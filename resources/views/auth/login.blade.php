@@ -65,10 +65,12 @@
                             </div>
 								</div>
 
-								<div class="form-group row mb-0 mt-3">
-								<p style="margin-left:265px ">OR</p>
-                        <br />
-                        <div class="form-group">
+								<div class="form-group row mt-3 ">
+								
+                       
+                        <div class="col-md-8 offset-md-4">
+
+									<p >OR</p>
                             {{-- <div class="col-md-8 col-md-offset-4">
                               <a href="" class="btn btn-primary">Login with Facebook</a>
                             </div> --}}
@@ -83,6 +85,10 @@
 									
 										<a href="{{route('redirect','google')}}" title="google">
 											<i class="fa fa-2x fa-google"></i>
+										</a>
+									
+										<a href="{{route('redirect','github')}}" title="github">
+											<i class="fa fa-2x fa-github"></i>
 										</a>
 
 								</div>
