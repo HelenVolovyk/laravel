@@ -48,10 +48,10 @@ return [
 		'redirect' => 'http://test.com/login/google/callback',
   ],
 
-	'github' => [
-		'client_id' => env('GITHUB_CLIENT_ID'),
-		'client_secret' => env('GITHUB_CLIENT_SECRET'),
-		'redirect' => 'http://test.com/login/github/callback',
-	],
+		'github' => [
+			'client_id' => env('GITHUB_CLIENT_ID'),
+			'client_secret' => env('GITHUB_CLIENT_SECRET'),
+			'redirect' => 'http://test.com/login/github/callback',
+		],
 
 ];

@@ -90,6 +90,8 @@
 										<a href="{{route('redirect','github')}}" title="github">
 											<i class="fa fa-2x fa-github"></i>
 										</a>
+									
+										
 
 								</div>
 							</div>
