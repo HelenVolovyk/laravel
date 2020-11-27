@@ -36,7 +36,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    STOR
+                    {{__('main.stor')}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -62,13 +62,26 @@
                         <li class="nav-item">
                        
                             <a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                               
-                                @if(Cart::instance('cart')->count() > 0)
+									 
+									
+
+
+										  @if(Cart::instance('cart')->count() > 0)
+								
                             <span class="badge badge-pill badge-secondary">{{Cart::instance('cart')->count()}}</span>
                             @endif
-                            </a>
-                            
-                        </li>
+									 </a>		
+
+									 
+								</li>
+								
+								<li class="nav-item">
+									<a class="nav-link" href="locale/ru">переключить язык</a>
+								</li>
+								
+								{{-- <li class="nav-item">
+									<a class="nav-link" href="{{ route('locale', ['locale' => 'ru']) }}">переключить язык</a>
+								</li> --}}
 
                         @guest
                             <li class="nav-item">
