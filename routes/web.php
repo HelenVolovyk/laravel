@@ -43,7 +43,7 @@ Route::group([
 
 	Route::get('/', 'HomeController@index')->name('index');
 
-	Route::get('/about', 'PageController@about');
+	Route::get('/about', 'PageController@about')->name('about');
 
 	Route::get('/contact', 'ContactController@index')->name('contact');
 

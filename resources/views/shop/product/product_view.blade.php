@@ -14,7 +14,7 @@
                       
         </div>
       
-    
+ 
        <div class="card-body">
 			<h5 class="card-title">{{$product->__('name')}}</h5>
           <p class="card-text">{{$product->__('shot_description')}}</p>

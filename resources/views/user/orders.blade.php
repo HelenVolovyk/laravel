@@ -6,7 +6,7 @@
         <div class="col-md-12">
            
 
-<h2 class="text-center mb-4">My orders</h2>
+<h2 class="text-center mb-4">{{ __('My Orders') }}</h2>
  
 @foreach($orders as $order)
 
@@ -40,13 +40,26 @@
         <td>
              <div>
              
-					{{-- {{$product->pluck('name')}} --}}
+									
 					
-               {{-- <div>@include('user.order_view', ['product'=>$order->products()->first()])</div> --}}
+
 					
-					{{-- <div>@include('user.order_view', ['product'=>$order->products()->first()])</div>  --}}
-					
-					 {{$order->products()->first()->name}} 
+					{{-- {{ $order->products()->firstOrFail()->__('name') }} --}}
+
+					 <?php
+					// dd( $order->products()->firstOrFail()->__('name') )
+
+// 					$order  = Order::find(1);
+// $product = $order->product;
+// $name = $product->name;
+// dd($name);
+
+					?> 
+{{-- 					
+				{{ $order->products()->first() }}
+				 --}}
+		
+
 					 @each('shop.cart.parts.checkout_view', Cart::instance('cart')->content(), 'row')
                
             

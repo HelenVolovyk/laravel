@@ -3,6 +3,7 @@
       {{-- <img src="{{Storage::disk('public')->url($product['product']['thumbnail'])}}" height="64" width="64"/>  --}}
 
     {{-- <a href="{{route('product.show'), $row->id}}"> --}}
+
     <a href="{{route('product.show', $row->id)}}">
       <strong>{{$row->name}}</strong>
     </a>
@@ -13,8 +14,8 @@
 <form action="{{route('cart.count.update', $row->id)}}" method="POST"> 
   @csrf
   <input type="hidden" value="{{$row->rowId}}" name="rowId">
-  <input type="number" min="1" value="{{$row->qty}}" name="product_count" style="width: 55px; height: 35px; margin-right:10px">
-  <input type="submit" class="btn btn-outline-success" value="update count">
+  <input type="number" min="1"  value="{{$row->qty}}" name="product_count" style="width: 55px; height: 35px; margin-right:10px">
+  <input type="submit" class="btn btn-outline-success" value="{{ __('update count') }}">
 
 </form>
 </td>

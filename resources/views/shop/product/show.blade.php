@@ -14,7 +14,7 @@
   <div class="col-md-4">
     <div class="text-center"> 
  
- 
+
       <div class="like">
       <a class="nav-link" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a></div>
     </div>
@@ -72,8 +72,9 @@
 
         </div> 
         <button type="submit" class="btn btn-primary mb-2">{{ __('Add to Cart') }}</button>
-      </form>
-    </div>
+		</form>
+		
+	    </div>
   @endif
 <hr>
 

@@ -50,7 +50,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('user.wishlist')}}"><i class="fa fa-heart-o" aria-hidden="true"></i>
                                 @if(Cart::instance('wishlist')->count() > 0)
@@ -79,7 +79,7 @@
 								<a class="nav-link" href="{{ route('locale',  __('main.set_lang') ) }} ">{{ __('main.set_lang') }}</a>
 								</li> --}}
 								
-					
+				
 								 @if(count(config('app.languages')) > 1)
 								 <li class="nav-item dropdown d-md-down-none">
 									  <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -94,6 +94,7 @@
 								 </li>
 							@endif         
 
+							 <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('Login') }}</a>
@@ -169,7 +170,7 @@
           <a class="nav-link" href="/about">  {{ __('About') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">  {{ __('Contact') }}</a>
+          <a class="nav-link" href="{{ route('contact', app()->getLocale()) }}">  {{ __('Contact') }}</a>
         </li>
       
       </ul>

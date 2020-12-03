@@ -11,12 +11,12 @@ Shopping Cart
   @if(Cart::instance('cart')->count() > 0)
   <div class="container">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Cart</li>
+      <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+      <li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ __('Cart') }}</li>
     </ol>
 
-    <h1 class="text-center">Cart</h1>
+    <h1 class="text-center">{{ __('Cart') }}</h1>
     <div class="row justify-content-md-center">
     
       <div class="col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-3">
@@ -24,10 +24,10 @@ Shopping Cart
        <table class="table table-light">
           <thead>
             <tr>
-             <th>Product</th>
-             <th>Qty</th>
-             <th>Price</th>
-             <th>Subtotal</th>
+             <th>{{ __('Product') }}</th>
+             <th>{{ __('Qty') }}</th>
+             <th>{{ __('Price') }}</th>
+             <th>{{ __('Subtotal') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -43,11 +43,12 @@ Shopping Cart
   <div class="row-right mt-5">
     <div class="col-sm-11 col-md-11 col-md-offset-3 col-sm-offset-3">
     <div>
-    <span><strong>Total {{Cart::total()}}</strong></span>
+    <span><strong>{{ __('Total') }}
+		 {{Cart::total()}}</strong></span>
     </div>
     <div class="mt-3">
-       <a href="{{'/checkout'}}" type="button" class="btn btn-success">Checkout</a> 
-      {{-- <a href="#" type="button" class="btn btn-success">Checkout</a> --}}
+       <a href="{{ route('checkout', app()->getLocale()) }}" type="button" class="btn btn-success">{{ __('Checkout') }}</a> 
+     
     </div>
     </div>
   </div>
@@ -55,7 +56,7 @@ Shopping Cart
   @else
 
   <div class="row justify-content-center">
-         <h2>No items in Cart!</h2> 
+         <h2>{{ __('No items in Cart!') }}</h2> 
     
   </div>
 </div>

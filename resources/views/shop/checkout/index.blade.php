@@ -7,7 +7,7 @@ Checkout
 
 @section('content')
 <div class="container">
-  <h1 class="text-center">Checkout</h1>
+  <h1 class="text-center">{{ __('Checkout') }}</h1>
   <div class="row justify-content-space-between">
     <div class="col-md-6">
     
@@ -16,7 +16,8 @@ Checkout
 
         {{-- <div id="charge-error" class="alert alert-danger" {{!Session::has('error') ? 'hidden' : ''}}>
         {{Session::get('error')}}
-        </div> --}}
+		  </div> --}}
+		  
         @if($errors->any())
         <div class="alert alert-danger">
           <ul>
@@ -33,25 +34,25 @@ Checkout
                
           <div class="">
             <div class="form-group">
-              <label for="user_name">Name</label>
+              <label for="user_name">{{ __('Name') }}</label>
                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ Auth()->user()->name }}" autocomplete="name" autofocus>
             </div>
           </div>
           <div class="">
             <div class="form-group">
-              <label for="user_surname">Surname</label>
+              <label for="user_surname">{{ __('Surname') }}</label>
               <input type="text" id="surname" name="surname" class="form-control @error('surname') is-invalid @enderror" value="{{ Auth()->user()->surname  }}" autocomplete="surname" autofocus>
             </div>
           </div>
           <div class="">
             <div class="form-group">
-              <label for="user_email">Email</label>
+              <label for="user_email">{{ __('Email') }}</label>
               <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ Auth()->user()->email  }}" autocomplete="email" autofocus>
             </div>
           </div>
           <div class="">
             <div class="form-group">
-              <label for="user_phone">Phone</label>
+              <label for="user_phone">{{ __('Phone') }}</label>
               <input type="text" id="phone" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ Auth()->user()->phone }}">
             </div>
           </div>
@@ -59,23 +60,26 @@ Checkout
           <hr>
           <div class="">
             <div class="form-group">
-              <label for="country">Country</label>
+              <label for="country">{{ __('Country') }}</label>
               <input type="text" id="country" name="country" class="form-control @error('country') is-invalid @enderror" required>
             </div>
           </div>
           <div class="">
             <div class="form-group">
-              <label for="city">City</label>
+              <label for="city">{{ __('City') }}</label>
               <input type="text" id="city" name="city" class="form-control @error('city') is-invalid @enderror" required>
             </div>
           </div>
           <div class="">
             <div class="form-group">
-              <label for="addres">Address</label>
+              <label for="addres">{{ __('Address') }}</label>
               <input type="text" id="address" name="address" class="form-control @error('address') is-invalid @enderror" required>
             </div>
           </div>
-          <hr>
+			 <hr>
+			 
+
+
          {{-- <div class="">
             <div class="form-group">
               <label for="card-name">Card Holder Name</label>
@@ -116,23 +120,25 @@ Checkout
               <input type="text" id="total" name="total" class="form-control" value="{{$total}}">
             </div>
           </div>
-        --}}
+		  --}}
+		  
+
         @csrf
-        <button type="submit" class="btn btn-success">Buy now</button>
+        <button type="submit" class="btn btn-success">{{ __('Buy now') }}</button>
      
         </form>
       </div>
 
       <div class="col"></div>
 
-<div class="col-md-5">
+<div class="col-md-5 mt-3">
   <table class="table">
     <thead class="thead-light">
       <tr>
-       <th>Product</th >
-       <th>Qty</th>
-       <th>Price</th>
-       <th>Subtotal</th>
+       <th>{{ __('Product') }}</th >
+       <th>{{ __('Qty') }}</th>
+       <th>{{ __('Price') }}</th>
+       <th>{{ __('Subtotal') }}</th>
       </tr>
     </thead>
     <tbody>
@@ -140,7 +146,8 @@ Checkout
     </tbody>
  </table>
  <div class="row-right">
-<strong>Total {{Cart::total()}}</strong>
+<strong>{{ __('Total') }}
+	{{Cart::total()}}</strong>
   </div>
 
 </div>
