@@ -28,7 +28,7 @@ $factory->define(User::class, function (Faker $faker) {
         'surname' => $faker->LastName,
 		  'email' => $faker->unique()->safeEmail,
 		  'balance' => $faker->randomDigit,
-		  'social_account_id' => $faker->randomDigit(),
+		  'social_account_id' => $faker->randomNumber($nbDigit = NULL),
 		  'provider' => Str::random(),
 		  'email_verified_at' => now(),
 		  'phone' => $faker->phoneNumber,

@@ -5,7 +5,7 @@
 
 <div class="container text-center">
   <div class="col-md-12">
-	 <h2 class="mb-3">CONTACT</h2>
+	 <h2 class="mb-3">{{ __('CONTACT') }}</h2>
 
 
 	
@@ -15,22 +15,23 @@
 		<form action="{{route('contact.send')}}" method="POST">
 			@csrf
 			<div class="form-group">
-				<label for="name">Name</label>
-				<input id="name" class="form-control" type="text" name="name" placeholder="your name">
+				<label for="name">{{ __('Name') }}</label>
+				<input id="name" class="form-control" type="text" name="name" placeholder="{{ __('your name') }}">
 			</div>
 			<div class="form-group">
 				<label for="email">email</label>
-				<input id="email" class="form-control" type="email" name="email" placeholder="your email">
+				<input id="email" class="form-control" type="email" name="email" 
+				placeholder="{{ __('your email') }}">
 			</div>
 			<div class="form-group">
-				<label for="subject">Subject</label>
-				<input id="subject" class="form-control" type="text" name="subject" placeholder="subject">
+				<label for="subject">{{ __('Subject') }}</label>
+				<input id="subject" class="form-control" type="text" name="subject" placeholder="{{ __('subject') }}">
 			</div>
 			<div class="form-group">
-				<label for="message">Message</label>
-			<textarea name="message" id="message"  class="form-controll" placeholder="message"></textarea>
+				<label for="message">{{ __('Message') }}</label>
+			<textarea name="message" id="message"  class="form-controll" placeholder="{{ __('message') }}"></textarea>
 			</div>
-			<button type="submit" class="btn btn-success">send</button>
+			<button type="submit" class="btn btn-success">{{ __('send') }}</button>
 
 			
 		</form>

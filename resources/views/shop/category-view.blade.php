@@ -1,6 +1,9 @@
 <div class="">
 <a href="{{route('category.show', $category->id)}}"
-  >{{$category->title}}
+  >{{ $category->__('title') }}
+  
 </a> 
+
+
 </div>
 

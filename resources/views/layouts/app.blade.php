@@ -36,7 +36,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{__('main.stor')}}
+                    {{ __('My Stor') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -75,21 +75,32 @@
 									 
 								</li>
 								
-								<li class="nav-item">
-									<a class="nav-link" href="locale/ru">переключить язык</a>
-								</li>
-								
 								{{-- <li class="nav-item">
-									<a class="nav-link" href="{{ route('locale', ['locale' => 'ru']) }}">переключить язык</a>
+								<a class="nav-link" href="{{ route('locale',  __('main.set_lang') ) }} ">{{ __('main.set_lang') }}</a>
 								</li> --}}
+								
+					
+								 @if(count(config('app.languages')) > 1)
+								 <li class="nav-item dropdown d-md-down-none">
+									  <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+												{{ strtoupper(app()->getLocale()) }}
+									  </a>
+									  <div class="dropdown-menu dropdown-menu-right">
+											@foreach(config('app.languages') as $langLocale => $langName)
+												 <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+										
+											@endforeach
+									  </div>
+								 </li>
+							@endif         
 
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -146,19 +157,19 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Shop
+              {{ __('Shop') }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('shop')}}">All products</a>
+              <a class="dropdown-item" href="{{route('shop')}}">{{ __('All products') }}</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link" href="/about">  {{ __('About') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="/contact">  {{ __('Contact') }}</a>
         </li>
       
       </ul>
@@ -173,6 +184,7 @@
             @yield('content')
         </main>
     </div>
-    @stack('footer-scripts')
+	 @stack('footer-scripts')
+	 {{-- @include('layouts.footer') --}}
 </body>
 </html>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-10">
            
             <div class="card">
                 <div class="card-header">Create Products</div>
@@ -65,6 +65,26 @@
                       </div>
 
                       <div class="form-group row">
+                          <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name_UK') }}</label>
+
+                          <div class="col-md-6">
+                              <input id="name_uk" 
+                              type="text" 
+                              class="form-control @error('name_uk') is-invalid @enderror" 
+                              name="name_uk" 
+                              value="{{ old('name_uk') }}" 
+                              required 
+                              autofocus>
+
+                              @error('name_uk')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
                           <label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('Category_id') }}</label>
                           <div class="col-md-6">
                             <select name="category_id" id="category_id" class="form-control">
@@ -116,6 +136,20 @@
                       </div>
 
                       <div class="form-group row">
+                          <label for="description_uk" class="col-md-4 col-form-label text-md-right">{{ __('Description_uk') }}</label>
+
+                          <div class="col-md-6">
+                             <textarea name="description_uk" 
+                             id="description_uk" 
+                             class="form-control" 
+                             cols="30" rows="10"
+                            >
+                            {{old('description_uk')}}</textarea>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
                           <label for="shot_description" class="col-md-4 col-form-label text-md-right">{{ __('Shot Description') }}</label>
 
                           <div class="col-md-6">
@@ -128,6 +162,26 @@
                             {{old('shot_description')}}</textarea>
 
                               @error('shot_description')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="shot_description_uk" class="col-md-4 col-form-label text-md-right">{{ __('Shot Description_uk') }}</label>
+
+                          <div class="col-md-6">
+                             <textarea name="shot_description_uk" 
+                             id="shot_description_uk" 
+                             class="form-control" 
+                             cols="30" rows="10"
+                             maxlength="200"
+                             required>
+                            {{old('shot_description_uk')}}</textarea>
+
+                              @error('shot_description_uk')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
                                   </span>

@@ -113,16 +113,21 @@ class ProductsController extends Controller
         $product->update([
             'SKU'               => $request->get('SKU'),
             'name'              => $request->get('name'),
+            'name_uk'           => $request->get('name_uk'),
             'category'          => $request->get('category'),
+            'category_uk'       => $request->get('category_uk'),
             'thumbnail'         => $product->thumbnail,
             // 'thumbnail'         => $request->get('thumbnail'),
-            'shot_description'  => $request->get('shot_description'),
+				'description'  		=> $request->get('description'),
+				'description_uk'  	=> $request->get('description_uk'),
+            'shot_description'  	=> $request->get('shot_description'),
+            'shot_description_uk'  => $request->get('shot_description_uk'),
             'price'             => $request->get('price'),
             'discount'          => $request->get('discount'),
             'quantity'          => $request->get('quantity')
         ]);
 
-    //  dd($request->product);
+     // dd($request->product);
 
         // if (!empty($request->file('thumbnail'))) {
         //     $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);

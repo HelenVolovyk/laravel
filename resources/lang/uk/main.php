@@ -1,4 +1,5 @@
 <?php
 return [
-	'stor' => 'Мій магазин',
+	"current_lang" => "uk",
+	"set_lang" => "ru",
 ];

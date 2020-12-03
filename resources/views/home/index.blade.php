@@ -22,8 +22,8 @@
 </div>
 @endforeach
 
-  <div class="text-center button-container mt-2">
-    <a href="/shop" class="button">View more products</a>
+  <div class="text-center button-container mt-3">
+    <a href="/shop" class="button">{{ __('View more products') }}</a>
   </div>     
 
 <!--  parent -->

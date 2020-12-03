@@ -35,19 +35,14 @@ class HomeController extends Controller
 	}
 
 	public function changeLocale($locale)
-	{
-
+	 {
 		
-		 $currentLocale =App::getLocale();
-		 dd($currentLocale);
-
-		// return redirect()->back();
-
-		//App::setlocale($locale);
-		//store the locale in session so that the middleware can register it
-		// session()->put('locale', $locale);
-		// return redirect()->back();
-
+		
+		// session(['locale' => $locale]);
+		// 	App::setlocale($locale);
+		// //dd(session('locale'));
+	
+		//  return redirect()->back();
 	}
 
 

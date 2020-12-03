@@ -7,7 +7,9 @@
 
 <div class="row justify-content-end">
   <div class="col-md-4">
-    <h3 class="text-center">{{__($product->name)}}</h3>
+	 <h3 class="text-center">{{ $product->__('name') }}</h3>
+	
+	
   </div>
   <div class="col-md-4">
     <div class="text-center"> 
@@ -28,27 +30,30 @@
   </div>
   <div class="col-md-6">
     @if($product->discount > 0)
-      <p style="color: red; text-decoration: line-through">Old Price: ${{$product->price}}</p>
+		<p style="color: red; text-decoration: line-through">{{ __('Old Price:') }}
+			 ${{$product->price}}</p>
     @endif
-      <p>PRICE: <strong>${{$product->printPrice()}}</strong></p>
+      <p>{{ __('PRICE:') }}<strong>${{$product->printPrice()}}</strong></p>
       <p>SKU: {{$product->SKU}}</p>
-      <p>IN STOCK: {{$product->quantity}}</p>
+      <p>{{ __('IN STOCK:') }}
+			<strong> {{$product->quantity}}</strong></p>
       <hr>
        
         <div class="product_category">
-          <div>Product Categories</div>
+			 <div>{{ __('Product Categories') }}</div>
           <div>@include('shop.category-view', ['category'=>$product->category()->first()])</div>
         </div>
         <hr>
            @if($product->usersRated() > 0)
-           <p>Rating: {{round($product->averageRating(), 1) ?? 0}} /5 ({{$product->usersRated()}})</p>
+           <p>{{ __('Rating:')  }}
+				  {{round($product->averageRating(), 1) ?? 0}} /5 ({{$product->usersRated()}})</p>
            @endif
         
     
       @if($product->quantity > 0)
       <hr>
       <div class="">
-        <p>Quantity</p>
+        <p>{{ __('Quantity') }}</p>
        
       <form action="{{route('cart.add', $product)}}" method="POST" class="form-inline" >
         @csrf
@@ -66,7 +71,7 @@
                   style="width: 55px; height: 35px; margin-right:10px"> 
 
         </div> 
-        <button type="submit" class="btn btn-primary mb-2">Add to Cart</button>
+        <button type="submit" class="btn btn-primary mb-2">{{ __('Add to Cart') }}</button>
       </form>
     </div>
   @endif
@@ -112,8 +117,9 @@
   </div>
 
   <div class="">
-      <p style="margin-top: 2%">DESCRIPTION: </p>
-      <p>{{$product->description}}</p>
+      <p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
+      <p>{{$product->__('description')}}</p>
+     
   </div>
   
 <div class="">

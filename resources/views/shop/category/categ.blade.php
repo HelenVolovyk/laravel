@@ -18,10 +18,10 @@
  
     <div class="card-body">
       <a href="{{route('category.show', $category)}}">
-        <h5 class="card-title">{{$category->title}}</h5>
+        <h5 class="card-title">{{$category->__('title')}}</h5>
       </a>
       
-       <p class="card-text">{{$category->description}}</p>
+       <p class="card-text">{{$category->__('description')}}</p>
       
          
 

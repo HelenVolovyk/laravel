@@ -3,8 +3,11 @@
              <th><img src="{{Storage::disk('public')->url($product->thumbnail)}}" height="50" width="50"></th>
              <td>{{$product->name}}</td>
 
-           <td><a href="{{route('admin.products.edit', $product->category->id)}}">{{$product->category->title}}</a></td>
+			  <td><a href="{{route('admin.products.edit', $product->category->id)}}">{{$product->category->title}}</a>
+			  </td>
+       
              <td>{{$product->shot_description}}</td>
+          
              <td>
                <div style="display: flex; flex-direction: row; align-item: center; justify-conrent: center">
                 <a href="{{route('admin.products.edit', $product)}}"

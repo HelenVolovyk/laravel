@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-All Products
+{{ __('All Products') }}
 @endsection
 
 @section('content')
@@ -9,17 +9,17 @@ All Products
 
 <div class="container">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+    <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ __('Shop') }}</li>
   </ol>
 
 <div class="row">
   <div class="col-md-2">
     <aside class="product-section container">
       <div class="sidebar">
-        <h6>By Category</h6>
+        <h6>{{ __('By Category') }}</h6>
           <div class="category_link mt-3">
-            <div><a href="{{route('category.index')}}">all categories</a></div>
+            <div class="font-weight-bold"><a href="{{route('category.index')}}">{{ __('all categories') }}</a></div>
             <div>
             
          

@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -182,7 +182,8 @@ return [
         \App\Providers\ImageServiceProvider::class,
 		  \App\Providers\WishlistServiceProvider::class,
 		  Laravel\Socialite\SocialiteServiceProvider::class,
-
+		  \App\Services\Localization\LocalizationServiceProvider::class,
+		  \App\Services\LanguageServiceProvider::class,
 	
 
 		  
@@ -239,8 +240,19 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
 		  'View' => Illuminate\Support\Facades\View::class,
 		  'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+		  'LocalizationService' => App\Services\Localization\LocalizationService::class,
 	 ],
 	 
-
+// 	 'locales' => [
+// 		'en' => 'english',
+// 		'ru' => 'russian',
+// 		'uk' => 'ukrain'
+//   ],
+	 
+	 'languages' => [
+		'en' => 'english',
+		'ru' => 'russian',
+		'uk' => 'ukrain'
+  ],
 
 ];

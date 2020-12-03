@@ -13,12 +13,12 @@ All Categories
 
 <div class="container">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
-    <li class="breadcrumb-item active" aria-current="page">All Categories</li>
+    <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+    <li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ __('All Categories') }}</li>
   </ol>
 
-  <h1 class="text-center mt-2">All Categories</h1>
+  <h1 class="text-center mt-2">{{ __('All Categories') }}</h1>
 <div class="col-md-12 mt-5">
   
   <div class="categories text-center">

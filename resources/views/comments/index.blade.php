@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <hr>
-    <p>COMMENTS:</p>
+    <p>{{ __('COMMENTS:') }}</p>
     <div class="col-cm-12">
       @each('comments.single', $comments, 'comment')
       <br>

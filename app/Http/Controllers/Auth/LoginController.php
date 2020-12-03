@@ -13,7 +13,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Login Controller
     |--------------------------------------------------------------------------
@@ -24,61 +24,64 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+	use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    //protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = 'admin/dashboard';
+	/**
+	 * Where to redirect users after login.
+	 *
+	 * @var string
+	 */
+	//protected $redirectTo = RouteServiceProvider::HOME;
+	protected $redirectTo = 'admin/dashboard';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-	 }
-	 
-
-	 public function redirectToProvider($provider)
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
 	{
-		 return Socialite::driver($provider)->redirect();
+		$this->middleware('guest')->except('logout');
 	}
 
 
-	 public function handleProviderCallback($provider)
+	public function redirectToProvider($provider)
 	{
-		$getInfo = Socialite::driver($provider)->user();
+		return Socialite::driver($provider)->redirect();
+	}
 
-		//dd($getInfo);
-		$user = $this->createUser($getInfo, $provider);
-		Auth::login($user);
+
+	public function handleProviderCallback($provider)
+	{
+		$SocialUser = Socialite::driver($provider)->user();
+
+		//dd($SocialUser );
+		$user = $this->createUser($SocialUser, $provider);
+		Auth::login($user, true);
 		return redirect('/');
-		 
 	}
 
-	function createUser($getInfo, $provider)
+	function createUser($SocialUser, $provider)
 	{
-		$user = User::where('social_acount_id', $getInfo->id)->first();
+		
 
-	
-		if(!$user)
-		{
+		if ($user = User::where('email', $SocialUser->email)->first()) {
+			return $user;
+		}
+
+
+
+		if (!$user) {
 			$user = User::create([
-				'name' => $getInfo->name,
-				'email' => $getInfo->email,
-				'social_acount_id' => $getInfo->id,
-				'provider' => $provider, 
-				'password' => bcrypt(rand(25)),	
+				'role_id' => 2,
+				'name' => $SocialUser->getName(),
+				'surname' => 'Sociallite',
+				'email' => $SocialUser->getEmail(),
+				'social_account_id' => $SocialUser->getId(),
+				'provider' => $provider,
+				'password' => bcrypt(rand(10, 20)),
 			]);
 		}
 		return $user;
 	}
-
-	
 }

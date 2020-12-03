@@ -16,10 +16,11 @@
       
     
        <div class="card-body">
-         <h5 class="card-title">{{$product->name}}</h5>
-          <p class="card-text">{{$product->shot_description}}</p>
+			<h5 class="card-title">{{$product->__('name')}}</h5>
+			
+          <p class="card-text">{{$product->__('shot_description')}}</p>
          
-            @if(!empty($product->category)) 
+            @if(!empty($product->__('category'))) 
      
               @include('shop.category-view', ['category' => $product->category()->first()]) 
             @endif 

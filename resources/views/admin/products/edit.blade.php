@@ -47,18 +47,37 @@
                         </div>
   
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
   
                             <div class="col-md-6">
-                                <input id="name" 
+										<input id="name" 
+										type="text" 
+										class="form-control @error('name') is-invalid @enderror" 
+										name="name" 
+										value="{{ $product->name ?? '' }}" 
+										required 
+										autofocus>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+  
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name_UK') }}</label>
+  
+                            <div class="col-md-6">
+                                <input id="name_uk" 
                                 type="text" 
-                                class="form-control @error('name') is-invalid @enderror" 
-                                name="name" 
-                                value="{{ $product->name ?? '' }}" 
+                                class="form-control @error('name_uk') is-invalid @enderror" 
+                                name="name_uk" 
+                                value="{{ $product->name_uk ?? '' }}" 
                                 required 
                                 autofocus>
   
-                                @error('name')
+                                @error('name_uk')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -84,6 +103,8 @@
                               @enderror
                             </div>
                         </div>
+
+                 
 
 
                         <div class="form-group row">
@@ -119,9 +140,23 @@
   
                             </div>
                         </div>
+                
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description_UK') }}</label>
+  
+                            <div class="col-md-6">
+                               <textarea name="description_uk" 
+                               id="description_uk" 
+                               class="form-control" 
+                               cols="30" rows="10"
+                              >
+                              {{ $product->description_uk ?? ''}}</textarea>
+  
+                            </div>
+                        </div>
 
                         <div class="form-group row">
-                            <label for="shot_description" class="col-md-4 col-form-label text-md-right">{{ __('Shot Description') }}</label>
+                            <label for="shot_description" class="col-md-4 col-form-label text-md-right"> Shot Description </label>
   
                             <div class="col-md-6">
                                <textarea name="shot_description" 
@@ -130,9 +165,29 @@
                                cols="30" rows="10"
                                maxlength="200"
                                required>
-                              {{$product->shot_description ?? ''}}</textarea>
+                               {{$product->shot_description ?? ''}}</textarea>
   
                                 @error('shot_description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="shot_description_uk" class="col-md-4 col-form-label text-md-right">{{ __('Shot Description_uk') }}</label>
+  
+                            <div class="col-md-6">
+                               <textarea name="shot_description_uk" 
+                               id="shot_description_uk" 
+                               class="form-control" 
+                               cols="30" rows="10"
+                               maxlength="200"
+                               required>
+                              {{$product->shot_description_uk ?? ''}}</textarea>
+  
+                                @error('shot_description_uk')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

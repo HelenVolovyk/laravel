@@ -70,7 +70,8 @@
                        
                         <div class="col-md-8 offset-md-4">
 
-									<p >OR</p>
+									<p >{{ __('OR') }}</p>
+
                             {{-- <div class="col-md-8 col-md-offset-4">
                               <a href="" class="btn btn-primary">Login with Facebook</a>
                             </div> --}}
@@ -79,6 +80,7 @@
 										{{-- <a href="{{ route('auth.social', 'facebook') }}" title="Facebook">
 											<i class="fa fa-2x fa-facebook-square"></i>
 										</a>--}}
+										
 										<a href="{{ route('redirect', 'instagram') }}" title="Instagram">
 											<i class="fa fa-2x fa-instagram"></i>
 										</a> 

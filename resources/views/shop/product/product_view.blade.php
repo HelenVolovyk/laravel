@@ -9,24 +9,19 @@
 
         <div class="cart-link">
           
-          {{-- <a class="badge badge-pill badge-light flot-right" href="{{route('product.show', $product->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
+       
           <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
                       
         </div>
       
     
        <div class="card-body">
-         <h5 class="card-title">{{$product->name}}</h5>
-          <p class="card-text">{{$product->shot_description}}.</p>
-         
-            @if(!empty($product->category)) 
-     
-              @include('shop.category-view', ['category' => $product->category()->first()]) 
-            @endif 
-       
-
-        
-
+			<h5 class="card-title">{{$product->__('name')}}</h5>
+          <p class="card-text">{{$product->__('shot_description')}}</p>
+      		 @include('shop.category-view', ['category'=>$product->category()->first()])
+            
+           
+              
            <div class="clearfix ">
              <div class="price">
              @if($product->discount > 0)
@@ -34,7 +29,7 @@
              @endif
              <div class="printPrice">${{$product->printPrice()}}</div>
             </div>
-             {{-- <a href="{{route('product.addToCart', ['id' => $product->id])}}" class="btn btn-primary pull-right">Add to Cart </a> --}}
+           
 
              <form action="{{route('cart.add', $product)}}" method="POST" class="form-inline" id="button_center">             
               @method('POST')
@@ -53,11 +48,9 @@
       
               </div> 
             
-
-                <button type="submit" class="btn btn-primary mt-2" id="button_center">Add to Cart</button>
+                <button type="submit" class="btn btn-primary mt-2" id="button_center">{{ __('Add to Cart') }}</button>
            
-            
-            </form>
+               </form>
 
 
            </div>

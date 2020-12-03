@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\Auth\AuthSocialController;
 use App\Http\Controllers\OrderController;
+use App\Services\Localization\LocalizationService;
 use Carbon\Traits\Localization;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
@@ -21,31 +23,36 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-// Route::get('/clear-cache', function() {
-// 	$exitCode = Artisan::call('cache:clear');
-// 	$exitCode = Artisan::call('config:cache');
-// 	return 'DONE'; //Return anything
-// });
 
 
- 
+//Route::redirect('/', '/ru');
 
 
 
-	Route::get('locale/{locale}', 'HomeController@changeLocale')->name('locale');
+Route::group([
+	//'prefix' => '{languaue}',
+	//'where' => ['locale' => '[a-zA-Z]{2}'],
+	//'prefix' => LocalizationService::locale(),
+	'prefix' => Config::get('routeLang'),
+	'middleware' => 'set_locale'
+], function () {
+
+
+
+	//Route::get('locale/{locale}', 'HomeController@changeLocale')->name('locale');
 
 	Route::get('/', 'HomeController@index')->name('index');
-	
-	Route::get('/about','PageController@about');
-	
-		Route::get('/contact', 'ContactController@index')->name('contact');
-	
+
+	Route::get('/about', 'PageController@about');
+
+	Route::get('/contact', 'ContactController@index')->name('contact');
+
 	Route::post('/contact/send', 'ContactController@send')->name('contact.send');
 
 	Auth::routes();
 
-	Route::get('login/{provider}', 'Auth/LoginController@redirectToProvider')->name('redirect');
-	Route::get('login/{provider}/callback', 'Auth/LoginController@handleProviderCallback');
+	Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('redirect');
+	Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 	Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
@@ -63,7 +70,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 
 	Route::get('/shop', 'ShopController@index')->name('shop');
-	//Route::post('/shop/cart/{product}/add', 'CartController@add')->name('cart.add');
+
 
 
 
@@ -120,4 +127,4 @@ use Laravel\Socialite\Facades\Socialite;
 
 		Route::resource('categories', 'CategoriesController')->except(['show']);
 	});
-//});
+});

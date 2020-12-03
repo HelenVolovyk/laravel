@@ -45,6 +45,26 @@
                       </div>
 
                       <div class="form-group row">
+                          <label for="title_uk" class="col-md-4 col-form-label text-md-right">{{ __('Title_uk') }}</label>
+
+                          <div class="col-md-6">
+                              <input id="title_uk" 
+                              type="text_uk" 
+                              class="form-control @error('title_uk') is-invalid @enderror" 
+                              name="title_uk" 
+                              value="{{ old('title_uk') }}" 
+                              required 
+                              autofocus>
+
+                              @error('title_uk')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
 
                           <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
@@ -75,6 +95,25 @@
                             {{old('description')}}</textarea>
 
                               @error('description')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="description_uk" class="col-md-4 col-form-label text-md-right">{{ __('Description_uk') }}</label>
+
+                          <div class="col-md-6">
+                             <textarea name="description_uk" 
+                             id="description_uk" 
+                             class="form-control" 
+                             cols="30" rows="10"
+                             required>
+                            {{old('description_uk')}}</textarea>
+
+                              @error('description_uk')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
                                   </span>

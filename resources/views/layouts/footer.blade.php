@@ -1,4 +1,5 @@
 
+
             <footer class="container py-5">
       <div class="row">
         <div class="col-12 col-md">
@@ -12,8 +13,8 @@
             <li><a class="text-muted" href="#">Random feature</a></li>
             <li><a class="text-muted" href="#">Team feature</a></li>
             <li><a class="text-muted" href="#">Stuff for developers</a></li>
-            <li><a class="text-muted" href="#">Another one</a></li>
-            <li><a class="text-muted" href="#">Last time</a></li>
+            {{-- <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li> --}}
           </ul>
         </div>
         <div class="col-6 col-md">

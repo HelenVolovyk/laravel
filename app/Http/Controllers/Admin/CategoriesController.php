@@ -50,7 +50,9 @@ class CategoriesController extends Controller
 
         $newCategory = $category->create([
             'title' => $request->get('title'),
-            'description' => $request->get('description')
+            'title_uk' => $request->get('title_uk'),
+            'description' => $request->get('description'),
+            'description_uk' => $request->get('description_uk')
         ]);
 
         if (!empty($request->file('image'))) {
@@ -110,7 +112,9 @@ class CategoriesController extends Controller
         //dd($request->files);
         $category->update([
             'title' => $request->get('title'),
-            'description' => $request->get('description')
+            'title_uk' => $request->get('title_uk'),
+            'description' => $request->get('description'),
+            'description_uk' => $request->get('description_uk')
         ]);
 
       
