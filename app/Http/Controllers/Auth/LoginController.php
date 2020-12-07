@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-//use Laravel\Socialite\Facades\Socialite;
+
 
 class LoginController extends Controller
 {

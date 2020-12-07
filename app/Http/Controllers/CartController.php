@@ -19,8 +19,6 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
 
-
-
 	public function index()
 	{
 		return view('shop.cart.index');
@@ -33,21 +31,15 @@ class CartController extends Controller
 
 	public function add(Request $request, Product $product)
 	{
-		
-	
-		//dd($request);
-
-		Cart::instance('cart')->add(
+			
+			Cart::instance('cart')->add(
 			$product->id,
 			$product->__('name'),
 			$request->product_count,
 			$product->getPrice()
 		);
 
-
-
 		//Cart::instance('cart')->store(auth()->user()->instanceCartName()); 
-
 
 		return redirect()->back()->with(['status' => 'The product was added to cart']);
 	}
@@ -69,12 +61,9 @@ class CartController extends Controller
 
 
 
-
 	public function delete(Request $request, Product $product)
 	{
-		//dd($request);
-		//$product->images()->delete();
-
+		
 		Cart::instance('cart')->remove($request->rowId);
 		//Cart::instance('cart')->restore(Auth::user()->instanceCartName());
 

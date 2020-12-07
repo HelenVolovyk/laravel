@@ -14,7 +14,11 @@ Shopping Cart
       <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
       <li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ __('Cart') }}</li>
-    </ol>
+	 </ol>
+	 
+	
+	
+	 
 
     <h1 class="text-center">{{ __('Cart') }}</h1>
     <div class="row justify-content-md-center">

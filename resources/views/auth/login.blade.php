@@ -92,8 +92,22 @@
 										<a href="{{route('redirect','github')}}" title="github">
 											<i class="fa fa-2x fa-github"></i>
 										</a>
-									
-										
+
+										<div class="form-group row">
+											<div class="col-md-8 offset-md-4">
+												@if (Route::has('register'))
+												{{ __('Not Account?') }}
+													<a class="ml-3" href="{{ route('register', app()->getLocale()) }}">	{{ __('Create') }}</a>
+												@endif
+
+																	
+											</div>
+										</div>	
+
+
+
+
+
 
 								</div>
 							</div>

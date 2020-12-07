@@ -12,12 +12,16 @@
 
     <!-- Scripts -->
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	 <script src="https://kit.fontawesome.com/48684df7ca.js" crossorigin="anonymous"></script>
     
     <script src="{{ asset('js/app.js') }}" defer></script>
     @stack('scripts')
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous"></script>
+	 crossorigin="anonymous"></script>
+	 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	 <script type="text/javascript" src="js/slick.min.js"></script>
+	 <script type="text/javascript" src="js/script.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,19 +29,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   
 
 </head>
 <body>
     <div id="app">
         @section('navbar')
-
+		  <div class="col-12 text-center">
+			<a class="navbar-brand" href="{{ url('/') }}">
+				{{ __('My Stor') }}
+		  </a>
+		</div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ __('My Stor') }}
-                </a>
+				
+					 <a href="tel:123-456-78">123-456-78</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -75,35 +84,40 @@
 									 
 								</li>
 								
+								{{-- !!!ЯЗЫК --}}
+
 								{{-- <li class="nav-item">
 								<a class="nav-link" href="{{ route('locale',  __('main.set_lang') ) }} ">{{ __('main.set_lang') }}</a>
 								</li> --}}
 								
-				
+{{-- 				
 								 @if(count(config('app.languages')) > 1)
-								 <li class="nav-item dropdown d-md-down-none">
-									  <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-												{{ strtoupper(app()->getLocale()) }}
-									  </a>
-									  <div class="dropdown-menu dropdown-menu-right">
-											@foreach(config('app.languages') as $langLocale => $langName)
-												 <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-										
-											@endforeach
-									  </div>
-								 </li>
-							@endif         
+									<li class="nav-item dropdown d-md-down-none">
+										<a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+													{{ strtoupper(app()->getLocale()) }}
+										</a>
+										<div class="dropdown-menu dropdown-menu-right">
+												@foreach(config('app.languages') as $langLocale => $langName)
+													<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+											
+												@endforeach
+										</div>
+									</li>
+								@endif          --}}
 
 							 <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('Login') }}</a>
+                            </li> --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
                             </li>
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -117,7 +131,7 @@
                                     </a>
                                     @endif
                                     @if(auth()->user()->IsUser)
-                                    <a class="dropdown-item" href="{{ route('user.profile') }}">
+                                    <a class="dropdown-item" href="{{ route('user.profile.index') }}">
                                         {{ __('My Profile') }}
                                     </a>
                                  
@@ -153,7 +167,7 @@
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
       <div class="container">
-        <div class="collapse navbar-collapse  d-flex justify-content-end" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse  d-flex justify-content-between" id="navbarNavDropdown">
        
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
@@ -170,10 +184,27 @@
           <a class="nav-link" href="/about">  {{ __('About') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('contact', app()->getLocale()) }}">  {{ __('Contact') }}</a>
+          <a class="nav-link" href="{{ route('contact.index', app()->getLocale()) }}">  {{ __('Contact') }}</a>
         </li>
       
-      </ul>
+		</ul>
+		
+		@if(count(config('app.languages')) > 1)
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown d-md-down-none">
+					<a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								{{ strtoupper(app()->getLocale()) }}
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+							@foreach(config('app.languages') as $langLocale => $langName)
+								<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+						
+							@endforeach
+					</div>
+				</li>
+			</ul>
+		@endif     
+
     </div>
   </nav>
 </div>
@@ -184,8 +215,13 @@
 			  @include('inc.message')
             @yield('content')
         </main>
-    </div>
+	 </div>
+	 
 	 @stack('footer-scripts')
 	 {{-- @include('layouts.footer') --}}
+
+
+	
+	 <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

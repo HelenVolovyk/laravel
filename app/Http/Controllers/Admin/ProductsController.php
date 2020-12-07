@@ -116,8 +116,8 @@ class ProductsController extends Controller
             'name_uk'           => $request->get('name_uk'),
             'category'          => $request->get('category'),
             'category_uk'       => $request->get('category_uk'),
-            'thumbnail'         => $product->thumbnail,
-            // 'thumbnail'         => $request->get('thumbnail'),
+              'thumbnail'         => $product->thumbnail,
+          	//  'thumbnail'         => $request->get('thumbnail'),
 				'description'  		=> $request->get('description'),
 				'description_uk'  	=> $request->get('description_uk'),
             'shot_description'  	=> $request->get('shot_description'),
@@ -129,21 +129,21 @@ class ProductsController extends Controller
 
      // dd($request->product);
 
-        // if (!empty($request->file('thumbnail'))) {
-        //     $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
-        //     $filePath       = $imageService->upload($request->file('thumbnail'));
-        //     $oldThumbnail   = $product->thumbnail;
+      //   if (!empty($request->file('thumbnail'))) {
+      //       $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+      //       $filePath       = $imageService->upload($request->file('thumbnail'));
+      //       $oldThumbnail   = $product['thumbnail'];
 
-        //     if (!is_null($oldThumbnail)) {
-        //         $imageService->remove($oldThumbnail->path);
-        //     }
+      //       if (!is_null($oldThumbnail)) {
+      //           $imageService->remove($oldThumbnail->path);
+      //       }
     
-        //     if (is_null($oldThumbnail)) {
-        //         $product->thumbnail->create(['path' => $filePath]);
-        //     } else {
-        //         $product->thumbnail->update(['path' => $filePath]);
-        //     }
-        // }
+      //       if (is_null($oldThumbnail)) {
+      //           $product['thumbnail']->create(['path' => $filePath]);
+      //       } else {
+      //           $product['thumbnail']->update(['path' => $filePath]);
+      //       }
+      //   }
   //dd($request->files);
    
 

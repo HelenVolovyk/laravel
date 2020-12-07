@@ -42,13 +42,13 @@ class Product extends Model implements Buyable
 	public function orders()
 	{
 
-		return $this->belongsToMany(\App\Models\Order::class, 'order_product', 'order_id', 'product_id')
+		return $this->belongsToMany(\App\Models\Order::class, 'order_product', 'product_id', 'order_id',)
 			->withPivot('quantity', 'price')
 			->withTimestamps();
 	}
 
 
-	public function images()
+	public function image()
 	{
 		return $this->morphMany(\App\Models\Image::class, 'imageable');
 	}

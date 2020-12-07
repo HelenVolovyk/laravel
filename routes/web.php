@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SlidersController;
 use App\Http\Controllers\Auth\AuthSocialController;
 use App\Http\Controllers\OrderController;
 use App\Services\Localization\LocalizationService;
@@ -42,79 +43,79 @@ Route::group([
 	//Route::get('locale/{locale}', 'HomeController@changeLocale')->name('locale');
 
 	Route::get('/', 'HomeController@index')->name('index');
-
 	Route::get('/about', 'PageController@about')->name('about');
 
-	Route::get('/contact', 'ContactController@index')->name('contact');
-
-	Route::post('/contact/send', 'ContactController@send')->name('contact.send');
+	//*contact
+	Route::prefix('contact')->name('contact.')->group(function () {
+		Route::get('/', 'ContactController@index')->name('index');
+		Route::post('/send', 'ContactController@send')->name('send');
+	});
 
 	Auth::routes();
 
-	Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('redirect');
-	Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-
+	//*login socialite
+	Route::prefix('login')->group(function () {
+		Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('redirect');
+		Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+	});
 
 	Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
 		Route::delete('images/{image}/remove', 'ImagesController@remove')->name('image.remove');
 	});
 
-
-	Route::get('category/{category}', 'CategoryController@show')->name('category.show');
-	Route::get('category/', 'CategoryController@index')->name('category.index');
-
+	Route::prefix('category')->name('category.')->group(function () {
+		Route::get('/{category}', 'CategoryController@show')->name('show');
+		Route::get('/', 'CategoryController@index')->name('index');
+	});
 
 	Route::resource('product', 'ProductController');
-	Route::get('product/{product}', "ProductController@show")->name('product.show');
-	Route::get('product', "ProductController@index")->name('product.index');
-
 
 	Route::get('/shop', 'ShopController@index')->name('shop');
-
-
+	Route::get('/search', 'ShopController@search')->name('search');
 
 
 	Route::middleware('auth')->group(function () {
 		//*Shopping cart
-		Route::get('/cart', 'CartController@index')->name('cart.index');
-		Route::post('/cart/{product}/add', 'CartController@add')->name('cart.add');
-		Route::post('/cart/{product}/count/update', 'CartController@update')->name('cart.count.update');
-		Route::delete('/cart/{product}/delete', 'CartController@delete')->name('cart.delete');
+		Route::prefix('cart')->name('cart.')->group(function () {
+			Route::get('/', 'CartController@index')->name('index');
+			Route::post('/{product}/add', 'CartController@add')->name('add');
+			Route::post('/{product}/count/update', 'CartController@update')->name('count.update');
+			Route::delete('/{product}/delete', 'CartController@delete')->name('delete');
+		});
 
 		//*checkout
-
 		Route::get('/checkout', 'CheckoutController')->name('checkout');
 		Route::post('/order/create', 'OrderController@create')->name('order.create');
 		Route::get('/thankyou/{order}', 'PageController@thankyou')->name('thankyou');
 		Route::get('/order', 'OrderController@getOrderByUser')->name('user.order');
 
 		//* wishlist
-		Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
-		Route::get('/wishlist/{product}/add', 'WishlistController@add')->name('wishlist.add');
-		Route::get('user/wishlist', 'WishlistController@userList')->name('user.wishlist');
-		Route::delete('/wishlist/{product}/delete', 'WishlistController@delete')->name('wishlist.delete');
+		Route::prefix('wishlist')->name('wishlist.')->group(function () {
+			Route::get('/{product}/add', 'WishlistController@add')->name('add');
+			Route::delete('/{product}/delete', 'WishlistController@delete')->name('delete');
+		});
+
+
 		//* Rating
-
 		Route::post('rating/{product}/add', 'RatingController@add')->name('rating.add');
+
 		//*comment
-
-		Route::post('/comments/{product}/add', 'CommentController@add')->name('comments.add');
-		Route::get('/comments/{product}/all_comments', 'CommentController@show')->name('comments.show');
+		Route::prefix('comment')->name('comments.')->group(function () {
+			Route::post('/{product}/add', 'CommentController@add')->name('add');
+			Route::get('/{product}/all_comments', 'CommentController@show')->name('show');
+		});
 	});
-
 
 
 	//*auth()->user
-	Route::middleware(['auth', 'user'])->group(function () {
-		Route::get('user/profile', 'ProfileController@index')->name('user.profile');
-		Route::get('user/profile/edit', 'ProfileController@edit')->name('user.profile.edit');
-		Route::post('user/profile/update', 'ProfileController@update')->name('user.profile.update');
+	Route::middleware(['auth', 'user'])->prefix('user')->name('user.')->group(function () {
+		Route::prefix('profile')->name('profile.')->group(function () {
+			Route::get('/', 'ProfileController@index')->name('index');
+			Route::get('/edit', 'ProfileController@edit')->name('edit');
+			Route::post('/update', 'ProfileController@update')->name('update');
+		});
+		Route::get('/wishlist', 'WishlistController@userList')->name('wishlist');
 	});
-
-
-
-	//* Mail
-	Route::get('/send', 'MailController@send');
 
 
 	//*admin
@@ -123,8 +124,20 @@ Route::group([
 		Route::get('/users', 'UsersController@index')->name('users');
 		Route::get('/orders', 'UsersController@getOrders')->name('users.orders');
 
-		Route::resource('products', 'ProductsController')->except(['show']);
+		Route::prefix('sliders')->name('sladers.')->group(function () {
+			Route::get('/index', 'SlidersController@index')->name('index');
+			Route::get('/create', 'SlidersController@create')->name('create');
+			Route::post('/store', 'SlidersController@store')->name('store');
+			Route::get('/index', 'SlidersController@index')->name('index');
+		});
 
+
+
+		Route::resource('products', 'ProductsController')->except(['show']);
 		Route::resource('categories', 'CategoriesController')->except(['show']);
+		Route::resource('sliders', 'SlidersController');
 	});
+
+	//* Mail
+	Route::get('/send', 'MailController@send');
 });

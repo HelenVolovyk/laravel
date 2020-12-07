@@ -120,7 +120,8 @@
                                 <input id="thumbnail" 
                                 type="file" 
                                 class="form-control @error('thumbnail') is-invalid @enderror" 
-                                name="thumbnail" >
+										  name="thumbnail" 
+										  value="{{ $product->thumbnail ?? '' }}" >
                            
   
                             

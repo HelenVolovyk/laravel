@@ -12,11 +12,21 @@ All Categories
 
 
 <div class="container">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
-    <li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ __('All Categories') }}</li>
-  </ol>
+	<div class="d-flex justify-content-between">
+		<div class="">
+			<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+			<li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
+			<li class="breadcrumb-item active" aria-current="page">{{ __('All Categories') }}</li>
+			</ol>
+		</div>
+ 
+  
+	 <div class="">
+		@include('inc.search')
+	</div>
+ 
+	</div>
 
   <h1 class="text-center mt-2">{{ __('All Categories') }}</h1>
 <div class="col-md-12 mt-5">

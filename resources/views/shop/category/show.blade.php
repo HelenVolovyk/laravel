@@ -7,12 +7,19 @@
 @section('content')
 
 <div class="container">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
-    <li class="breadcrumb-item "><a href="/shop">{{ __('Shop') }}</a></li>
-    <li class="breadcrumb-item "><a href="{{route('category.index')}}">{{ __('All Categories') }}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ $category->__('title')}}</li> 
-  </ol>
+	<div class="d-flex justify-content-between">
+		<div class="">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+				<li class="breadcrumb-item "><a href="/shop">{{ __('Shop') }}</a></li>
+				<li class="breadcrumb-item "><a href="{{route('category.index')}}">{{ __('All Categories') }}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">{{ $category->__('title')}}</li> 
+			</ol>
+		</div>
+		<div class="">
+			@include('inc.search')
+		</div>
+	</div>
 
 <div class="row">
   <div class="col-md-2">

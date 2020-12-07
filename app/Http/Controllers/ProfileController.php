@@ -26,7 +26,7 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-        return view('user/profile/edit', compact('users'));
+        return view('user/profile/edit', compact('user'));
     }
 
     public function update(UpdateUsersProfileRequest $request, User $user)
@@ -42,5 +42,7 @@ class ProfileController extends Controller
 
         return redirect(route('user.profile'))
             ->with(['status' => 'The profile was successfully updated!']);
-    }
+	 }
+	 
+	
 }

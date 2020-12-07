@@ -60,8 +60,8 @@ class UpdateProductRequest extends FormRequest
                     ->ignore((request()->route()->parameter('product')->id))
             ],
             'shot_description' => 'required|min:10',
-            'thumbnail' => 'image',
-            'product_images.*' => 'image'
+            // 'thumbnail' => 'image',
+            // 'product_images.*' => 'image'
 
 
         ];

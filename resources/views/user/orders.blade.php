@@ -8,8 +8,8 @@
 
 <h2 class="text-center mb-4">{{ __('My Orders') }}</h2>
  
-@foreach($orders as $order)
 
+<div class="table-responsive-md">
 
 <table class="table">
     <thead>
@@ -19,58 +19,63 @@
         <th>Status</th>
         <th>My requisites</th>
         <th>My products</th>
-      </tr>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach($orders as $order)
       <tr>
-        <td>N{{$order['id']}}</td>
-        <td> {{$order['total']}} </td>
-        <td> {{$order['status']['type']}}</td>
+		  <td>N{{$order->id}}<br>
+			{{ $order->created_at }}</td>
+        <td> {{number_format($order->total, 2, ',', '.')}} </td>
+        <td> {{$order->status->type}}</td>
         <td><div>
                       
-                <div>{{$order['user_name']}}</div>
-                <div>{{$order['user_surname']}}</div>
-                <div>{{$order['user_email']}}</div>
-                <div>{{$order['user_phone']}}</div>
-                <div>{{$order['country']}}</div>
-                <div>{{$order['city']}}</div>
-                <div>{{$order['address']}}</div>
+                <div>{{$order->user_name}}</div>
+                <div>{{$order->user_surname}}</div>
+                <div>{{$order->user_email}}</div>
+                <div>{{$order->user_phone}}</div>
+                <div>{{$order->country}}</div>
+                <div>{{$order->city}}</div>
+                <div>{{$order->address}}</div>
               
             </div>
          </td>
 
-        <td>
-             <div>
-             
-									
+		  <td>	
+			  {{-- @foreach($order->products as $product)
+				name: {{ $product->name }}<br>
+				quantity: {{ $product->quantity }}<br>
+				price: {{ number_format($product->price, 2, ',', '.') }}<br> --}}
+			 
+				<table class="table table-light">
+					<thead>
+					  <tr>
+						<th>{{ __('Product') }}</th>
+						<th>{{ __('Qty') }}</th>
+						<th>{{ __('Price') }}</th>
 					
-
-					
-					{{-- {{ $order->products()->firstOrFail()->__('name') }} --}}
-
-					 <?php
-					// dd( $order->products()->firstOrFail()->__('name') )
-
-// 					$order  = Order::find(1);
-// $product = $order->product;
-// $name = $product->name;
-// dd($name);
-
-					?> 
-{{-- 					
-				{{ $order->products()->first() }}
-				 --}}
+					  </tr>
+					</thead>
+					<tbody>
+						@foreach($order->products as $product)
+					 <td>{{ $product->name }}</td>
+					 <td>{{ $product->pivot->quantity }}</td>
+					 <td>{{ $product->pivot->price }}</td>
+					</tbody>
+					@endforeach
+				</table>
 		
-
-					 @each('shop.cart.parts.checkout_view', Cart::instance('cart')->content(), 'row')
-               
-            
-            </div>
+             {{-- @endforeach --}}
          </td>
-      </tr>
-    </thead>
+		</tr>
+		
+@endforeach
+</tbody>
+  
 
   </table>
+</div>
 
-@endforeach
         </div>
     </div>
 </div>

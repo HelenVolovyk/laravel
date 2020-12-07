@@ -89,11 +89,30 @@ crossorigin="anonymous"></script>
                                <a class="dropdown-item" href="{{ route('admin.users.orders') }}" >
                                     {{ __('Users Orders') }}
                                </a> 
-                               
-
-                            
+                                                         
                             </div>
                         </li>
+                    
+                    
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              Sliders<span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                              
+                               <a class="dropdown-item" href="{{ route('admin.sliders.index') }}" >
+                                    {{ __('Sliders List') }}
+                               </a> 
+                                                                                  
+                               <a class="dropdown-item" href="{{ route('admin.sliders.create') }}" >
+                                    {{ __('Slider Create') }}
+                               </a> 
+                                                                                      
+                            </div>
+                        </li>
+                    
+                       
                     </ul>
 
                     <!-- Right Side Of Navbar -->

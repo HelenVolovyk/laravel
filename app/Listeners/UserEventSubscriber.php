@@ -6,6 +6,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
+
 class UserEventSubscriber
 {
    /**
@@ -26,8 +27,7 @@ class UserEventSubscriber
      */
     public function handleUserLogout($event)
     {
-      // dd($event);
-			dd(Cart::instance('cart')->content()->count());
+			//dd(Cart::instance('cart')->content()->count());
 			
         if(Cart::instance('cart')->count() > 0) {
             Cart::instance('cart')
@@ -43,14 +43,13 @@ class UserEventSubscriber
     public function subscribe($event)
     {
         $event->listen(
-            'Illuminate\Auth\Events\login',
+            'Illuminate\Auth\Events\Login',
             'App\Listeners\UserEventSubscriber@handleUserLogin'
         );
 
         $event->listen(
-            'Illuminate\Auth\Events\logout',
+            'Illuminate\Auth\Events\Logout',
             'App\Listeners\UserEventSubscriber@handleUserLogout'
         );
     }
 }
-

@@ -18,6 +18,7 @@
         "literally-html": "^0.1.1",
         "lodash": "^4.17.13",
         "popper.js": "^1.16.1",
+        "prettier": "2.2.1",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",

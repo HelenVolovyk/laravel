@@ -12,6 +12,8 @@
   </div>
 @endif
 
+@include('inc.slider')
+
 @foreach($products->chunk(3) as $productChunk)
 <div class="row">
   @foreach($productChunk as $product)

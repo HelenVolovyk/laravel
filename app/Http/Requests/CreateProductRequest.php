@@ -46,7 +46,7 @@ class CreateProductRequest extends FormRequest
             'name' => 'required|min:2|max:150|unique:products',
             'shot_description' => 'required|min:10',
            // 'thumbnail' => 'required|image',
-            'product_images.*' => 'image'
+           // 'product_images.*' => 'image'
 
 
         ];
