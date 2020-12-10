@@ -3,8 +3,11 @@
 
 @section('content')
 <div class="container">
-
-
+{{-- 
+	{{$product=Product::where('images_id', $image->id)->get()}}  --}}
+	{{-- {{ Storage::disk('public')->$filePath}} --}}
+	{{Storage::disk('public')->url($product->images()->pluck('path'))}} 
+	
 <div class="row justify-content-end">
   <div class="col-md-4">
 	 <h3 class="text-center">{{ $product->__('name') }}</h3>
@@ -27,6 +30,10 @@
       @if(Storage::disk('public')->has($product->thumbnail))
         <img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="">
       @endif
+     
+      
+      
+  
   </div>
   <div class="col-md-6">
     @if($product->discount > 0)

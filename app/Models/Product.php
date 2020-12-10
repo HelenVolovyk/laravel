@@ -48,7 +48,7 @@ class Product extends Model implements Buyable
 	}
 
 
-	public function image()
+	public function images()
 	{
 		return $this->morphMany(\App\Models\Image::class, 'imageable');
 	}

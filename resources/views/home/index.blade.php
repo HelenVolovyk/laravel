@@ -12,7 +12,9 @@
   </div>
 @endif
 
-@include('inc.slider')
+<div class="container">
+{{-- @include('inc.slider') --}}
+</div>
 
 @foreach($products->chunk(3) as $productChunk)
 <div class="row">

@@ -12,16 +12,12 @@
 
     <!-- Scripts -->
     
-	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	 <script src="https://kit.fontawesome.com/48684df7ca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
     <script src="{{ asset('js/app.js') }}" defer></script>
     @stack('scripts')
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-	 crossorigin="anonymous"></script>
-	 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	 <script type="text/javascript" src="js/slick.min.js"></script>
-	 <script type="text/javascript" src="js/script.js"></script>
+    crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,199 +25,28 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-	 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   
-
 </head>
-<body>
-    <div id="app">
-        @section('navbar')
-		  <div class="col-12 text-center">
-			<a class="navbar-brand" href="{{ url('/') }}">
-				{{ __('My Stor') }}
-		  </a>
-		</div>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-				
-					 <a href="tel:123-456-78">123-456-78</a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+	<body>
+		<div id="app">
+			@include('inc.header')
+			{{-- @section('navbar') --}}
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('user.wishlist')}}"><i class="fa fa-heart-o" aria-hidden="true"></i>
-                                @if(Cart::instance('wishlist')->count() > 0)
-                                <span class="badge badge-pill badge-secondary">{{Cart::instance('wishlist')->count()}}</span>
-                                @endif
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                       
-                            <a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-									 
-									
-
-
-										  @if(Cart::instance('cart')->count() > 0)
-								
-                            <span class="badge badge-pill badge-secondary">{{Cart::instance('cart')->count()}}</span>
-                            @endif
-									 </a>		
-
-									 
-								</li>
-								
-								{{-- !!!ЯЗЫК --}}
-
-								{{-- <li class="nav-item">
-								<a class="nav-link" href="{{ route('locale',  __('main.set_lang') ) }} ">{{ __('main.set_lang') }}</a>
-								</li> --}}
-								
-{{-- 				
-								 @if(count(config('app.languages')) > 1)
-									<li class="nav-item dropdown d-md-down-none">
-										<a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-													{{ strtoupper(app()->getLocale()) }}
-										</a>
-										<div class="dropdown-menu dropdown-menu-right">
-												@foreach(config('app.languages') as $langLocale => $langName)
-													<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-											
-												@endforeach
-										</div>
-									</li>
-								@endif          --}}
-
-							 <!-- Authentication Links -->
-                        @guest
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('Login') }}</a>
-                            </li> --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
-                            </li>
-                            {{-- @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @if(auth()->user()->IsAdmin)
-                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
-                                        {{ __('Dashboard') }}
-                                    </a>
-                                    @endif
-                                    @if(auth()->user()->IsUser)
-                                    <a class="dropdown-item" href="{{ route('user.profile.index') }}">
-                                        {{ __('My Profile') }}
-                                    </a>
-                                 
-                                    <a class="dropdown-item" href="{{ route('user.wishlist') }}">
-                                        {{ __('My WishList') }}
-                                    </a>
-                                    @endif
-                                    <a class="dropdown-item" href="{{ route('user.order') }}">
-                                        {{ __('My Orders') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-
-                               
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-      
-
-   <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-      <div class="container">
-        <div class="collapse navbar-collapse  d-flex justify-content-between" id="navbarNavDropdown">
-       
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ __('Shop') }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('shop')}}">{{ __('All products') }}</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">  {{ __('About') }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('contact.index', app()->getLocale()) }}">  {{ __('Contact') }}</a>
-        </li>
-      
-		</ul>
+			@show
 		
-		@if(count(config('app.languages')) > 1)
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown d-md-down-none">
-					<a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								{{ strtoupper(app()->getLocale()) }}
-					</a>
-					<div class="dropdown-menu dropdown-menu-right">
-							@foreach(config('app.languages') as $langLocale => $langName)
-								<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-						
-							@endforeach
-					</div>
-				</li>
-			</ul>
-		@endif     
-
-    </div>
-  </nav>
-</div>
-@show
-     
-		  
-        <main class="py-4">
-			  @include('inc.message')
-            @yield('content')
-        </main>
-	 </div>
-	 
-	 @stack('footer-scripts')
-	 {{-- @include('layouts.footer') --}}
-
-
-	
-	 <script type="text/javascript" src="js/script.js"></script>
-</body>
+			
+					<main class="py-4">
+						<div class="container">
+							@include('inc.message')
+								@yield('content')
+						</div>
+					</main>
+		</div>
+		
+		@include('inc.footerr')
+		@stack('footer-scripts')
+		
+	</body>
 </html>

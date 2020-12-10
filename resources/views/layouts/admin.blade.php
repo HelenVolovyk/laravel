@@ -22,8 +22,13 @@ crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+	 <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+	 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	 <script src="https://kit.fontawesome.com/48684df7ca.js" crossorigin="anonymous"></script>
+
 </head>
+
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -101,11 +106,11 @@ crossorigin="anonymous"></script>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                               
-                               <a class="dropdown-item" href="{{ route('admin.sliders.index') }}" >
+                               <a class="dropdown-item" href="" >
                                     {{ __('Sliders List') }}
                                </a> 
                                                                                   
-                               <a class="dropdown-item" href="{{ route('admin.sliders.create') }}" >
+                               <a class="dropdown-item" href="" >
                                     {{ __('Slider Create') }}
                                </a> 
                                                                                       

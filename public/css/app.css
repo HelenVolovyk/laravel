@@ -3096,6 +3096,20 @@ label.star:before {
   color: #ff7e1a;
 }
 
+.footer {
+  background-color: #f5f5f5;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  flex: 1 0 auto;
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

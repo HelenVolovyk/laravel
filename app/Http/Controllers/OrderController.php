@@ -101,7 +101,7 @@ class OrderController extends Controller
 	public function thankyou()
 	{
 		$order = $this->orderRepository->getId();
-		dd($order);
+		//dd($order);
 		return view('shop.checkout.thankyou', compact('order'));
 	}
 }

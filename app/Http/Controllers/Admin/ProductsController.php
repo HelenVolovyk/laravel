@@ -61,10 +61,9 @@ class ProductsController extends Controller
         //dd($product);
 
         if (!empty($request->file('product_images'))) {
-
-            foreach ($request->file('product_images') as $image) {
+	            foreach ($request->file('product_images') as $image) {
                 $filePath       = $imageService->upload($image);
-                $product->images()->create(['path' => $filePath]);
+                $product->image()->create(['path' => $filePath]);
             }
         }
 
@@ -107,7 +106,7 @@ class ProductsController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //dd($request->product);
+   //dd($request->product);
    
 
         $product->update([
@@ -116,8 +115,8 @@ class ProductsController extends Controller
             'name_uk'           => $request->get('name_uk'),
             'category'          => $request->get('category'),
             'category_uk'       => $request->get('category_uk'),
-              'thumbnail'         => $product->thumbnail,
-          	//  'thumbnail'         => $request->get('thumbnail'),
+              //'thumbnail'         => $product->thumbnail,
+          	 'thumbnail'         => $request->file('thumbnail'),
 				'description'  		=> $request->get('description'),
 				'description_uk'  	=> $request->get('description_uk'),
             'shot_description'  	=> $request->get('shot_description'),
@@ -127,7 +126,7 @@ class ProductsController extends Controller
             'quantity'          => $request->get('quantity')
         ]);
 
-     // dd($request->product);
+      //dd($request->product);
 
       //   if (!empty($request->file('thumbnail'))) {
       //       $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
@@ -148,9 +147,9 @@ class ProductsController extends Controller
    
 
         if (!empty($request->file('image'))) {
-            $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
-            $filePath       = $imageService->upload($request->file('image'));
-            $oldImage       = $product->image()->first();
+             $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+             $filePath       = $imageService->upload($request->file('image'));
+             $oldImage       = $product->image()->first();
 
             if (!is_null($oldImage)) {
                 $imageService->remove($oldImage->path);
@@ -163,7 +162,7 @@ class ProductsController extends Controller
             }
         }
       
-      
+        //dd($request->files);
 
         return redirect()
             ->back()
@@ -179,7 +178,7 @@ class ProductsController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        $product->images()->delete();
+        $product->image()->delete();
 
         return redirect(route('admin.products.index'))
             ->with(['status' => 'The product was successfully removed!']);

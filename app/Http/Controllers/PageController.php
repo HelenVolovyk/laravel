@@ -21,6 +21,7 @@ class PageController extends Controller
 		$this->orderRepository = $orderRepository;
 	}
 
+	
 	 public function thankyou()
 	 {
 		 $order = $this->orderRepository->getId();

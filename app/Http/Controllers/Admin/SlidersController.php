@@ -25,27 +25,18 @@ class SlidersController extends Controller
 
 	public function store(Request $request, Slider $slider)
 	{
+		$newSlider = $slider->create([
+			'title' => $request->get('title'),
+			'title_uk' => $request->get('title_uk'),
+		
+	  ]);
 
-		$slider = $request->all();
+	  if (!empty($request->file('image'))) {
+			$imageService = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+			$filePath = $imageService->upload($request->file('image'));
+		 
 
-		unset($slider['slider_images']);
-		unset($slider['thumbnail']);
-		unset($slider['_token']);
-
-		if (!empty($request->file('thumbnail'))) {
-			$imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
-			$filePath       = $imageService->upload($request->file('thumbnail'));
-			$slider['thumbnail'] = $filePath;
-		}
-
-		$slider = Slider::create($slider);
-
-		if (!empty($request->file('slider_images'))) {
-
-			foreach ($request->file('slider_images') as $image) {
-				 $filePath       = $imageService->upload($image);
-				 $slider->images()->create(['path' => $filePath]);
-			}
+			$newSlider->image()->create(['path' => $filePath]);
 	  }
 
 		
@@ -58,7 +49,11 @@ class SlidersController extends Controller
 		// $image = array();
 
 		
-			$images = $slider->images();
+		$image = array();
+		//dd($category->image()->exists());
+		if ($slider->image()->exists()) {
+			 $image = $slider->image()->first()->toArray();
+		}
 	
 		// dd($images);
 		return view('admin/sliders/edit', compact( 'images'));
@@ -76,7 +71,7 @@ class SlidersController extends Controller
 			'title_uk'         => $request->get('title_uk'),
 		//'thumbnail'         => $slider->thumbnail,
          
-			 'thumbnail'         => $request->get('thumbnail'),
+			 
 		]);
 
 
