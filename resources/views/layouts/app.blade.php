@@ -31,17 +31,27 @@
 
 	<body>
 		<div id="app">
+		
 			@include('inc.header')
 			{{-- @section('navbar') --}}
 
 			@show
 		
+					@if(Request::is('/'))
+						@include('inc.slider')
+						
+					@endif
+
+
+	
 			
 					<main class="py-4">
 						<div class="container">
-							@include('inc.message')
+								@include('inc.message')
+						
 								@yield('content')
 						</div>
+						
 					</main>
 		</div>
 		

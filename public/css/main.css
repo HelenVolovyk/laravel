@@ -185,8 +185,11 @@ input[type=product_count] {
 
 /* flex-элемент №3 */
 .block__element_5 {
-    background-color: #f1f8ee;
+	 background-color: #f1f8ee;
 }
+/* .block__element_5 a{
+	 color: #fff;
+} */
 
 /* контент */
 .block__content {
@@ -198,3 +201,5 @@ input[type=product_count] {
   
     /* плюс прочие стили для текста, отступы */
 }
+
+

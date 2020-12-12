@@ -12,6 +12,19 @@ class PageController extends Controller
 	 {
 		 return view('about');
 	 }
+	 public function payment()
+	 {
+		 return view('payment');
+	 }
+	 public function shares()
+	 {
+		 return view('shares');
+	 }
+	 public function recipes()
+	 {
+		 return view('recipes');
+	 }
+	
 
 
 	 private $orderRepository;

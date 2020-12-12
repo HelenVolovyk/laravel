@@ -6,7 +6,7 @@
 
 @section('content')
 
-
+<div class="content">
 <div class="container">
 	<div class="d-flex justify-content-between">
 		<div class="">
@@ -58,4 +58,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 @endsection
