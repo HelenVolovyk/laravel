@@ -51,14 +51,14 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 	<div class="carousel-inner">
 	  <div class="carousel-item active">
-		<svg class="carousel-3 bd-placeholder-img" width="100%" height="900px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+		<svg class="carousel-3 bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
 	</div>
 	  </div>
 	  <div class="carousel-item">
-		<svg class="carousel-2 bd-placeholder-img" width="100%" height="900px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+		<svg class="carousel-2 bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
 	  </div>
 	  <div class="carousel-item">
-		<svg class="carousel-3 bd-placeholder-img" width="100%" height="900px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+		<svg class="carousel-3 bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
 	  </div>
 	</div>
 	<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

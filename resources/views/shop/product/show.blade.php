@@ -14,6 +14,7 @@
 	
 	
   </div>
+  <div class="content">
   <div class="col-md-4">
     <div class="text-center"> 
  
@@ -32,8 +33,7 @@
       @endif
      
       
-      
-  
+        
   </div>
   <div class="col-md-6">
     @if($product->discount > 0)
@@ -83,8 +83,76 @@
 		
 	    </div>
   @endif
-<hr>
+  <hr>
+  {{-- <p>
+	<a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+		<i class="fa fa-check"></i>
+	  {{ __('ordering options') }}
+	</a>
+ </p>
+ <div class="collapse" id="collapseExample">
+	<div class="card card-body">
+	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+	</div>
+ </div>
+  <p>
+	<a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+		<i class="fa fa-check"></i>
+	  {{ __('payment options') }}
+	</a>
+ </p>
+ <div class="collapse" id="collapseExample">
+	<div class="card card-body">
+	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+	</div>
+ </div>
+  <p>
+	<a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+		<i class="fa fa-check"></i>
+	  {{ __('delivery') }}
+	</a>
+ </p>
+ <div class="collapse" id="collapseExample">
+	<div class="card card-body">
+	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+	</div>
+ </div> --}}
 
+
+ <div class="accordion" id="accordionExample">
+	<div class="card">
+	  <div class="card-header" id="headingOne">
+		 <h5 class="mb-0">
+			<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				<i class="fa fa-check"></i>
+				{{ __('ordering options') }}
+			</button>
+		 </h5>
+	  </div>
+ 
+	  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+		 <div class="card-body">
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+		 </div>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-header" id="headingTwo">
+		 <h5 class="mb-0">
+			<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				<i class="fa fa-check"></i>
+				{{ __('payment options') }}
+			</button>
+		 </h5>
+	  </div>
+	  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+		 <div class="card-body">
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
+		 </div>
+	  </div>
+	</div>
+
+ </div>
  
  @auth   
 <form class="form-horizontal poststars" action="{{route('rating.add', $product)}}" id="addStar" method="POST">
@@ -149,7 +217,7 @@
 
 
 @endsection
-
+</div>
 
 
 

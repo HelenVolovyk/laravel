@@ -3,22 +3,17 @@
 
   
 	
-<div class="container">
-	<div class="header__body">
-	
+{{-- <div class="container"> --}}
+	{{-- <div class="header__body">
+
+
 		
 
 		<nav class="header__menu">
 			
 			<ul class="header__list">
 			
-					{{-- <div class="row justify-content-md-center"> --}}
-
-				{{-- <div class="text-eline-start">
-					<a href="tel:123-456-78">123-456-78</a>
-				</div> --}}
-				
-			
+						
 					<li class="header__link">
 						<a class="header__link" href={{route('shop')}}>{{ __('Shop') }}</a>
 					</li>
@@ -60,10 +55,11 @@
 					</div>
 				
 			<div class="header__enter">
-					@guest
-					<li class="nav-item">
-						<a class="nav-link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
-				</li>	
+				@guest
+                           
+				<li class="nav-item">
+					 <a class="header__link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+				</li>		
 			@else
 					<li class="nav-item dropdown ml-2">
 						<a id="navbarDropdown" class="header__link nav-link dropdown-toggle font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -103,18 +99,18 @@
 			@endguest
 			</div>
 			
-		<div class="search ">
+		{{-- <div class="search">
 			@include('inc.search')
 		</div>
-	
+	 --}}
 				
-			
+{{-- 			
 			</ul>
 			
 	</nav>	
 
 				
 
-	</div>
-</div>
-  </header>
+	</div>  --}}
+{{-- </div> --}}
+  {{-- </header> --}}
