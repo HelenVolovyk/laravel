@@ -1,19 +1,13 @@
 @include('inc.name')
   @section('navbar')
-
   
-	
-{{-- <div class="container"> --}}
-	{{-- <div class="header__body">
-
-
-		
+	 <div class="header__body">
+		 
 
 		<nav class="header__menu">
-			
+			<div class="container">
 			<ul class="header__list">
-			
-						
+				
 					<li class="header__link">
 						<a class="header__link" href={{route('shop')}}>{{ __('Shop') }}</a>
 					</li>
@@ -26,17 +20,16 @@
 					<li class="header__link">
 						<a class="header__link" href={{route('recipes')}}>{{ __('Healthy recipes') }}</a>
 					</li>
-				
 					<li class="header__link">
 						<a class="header__link" href="/about">{{ __('About') }}</a>
 					</li>
-					
 					<li class="header__link">
 						<a class="header__link" href="/contact">{{ __('Contact') }}</a>
 					</li>
+				
 
 					<div class="header__lang">
-						<div class="lang mt-2 ml-2">
+						<div class="lang mt-2">
 							@if(count(config('app.languages')) > 1)
 							
 								<li class="nav-item dropdown d-md-down-none ">
@@ -94,23 +87,19 @@
 									@csrf
 							</form>
 						</div>
-														
 					</li>
 			@endguest
 			</div>
-			
-		{{-- <div class="search">
+		
 			@include('inc.search')
-		</div>
-	 --}}
-				
-{{-- 			
 			</ul>
-			
-	</nav>	
-
+		</div>
+		</nav>	
+	
+								
+					
 				
-
-	</div>  --}}
-{{-- </div> --}}
-  {{-- </header> --}}
+			
+		
+	</div>
+</header>

@@ -255,6 +255,24 @@
                           </div>
                       </div>
 
+							 <div class="form-group row">
+								<label for="units_id" class="col-md-4 col-form-label text-md-right">{{ __('Units_id') }}</label>
+								<div class="col-md-6">
+								  <select name="units_id" id="units_id" class="form-control">
+										@foreach($units as $unit)
+											 <option value="{{$unit['id']}}">{{$unit['name']}}</option>
+										@endforeach
+										</select>
+
+
+									 @error('unit_id')
+										  <span class="invalid-feedback" role="alert">
+												<strong>{{ $message }}</strong>
+										  </span>
+									 @enderror
+								</div>
+						  </div>
+
 
                       @include('admin.products.parts.images')
 

@@ -1,5 +1,7 @@
           <tr>
+				{{-- <td> @include('admin.categories.parts.images')</td> --}}
              <th scope="row">{{$category->id}}</th>
+            
              <td>{{$category->title}}</td>
             
              <td>{{$category->_shotDescription}}</td>

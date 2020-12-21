@@ -20,9 +20,13 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        $categories = Category::withCount('products')->paginate(5);
-       // dd($categories);
-        return view('admin/categories/index', compact('categories'));
+		  $categories = Category::withCount('products')->paginate(5);
+		  foreach($categories as $category){
+			$image = $category->image;
+		  }
+		 
+        //dd($image->path);
+        return view('admin/categories/index', compact('categories', 'image'));
         // dd('hi!');
     }
 

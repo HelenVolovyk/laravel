@@ -1,0 +1,19 @@
+.ac-category {
+	display: none;
+}
+
+
+@media (max-width:767px) {
+	
+	.sidebar {
+		display: none;
+	}
+	.ac-category {
+		display: block;
+		width: 100%;
+		padding: 0px;
+	}
+	.top {
+		justify-content: start;
+	}
+}

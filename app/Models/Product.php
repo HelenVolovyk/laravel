@@ -30,6 +30,7 @@ class Product extends Model implements Buyable
 		'price',
 		'discount',
 		'quantity',
+		'units_id',
 		'thumbnail'
 
 	];
@@ -58,7 +59,11 @@ class Product extends Model implements Buyable
 		return $this->morphMany(\App\Models\Comment::class, 'commentable');
 	}
 
-
+	public function units()
+	{
+		return $this->belongsTo(\App\Models\Unit::class);
+	}
+	
 	public function followers()
 	{
 		return $this->belongsToMany(
@@ -86,7 +91,7 @@ class Product extends Model implements Buyable
 			$price -= ($price / 100 * $this->discount);
 		}
 
-		return round($price, 2);
+		return number_format($price, 2, '.', '');
 	}
 
 	public function getPrice()

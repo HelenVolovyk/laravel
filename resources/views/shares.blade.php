@@ -7,41 +7,17 @@
     <h2>{{ __('Shares') }}</h2>
 	 <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-</div>
-</div>
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+		<div class="col-md-6 px-0">
+		  <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+		  <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+		  <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+		</div>
+	 </div>
+  
+	<div class="">
+		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro delectus ipsam nulla praesentium, excepturi deserunt consequatur eos accusamus sed nesciunt, quidem fugit iusto deleniti rem aliquam dolores quia repellendus ipsum.</p>
+		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro delectus ipsam nulla praesentium, excepturi deserunt consequatur eos accusamus sed nesciunt, quidem fugit iusto deleniti rem aliquam dolores quia repellendus ipsum.</p>
+	</div>
+			
 @endsection

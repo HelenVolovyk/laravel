@@ -25,9 +25,9 @@
            <div class="clearfix ">
              <div class="price">
              @if($product->discount > 0)
-               <small style="color: red; text-decoration: line-through">${{$product->price}}</small>
+               <small style="color: red; text-decoration: line-through">{{$product->price}} грн</small>
              @endif
-             <div class="printPrice">${{$product->printPrice()}}</div>
+             <div class="printPrice">{{$product->printPrice()}} грн</div>
             </div>
            
 

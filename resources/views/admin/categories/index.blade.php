@@ -7,12 +7,13 @@
             
             <div class="card">
                 <div class="card-header">Category List</div>
-
+			
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
+									<th scope="col">{{__('id')}}</th>
+                            {{-- <th scope="col">{{ __('image') }}</th> --}}
                             <th scope="col">{{__('Title')}}</th>
                             <th scope="col">{{__('Description')}}</th>
                             <th scope="col">{{__('Products Count')}}</th>
@@ -20,7 +21,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @each('admin.categories.parts.category_row', $categories, 'category')
+                            @each('admin.categories.parts.category_row', $categories, 'category', $image, 'image')
                        
                           
                         </tbody>

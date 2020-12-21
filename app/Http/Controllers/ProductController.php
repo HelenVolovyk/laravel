@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Image;
+use App\Models\Unit;
 
 class ProductController extends Controller
 {
@@ -24,7 +25,9 @@ class ProductController extends Controller
 		$categories = Category::all();
 		$comments = $product->comments()->with('user')->paginate(5);
 		
-		$images = $product->images()->get('path');
+		$images = $product->images()->get();
+		$units = Unit::all();
+		$units = $product->units()->first();
 	
 		
 		//  $images = $product->image();
@@ -33,9 +36,12 @@ class ProductController extends Controller
 		//$images  = preg_replace("/[^a-zA-Z0-9\s-]/", "", $images );
 	
 		//$images  = preg_replace('/(^[\"\']|[\"\']$)/', '', $image);
+		
 	//dd($images);
+	
 	//echo trim($images, '"');
 		//dd($product->images()->pluck('path'));
-		return view('shop.product.show', compact('product',  'comments'), compact('categories'), compact('images') );
+		
+		return view('shop.product.show', compact('product',  'comments'), compact('categories'), compact('images'), compact('units') );
 	}
 }

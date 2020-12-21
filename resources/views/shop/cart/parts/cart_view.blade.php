@@ -20,10 +20,10 @@
 </form>
 </td>
 <td>
-  <span class ="label label-success"><strong>${{$row->price}}</strong></span>
+  <span class ="label label-success"><strong>{{$row->price}} грн</strong></span>
 </td>
 <td>
-  <span class ="label label-success"><strong>${{$row->total}}</strong></span>
+  <span class ="label label-success"><strong>{{$row->total}} грн</strong></span>
 </td>
 <td>
  <form action="{{route('cart.delete', $row->id)}}" method="POST"> 

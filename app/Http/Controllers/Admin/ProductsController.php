@@ -7,6 +7,8 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Unit;
+use Carbon\Traits\Units;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -30,9 +32,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories = Category::all()->toArray();
-        //dd($categories);
-        return view('admin/products/create', compact('categories'));
+		  $categories = Category::all()->toArray();
+		  $units = Unit::all()->toArray();
+        //dd($units);
+        return view('admin/products/create', compact('categories', 'units'));
     }
 
     /**
@@ -43,7 +46,7 @@ class ProductsController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-        //dd($request);
+       //dd($request);
         //dd($request->file('product_images'));
         $product = $request->all();
 
@@ -90,11 +93,13 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-       // dd($product);
-        $categories = Category::all()->toArray();
+		  		 
+		  $categories = Category::all()->toArray();
+		  $units = Unit::all();
+		 
         $images = $product->images;
-       // dd($images);
-        return view('admin/products/edit', compact('categories', 'product'));
+        //dd( $units->name);
+        return view('admin/products/edit', compact('categories', 'product', 'units'));
     }
 
     /**
@@ -123,7 +128,8 @@ class ProductsController extends Controller
             'shot_description_uk'  => $request->get('shot_description_uk'),
             'price'             => $request->get('price'),
             'discount'          => $request->get('discount'),
-            'quantity'          => $request->get('quantity')
+            'quantity'          => $request->get('quantity'),
+            'unit'         	  => $request->get('unit')
         ]);
 
       //dd($request->product);

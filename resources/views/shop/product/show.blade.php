@@ -2,47 +2,45 @@
  @inject('wishlist', 'App\Services\WishlistService')
 
 @section('content')
+<div class="content">
 <div class="container">
 {{-- 
 	{{$product=Product::where('images_id', $image->id)->get()}}  --}}
 	{{-- {{ Storage::disk('public')->$filePath}} --}}
-	{{Storage::disk('public')->url($product->images()->pluck('path'))}} 
+	{{-- {{Storage::disk('public')->url($product->images()->pluck('path'))}}  --}}
 	
-<div class="row justify-content-end">
-  <div class="col-md-4">
+<div class="row justify-content-center">
+  <div class="col-md-4 mb-3">
 	 <h3 class="text-center">{{ $product->__('name') }}</h3>
+  </div>
+  
 	
 	
-  </div>
-  <div class="content">
-  <div class="col-md-4">
-    <div class="text-center"> 
- 
-
-      <div class="like">
-      <a class="nav-link" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a></div>
-    </div>
-   
-  </div>
-</div>
 <hr>
+
 <div class="row">
   <div class="col-md-6">
-      @if(Storage::disk('public')->has($product->thumbnail))
-        <img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="">
-      @endif
-     
-      
-        
+	<div class="card md-4 shadow-sm" >
+
+ 		@if(Storage::disk('public')->has($product->thumbnail)) 
+			<img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="">
+		 @endif
+		
+			<div class="cart-link">
+				<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-3x" aria-hidden="true"></i></a>
+			</div>
+			
+	</div>
   </div>
+
   <div class="col-md-6">
     @if($product->discount > 0)
-		<p style="color: red; text-decoration: line-through">{{ __('Old Price:') }}
-			 ${{$product->price}}</p>
+		<p style="color: red; text-decoration: line-through">{{ __('Old Price: ') }}
+			 {{$product->price}} грн</p>
     @endif
-      <p>{{ __('PRICE:') }}<strong>${{$product->printPrice()}}</strong></p>
+      <p>{{ __('PRICE: ') }}<strong>{{$product->printPrice()}} грн</strong></p>
       <p>SKU: {{$product->SKU}}</p>
-      <p>{{ __('IN STOCK:') }}
+      <p>{{ __('IN STOCK: ') }}
 			<strong> {{$product->quantity}}</strong></p>
       <hr>
        
@@ -77,83 +75,20 @@
                   value="1"
                   style="width: 55px; height: 35px; margin-right:10px"> 
 
-        </div> 
+		  </div> 
+
+		  <div>@include('shop.units-view', ['units'=>$product->units()->first()])</div>
+
         <button type="submit" class="btn btn-primary mb-2">{{ __('Add to Cart') }}</button>
 		</form>
 		
 	    </div>
   @endif
   <hr>
-  {{-- <p>
-	<a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-		<i class="fa fa-check"></i>
-	  {{ __('ordering options') }}
-	</a>
- </p>
- <div class="collapse" id="collapseExample">
-	<div class="card card-body">
-	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-	</div>
- </div>
-  <p>
-	<a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-		<i class="fa fa-check"></i>
-	  {{ __('payment options') }}
-	</a>
- </p>
- <div class="collapse" id="collapseExample">
-	<div class="card card-body">
-	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-	</div>
- </div>
-  <p>
-	<a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-		<i class="fa fa-check"></i>
-	  {{ __('delivery') }}
-	</a>
- </p>
- <div class="collapse" id="collapseExample">
-	<div class="card card-body">
-	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-	</div>
- </div> --}}
-
-
- <div class="accordion" id="accordionExample">
-	<div class="card">
-	  <div class="card-header" id="headingOne">
-		 <h5 class="mb-0">
-			<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-				<i class="fa fa-check"></i>
-				{{ __('ordering options') }}
-			</button>
-		 </h5>
-	  </div>
- 
-	  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-		 <div class="card-body">
-			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
-		 </div>
-	  </div>
-	</div>
-	<div class="card">
-	  <div class="card-header" id="headingTwo">
-		 <h5 class="mb-0">
-			<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				<i class="fa fa-check"></i>
-				{{ __('payment options') }}
-			</button>
-		 </h5>
-	  </div>
-	  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-		 <div class="card-body">
-			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla 
-		 </div>
-	  </div>
-	</div>
-
- </div>
- 
+  
+@include('shop.product.accordion')
+		
+			
  @auth   
 <form class="form-horizontal poststars" action="{{route('rating.add', $product)}}" id="addStar" method="POST">
   @csrf
@@ -192,32 +127,30 @@
   
   </div>
 
-  <div class="">
-      <p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
-      <p>{{$product->__('description')}}</p>
-     
-  </div>
+		<div class="col-md-12">
+				<p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
+				<p>{{$product->__('description')}}</p>
+		</div>
   
-<div class="">
-     @include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
+		<div class="">
+			@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
+		</div>
   
-  
+
+	</div>
+			<script>
+				$(function(){
+				$('#addStar').change('.star', function(e){
+					$(this).submit();
+				});
+				});
+			</script>
+	</div>    
+
+
 </div>
-  
-
-</div>
-    <script>
-      $(function(){
-        $('#addStar').change('.star', function(e){
-          $(this).submit();
-        });
-      });
-    </script>
-</div>    
-
-
 @endsection
-</div>
+
 
 
 
