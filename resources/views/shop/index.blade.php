@@ -28,7 +28,7 @@
 					<div class="sidebar">
 					<h6>{{ __('By Category') }}</h6>
 						<div class="category__link mt-3">
-							<div class="font-weight-bold">
+							<div class="font-weight-bold pb-2">
 								<a class="category__link" href="{{route('category.index')}}">{{ __('all categories') }}
 								</a>
 							</div>

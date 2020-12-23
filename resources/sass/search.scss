@@ -32,20 +32,14 @@ nav form .fa {
 		padding-right: 5px;
 		padding-left: 0px;
 		font-weight: 20px;
-		
 	}
-
 	.navbar-brand a {
 		padding-bottom: 0;
 	}
-
 	.query.search-box::placeholder {
 		font-style: italic;
 		color: rgb(182, 181, 181);
-		
-		
 	} 
-
 	.search-box {
 		margin-bottom: 10px;
 	}
@@ -55,12 +49,14 @@ nav form .fa {
 		color: white;
 	}
 	form.search-form {
-		left: 20%;
+		 left: 23%;
 		top: 5px;
 		width: 300px;
 	}
 	nav form input.active  {
 		top: -4px;
+		width: 85%;
+		right: 17%;
 	}
 
 
@@ -85,8 +81,8 @@ nav form .fa {
  }
 nav form {
 	position: absolute;
-	width: 60%;
-	left:  80%;
+	width: 80%;
+	left:  72%;
 	
 }
 

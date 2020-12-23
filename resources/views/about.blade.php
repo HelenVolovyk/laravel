@@ -14,6 +14,7 @@
 						<div class="about-block__content">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia pariatur molestiae animi nisi nostrum, libero consectetur ipsa nam, beatae similique rerum deleniti perspiciatis at a dolores facilis itaque quam corporis!
 						</div>
+					
 					</div>
 
 					<div class="about-block__element_2">

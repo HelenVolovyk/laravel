@@ -7,3 +7,40 @@
 .carousel-1 {
 	color: #9ee295;
 }
+
+.carousel-item {
+	width: 100%;
+	 height: 800px;
+	 position: relative;
+}
+ 	
+ 	@media(max-width: 767px){
+		.carousel-item {
+			height: 80%;
+	}
+}
+
+
+.myCarousel img {
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+}
+
+// .carousel__container {
+// 	flex-direction: column;
+// 	align-items: center;
+// }
+
+.carousel-caption {
+	margin-bottom: 20px;
+}
+@media(max-width: 767px){
+	.carousel-caption{
+		margin-bottom: 10px;
+	}
+}

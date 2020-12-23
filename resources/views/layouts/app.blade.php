@@ -31,6 +31,7 @@
 
 	<body>
 		<div id="app">
+			<div class="wrapper">
 		
 			@include('inc.header')
 			{{-- @section('navbar') --}}
@@ -38,7 +39,7 @@
 			@show
 		
 					@if(Request::is('/'))
-						@include('inc.slider')
+						{{-- @include('inc.slider') --}}
 						
 					@endif
 
@@ -53,6 +54,7 @@
 						</div>
 						
 					</main>
+				</div>
 		</div>
 		
 		@include('inc.footerr')

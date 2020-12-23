@@ -21,8 +21,8 @@
 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate atque asperiores nostrum quam enim obcaecati temporibus eveniet numquam, cumque porro ad, rerum repudiandae earum placeat, libero recusandae. Voluptate, praesentium laborum?</p>
 	</div>
 
-	@foreach($products->chunk(3) as $productChunk)
-		<div class="row">
+	@foreach($products->chunk(4) as $productChunk)
+		<div class="row col md-12">
 			@foreach($productChunk as $product)
 
 			@include('shop.product.product_view')

@@ -8,6 +8,7 @@ require('./bootstrap');
 require('./header');
 require('./accordion');
 require('./search');
+require('./carousel');
 
 // window.Vue = require('vue');
 
