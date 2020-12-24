@@ -1,15 +1,11 @@
-// i.fa.fa-search::before {
-// 	color: rgb(231, 229, 229);
-// 	font-weight: 16px;
-// 	cursor: pointer;
-// }
-nav form .fa {
+i.fa.fa-search::before,
+	i.fa.fa-times::before  {
 	position: absolute;
 	color: rgb(170, 170, 170);
 	font-weight: 16px;
 	cursor: pointer;
-	top: 5px;
-	right: 30%;
+	top: 17px;
+	left: 52%;
 }
 
 .search-box::placeholder {
@@ -27,11 +23,11 @@ nav form .fa {
 
 @media (max-width: 767px) {
 
-	i.fa.fa-search::before {
-		color: rgb(255, 255, 255);
-		padding-right: 5px;
-		padding-left: 0px;
-		font-weight: 20px;
+	.head__search {
+		display: block;
+	}
+	.fa-times {
+		display: block;
 	}
 	.navbar-brand a {
 		padding-bottom: 0;
@@ -43,24 +39,28 @@ nav form .fa {
 	.search-box {
 		margin-bottom: 10px;
 	}
-	nav form .fa {
-		right: 25%;
-		top: 5px;
-		color: white;
-	}
+	// i.fa.fa-search::before,
+	// i.fa.fa-times::before {
+	// 	left: 76%;
+	// 	top: 16px;
+	// 	color: white;
+	// 	font-weight: 20px;
+	// 	padding-right: 5px;
+	// }
+
 	form.search-form {
-		 left: 23%;
-		top: 5px;
-		width: 300px;
-	}
-	nav form input.active  {
+	  left: 23%;
+	  top: 5px;
+	  width: 300px;
+  }
+	
+	.form input.active {
 		top: -4px;
 		width: 85%;
 		right: 17%;
 	}
-
-
 }
+
 .search-box {
 	//   text-decoration: underline;
 	 background-color: rgb(245, 244, 244);
@@ -82,13 +82,14 @@ nav form .fa {
 nav form {
 	position: absolute;
 	width: 80%;
-	left:  72%;
+	left: 25%;
+	top: 5px;
 	
 }
 
 nav form input {
 	position: relative;
-	width: 70%;
+	width: 50%;
 	transform: scaleX(0);
 	transform-origin: right;
 	transition: 0.5s;
@@ -96,7 +97,8 @@ nav form input {
 }
 nav form input.active {
 	transform: scaleX(1);
-	padding: 10px;
+	 padding: 10px;
+	 left: 5%;
 }
 nav form input.active ~ .fa-search{
 	visibility: hidden;

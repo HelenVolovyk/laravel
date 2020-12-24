@@ -47,7 +47,12 @@ body {
 .header__lang {
 	display: none;
 }
-
+.head__search {
+	display: none;
+}
+.nav__search {
+	display: block;
+}
 
 .header:before {
 	content: "";
@@ -61,12 +66,13 @@ body {
 }
 
 .header__body {
-	position: relative;
+	// position: relative;
 	/* z-index: 2; */
 	display: flex;
 	justify-content: center;
 	align-items: top;
 	height: 60px;
+	width: 100%;
 	background-color: #fff;
 	overflow: hidden;
 }
@@ -87,6 +93,8 @@ body {
 /*new*/
 
 }
+
+
 .header__link {
 	transform: scale(1);
 	transition: 0.5s;
@@ -170,6 +178,12 @@ body {
 	.header__lang {
 		display: block;
 	}
+	.head__search {
+		display: block;
+	}
+	.nav__search {
+		display: none;
+	}
 	body.lock {
 		overflow: hidden;
 	}
@@ -185,7 +199,6 @@ body {
 		position: relative;
 		width: 30px;
 		height: 20px;
-		position: relative;
 		z-index: 3;
 		
 	}

@@ -25,6 +25,11 @@ class PageController extends Controller
 		 return view('recipes');
 	 }
 	
+	 public function recipe()
+	 {
+		 return view('recipe');
+	 }
+	
 
 
 	 private $orderRepository;

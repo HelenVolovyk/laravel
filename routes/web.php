@@ -47,6 +47,7 @@ Route::group([
 	Route::get('/payment', 'PageController@payment')->name('payment');
 	Route::get('/shares', 'PageController@shares')->name('shares');
 	Route::get('/recipes', 'PageController@recipes')->name('recipes');
+	Route::get('/recipe', 'PageController@recipe')->name('recipe');
 
 	//*contact
 	Route::prefix('contact')->name('contact.')->group(function () {

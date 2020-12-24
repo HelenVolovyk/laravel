@@ -1,6 +1,8 @@
 .tabs {
 	padding: 50px 0;
 	margin: 0px 0px 50px 0px;
+	// background-color: rgb(248, 247, 247);
+	
 }
 .tabs__items {
 	display: flex;
@@ -35,24 +37,24 @@
 
 }
 .tabs__block:nth-child(1) {
-	background-color: rgb(253, 168, 168);
+	background-color: rgb(248, 248, 248);
 }
 .tabs__block:nth-child(1)::before {
-	background-color: rgb(253, 168, 168);
+	background-color: rgb(248, 248, 248);
 	left: 0;
 }
 .tabs__block:nth-child(2) {
-	background-color: rgb(209, 253, 168);
+	background-color: rgb(248, 248, 248);
 }
 .tabs__block:nth-child(2):before {
-	background-color: rgb(209, 253, 168);
+	background-color: rgb(248, 248, 248);
 	left: 33.333%;
 }
 .tabs__block:nth-child(3) {
-	background-color: rgb(199, 253, 168);
+	background-color: rgb(248, 248, 248);
 }
 .tabs__block:nth-child(3):before {
-	background-color: rgb(199, 253, 168);
+	background-color: rgb(248, 248, 248);
 	right: 0;
 }
 .tabs__block:target {

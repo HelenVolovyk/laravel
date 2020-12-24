@@ -28,6 +28,9 @@
 					</li>
 				
 
+				
+
+
 					<div class="header__lang">
 						<div class="lang mt-2">
 							@if(count(config('app.languages')) > 1)
@@ -90,15 +93,19 @@
 					</li>
 			@endguest
 			</div>
+			
 		
-			@include('inc.search')
 			</ul>
+		
 		</div>
-		</nav>	
+
+		
+	
+	</nav>	
 	
 								
 					
-				
+	@include('inc.searchMob')			
 			
 		
 	</div>

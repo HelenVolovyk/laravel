@@ -35,9 +35,11 @@
 		
 			@include('inc.header')
 			{{-- @section('navbar') --}}
-
-			@show
 		
+			@show
+	
+			
+
 					@if(Request::is('/'))
 						{{-- @include('inc.slider') --}}
 						

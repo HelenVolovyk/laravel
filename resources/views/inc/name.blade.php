@@ -18,6 +18,7 @@
 		</div>
 			
 		
+
   <!-- Lang -->
   <ul class="navbar-nav ml-auto ">
 
@@ -112,8 +113,9 @@
 			
 		 </ul>
 
-				
-
+				<div class="nav__search">		
+					@include('inc.search')
+				</div>
 			</div>
 		</nav>
 	</div>

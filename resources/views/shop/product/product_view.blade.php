@@ -3,13 +3,12 @@
      <div class="card shadow-sm" >
         <a href="{{route('product.show', $product)}}">
 
-          <div class="cart-img ">
-            <img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="..." ></div> 
+          <div class="scale cart-img ">
+            <img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="scale card-img-top" alt="..." ></div> 
         </a>
 
         <div class="cart-link">
-          
-       
+                 
           <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
                       
         </div>
@@ -17,7 +16,9 @@
  
        <div class="card-body">
 			<h5 class="card-title">{{$product->__('name')}}</h5>
-          <p class="card-text">{{$product->__('shot_description')}}</p>
+			<div class="cart-description">
+			 	<p class="card-text">{{$product->__('shot_description')}}</p>
+			</div>
       		 @include('shop.category-view', ['category'=>$product->category()->first()])
             
            
@@ -30,7 +31,7 @@
              <div class="printPrice">{{$product->printPrice()}} грн</div>
             </div>
            
-
+				<div class="d-flex justify-content-center mt-3">
              <form action="{{route('cart.add', $product)}}" method="POST" class="form-inline" id="button_center">             
               @method('POST')
               @csrf
@@ -47,9 +48,9 @@
                       > 
       
               </div> 
-            
+          
                 <button type="submit" class="btn btn-primary mt-2" id="button_center">{{ __('Add to Cart') }}</button>
-           
+            </div>
                </form>
 
 
