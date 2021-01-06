@@ -1,6 +1,9 @@
 <header class="header">
+	
 	<div class="name">
+	
 		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
+			
 			<div class="container">
 				
 			  <!-- Right Side Of Navbar -->
@@ -10,15 +13,20 @@
 				<span></span>
 			</div> 
 
-			<a  href="{{ url('/') }}" class="header__logo ">
+			<a  href="{{ url('/') }}" class="header__logo">
 				<i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i>
 			</a>
+
+		
+			
+			{{-- <a class="tel" href="tel:123-456-78"><i class="fa fa-phone fa-2x"></i>  123-456-78</a> --}}
+		
 			<div class="brend__name">
-			<a class="navbar-brand" href="">{{ __('My Stor') }}</a>
-		</div>
+				<a class="navbar-brand" href="">{{ __('My Stor') }}</a>
+			</div>
 			
 		
-
+		
   <!-- Lang -->
   <ul class="navbar-nav ml-auto ">
 
@@ -71,6 +79,7 @@
 			</div>
 					
 		
+
 			<div class="d-flex justify-content-end">
 				<li class="nav-item">
 					 <a class="nav-link" href="{{route('user.wishlist')}}"><i class="fa fa-heart-o" aria-hidden="true"></i>

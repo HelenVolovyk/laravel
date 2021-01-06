@@ -1,14 +1,19 @@
 @include('inc.name')
   @section('navbar')
   
+  
 	 <div class="header__body">
-		 
+		
 
 		<nav class="header__menu">
+		
 			<div class="container">
 			<ul class="header__list">
 				
+				
+			
 					<li class="header__link">
+
 						<a class="header__link" href={{route('shop')}}>{{ __('Shop') }}</a>
 					</li>
 					<li class="header__link">
@@ -97,6 +102,10 @@
 		
 			</ul>
 		
+			<div class="nav__search">		
+				@include('inc.search')
+			</div>
+			
 		</div>
 
 		
@@ -105,7 +114,7 @@
 	
 								
 					
-	@include('inc.searchMob')			
+	{{-- @include('inc.searchMob')			 --}}
 			
 		
 	</div>

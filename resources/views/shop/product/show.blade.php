@@ -2,8 +2,9 @@
  @inject('wishlist', 'App\Services\WishlistService')
 
 @section('content')
-<div class="content">
 <div class="container">
+<div class="content">
+
 {{-- 
 	{{$product=Product::where('images_id', $image->id)->get()}}  --}}
 	{{-- {{ Storage::disk('public')->$filePath}} --}}
@@ -33,7 +34,7 @@
 	</div>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-6 pl-5">
     @if($product->discount > 0)
 		<p style="color: red; text-decoration: line-through">{{ __('Old Price: ') }}
 			 {{$product->price}} грн</p>
@@ -79,7 +80,7 @@
 
 		  <div>@include('shop.units-view', ['units'=>$product->units()->first()])</div>
 
-        <button type="submit" class="btn btn-primary mb-2">{{ __('Add to Cart') }}</button>
+        <button type="submit" class="btn btn-primary mb-2 ml-5">{{ __('Add to Cart') }}</button>
 		</form>
 		
 	    </div>
@@ -90,11 +91,14 @@
 		
 			
  @auth   
-<form class="form-horizontal poststars" action="{{route('rating.add', $product)}}" id="addStar" method="POST">
-  @csrf
+ <div class="row pl-3">
+ 	<div class="">{{ __('Evaluate a product') }}</div>
+
+ 
+		<div class="form-group required pl-5">
+			<form class="form-horizontal poststars" action="{{route('rating.add', $product)}}" id="addStar" method="POST">
+			@csrf
   
-<div class="form-group required">
-  <div class="col-sm-12">
 
     @if($product->getUserProductRating()!==false) 
     @for($i=1; $i<=5; $i++)
@@ -120,24 +124,57 @@
         <label class="star star-5" for="star-5"></label> 
        
      @endif 
-        </div>
-      </div>
-    </form>
-  @endauth  
+      
+			
+			</form>
+		@endauth  
+		</div>
+	</div>
   
-  </div>
-
+  
 		<div class="col-md-12">
 				<p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
 				<p>{{$product->__('description')}}</p>
 		</div>
-  
-		<div class="">
-			@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
-		</div>
-  
-
+		
+				<div class="mt-3">
+						@if(!empty($vote->rating)){
+							@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
+						}
+						@else 
+							<div class="col-md-12">
+								<p>{{ __('COMMENTS:') }}</p>
+								<p>{{ __('This product has no comments yet') }} </p>
+							</div>
+					
+							@endif
+					</div>
+				</div>
+			</div>
+		</div> 
 	</div>
+</div>
+
+<p style="margin-top: 2%; text-align:center; margin-bottom: 2%">{{ __('YOU MAY ALSO LIKE:') }} </p>  
+	<div class="container-fluid">
+	
+		<div class="sentence">
+		
+		
+				@foreach($products->chunk(5) as $productChunk)
+				
+					@foreach($productChunk as $product)
+
+						@include('shop.product.product_shop_view')
+
+					@endforeach
+				@endforeach
+			
+		</div>
+	</div>
+
+
+
 			<script>
 				$(function(){
 				$('#addStar').change('.star', function(e){
@@ -145,10 +182,9 @@
 				});
 				});
 			</script>
-	</div>    
 
 
-</div>
+
 @endsection
 
 

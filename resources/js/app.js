@@ -9,6 +9,8 @@ require('./header');
 require('./accordion');
 require('./search');
 require('./carousel');
+require('./btn');
+require('./owlCarousel');
 
 // window.Vue = require('vue');
 

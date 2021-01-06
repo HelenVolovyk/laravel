@@ -28,7 +28,8 @@ class HomeController extends Controller
 	public function index()
 	{
 
-		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
+		$products = Product::inRandomOrder()->where('quantity', '>', '0')->get();
+		// $products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		//$products = Product::with('category')->where('quantity', '>', '0')->paginate(10);
 		$categories = Category::all();
 		return view('home.index', compact('categories', 'products'));
@@ -48,5 +49,3 @@ class HomeController extends Controller
 
 
 }
-
-

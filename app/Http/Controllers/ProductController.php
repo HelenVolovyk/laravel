@@ -28,6 +28,10 @@ class ProductController extends Controller
 		$images = $product->images()->get();
 		$units = Unit::all();
 		$units = $product->units()->first();
+
+		
+		$products = Product::inRandomOrder()->take(5)->where('quantity', '>', '0')->get();
+		$categories = Category::all();
 	
 		
 		//  $images = $product->image();
@@ -42,6 +46,6 @@ class ProductController extends Controller
 	//echo trim($images, '"');
 		//dd($product->images()->pluck('path'));
 		
-		return view('shop.product.show', compact('product',  'comments'), compact('categories'), compact('images'), compact('units') );
+		return view('shop.product.show', compact('product',  'comments'), compact('products', 'categories'), compact('images'), compact('units') );
 	}
 }

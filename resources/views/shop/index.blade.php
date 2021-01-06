@@ -8,17 +8,17 @@
 
 <div class="content">
 	<div class="container">
-		<div class="top d-flex justify-content-between">
-			<div class="bread">
+		<div class="top row">
+			<div class="bread col-auto mr-auto">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
 					<li class="breadcrumb-item active" aria-current="page">{{ __('Shop') }}</li>
 				</ol>
 			</div>
 			
-			{{-- <div class="search__shop">
+			<div class="search__shop col-auto">
 				@include('inc.search')
-			</div>  --}}
+			</div> 
 				
 		</div>
 
@@ -69,5 +69,6 @@
 			</div>
 		</div>
 	</div>
+	
 </div>
 @endsection

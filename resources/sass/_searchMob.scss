@@ -9,11 +9,11 @@ color: $blue;
 // 	}
 	.box{
 		position: absolute;
-		top: 55%;
-		left: 5%;
+		top: 75%;
+		left: 2%;
 		transition: translate(-30%, 30%);
-		width: 40px;
-		height: 40px;
+		width: 30px;
+		height: 30px;
 		transition: .5s;
 	}
 
@@ -29,8 +29,8 @@ color: $blue;
 		font-size: 23px;
 		cursor: pointer;
 		transition: .5s;
-		box-shadow: -1px -1px 2px #edeff1,
-		2px 2px 3px #cacfd8;
+	// 	box-shadow: -1px -1px 2px #edeff1,
+	// 	2px 2px 3px #cacfd8;
 	}
 	.svg.bi.bi-arrow-repeat{
 		top: 25px;
@@ -48,7 +48,7 @@ color: $blue;
 		border-radius: 30px;
 		outline: none;
 		font-size: 19px;
-		padding-left: 20px;
+		padding-left: 30px;
 		color: rgb(184, 182, 182);
 		box-shadow: -1px -1px 2px #f2f4f7,
 		3px 3px 5px #cacfd8;
@@ -61,6 +61,7 @@ color: $blue;
 	}
 	#check:checked+.box{
 		width: 300px;
+		left: 5px;
 	}
 	#check:checked+.box > input{
 		opacity: 1;

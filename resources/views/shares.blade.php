@@ -20,4 +20,7 @@
 		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro delectus ipsam nulla praesentium, excepturi deserunt consequatur eos accusamus sed nesciunt, quidem fugit iusto deleniti rem aliquam dolores quia repellendus ipsum.</p>
 	</div>
 			
+	<div class="text-right button-container mt-5">
+		<a href="/shop" class="">{{ __('View more products') }}</a>
+	 </div>  
 @endsection

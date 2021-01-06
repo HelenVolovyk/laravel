@@ -42,7 +42,8 @@
 		
 	 <hr class="featurette-divider mt-5">
 </div>
-	<div class="container-fluid">
+	<div class="container-fluid" style="background-color: #ddd">
+		<div class="container">
 	 <div class="tabs">
 		 <nav class="tabs__items">
 			 <a href="#tab_01" class="tabs__item"><span>Первая</span></a>
@@ -52,21 +53,28 @@
 		 <div class="tabs__body">
 			 <div id="tab_01" class="tabs__block">
 				Первая.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore?
+				Первая.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore?
 			 </div>
 		 
 			 <div id="tab_02" class="tabs__block">
-				Вторая.  LоПерваяраяorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore?
+				Вторая.  Перваяраяorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore?
+				Вторая.  Перваяраяorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore?
 			 </div>
 		
 			 <div id="tab_03" class="tabs__block">
-				Третья.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore?
+				Третья.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore? 
+				Третья.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quis perferendis neque veritatis nesciunt impedit doloribus esse. Quis nisi ut, inventore velit ipsa necessitatibus soluta suscipit harum doloribus, rerum dolore? 
 			 </div>
 			</div>
-	 	</div>
+		 </div>
+		</div>
 	</div> 
 
-	 <div class="text">
-		 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quam cupiditate, ea recusandae et veritatis soluta aliquid reiciendis! Consequatur quibusdam odio cum provident mollitia perferendis qui, ex modi reiciendis ipsum?
+	 <div class="text text-center">
+		 <h4>Lorem ipsum dolor sit amet </h4>
+		 <p>
+		 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quam cupiditate, ea recusandae et veritatis soluta aliquid reiciendis! <br>Consequatur quibusdam odio cum provident mollitia perferendis qui, ex modi reiciendis ipsum?
+		</p>
 	 </div>
 
 

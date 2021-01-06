@@ -1,17 +1,3 @@
-*,
-*:before,
-*:after {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	box-sizing: border-box;
-}
-
-html,
-body {
-	height: 100%;
-	font-family: arial;
-}
 
 .header {
 	position: fixed;
@@ -21,9 +7,16 @@ body {
 	width: 100%;
 	
 }
-
+.up{
+	width: 100%;
+	height: 50px;
+	background-color: rgb(19, 124, 228);
+	top: 0;
+	left: 0;
+}
 .name {
 	z-index: 60;
+	padding-bottom: 0;
 }
 
 .header a {
@@ -34,14 +27,12 @@ body {
 	position: relative;
 }
 
-.container {
-	max-width: 1180px;
-	padding: 0px 15px;
-	margin: 0px auto;
-}
-
 .header__enter {
 	display: none;
+}
+
+.name__enter {
+	display: block;
 }
 
 .header__lang {
@@ -71,7 +62,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: top;
-	height: 60px;
+	height: 40px;
 	width: 100%;
 	background-color: #fff;
 	overflow: hidden;
@@ -104,38 +95,36 @@ body {
 	transform: scaleX(0);
 	
 } 
-
-
 .header__logo {
 	flex: 0 0 60px;
 	border-radius: 50%;
 	overflow: hidden;
-	position: relative;
+   position: relative;
 	z-index: 3;
 }
-
+// .fa.fa-bandcamp{
+// 	position: relative;
+// }
+a.tel {
+	font-weight: 300;
+	position: absolute;
+	margin-top: 70px;
+	
+}
+i.fa.fa-phone.fa-2x:before {
+	margin-top: 3px;
+}
 .header__logo img {
 	max-width: 100%;
 	display: block;
 }
 
-.content {
-	padding-top: 120px;
-}
+// a.tel {
+// position: absolute;
+// margin-top: -20px;
+// }
 
-.content__text {
-	font-size: 16px;
-	line-height: 20px;
-}
-.content__text p {
-	margin-bottom: 20px;
-}
 
-@media (max-width: 767px) {
-	.content {
-		padding: 60px 0px 0px 0px;
-	}
-}
 
 .header__burger {
 	display: none;
@@ -150,12 +139,10 @@ body {
 .navbar-brand {
 	max-width: 120px;
 }
-.tel {
-	font-weight: 200;
-	
-}
 
-@media (max-width: 767px) {
+
+
+@media (max-width: 1024px) {
 
 	.brend__name {
 		display: none;

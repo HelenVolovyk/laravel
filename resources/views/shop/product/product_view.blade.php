@@ -1,5 +1,6 @@
 
    <div class="col-sm-6 col-md-4">
+   {{-- <div class="col-sm-4 col-md-3"> --}}
      <div class="card shadow-sm" >
         <a href="{{route('product.show', $product)}}">
 
@@ -16,11 +17,12 @@
  
        <div class="card-body">
 			<h5 class="card-title">{{$product->__('name')}}</h5>
-			<div class="cart-description">
+			{{-- <div class="cart-description">
 			 	<p class="card-text">{{$product->__('shot_description')}}</p>
-			</div>
+			</div> --}}
+				<div class="">
       		 @include('shop.category-view', ['category'=>$product->category()->first()])
-            
+				</div>  
            
               
            <div class="clearfix ">
@@ -48,14 +50,20 @@
                       > 
       
               </div> 
-          
-                <button type="submit" class="btn btn-primary mt-2" id="button_center">{{ __('Add to Cart') }}</button>
+				 
+					 <button type="submit" class="btn btn-success  mt-2" id="button_center">{{ __('Add to Cart') }}</button>
+					 {{-- <button type="submit" class="button hvr-fade mt-2" id="button_center">{{ __('Add to Cart') }}</button> --}}
+				
+					
+
             </div>
                </form>
 
 
-           </div>
-       </div>
+			  </div>
+		
+		 </div>
+		
      </div>
     </div>
 

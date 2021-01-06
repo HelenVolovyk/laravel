@@ -18,7 +18,7 @@
       
 		 <p class="card-text">{{$category->__('description')}}</p>
 		 
-		 @include('admin.categories.parts.images')
+		 {{-- @include('admin.categories.parts.images') --}}
       
          
 

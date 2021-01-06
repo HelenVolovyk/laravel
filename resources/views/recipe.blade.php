@@ -14,19 +14,24 @@
 				<div class="mt-5 ">
 				
 
-				<p class="lead pt-5">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. <br>
+				{{-- <p class="lead pt-5">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. <br>
 					Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-				</p>
+				</p> --}}
 				<p><span class="text-muted">Donec ullamcorper</span></p>
 				<div class="ml-2">
-					<ul>
-						<li>gfghghgh dfgg</li>
-						<li>gfghghgh dfgg</li>
-						<li>gfghghgh dfgg</li>
-						<li>gfghghgh dfgg</li>
+					<ul class="recipe ">
+						<li class="recipe">gfghghgh dfgg - 300 g</li>
+						<li class="recipe">gfghghgh dfgg - 300 g</li>
+						<li class="recipe">gfghghgh dfgg - 300 g</li>
+						<li class="recipe">gfghghgh dfgg - 300 g</li>
 					</ul>
+					<hr>
 				</div>
+				
 			</div>
+			<div class="dws">
+				<a href="#" class="butt">добавить в корзину</a>
+			 </div>
 			</div>
 			
 			<div class="col-md-9 mt-5">
@@ -40,6 +45,14 @@
 				<div class="col md-12">
 					<div class="d-flex justify-content-end  mb-3">
 						<button type="submit" class="btn btn-primary">{{ __('Add to Cart') }}</button>
+						<a href="" class="wave-btn">
+							<span class="wave-btn__text">добавить в корзину</span>
+							<span class="wave-btn__waves"></span>
+						</a>
+
+						
+						
+							
 					</div>
 				</div>	
 			</div>

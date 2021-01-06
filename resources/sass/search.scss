@@ -4,8 +4,8 @@ i.fa.fa-search::before,
 	color: rgb(170, 170, 170);
 	font-weight: 16px;
 	cursor: pointer;
-	top: 17px;
-	left: 52%;
+	top: -13px;
+	left: 60%;
 }
 
 .search-box::placeholder {
@@ -16,12 +16,33 @@ i.fa.fa-search::before,
 	display: inline-block;
 	animation: cursor 1s infinite step-end;
  }
+
+ .search__shop {
+	 display: none;
+ }
  
  @keyframes cursor {
 	50% { background: transparent; }
  }
+ @media (max-width: 1024px){
+	nav form {
+		position: absolute;
+		width: 80%;
+		left: 85%;
+		top: 50px;
+		}
+		i.fa.fa-search::before,
+	i.fa.fa-times::before  {
+
+	top: -10px;
+	left: 85%;
+}
+	 }
 
 @media (max-width: 767px) {
+	.search__shop {
+		display: block;
+	}
 
 	.head__search {
 		display: block;
@@ -38,15 +59,18 @@ i.fa.fa-search::before,
 	} 
 	.search-box {
 		margin-bottom: 10px;
+		width: 100%;
+		position: relative;
 	}
-	// i.fa.fa-search::before,
-	// i.fa.fa-times::before {
-	// 	left: 76%;
-	// 	top: 16px;
-	// 	color: white;
-	// 	font-weight: 20px;
-	// 	padding-right: 5px;
-	// }
+	i.fa.fa-search::before,
+	i.fa.fa-times::before {
+		position: absolute;
+		left:  90%;
+		top: 5px;
+		
+		font-weight: 20px;
+		padding-right: 5px;
+	}
 
 	form.search-form {
 	  left: 23%;
@@ -58,6 +82,7 @@ i.fa.fa-search::before,
 		top: -4px;
 		width: 85%;
 		right: 17%;
+		left: 10px;
 	}
 }
 
@@ -76,14 +101,14 @@ i.fa.fa-search::before,
 
  }
 
-.brend__name {
+.name__lang {
 	 position: relative;
  }
 nav form {
 	position: absolute;
 	width: 80%;
 	left: 25%;
-	top: 5px;
+	top: 70px;
 	
 }
 
@@ -101,7 +126,7 @@ nav form input.active {
 	 left: 5%;
 }
 nav form input.active ~ .fa-search{
-	visibility: hidden;
+	display:	none;
 }
 nav form input.active ~ .fa-times{
 	display: block;

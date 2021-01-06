@@ -9,6 +9,16 @@
   .scale img:hover {
 	transform: scale(1.2); /* Увеличиваем масштаб */
   }
-  .cart-description {
-	  height: 60px;
-  }
+//   .cart-description {
+// 	  height: 16px;
+//   }
+
+.sentence {
+	// width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
