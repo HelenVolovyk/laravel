@@ -54,13 +54,13 @@
 
 	
 			
-					<main class="py-4">
+					{{-- <main > --}}
 						
 								@include('inc.message')
 						
 								@yield('content')
 						<a class="gotop" href=""><i class="fa fa-arrow-up"></i></a>
-					</main>
+					{{-- </main> --}}
 				</div>
 		</div>
 

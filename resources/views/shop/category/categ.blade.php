@@ -1,17 +1,12 @@
 
 
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-6 col-md-4 m-3">
   <div class="card shadow-sm" >
-
-
      <div class="cart-link">
-       
-     
-                   
      </div>
    
  
-    <div class="card-body">
+    <div class="categ card-body">
       <a href="{{route('category.show', $category)}}">
         <h5 class="card-title">{{$category->__('title')}}</h5>
       </a>
@@ -20,11 +15,7 @@
 		 
 		 {{-- @include('admin.categories.parts.images') --}}
       
-         
-
-     
-
-     
+        
     </div>
   </div>
  </div>

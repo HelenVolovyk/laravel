@@ -24,20 +24,20 @@ i.fa.fa-search::before,
  @keyframes cursor {
 	50% { background: transparent; }
  }
- @media (max-width: 1024px){
+ @media (max-width: 1224px){
 	nav form {
 		position: absolute;
 		width: 80%;
-		left: 85%;
+		left: 90%;
 		top: 50px;
 		}
 		i.fa.fa-search::before,
 	i.fa.fa-times::before  {
 
 	top: -10px;
-	left: 85%;
+	left: 90%;
+	}
 }
-	 }
 
 @media (max-width: 767px) {
 	.search__shop {

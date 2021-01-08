@@ -11,6 +11,7 @@ require('./search');
 require('./carousel');
 require('./btn');
 require('./owlCarousel');
+require('./lazy_load');
 
 // window.Vue = require('vue');
 

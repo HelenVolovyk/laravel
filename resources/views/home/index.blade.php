@@ -29,17 +29,11 @@
 		</div>
 	</div>
 
-	{{-- @foreach($products->chunk(3) as $productChunk)
-		<div class="row">
-			@foreach($productChunk as $product)
-				@include('shop.product.product_view')
-			@endforeach
-		</div>
-	@endforeach --}}
+
 <div class="container-fluid">
  	@include('inc.owlCarousel')
 </div>
-{{-- @include('inc.slick-carousel') --}}
+
 
   <div class="text-center button-container mt-5">
     <a href="/shop" class="">{{ __('View more products') }}</a>

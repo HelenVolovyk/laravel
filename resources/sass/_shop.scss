@@ -2,8 +2,31 @@
 	display: none;
 }
 
+.products {
+	display: none;
+}
 
+a, a:visited{
+	text-decoration: none;
+	display: block;
+	margin: 10px 0;
+}
 
+#loadMore {
+	padding: 10px;
+	text-align: center;
+	background-color: #33739E;
+	color: white;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	background-color: #fff;
+	box-shadow: 0 1px 1px #ccc;
+	transition: all 600ms ease-in-out;
+}
+#loadMore:hover{
+	background-color: #fff;
+	color: #33739E;
+}
 @media (max-width:767px) {
 	
 	.sidebar {

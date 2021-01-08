@@ -1,6 +1,6 @@
 <footer>
 	
-	<div class="jumbotron jumbotron-fluid text-center mt-5">
+	<div class="jumbotron jumbotron-fluid text-center">
 		<div class="container-fluid">
 		  <h6 class="display-4">Fluid jumbotron</h6>
 		  <p class="lead">Это модифицированный jumbotron, который занимает все горизонтальное пространство своего родителя.</p>
@@ -36,7 +36,7 @@
 		<ul class="list-unstyled text-small">
 			<li><a class="text-muted" href="#">Cool stuff</a></li>
 			<li><a class="text-muted" href="#">Random feature</a></li>
-			<li><a class="text-muted" href="tel:123-56-78"><i class="fa fa-phone fa"></i>  123-456-78</a></li>
+			<li><a class="text-muted"  class="hvr-grow-rotate" href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon"></i>  123-456-78</a></li>
 		
 		 </ul>
 	</div>

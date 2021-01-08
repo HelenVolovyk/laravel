@@ -25,32 +25,48 @@ All Categories
 	</div> --}}
  
 		</div>
+	</div>
 
-  		<h1 class="text-center mt-2">{{ __('All Categories') }}</h1>
+		  <h1 class="text-center mt-2">{{ __('All Categories') }}</h1>
+
+		  <div class="categories">
 		<div class="col-md-12 mt-5">
   
-  			<div class="categories text-center">
+  			<div class="categories text-center container">
+				<div class="categ__text pt-3 pb-3">
     			@foreach($categories->chunk(3) as $categoryChunk)
-					<div class="row d-flex justify-content-around mt-5">
+					<div class="row d-flex justify-content-around">
+					
   					@foreach($categoryChunk as $category)
 
 					@include('shop.category.categ')
 
 					@endforeach
-					</div>
+				</div>
+					
 				@endforeach
+			</div>
   			</div>
 		</div>
+	</div>
 
 		<div id="portfolio" class="offset">
-			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
+			<div class="jumbotron jumbotron-fluid mt-5">
+				<div class="container-fluid mt-5">
 				<h3 class="heading text-center">Fluid jumbotron</h3>
 				<div class="heading__underline"></div>
 				</div>
 			</div> 
 		</div>
 		
+
+	
+		<div class="text-center">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quas reprehenderit fuga doloremque explicabo labore odio sed, earum atque? Pariatur voluptatibus error ipsum atque ut nemo aliquid numquam et quis.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quas reprehenderit fuga doloremque explicabo labore odio sed, earum atque? Pariatur voluptatibus error ipsum atque ut nemo aliquid numquam et quis.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quas reprehenderit fuga doloremque explicabo labore odio sed, earum atque? Pariatur voluptatibus error ipsum atque ut nemo aliquid numquam et quis.</p>
+		</div>
+
 		<div class=" d-flex justify-content-center">
 		 <div class="col-md-9 row no-padding">
 			 <div class="col-sm-4">
@@ -98,6 +114,5 @@ All Categories
 		 </div> 
 
 		</div>
-	</div>
 </div>
 @endsection

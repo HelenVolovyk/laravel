@@ -1,4 +1,3 @@
-
 .header {
 	position: fixed;
 	top: 0;
@@ -76,7 +75,7 @@
 }
 
 .header__link {
-	color: rgb(170, 170, 170);
+	color: rgb(170, 170, 170) !important;
 	text-transform: uppercase;
 	font-size: 14px;
 	text-decoration: none;
@@ -142,7 +141,7 @@ i.fa.fa-phone.fa-2x:before {
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
 
 	.brend__name {
 		display: none;

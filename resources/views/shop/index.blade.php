@@ -56,16 +56,21 @@
 			<div class="col-md-10">
 			
 				<div class="products">
+					
 					@foreach($products->chunk(3) as $productChunk)
+					
 				<div class="row">
+				
 				@foreach($productChunk as $product)
-
+				
 				@include('shop.product.product_view')
-
+				
 				@endforeach
+				
 				</div>
 				@endforeach
 				</div>
+				<a id="loadMore" href="">Load More</a>
 			</div>
 		</div>
 	</div>
