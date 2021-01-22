@@ -26,18 +26,18 @@
 	</div>
 
 	<div class="container-fluid mt-5 mb-5">
-			<div class="payment__block" >
-				<span>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </span>
+			<div class="payment__block" style="text-transform: uppercase" >
+				<span>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</span>
 			</div>	
-	</div>
+	</div>	<div class="" style="width: 100%; height:100%; background-color: grey;"></div>
 	
 		
 	
-{{-- 
-	<div class="container-fluid" style="background-color: rgb(235, 235, 235)"> --}}
+
+	<div class="container-fluid" style="background-color: rgb(235, 235, 235)">
 		
 		<div class="tabs">
-			<div class="container-fluid" style="background-color: rgb(235, 235, 235)">
+			
 			<nav class="tabs__items">
 				<a href="#tab_01" class="tabs__item"><span>
 					<i class="fa fa-money pr-1" aria-hidden="true"></i> 

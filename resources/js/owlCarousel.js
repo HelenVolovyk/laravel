@@ -1,5 +1,7 @@
-const nextIcon = '<i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>';
-const prevIcon = '<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>';
+// const nextIcon = '<i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>';
+// const prevIcon = '<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>';
+const nextIcon = '<i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>';
+const prevIcon = '<i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>';
 
 $(window).on('load', function(){
 	$('.owl-carousel').owlCarousel({

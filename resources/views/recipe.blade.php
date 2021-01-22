@@ -5,12 +5,12 @@
 <div class="container">
  
 	 <h2>{{ __('Healthy recipes') }}</h2>
-	 <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit illum eveniet nesciunt quo impedit laboriosam dolorum ab ipsum id, inventore, nam cum obcaecati deleniti non illo repudiandae quia doloribus vitae.</h3>
+	 <h3 class="mt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit illum eveniet nesciunt quo impedit laboriosam dolorum ab ipsum id, inventore, nam cum obcaecati deleniti non illo repudiandae quia doloribus vitae.</h3>
 	 <hr class="featurette-divider">
 
     <div class="row featurette">
 		
-			<div class="col-md-3">
+			<div class="col-md-3" style="overflow: hidden">
 				<div class="mt-5 ">
 				
 
@@ -18,20 +18,24 @@
 					Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
 				</p> --}}
 				<p><span class="text-muted">Donec ullamcorper</span></p>
-				<div class="ml-2">
-					<ul class="recipe ">
-						<li class="recipe">gfghghgh dfgg - 300 g</li>
-						<li class="recipe">gfghghgh dfgg - 300 g</li>
-						<li class="recipe">gfghghgh dfgg - 300 g</li>
-						<li class="recipe">gfghghgh dfgg - 300 g</li>
-					</ul>
-					<hr>
+					<div class="ml-2 mt-5">
+						<ul class="recipe ">
+							<li class="recipe">gfghghgh dfgg - 300 g</li>
+							<li class="recipe">gfghghgh dfgg - 300 g</li>
+							<li class="recipe">gfghghgh dfgg - 300 g</li>
+							<li class="recipe">gfghghgh dfgg - 300 g</li>
+						
+						<hr>
+							<li class="recipe">gfghghgh dfgg - 300 g</li>
+							</ul>
+					</div>
+					
 				</div>
-				
-			</div>
-			<div class="dws">
+				<div class="" style="width: 100%; height:100%; background-color: rgb(206, 229, 245);"></div>
+			{{-- <div class="dws">
 				<a href="#" class="butt">добавить в корзину</a>
-			 </div>
+			</div> --}}
+				
 			</div>
 			
 			<div class="col-md-9 mt-5">
@@ -41,18 +45,17 @@
 					<h4 class="featurette-heading mt-5">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h4>
 					<p class="lead mt-3">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
 					</p>
+					<p class="lead mt-3">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+					</p>
 				</div>
 				<div class="col md-12">
 					<div class="d-flex justify-content-end  mb-3">
-						<button type="submit" class="btn btn-primary">{{ __('Add to Cart') }}</button>
+						{{-- <button type="submit" class="btn btn-primary">{{ __('Add to Cart') }}</button>  --}}
 						<a href="" class="wave-btn">
 							<span class="wave-btn__text">добавить в корзину</span>
 							<span class="wave-btn__waves"></span>
-						</a>
+						</a> 
 
-						
-						
-							
 					</div>
 				</div>	
 			</div>

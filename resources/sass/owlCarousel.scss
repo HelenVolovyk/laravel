@@ -18,16 +18,30 @@
 	}
 }
 
-i.fa.fa-arrow-left,
-i.fa.fa-arrow-right{
+// i.fa.fa-arrow-left,
+// i.fa.fa-arrow-right{
+// 	color: rgb(197, 197, 197);
+// 	position: absolute;
+// 	top: 45%;
+// }
+
+// i.fa.fa-arrow-left{
+// 	left: -2%;
+// }
+// i.fa.fa-arrow-right{
+// 	right: -2%;
+// }
+
+i.fa.fa-chevron-left,
+i.fa.fa-chevron-right{
 	color: rgb(197, 197, 197);
 	position: absolute;
 	top: 45%;
 }
 
-i.fa.fa-arrow-left{
+i.fa.fa-chevron-left{
 	left: -2%;
 }
-i.fa.fa-arrow-right{
+i.fa.fa-chevron-right{
 	right: -2%;
 }

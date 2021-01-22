@@ -30,47 +30,25 @@
 	</div>
 
 
+<section>
+	@include('home.prod')
+</section>
+
+
+
+	<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Debitis inventore quos consectetur dolorum ab, illo quaerat perferendis minima accusamus error nemo voluptatem fuga dolorem doloremque id odio in soluta accusantium?</p>
+
+
 <div class="container-fluid">
  	@include('inc.owlCarousel')
 </div>
 
 
-  <div class="text-center button-container mt-5">
+  <div class="text-center button-container mt-3 mb-5">
     <a href="/shop" class="">{{ __('View more products') }}</a>
-  </div>     
+  </div>   
+    
 
-			<!--  parent -->
-			<div class="block">
-			<!--  flex-container  -->
-			<div class="block__row">
-				<!--  flex-element  -->
-				<div class="block__element block__element_1">
-					<!--  content  -->
-					<div class="block__content"><a href="/category/5">cicerro</a></div>
-				</div>
-				<!--  flex-element  -->
-				<div class="block__element block__element_2">
-					<!--  content  -->
-					<div class="block__content"><a href="/category/3">dolorum</a></div>
-				</div>
-				<!--  flex-element  -->
-				<div class="block__element block__element_3">
-					<!--  content  -->
-					<div class="block__content"><a href="/category/1">quae</a></div>
-				</div>
-				<!--  flex-element  -->
-				<div class="block__element block__element_4">
-					<!--  content  -->
-					<div class="block__content"><a href="/category/2">iste</a></div>
-				</div>
-				<!--  flex-element  -->
-				<div class="block__element block__element_5">
-					<!--  content  -->
-					<div class="block__content"><a class="name" href="/category/4">lorem</a></div>
-				</div>
-			</div>
-		</div>
-	
 </div>
 
 

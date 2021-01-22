@@ -30,7 +30,7 @@ class ProductController extends Controller
 		$units = $product->units()->first();
 
 		
-		$products = Product::inRandomOrder()->take(5)->where('quantity', '>', '0')->get();
+		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		$categories = Category::all();
 	
 		

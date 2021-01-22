@@ -70,7 +70,7 @@
 				</div>
 				@endforeach
 				</div>
-				<a id="loadMore" href="">Load More</a>
+				{{-- <a id="loadMore" href="">Load More</a> --}}
 			</div>
 		</div>
 	</div>
