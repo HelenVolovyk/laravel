@@ -1,0 +1,30 @@
+.rec{
+	background-color: rgb(228, 228, 228); 
+	height:600px; 
+	width: 100%; 
+	position:relative;
+}
+.rec__block{
+	background-color: lavender; position: absolute; 
+	top: 15%; 
+	width: 90%; 
+	height: 600px; 
+	margin-left: 5%; 
+	margin-right: 5%; 
+	display: flex;
+}
+.rec__block-1{
+	background-color: rgb(192, 192, 247); 
+	width: 50%; height: 100%; 
+}
+.rec__block-2{
+	background-color: rgb(145, 191, 243); 
+	width: 50%; 
+	height: 100%; 
+	display: flex; 
+	justify-content: center; align-items:center; flex-direction:column; 
+	padding: 0 5%;
+}
+.rec__block-2 p{
+	margin-bottom: 50px;
+}

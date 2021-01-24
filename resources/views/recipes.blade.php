@@ -6,6 +6,20 @@
  
     <h2>{{ __('Healthy recipes') }}</h2>
 	 <hr class="featurette-divider">
+	 <div class="d-flex justify-content-between">
+		<div class="bread">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">{{ __('recipes') }}</li> 
+				
+			</ol>
+		</div>
+		{{-- <div class="">
+			@include('inc.search')
+		</div> --}}
+	</div>
+
+
 
     <div class="row featurette">
       <div class="col-md-7 mt-5">
@@ -14,8 +28,8 @@
 		  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 		
 		 <div class="mt-5">
-			<a href="{{ route('recipe') }}">
-				<p><span class="text-muted">Donec ullamcorper zdfbdbg</span></p>
+			<a class="recipes__link" href="{{ route('recipe') }}">
+			Donec ullamcorper zdfbdbg
 			</a>
 		</div>
 		</div>
@@ -35,8 +49,8 @@
 		  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 	
 		  <div class="col-md-9 offset-md-8 mt-5">
-				<a href="{{ route('recipe') }}">
-					<p><span class="text-muted">Donec ullamcorper zdfbdbg</span></p>
+			<a class="recipes__link" href="{{ route('recipe') }}">
+				Donec ullamcorper zdfbdbg
 				</a>
 			</div>
 		</div>

@@ -22,7 +22,7 @@
 	justify-content: center;
 }
 .payment__block span{
-	font-size: 44px;
+	font-size: 64px;
 	color: rgb(172, 172, 172);
 }
 .tabs {
@@ -103,4 +103,20 @@
 		text-overflow: ellipsis;
 		
 	}
+}
+.payment__title{
+	display: flex;
+	justify-content: center;
+}
+
+.payment__box{
+	width: 500px;
+	height: 500px;
+	background-color: yellowgreen;
+	position: relative;
+}
+.payment__block span{
+	position: absolute;
+	margin-top: -15%;
+	text-transform: uppercase;
 }

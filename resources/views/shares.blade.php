@@ -6,6 +6,20 @@
  
     <h2>{{ __('Shares') }}</h2>
 	 <hr class="featurette-divider">
+	 <div class="d-flex justify-content-between">
+		<div class="bread">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">{{ __('shares') }}</li> 
+				
+			</ol>
+		</div>
+		{{-- <div class="">
+			@include('inc.search')
+		</div> --}}
+	</div>
+
+
 
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5">
 		<div class="col-md-6 px-0">

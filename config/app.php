@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        willvincent\Rateable\RateableServiceProvider::class,
+		  willvincent\Rateable\RateableServiceProvider::class,
         
        
 
@@ -184,6 +184,8 @@ return [
 		  Laravel\Socialite\SocialiteServiceProvider::class,
 		  \App\Services\Localization\LocalizationServiceProvider::class,
 		  \App\Services\LanguageServiceProvider::class,
+		//   Barryvdh\Debugbar\ServiceProvider::class,
+
 	
 
 		  
@@ -241,6 +243,7 @@ return [
 		  'View' => Illuminate\Support\Facades\View::class,
 		  'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 		  'LocalizationService' => App\Services\Localization\LocalizationService::class,
+		//   'Debugbar' => Barryvdh\Debugbar\Facade::class,
 	 ],
 	 
 // 	 'locales' => [

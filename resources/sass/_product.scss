@@ -21,4 +21,18 @@
 	margin-left: 10%;
 	margin-right: 10%;
 }
+.card{
+	border: none; 
+}
+.card:hover{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transition: 0.5s ease-in-out;
+}
+.card__btn{
+	opacity: 0;
+}
 
+a.cart__link:hover:after,
+a.cart__link:focus:after{
+	width: 0%;
+}

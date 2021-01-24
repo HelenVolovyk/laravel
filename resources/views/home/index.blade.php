@@ -48,6 +48,13 @@
     <a href="/shop" class="">{{ __('View more products') }}</a>
   </div>   
     
+  	<section style="height: 60vh">
+		@include('home.rec')
+	</section> 
+    
+  	<section style="height: 60vh">
+		@include('home.inst')
+	</section> 
 
 </div>
 

@@ -17,8 +17,18 @@
 	z-index: 60;
 	padding-bottom: 0;
 }
+a.navbar-brand:hover:after,
+a.navbar-brand:focus:after,
+a.header__lang:hover:after,
+a.header__lang:focus:after,
+a.recipes__link:hover:after,
+a.recipes__link:focus:after{
+	width: 0%;
+}
 
-.header a {
+
+a.header__link:hover,
+a.recipes__link:hover {
 	text-decoration: none;
 }
 .header li {
@@ -73,16 +83,43 @@
 	z-index: 2;
 	
 }
+.header__link a:hover{
+	text-decoration: none;
+	color: $blue;
+}
 
-.header__link {
+a.header__link {
 	color: rgb(170, 170, 170);
 	text-transform: uppercase;
 	font-size: 14px;
 	text-decoration: none;
-	padding: 0px 15px 0px 0px;
-/*new*/
-
+	padding: 0px 7px 0px 7px;
+	position: relative;
 }
+a.header__link:after,
+a.category__link:after,
+a.recipes__link::after{
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 2px; /*задаём ширину линии*/
+	background-color: $blue; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+a.header__link:hover:after,
+a.header__link:focus:after,
+a.category__link:hover:after,
+a.category__link:focus:after,
+a.recipes__link:hover:after,
+a.recipes__link:focus:after
+{
+	width: 100%;
+}
+
+
+
 
 
 .header__link {

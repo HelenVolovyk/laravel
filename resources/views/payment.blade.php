@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'payment')
 
 @section('content')
 <div class="content">
@@ -6,7 +7,18 @@
  
 		<h2>{{ __('Payment and delivery') }}</h2>
 		<hr class="featurette-divider">
-
+		<div class="d-flex justify-content-between">
+			<div class="bread">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
+					<li class="breadcrumb-item active" aria-current="page">{{ __('payment') }}</li> 
+					
+				</ol>
+			</div>
+			{{-- <div class="">
+				@include('inc.search')
+			</div> --}}
+		</div>
 		<div class="row">
 			<div class="payment">
 				<div class="payment__content">
@@ -26,15 +38,52 @@
 	</div>
 
 	<div class="container-fluid mt-5 mb-5">
-			<div class="payment__block" style="text-transform: uppercase" >
-				<span>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</span>
-			</div>	
-	</div>	<div class="" style="width: 100%; height:100%; background-color: grey;"></div>
+		<div class="col-md-4 offset-3">
+				<div class="payment__box"></div>
+		</div>
 	
+			<div class="payment__block">
+				<span>Donec sed odio dui. Cras justo odio, dapibus ac </span>
+			</div>	
+	</div>	
+	{{-- <div class="" style="width: 100%; height:100%; background-color: grey;"></div> --}}
+	
+	<div class="container pt-5">
+		<!-- Example row of columns -->
+		<div class="row  ">
+		  <div class="col-md-6 ">
+			  <div class="payment__title">
+				<i class="fa fa-money fa-2 pr-2 pt-2" aria-hidden="true"></i> 
+			 	<h2>Heading</h2>
+			</div>
 		
+			<p style="padding: 0 5%">
+			 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+		</p>
+			 {{-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> --}}
+			
+		  </div>
+		  <div class="col-md-6">
+			<div class="payment__title">
+			<i class="fa fa-credit-card pr-2 pt-2" aria-hidden="true"></i>
+			 <h2>Heading</h2>
+			</div>
+		
+			 <p style="padding: 0 5%">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			 {{-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> --}}
+		
+		  </div>
+		
+		</div>
+  
+		<hr>
+  
+	 </div> 
 	
 
-	<div class="container-fluid" style="background-color: rgb(235, 235, 235)">
+	{{-- <div class="container-fluid" style="background-color: rgb(235, 235, 235)">
 		
 		<div class="tabs">
 			
@@ -72,8 +121,8 @@
 				</div>
 			</div>
 		</div>
-		
-	{{-- </div>  --}}
+		 --}}
+	 </div>  
 
 	 <div class="text text-center">
 			 <p></p>

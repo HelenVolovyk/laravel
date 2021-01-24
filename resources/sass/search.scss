@@ -4,13 +4,14 @@ i.fa.fa-search::before,
 	color: rgb(170, 170, 170);
 	font-weight: 16px;
 	cursor: pointer;
-	top: -13px;
+	top: -32px;
 	left: 60%;
 }
 
 .search-box::placeholder {
 	font-style: italic;
 	text-align: center;
+	color: rgb(182, 181, 181);
 } 
 .form input:not(:focus) + label.cursor:before {
 	display: inline-block;
@@ -79,7 +80,7 @@ i.fa.fa-search::before,
   }
 	
 	.form input.active {
-		top: -4px;
+		top: -6px;
 		width: 85%;
 		right: 17%;
 		left: 10px;

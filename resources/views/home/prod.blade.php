@@ -4,7 +4,7 @@
 			<div class="home__product">
 				<a href="">
 					<span class="home__product-image ">
-					 {{-- <img src="{{Storage::disk('public')->url('images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg')}}"  alt="">  --}}
+					  {{-- <img src="{{Storage::disk('public')->url('images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg')}}"  alt="">   --}}
 					</span>
 				</a>
 			</div>
