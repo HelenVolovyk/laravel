@@ -14,8 +14,9 @@ class ShopController extends Controller
 	{
 		$products = Product::all()->where('quantity', '>', '0');
 		$categories = Category::all();
+		$title = 'shop';
 
-		return view('shop.index', compact('categories'), compact('products'));
+		return view('shop.index', compact('categories'), compact('products'),  compact('title'));
 	}
 
 	public function search(Request $request)

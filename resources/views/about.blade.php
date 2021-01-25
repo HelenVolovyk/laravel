@@ -6,18 +6,7 @@
 			<h2>{{ __('ABOUT') }}</h2>
 			<hr class="about__hr">
 
-			<div class="d-flex justify-content-between">
-				<div class="bread">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-						<li class="breadcrumb-item active" aria-current="page">{{ __('About') }}</li> 
-						
-					</ol>
-				</div>
-				{{-- <div class="">
-					@include('inc.search')
-				</div> --}}
-			</div>
+			@include('inc.breadcrumb')
 
 				<div class="col-md-12 offset-md-1 pt-5 pb-5">
 					<h4 class="font-italic text-left ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>

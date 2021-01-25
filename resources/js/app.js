@@ -13,6 +13,7 @@ require('./btn');
 require('./owlCarousel');
 require('./lazy_load');
 require('./ibg');
+require('./link');
 
 // window.Vue = require('vue');
 

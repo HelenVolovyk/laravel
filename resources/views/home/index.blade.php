@@ -45,14 +45,14 @@
 
 
   <div class="text-center button-container mt-3 mb-5">
-    <a href="/shop" class="">{{ __('View more products') }}</a>
+    <a href="/shop" class="rec__link-shop">{{ __('View more products') }}</a>
   </div>   
     
-  	<section style="height: 60vh">
+  	<section style="">
 		@include('home.rec')
 	</section> 
     
-  	<section style="height: 60vh">
+  	<section style="">
 		@include('home.inst')
 	</section> 
 

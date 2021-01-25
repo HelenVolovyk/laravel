@@ -38,15 +38,15 @@
 	</div>
 
 	<div class="container-fluid mt-5 mb-5">
-		<div class="col-md-4 offset-3">
-				<div class="payment__box"></div>
+		<div class="payment__box col-md-4 offset-md-2 col-sm-12 offset-sm-0">
+				<div class="payment__box-square"></div>
 		</div>
 	
 			<div class="payment__block">
 				<span>Donec sed odio dui. Cras justo odio, dapibus ac </span>
 			</div>	
 	</div>	
-	{{-- <div class="" style="width: 100%; height:100%; background-color: grey;"></div> --}}
+	
 	
 	<div class="container pt-5">
 		<!-- Example row of columns -->

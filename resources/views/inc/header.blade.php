@@ -1,6 +1,8 @@
 @include('inc.name')
   @section('navbar')
-  
+  <?php $url = $_SERVER["REQUEST_URI"];?>
+
+	
   
 	 <div class="header__body">
 		
@@ -14,22 +16,22 @@
 			
 					<li class="header__link">
 
-						<a class="header__link" href={{route('shop')}}>{{ __('Shop') }}</a>
+						<a class="header__link <?php if ($url == "/shop") { echo ' active';}?>" href={{route('shop')}}>{{ __('Shop') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link" href={{route('payment')}}>{{ __('Payment and delivery') }}</a>
+						<a class="header__link  <?php if ($url == "/payment") { echo ' active';}?>" href={{route('payment')}}>{{ __('Payment and delivery') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link" href={{route('shares')}}>{{ __('Shares') }}</a>
+						<a class="header__link  <?php if ($url == "/shares") { echo ' active';}?>" href={{route('shares')}}>{{ __('Shares') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link" href={{route('recipes')}}>{{ __('Healthy recipes') }}</a>
+						<a class="header__link  <?php if ($url == "/recipes") { echo ' active';}?>" href={{route('recipes')}}>{{ __('Healthy recipes') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link" href="/about">{{ __('About') }}</a>
+						<a class="header__link  <?php if ($url == "/about") { echo ' active';}?>" href="/about">{{ __('About') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link" href="/contact">{{ __('Contact') }}</a>
+						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="/contact">{{ __('Contact') }}</a>
 					</li>
 				
 

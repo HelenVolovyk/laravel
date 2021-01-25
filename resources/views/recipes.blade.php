@@ -6,19 +6,8 @@
  
     <h2>{{ __('Healthy recipes') }}</h2>
 	 <hr class="featurette-divider">
-	 <div class="d-flex justify-content-between">
-		<div class="bread">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-				<li class="breadcrumb-item active" aria-current="page">{{ __('recipes') }}</li> 
-				
-			</ol>
-		</div>
-		{{-- <div class="">
-			@include('inc.search')
-		</div> --}}
-	</div>
-
+	
+@include('inc.breadcrumb')
 
 
     <div class="row featurette">

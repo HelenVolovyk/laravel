@@ -28,6 +28,7 @@ a.recipes__link:focus:after{
 
 
 a.header__link:hover,
+a.rec__link:hover,
 a.recipes__link:hover {
 	text-decoration: none;
 }
@@ -96,8 +97,14 @@ a.header__link {
 	padding: 0px 7px 0px 7px;
 	position: relative;
 }
+a.header__link.active{
+	color: $blue;
+	border-bottom: 3px solid $blue; /*задаём цвет линии*/
+	padding-bottom: 1px;
+}
 a.header__link:after,
 a.category__link:after,
+
 a.recipes__link::after{
 	display: block;
 	position: absolute;
@@ -114,6 +121,7 @@ a.category__link:hover:after,
 a.category__link:focus:after,
 a.recipes__link:hover:after,
 a.recipes__link:focus:after
+
 {
 	width: 100%;
 }
@@ -183,9 +191,7 @@ i.fa.fa-phone.fa-2x:before {
 	.brend__name {
 		display: none;
 	}
-	.content {
-		padding-top: 60px;
-	}
+
 	.navbar-brand {
 		display: none;
 	}
@@ -284,10 +290,11 @@ i.fa.fa-phone.fa-2x:before {
 	.header__list li {
 		margin: 0px 0px 25px 0px;
 	}
-	.header__link {
+	a.header__link {
 		font-size: 20px;
 		color: white;
 		margin-left: 10px;
+		font-weight: bold;
 	}
 	i.fa.fa-heart-o::before {
 		margin-right: 5px;

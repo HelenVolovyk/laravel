@@ -10,24 +10,35 @@ class PageController extends Controller
 {
 	 public function about()
 	 {
-		 return view('about');
+		 $title = 'About';
+		 return view('about', compact('title'));
 	 }
 	 public function payment()
 	 {
-		 return view('payment');
+		 $title = 'payment';
+		 return view('payment', compact('title'));
 	 }
 	 public function shares()
 	 {
-		 return view('shares');
+		 $title = 'shares';
+		 return view('shares', compact('title'));
 	 }
 	 public function recipes()
 	 {
-		 return view('recipes');
+		 $title = 'recipes';
+		 return view('recipes', compact('title'));
 	 }
 	
 	 public function recipe()
 	 {
+		 $title = '';
 		 return view('recipe');
+	 }
+	
+	 public function contact()
+	 {
+		 $title = 'contact';
+		 return view('recipe', compact('title'));
 	 }
 	
 

@@ -17,14 +17,7 @@
 		padding: 5%;
 	}
 }
-.payment__block{
-	display: flex;
-	justify-content: center;
-}
-.payment__block span{
-	font-size: 64px;
-	color: rgb(172, 172, 172);
-}
+
 .tabs {
 	padding: 50px 0;
 	margin: 0px 0px 50px 0px;
@@ -108,15 +101,41 @@
 	display: flex;
 	justify-content: center;
 }
-
-.payment__box{
+.payment__box {
+	display: flex;
+}
+.payment__box-square{
 	width: 500px;
 	height: 500px;
 	background-color: yellowgreen;
 	position: relative;
 }
-.payment__block span{
+.payment__block{
 	position: absolute;
 	margin-top: -15%;
+	left: 30%;
+	right: 20%;
+}
+.payment__block span{
+	font-size: 64px;
+	color: rgb(172, 172, 172);
 	text-transform: uppercase;
+}
+@media (max-width:1024px){
+	.payment__block{
+		margin-top: -25%;
+	}
+	.payment__block span{
+		font-size: 50px;
+	}
+}
+@media (max-width:900px){
+	.payment__block{
+		margin-top: -55%;
+		left: 1%;
+		right: 1%;
+	}
+	.payment__block span{
+		font-size: 38px;
+	}
 }

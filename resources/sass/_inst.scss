@@ -9,7 +9,6 @@
 .container__inst{
 	width: 80%;
 	margin: 0 auto;
-	
 	margin-bottom: 5em;
 }
 .box-1 { grid-area: box-1; }
@@ -35,8 +34,8 @@
 	'box-1 box-4 box-5 box-6' 
 	'box-7 box-7 box-8 box-6' 
 	;
-	
 }
+
 
 .image-gallery > div{
 	padding: 1em;
@@ -108,4 +107,23 @@
 .box-8 {
 	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
 }
-
+@media (max-width:700px){
+	.container__inst{
+		width: 80%;
+		
+	}
+	.image-gallery {
+		display: grid;
+		grid-template-columns:repeat(2, 1fr);
+		grid-gap: 1em;
+		grid-auto-rows: 250px;
+		grid-auto-rows: minmax(170px, auto);
+		padding-bottom: 10em;
+		padding-top: 5em;
+		grid-template-areas:
+		'box-1 box-2' 
+		'box-1 box-4' 
+		'box-7 box-7' 
+		;
+	}
+}
