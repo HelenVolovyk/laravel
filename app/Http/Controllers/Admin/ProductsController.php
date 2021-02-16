@@ -185,6 +185,7 @@ class ProductsController extends Controller
     {
         $product->delete();
         $product->image()->delete();
+        $product->thumbnail()->delete();
 
         return redirect(route('admin.products.index'))
             ->with(['status' => 'The product was successfully removed!']);

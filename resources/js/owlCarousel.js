@@ -31,13 +31,16 @@ $(window).on('load', function(){
 				800:{
 						items:3
 				},
-				1024:{
-						items:4
-				},
-				1100:{
-						items:5
+				1030:{
+						items:3
 				},
 				1200:{
+						items:4
+				},
+				1500:{
+						items:5
+				},
+				1700:{
 						items:6
 				}
 			}

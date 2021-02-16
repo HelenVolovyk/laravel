@@ -4,7 +4,6 @@
 	left: 0;
 	z-index: 50;
 	width: 100%;
-	
 }
 .up{
 	width: 100%;
@@ -22,6 +21,7 @@ a.navbar-brand:focus:after,
 a.header__lang:hover:after,
 a.header__lang:focus:after,
 a.recipes__link:hover:after,
+a.categ__cart-linck::after,
 a.recipes__link:focus:after{
 	width: 0%;
 }
@@ -29,7 +29,9 @@ a.recipes__link:focus:after{
 
 a.header__link:hover,
 a.rec__link:hover,
-a.recipes__link:hover {
+a.recipes__link:hover,
+a.categ__cart-linck:hover
+{
 	text-decoration: none;
 }
 .header li {
@@ -82,7 +84,6 @@ a.recipes__link:hover {
 	display: flex;
 	position: relative;
 	z-index: 2;
-	
 }
 .header__link a:hover{
 	text-decoration: none;
@@ -102,9 +103,16 @@ a.header__link.active{
 	border-bottom: 3px solid $blue; /*задаём цвет линии*/
 	padding-bottom: 1px;
 }
+
+a.product__link.active{
+	color: $blue;
+	border-bottom: 2px solid $blue; /*задаём цвет линии*/
+	
+}
 a.header__link:after,
 a.category__link:after,
-
+.categ__cart-linck::after,
+a.product__link::after,
 a.recipes__link::after{
 	display: block;
 	position: absolute;
@@ -119,9 +127,12 @@ a.header__link:hover:after,
 a.header__link:focus:after,
 a.category__link:hover:after,
 a.category__link:focus:after,
+a.categ__cart-linck:hover:after,
+a.categ__cart-linck:focus:after,
 a.recipes__link:hover:after,
-a.recipes__link:focus:after
-
+a.recipes__link:focus:after,
+a.product__link:hover:after,
+a.product__link:focus:after
 {
 	width: 100%;
 }

@@ -10,6 +10,21 @@
 
 @media(max-width: 767px)
 {
+	.footer{
+		height: 80vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.team{
+		padding-top: 20%;
+
+	}
+	.text-muted,
+	.footer-brand{
+		font-size: 18px;
+	}
+	.footer__content{}
 	#footer__email{
 		width: 100%;
 		
@@ -30,10 +45,17 @@
 	footer{
 		margin-top: -15px;
 	}
+	.footer__fa{
+		font-size: 20px;
+		padding-right: 15px;
+	}
 }
 .nano {
-	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: gray	;
 }
 hr.socket{
-	margin-bottom: 0.5rem;
+	// margin-bottom: 0.5rem;
 }

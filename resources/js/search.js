@@ -11,12 +11,12 @@ closeIcon.onclick = () => {
 }
 
 
-$(document).ready(function(){
-	$('.fa-search').click(function(event){
-		$('.header__link').toggleClass('hide');
-	});
-	$('.fa-times').click(function(event){
-		$('.header__link').removeClass('hide');
-	});
+// $(document).ready(function(){
+// 	$('.fa-search').click(function(event){
+// 		$('.header__link').toggleClass('hide');
+// 	});
+// 	$('.fa-times').click(function(event){
+// 		$('.header__link').removeClass('hide');
+// 	});
 
-});
+// });

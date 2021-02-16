@@ -1,19 +1,19 @@
-		<div class="col-sm-6 col-md-2 pl-2">
-		  <div class="card shadow-sm" >
-			  <a href="{{route('product.show', $product)}}">
+<div class="col-sm-6 col-md-2 pl-2">
+	<div class="card" >
+			  
+		 <a href="{{route('product.show', $product)}}">
 	
-				 <div class="scale cart-img ">
+			<div class="scale cart-img ">
 					<img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="scale card-img-top" alt="..." ></div> 
-			  </a>
-	
-			  <div class="cart-link">
+		</a>
+			<div class="cart-link">
 						  
 				 <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
 								 
-			  </div>
+			</div>
 			
 	 
-			 <div class="card-body">
+			<div class="card-body">
 				<h5 class="card-title">{{$product->__('name')}}</h5>
 			
 					<div class="">
@@ -52,16 +52,16 @@
 					
 						
 	
-					</div>
-						</form>
+						</div>
+					</form>
 	
 	
-				  </div>
+			</div>
 			
-			 </div>
+		</div>
 			
-		  </div>
-		 </div>
+	</div>
+</div>
 	
 	  
 						 

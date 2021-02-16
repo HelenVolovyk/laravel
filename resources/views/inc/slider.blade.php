@@ -7,7 +7,7 @@
 	<div class="carousel-inner">
 	  <div class="carousel-item active " style="background-image: url(https://loremflickr.com/2000/960);">
 		
-		<div class="carousel-caption text-center ">
+		<div class="carousel-caption  ">
 			<h1>First slide label</h1>
 			<h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
 		 </div>

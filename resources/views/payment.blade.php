@@ -43,17 +43,18 @@
 		</div>
 	
 			<div class="payment__block">
-				<span>Donec sed odio dui. Cras justo odio, dapibus ac </span>
+				<div class="grey">Donec sed odio dui. Cras justo odio, dapibus ac </div>
+				<div class="white">Donec sed odio dui. Cras justo odio, dapibus ac </div>
 			</div>	
 	</div>	
 	
 	
-	<div class="container pt-5">
+	<div class="paiment-container pt-5">
 		<!-- Example row of columns -->
-		<div class="row  ">
-		  <div class="col-md-6 ">
+		
+		  <div class="col-md-6">
 			  <div class="payment__title">
-				<i class="fa fa-money fa-2 pr-2 pt-2" aria-hidden="true"></i> 
+				<i class="fa fa-money fa-2x pr-3" aria-hidden="true"></i> 
 			 	<h2>Heading</h2>
 			</div>
 		
@@ -66,7 +67,7 @@
 		  </div>
 		  <div class="col-md-6">
 			<div class="payment__title">
-			<i class="fa fa-credit-card pr-2 pt-2" aria-hidden="true"></i>
+			<i class="fa fa-credit-card fa-2x pr-3 " aria-hidden="true"></i>
 			 <h2>Heading</h2>
 			</div>
 		
@@ -76,7 +77,7 @@
 		
 		  </div>
 		
-		</div>
+		
   
 		<hr>
   

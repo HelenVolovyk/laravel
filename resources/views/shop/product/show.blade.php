@@ -132,28 +132,93 @@
 	</div>
   
   
-		<div class="col-md-12">
-				<p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
-				<p>{{$product->__('description')}}</p>
-		</div>
+	<div class="about__product-wrapper mt-5">
+		<div class="tabs-wrapper">
+			<input class="tab-input" type="radio" name="tabs" id="tab-1" checked>
+			<input class="tab-input" type="radio" name="tabs" id="tab-2">
+			<label class="tab tab-1" for="tab-1">
+				{{ __('DESCRIPTION:') }}
+			</label>
+		<label class="tab tab-2" for="tab-2">
+			{{ __('COMMENTS:') }}
+		</label>
+			<div class="tabs__content content-1">
+				
+					<p>{{$product->__('description')}}</p>
+				
+			</div>
+			<div class="tabs__content content-2">
+				@if(!empty($vote->rating)){
+					@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
+							}
+					@else 
+						<div class="col-md-12">
+							
+							<p>{{ __('This product has no comments yet') }} </p>
+						</div>
+			
+				@endif
+<a href="" class="reply">reply</a>
+
+				@push('footer-scripts')
+				<script>
+					 $(function(){
+						$(document).on('click', '.reply', function(e){
+						  e.preventDefault();
 		
-				<div class="mt-3">
+						 // alert($(this).data('parent_id'));
+						 $(this).append(`<form action="{{route('comments.add', $product)}}" method="POST"  style="margin: 16px auto; border: 1px solid #333; padding: 16px; width: 50%;">
+		  @csrf
+		  <h6>New comment</h6>
+		<input type="hidden" name="parent_id" id="parent_id">
+		<hr>
+		<textarea name="comment" id="comment" class="form-control" rows="10"></textarea>
+		<button type="submit" class="btn btn-outline-primary form-control mt-3">Add comment</button>
+		</form>`);  
+					  // alert(userName);
+		
+						  $('#parent_id').val($(this).data('parent_id'));
+						  $('#comment').val('@${userName} ');
+						  // $('html, body').animate({
+						  //   scrollTop: $("#comment").offset().top - 40
+						  // }, 2000);
+						  // $('#comment').focus();
+				  
+						});
+					 });
+				</script>
+			 @endpush
+
+			</div>
+		</div>
+	</div>
+
+
+
+					{{-- <div class="col-md-12">
+							<p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
+							<p>{{$product->__('description')}}</p>
+					</div>
+		
+					<div class="mt-3">
 						@if(!empty($vote->rating)){
 							@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
-						}
-						@else 
-							<div class="col-md-12">
-								<p>{{ __('COMMENTS:') }}</p>
-								<p>{{ __('This product has no comments yet') }} </p>
-							</div>
+									}
+							@else 
+								<div class="col-md-12">
+									<p>{{ __('COMMENTS:') }}</p>
+									<p>{{ __('This product has no comments yet') }} </p>
+								</div>
 					
-							@endif
-					</div>
+						@endif
+					</div> --}}
 				</div>
 			</div>
 		</div> 
 	</div>
 </div>
+
+
 
 <p style="margin-top: 2%; text-align:center; margin-bottom: 2%">{{ __('YOU MAY ALSO LIKE:') }} </p>  
 	<div class="container-fluid">

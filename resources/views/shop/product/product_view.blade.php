@@ -1,9 +1,6 @@
+<div class="col-sm-12 col-md-6 col-lg-4">
 
-   <div class="col-sm-6 col-md-4">
-	
-   {{-- <div class="col-sm-4 col-md-3"> --}}
-     {{-- <div class="card shadow-sm" > --}}
-     <div class="card" style="border: none" >
+     <div class="card mb-2" style="border: none" >
         <a  class="cart__link" href="{{route('product.show', $product)}}">
           <div class="scale cart-img ">
 				<img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="scale card-img-top" alt="..." >
@@ -53,21 +50,24 @@
                       > 
       
               </div> 
-				 
-				<button type="submit" class="btn  mt-2 card__btn" id="button_center">{{ __('Add to Cart') }}
+	  		{{-- <div class="add"> --}}
+				<button type="submit" class="btn  card__btn" id="button_center">{{ __('Add to Cart') }}
 				</button> 
+				<div class="btn__line">
+					<div class="block1"></div>
+					<div class="block2"></div>
+				</div>
+			  {{-- </div> --}}
+			</div>
 
 				
             </div>
                </form>
 
-
 			  </div>
-		
-		 </div>
-		
-     </div>
-    </div>
+		  </div>
+	   </div>
+  
 
   
                 

@@ -33,6 +33,12 @@
 					<li class="header__link">
 						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="/contact">{{ __('Contact') }}</a>
 					</li>
+					<li class="header__link">
+						<a class="header__link" >
+								т.(093) 123 11 11
+								
+					</a>
+					</li>
 				
 
 				
@@ -104,9 +110,7 @@
 		
 			</ul>
 		
-			<div class="nav__search">		
-				@include('inc.search')
-			</div>
+		
 			
 		</div>
 

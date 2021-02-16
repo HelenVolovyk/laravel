@@ -32,7 +32,7 @@ All Categories
 		  <div class="categories">
 		<div class="col-md-12 mt-5">
   
-  			<div class="categories text-center container">
+  			<div class="categories__container text-center">
 				<div class="categ__text pt-3 pb-3">
     			@foreach($categories->chunk(3) as $categoryChunk)
 					<div class="row d-flex justify-content-around">

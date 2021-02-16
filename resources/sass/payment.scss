@@ -10,6 +10,16 @@
 .payment__photo {
 	width: 40%;
 }
+i.fa.fa-credit-card,
+i.fa.fa-money{
+	color: rgb(170, 170, 170);
+}
+.paiment-container {	
+	margin-top: 3%;
+	padding: 0 10%;
+	display: flex;
+	justify-content: center;
+}
 @media(max-width:767px){
 	.payment__content,
 	.payment__photo{
@@ -109,6 +119,8 @@
 	height: 500px;
 	background-color: yellowgreen;
 	position: relative;
+	overflow: hidden;
+	z-index: 3;
 }
 .payment__block{
 	position: absolute;
@@ -116,10 +128,21 @@
 	left: 30%;
 	right: 20%;
 }
-.payment__block span{
+.grey{
 	font-size: 64px;
 	color: rgb(172, 172, 172);
 	text-transform: uppercase;
+	// z-index: 10;
+}
+.white{
+	font-size: 64px;
+	color: white;
+	text-transform: uppercase;
+	z-index: 5;
+	position: absolute;
+	top: -3%;
+	left: 4px;
+	
 }
 @media (max-width:1024px){
 	.payment__block{

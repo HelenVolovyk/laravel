@@ -19,7 +19,8 @@
 			</div>
 	 </div>
 
-	 <div class="container">
+	 <div class="container footer">
+		 <div class="footer__content">
 	<div class="row__footer-brand mb-3 mt-5">
 		<div class="footer-brand ml-3">
 			<a class="footer-brand" href="{{ url('/') }}">
@@ -54,15 +55,15 @@
 		<li><a class="text-muted" href="#">Team feature</a></li>
 		</ul>
 	</div>
-	<div class="col-md-3 text-center">
+	<div class="team col-md-3 text-center">
 		<ul class="list-unstyled text-small">
 		<li class="pb-1"><a class="text-muted" href="#">Team feature jhjhghg ,jvgjghfhf</a></li>
 		<hr class="mt-0">
 		<li>
 			<div class="row justify-content-center">
-			<a href=""><i class="fa fa-twitter"></i></a>
-			<a href=""><i class="fa fa-facebook pl-2"></i></a>
-			<a href=""><i class="fa fa-instagram pl-2"></i></a>
+			<a href=""><i class="footer__fa fa fa-twitter"></i></a>
+			<a href=""><i class="footer__fa fa fa-facebook pl-2"></i></a>
+			<a href=""><i class="footer__fa fa fa-instagram pl-2"></i></a>
 			</div>
 		</li>
 		</ul>
@@ -70,6 +71,7 @@
 	
 
 	</div>
+</div>
 </div>
 </div>
 </div>

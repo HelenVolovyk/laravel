@@ -34,7 +34,10 @@
 			<!-- Authentication Links -->
 		<div class="name__enter">
 		      @guest
-                           
+                 
+				<div class="nav__search">		
+					@include('inc.search')
+				</div>          
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 					</li>		
@@ -122,9 +125,6 @@
 			
 		 </ul>
 
-				<div class="nav__search">		
-					@include('inc.search')
-				</div>
 			</div>
 		</nav>
 	</div>

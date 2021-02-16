@@ -1,6 +1,9 @@
 
 	.inst{
-		width: 100%;
+		width: 80%;
+		margin-top: 10%;
+		
+		
 	}
 	.inst h2{
 		color: rgb(170, 170, 170);
@@ -25,8 +28,8 @@
 	display: grid;
 	grid-template-columns:repeat(4, 1fr);
 	grid-gap: 1em;
-	grid-auto-rows: 150px;
-	grid-auto-rows: minmax(170px, auto);
+	grid-auto-rows: 300px;
+	grid-auto-rows: minmax(250px, auto);
 	padding-bottom: 10em;
 	padding-top: 5em;
 	grid-template-areas:
@@ -75,7 +78,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: rgb(0, 0, 0, .8);
+	background-color: rgb(0, 0, 0, .7);
 	opacity: 0;  
 	transition: opacity .5s;  
  }
@@ -109,21 +112,29 @@
 }
 @media (max-width:700px){
 	.container__inst{
-		width: 80%;
-		
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 20%;
 	}
+
 	.image-gallery {
 		display: grid;
 		grid-template-columns:repeat(2, 1fr);
-		grid-gap: 1em;
+		grid-gap: 0.5em;
 		grid-auto-rows: 250px;
-		grid-auto-rows: minmax(170px, auto);
-		padding-bottom: 10em;
-		padding-top: 5em;
+		grid-auto-rows: minmax(150px, auto);
+		padding-bottom: 0;
+		padding-top: 3em;
 		grid-template-areas:
 		'box-1 box-2' 
-		'box-1 box-4' 
-		'box-7 box-7' 
+		'box-1 box-3' 
+		'box-4 box-4' 
+		'box-3 .' 
+		'box-5 box-6' 
+		'box-8 box-6' 
 		;
+	}
+	.inst{
+		width: 100%;
 	}
 }

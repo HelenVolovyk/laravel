@@ -53,7 +53,13 @@
 	</section> 
     
   	<section style="">
-		@include('home.inst')
+		  <div class="last d-flex ">
+			
+					@include('home.inst')
+			 
+			 
+		  </div>
+		
 	</section> 
 
 </div>

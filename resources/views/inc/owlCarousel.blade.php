@@ -4,10 +4,11 @@
 			@foreach($productChunk as $product)
 		
 		<div class="it ">
-			<div class="lazyOwl">
+			<div class="c">
 				@include('shop.product.product_view')
 			</div>
 		</div>
+		
 			@endforeach
 			@endforeach 
 		

@@ -5,32 +5,29 @@
 	max-width: 2000px;
 	margin: 0 auto;
 }
+
+@media(max-width: 600px){
+	.it{
+		width:500px;
+	}
+	.owl-item{
+		display: flex;
+		justify-content: center;
+	}
+}
 @media(max-width: 767px){
 	.it{
 		width: 400px;
-		padding-right: 5px;
 	}
 }
 @media(max-width: 400px){
 	.it{
-		width: 350px;
-		padding-right: 3px;
+		width: 100%;
 	}
 }
 
-// i.fa.fa-arrow-left,
-// i.fa.fa-arrow-right{
-// 	color: rgb(197, 197, 197);
-// 	position: absolute;
-// 	top: 45%;
-// }
 
-// i.fa.fa-arrow-left{
-// 	left: -2%;
-// }
-// i.fa.fa-arrow-right{
-// 	right: -2%;
-// }
+
 
 i.fa.fa-chevron-left,
 i.fa.fa-chevron-right{

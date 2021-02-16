@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="content">
-	<div class="shop__container" style="width: 80%; padding: 0 10%; margin: 0 auto;">
+	<div class="shop__container" >
 		<div class="top row" style="margin: 0" >
 			<div class="bread col-auto mr-auto" >
 				<ol class="breadcrumb" >
@@ -15,39 +15,47 @@
 					<li class="breadcrumb-item active" aria-current="page">{{ __('Shop') }}</li>
 				</ol>
 			</div> 
-			
-			
-			<div class="search__shop col-auto">
+						
+			{{-- <div class="search__shop col-auto">
 				@include('inc.search')
-			</div> 
+			</div>  --}}
 		</div>
+
 
 		<div class="row">
 			<div class="col-md-2">
-				@include('inc.sidebar')
-			</div>
-
-			<div class="col-md-10">
+				<aside class="product-section container">
+					<div class="sidebar">
+				
+						<div class="category_link ">
+							<div class="mb-2"><a class="category__link" href="{{route('category.index')}}">{{ __('all categories') }}</a></div>
+							<div>
+							
+						
+							</div>
+				
+							@each('shop.category-view', $categories, 'category') 
 			
-				<div class="products">
-					
+				
+							</div>
+						</div>
+					</aside>
+				</div>
+	
+				<div class="col-sm-12 col-md-10">
+					<div class="f">
 					@foreach($products->chunk(3) as $productChunk)
-					
-				<div class="row">
 				
-				@foreach($productChunk as $product)
-				
-				@include('shop.product.product_view')
-				
+					@foreach($productChunk as $product)
+
+						@include('shop.product.product_view')
+
+					@endforeach
 				@endforeach
-				
+			</div>
 				</div>
-				@endforeach
-				</div>
-				{{-- <a id="loadMore" href="">Load More</a> --}}
 			</div>
 		</div>
 	</div>
+	@endsection
 	
-</div>
-@endsection
