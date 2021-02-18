@@ -1,40 +1,38 @@
 .ff{
-color: $blue;
+color:rgb(190, 190, 190);
 }
-.check input{
+#check input{
 	display: none;
 }
-// input[type="checkbox"]{
-// 	display: none;
-// 	}
+input[type=checkbox]{
+	display: none;
+	}
 	.box{
-		position: absolute;
-		top: 75%;
-		left: 2%;
+		position: fixed;;
+		top: 80vh;
+		left: 0%;
 		transition: translate(-30%, 30%);
 		width: 30px;
 		height: 30px;
 		transition: .5s;
+		z-index: 100;
 	}
 
 	.box label{
 		position: absolute;
 		width: 40px;
 		height: 40px;
-		/* line-height: 6px; */
 		border-radius: 50%;
 		text-align: center;
-		/* padding: 50%; */
-		color: grey;
-		font-size: 23px;
+		left: -30px;
+		color: rgb(184, 184, 184);
+		font-size: 18px;
 		cursor: pointer;
 		transition: .5s;
-	// 	box-shadow: -1px -1px 2px #edeff1,
-	// 	2px 2px 3px #cacfd8;
+		box-shadow: -1px -1px 2px #edeff1,
+		2px 2px 3px #cacfd8;
 	}
-	.svg.bi.bi-arrow-repeat{
-		top: 25px;
-	}
+
 	.box label:hover{
 		box-shadow: -1px -1px 2px #edeff1,
 		2px 2px 3px #cacfd8;
@@ -43,7 +41,7 @@ color: $blue;
 	.box input{
 		width: 100%;
 		height: 100%;
-		background-color: transparent;
+		background-color:rgba(255, 255, 255);
 		border: none;
 		border-radius: 30px;
 		outline: none;
@@ -55,12 +53,16 @@ color: $blue;
 		transition: .5s;
 		opacity: 0;
 	}
+	.box input::placeholder{
+		color:rgb(175, 175, 175);
+	}
+	
 	.box input:focus{
 		box-shadow: -1px -1px 2px #edeff1,
 		3px 3px 5px #cacfd8;
 	}
 	#check:checked+.box{
-		width: 300px;
+		width: calc(100vw - 10px);
 		left: 5px;
 	}
 	#check:checked+.box > input{
@@ -68,7 +70,10 @@ color: $blue;
 	}
 	#check:checked+.box > label{
 		box-shadow: none;
+		transform: scale(1.1);
+		left: -10px;
 	}
 	#check:checked+.box > label:hover{
-		transform: scale(1);
+		transform: scale(1.1);
+		left: -10px;
 	}

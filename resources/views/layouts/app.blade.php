@@ -31,16 +31,18 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	 <link href="{{ asset('css/hover-min.css') }}" rel="stylesheet" media="all">
+	 <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" media="all">
+	 <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" media="all">
 
 	
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" /> 
-	 {{-- <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> --}}
-
+	 <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+<script src="{{  asset('js/wow.min.js')  }}"></script>
 	 
-	 {{-- <script>
-	 new WOW().init();
-	 </script> --}}
+<script>
+	new WOW().init();
+</script>
   
 </head>
 
@@ -60,7 +62,7 @@
 						
 					@endif
 
-
+					{{-- @include('inc.searchMob')	 --}}
 	
 			
 					{{-- <main > --}}
@@ -68,7 +70,9 @@
 								@include('inc.message')
 						
 								@yield('content')
-						<a class="gotop" href=""><i class="fa fa-arrow-up"></i></a>
+								<a class="gotop" href=""><i class="fa fa-arrow-up"></i></a>
+								<a class="gotop2" href=""><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+								<a class="gotop3" href=""><i class="fa fa-phone" aria-hidden="true"></i></a>
 					{{-- </main> --}}
 				</div>
 		</div>
@@ -83,6 +87,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script> 
+	  <script defer src="{{ asset('js/owl.carousel.min.js') }}"></script> 
 	 
 		
 		

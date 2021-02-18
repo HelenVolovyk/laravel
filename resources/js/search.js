@@ -1,14 +1,14 @@
-const { ready } = require("jquery");
+// const { ready } = require("jquery");
 
-var searchIcon = document.querySelector('.fa-search');
-var closeIcon = document.querySelector('.fa-times');
-var search = document.getElementById('query')
-searchIcon.onclick = () => {
-	search.classList.add('active');
-}
-closeIcon.onclick = () => {
-	search.classList.remove('active');
-}
+// var searchIcon = document.querySelector('.fa-search');
+// var closeIcon = document.querySelector('.fa-times');
+// var search = document.getElementById('query')
+// searchIcon.onclick = () => {
+// 	search.classList.add('active');
+// }
+// closeIcon.onclick = () => {
+// 	search.classList.remove('active');
+// }
 
 
 // $(document).ready(function(){

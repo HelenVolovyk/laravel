@@ -37,7 +37,9 @@
                  
 				<div class="nav__search">		
 					@include('inc.search')
-				</div>          
+				</div>  
+			   
+	
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 					</li>		

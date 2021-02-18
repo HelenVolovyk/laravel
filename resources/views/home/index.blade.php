@@ -24,7 +24,7 @@
 
 <div class="content">
 	<div class="container">
-		<div class="mt-4 mb-4">
+		<div class="mt-4 mb-4  wow fadeInUp" >
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate atque asperiores nostrum quam enim obcaecati tempori tainerbus eveniet numquam, cumque porro ad, rerum repudiandae earum placeat, libero recusandae. Voluptate, praesentium laborum?</p>
 		</div>
 	</div>
@@ -36,17 +36,15 @@
 
 
 
-	<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Debitis inventore quos consectetur dolorum ab, illo quaerat perferendis minima accusamus error nemo voluptatem fuga dolorem doloremque id odio in soluta accusantium?</p>
+	<p class="text-center  wow fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Debitis inventore quos consectetur dolorum ab, illo quaerat perferendis minima accusamus error nemo voluptatem fuga dolorem doloremque id odio in soluta accusantium?</p>
 
 
-<div class="container-fluid">
- 	@include('inc.owlCarousel')
-</div>
+	<div class="container-fluid">
+		@include('inc.owlCarousel')
+  </div>
 
 
-  <div class="text-center button-container mt-3 mb-5">
-    <a href="/shop" class="rec__link-shop">{{ __('View more products') }}</a>
-  </div>   
+  
     
   	<section style="">
 		@include('home.rec')

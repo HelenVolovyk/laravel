@@ -5,24 +5,24 @@
 	  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 	</ol>
 	<div class="carousel-inner">
-	  <div class="carousel-item active " style="background-image: url(https://loremflickr.com/2000/960);">
+	  <div class="carousel-item active ibg" style="background-image: url('http://test.com/storage/zg/e7/uV/eP/SW6CmHXoGFAsvYlQ_1607284769.jpg');">
 		
-		<div class="carousel-caption  ">
-			<h1>First slide label</h1>
-			<h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+		<div class="carousel__text text-center ">
+			<h1 class="wow fadeInUp" >First slide label</h1>
+			<h3 class="wow fadeInUp" data-wow-delay="1s">Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
 		 </div>
 		
 	  </div>
-	  <div class="carousel-item" style="background-image: url(https://loremflickr.com/2000/960);">
-		<div class="carousel-caption text-center">
-			<h1>First slide label</h1>
-			<h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+	  <div class="carousel-item ibg" style="background-image: url('http://test.com/storage/Zu/Lx/vi/dc/c9pPUJ4ZthkOYzON_1613651393.jpg');">
+		<div class="carousel__text text-center">
+			<h1 class="wow fadeInUp">First slide label</h1>
+			<h3 class="wow fadeInUp" data-wow-delay="1s">Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
 		 </div>
 	  </div>
 	  <div class="carousel-item" style="background-image: url(https://loremflickr.com/2000/960);">
-		<div class="carousel-caption text-center">
-			<h1>First slide label</h1>
-			<h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+		<div class="carousel__text text-center">
+			<h1 class="wow fadeInUp">First slide label</h1>
+			<h3 class="wow fadeInUp" data-wow-delay="1s">Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
 		 </div>
 	  </div>
 	</div>

@@ -7,6 +7,10 @@
 	padding-left: 0px;
 	width: 100px;
 }
+.text-muted,
+.footer-brand{
+	font-size: 17px;
+}
 
 @media(max-width: 767px)
 {
@@ -24,7 +28,7 @@
 	.footer-brand{
 		font-size: 18px;
 	}
-	.footer__content{}
+	
 	#footer__email{
 		width: 100%;
 		
@@ -55,7 +59,4 @@
 	align-items: center;
 	justify-content: center;
 	color: gray	;
-}
-hr.socket{
-	// margin-bottom: 0.5rem;
 }

@@ -118,7 +118,11 @@
 	
 	</nav>	
 	
-								
+					{{-- <div class="nav__search">		
+					@include('inc.search')
+				</div> 		
+						 --}}
+						
 					
 	{{-- @include('inc.searchMob')			 --}}
 			

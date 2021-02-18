@@ -1,6 +1,6 @@
 <footer>
 	
-	<div class="jumbotron jumbotron-fluid text-center">
+	<div class="jumbotron jumbotron-fluid text-center  wow fadeInUp">
 		<div class="container-fluid">
 		  <h6 class="display-4">Fluid jumbotron</h6>
 		  <p class="lead">Это модифицированный jumbotron, который занимает все горизонтальное пространство своего родителя.</p>
@@ -12,7 +12,7 @@
 							<input id="footer__email" class="form-control " type="email" name="email" 
 							placeholder="{{ __('your email') }}">
 				
-							<button type="submit" class="footer__btn btn btn-success">{{ __('send') }}</button>
+							<button type="submit" class="footer__btn btn btn-primary">{{ __('send') }}</button>
 						</div>
 					</div>
 				</form>
@@ -21,7 +21,7 @@
 
 	 <div class="container footer">
 		 <div class="footer__content">
-	<div class="row__footer-brand mb-3 mt-5">
+	<div class="row__footer-brand mb-3 ">
 		<div class="footer-brand ml-3">
 			<a class="footer-brand" href="{{ url('/') }}">
 				<i class="fa fa-bandcamp mr-1" aria-hidden="true"></i>

@@ -14,6 +14,8 @@ require('./owlCarousel');
 require('./lazy_load');
 require('./ibg');
 require('./link');
+require('./gotop');
+
 
 // window.Vue = require('vue');
 

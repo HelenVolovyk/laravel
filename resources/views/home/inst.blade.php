@@ -1,4 +1,4 @@
-<div class="inst">
+<div class="inst wow fadeInUp" data-wow-duration="2s">
 	<div class="container__inst">
 		<h2>follow us on instagram</h2>
 			<div class="image-gallery">

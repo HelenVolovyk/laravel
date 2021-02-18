@@ -9,7 +9,8 @@
 	
 }
 .rec__block{
-	background-color: lavender; position: absolute; 
+	// background-color: lavender; 
+	position: absolute; 
 	top: 15%; 
 	width: 90%; 
 	height: 600px; 
@@ -41,16 +42,35 @@
 	margin-bottom: 30px;
 	color: white;
 	padding: 5%;
+	position: relative;
+}
+.rec__block-2 p::after{
+	content: '';
+	position: absolute;
+	display: block;
+	padding-top: 15px;
+	width: 10%;
+	left: 45%;
+	right: 45%;
+	border-bottom: 1px solid rgb(255, 255, 255);
 }
 @media(max-width: 767px){
 	.rec__block-1,
 	.rec__block-2{
 		width: 100%;
+			
 	}
 	.rec__block-2 p{
-		padding-top: 20px;
+		padding-top: 30%;
+		font-size: 17px;
+		height: 800px;
 	}
 	.rec__link{
-		padding-bottom: 20px;
+		padding-bottom: 40px;
+	}
+}
+@media(max-width: 300px){
+	.rec__block-2 p{
+		font-size: 16px;
 	}
 }
