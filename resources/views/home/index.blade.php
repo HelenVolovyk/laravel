@@ -39,8 +39,11 @@
 	<p class="text-center  wow fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Debitis inventore quos consectetur dolorum ab, illo quaerat perferendis minima accusamus error nemo voluptatem fuga dolorem doloremque id odio in soluta accusantium?</p>
 
 
-	<div class="container-fluid">
+	<div class="container-fluid  wow fadeInUp" id="product__carousel">
 		@include('inc.owlCarousel')
+
+		<a class="more" href="">{{ __('View more products') }}</a>
+		
   </div>
 
 

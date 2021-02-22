@@ -22,7 +22,8 @@ a.header__lang:hover:after,
 a.header__lang:focus:after,
 a.recipes__link:hover:after,
 a.categ__cart-linck::after,
-a.recipes__link:focus:after{
+a.recipes__link:focus:after,
+a.more:focus::after{
 	width: 0%;
 }
 
@@ -30,8 +31,8 @@ a.recipes__link:focus:after{
 a.header__link:hover,
 a.rec__link:hover,
 a.recipes__link:hover,
-a.categ__cart-linck:hover
-{
+a.categ__cart-linck:hover,
+a.more:hover{
 	text-decoration: none;
 }
 .header li {
@@ -113,7 +114,8 @@ a.header__link:after,
 a.category__link:after,
 .categ__cart-linck::after,
 a.product__link::after,
-a.recipes__link::after{
+a.recipes__link::after,
+a.more::after{
 	display: block;
 	position: absolute;
 	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
@@ -132,24 +134,14 @@ a.categ__cart-linck:focus:after,
 a.recipes__link:hover:after,
 a.recipes__link:focus:after,
 a.product__link:hover:after,
-a.product__link:focus:after
+a.product__link:focus:after,
+a.more:focus::after,
+a.more:hover::after
 {
 	width: 100%;
 }
 
 
-
-
-
-.header__link {
-	transform: scale(1);
-	transition: 0.5s;
-	// display: block;
-}
-.header__link.hide {
-	transform: scaleX(0);
-	
-} 
 .header__logo {
 	flex: 0 0 60px;
 	border-radius: 50%;

@@ -51,8 +51,7 @@
 			<div class="wrapper">
 		
 			@include('inc.header')
-			{{-- @section('navbar') --}}
-		
+				
 			@show
 	
 			
@@ -62,7 +61,7 @@
 						
 					@endif
 
-					{{-- @include('inc.searchMob')	 --}}
+				
 	
 			
 					{{-- <main > --}}
@@ -70,9 +69,18 @@
 								@include('inc.message')
 						
 								@yield('content')
+							
+							
+									
+										
+								<a class="go__phone" href="tel:123-56-78"><i class="fa fa-phone" aria-hidden="true"></i></a>
+								<div class="go__search">
+									
+									@include('inc.search')
+								
+
+								</div>
 								<a class="gotop" href=""><i class="fa fa-arrow-up"></i></a>
-								<a class="gotop2" href=""><i class="fa fa-search-plus" aria-hidden="true"></i></a>
-								<a class="gotop3" href=""><i class="fa fa-phone" aria-hidden="true"></i></a>
 					{{-- </main> --}}
 				</div>
 		</div>

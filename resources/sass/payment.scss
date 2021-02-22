@@ -26,6 +26,11 @@ i.fa.fa-money{
 		width: 100%;
 		padding: 5%;
 	}
+	.paiment-container {	
+		
+		padding: 0;
+		
+	}
 }
 
 .tabs {
@@ -129,20 +134,29 @@ i.fa.fa-money{
 	right: 20%;
 }
 .grey{
-	font-size: 64px;
+	font-size: calc(36px + 24 * (100vw / 1280));
 	color: rgb(172, 172, 172);
 	text-transform: uppercase;
 	// z-index: 10;
 }
 .white{
-	font-size: 64px;
+	font-size: calc(36px + 24 * (100vw / 1280));
 	color: white;
 	text-transform: uppercase;
 	z-index: 5;
 	position: absolute;
-	top: -3%;
+	top: -1%;
 	left: 4px;
 	
+}
+.heading{
+	padding: 0% 5%;
+}
+@media(max-width:1400px){
+	.payment__block{
+		margin-top: -25%;
+	}
+
 }
 @media (max-width:1024px){
 	.payment__block{
@@ -151,14 +165,34 @@ i.fa.fa-money{
 	.payment__block span{
 		font-size: 50px;
 	}
+	.payment__block{
+		left: 1%;
+		right: 1%;
+	}
 }
 @media (max-width:900px){
 	.payment__block{
 		margin-top: -55%;
-		left: 1%;
-		right: 1%;
+		
 	}
 	.payment__block span{
 		font-size: 38px;
+	}
+}
+@media (max-width:767px){
+
+	.payment__block{
+		margin-top: -75%;
+		
+	}
+	.heading{
+		padding: 0% 1% 3% 1%;
+	}
+}
+@media (max-width:300px){
+
+	.payment__block{
+		margin-top: -95%;
+		
 	}
 }

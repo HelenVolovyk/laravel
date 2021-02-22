@@ -140,7 +140,7 @@ Route::group([
 		
 		Route::resource('products', 'ProductsController')->except(['show']);
 		Route::resource('categories', 'CategoriesController')->except(['show']);
-		// Route::resource('sliders', 'SlidersController');
+		 Route::resource('sliders', 'SlidersController');
 	});
 
 	//* Mail

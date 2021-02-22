@@ -1,20 +1,70 @@
 //*
-input[type=checkbox]{
-	display: none;
-	}
+
+.search{
+	position: fixed;
+	display: flex;
+	justify-content: flex-end;
+	right: -55px;
+	bottom: 22.5px;
+	z-index: 300;
+}
+i.fa.fa-search::before,
+	i.fa.fa-times::before  {
+	position: absolute;
+	color: rgb(204, 204, 204);
+	font-size: 20px;
+	cursor: pointer;
+
+}
+i.fa.fa-search::before{
+	top: -10px;
+	left: -5px;
+}
+
+
+i.fa.fa-search.hide{
+	opacity: 0;
+}
+i.fa.fa-times{
+	opacity: 0;
+}
+i.fa.fa-times.active{
+	transition: 0.5s;
+	opacity: 1;
+	top: -10px;
+	left: -5px;
+	z-index:200;
+}
+i.fa.fa-times.active::before{
+	top: 14px;
+	left: 20px;
+	
+}
+i.fa.fa-search:hover::before{
+	color: #0056b3;
+}
+.form input:not(:focus) + label.cursor:before {
+	display: inline-block;
+	animation: cursor 1s infinite step-end;
+ }
+
 	.box{
 		position: absolute;
-		top: 20%;
-		right:150px;
+		bottom: 83px;
+		right:105px;
 		transition: translate(-30%, 30%);
-		width: 40px;
-		height: 40px;
+		width: 50px;
+		height: 50px;
 		transition: .5s;
+		box-shadow: -1px -1px 2px #edeff1, 2px 2px 3px #cacfd8;
 	}
-
+.box.active{
+	box-shadow: none;
+}
 	.box label{
 		position: absolute;
-		top: 10px;
+		right: 8px;
+		bottom: 5px;
 		width: 40px;
 		height: 40px;
 		color: grey;
@@ -24,32 +74,58 @@ input[type=checkbox]{
 		transition: .5s;
 	}
 	
-	.box input
+	input#query
 	{
-		width: 100%;
-		height: 100%;
-		background-color: transparent;
-		border-bottom: 1px solid rgb(182, 182, 182);
+		position:absolute;
+		width: 300px;
+		height: 50px;
+		background-color: white;
 		outline: none;
+		right:1px;
+		transition: translate(-30%, 30%);
+		box-shadow: -1px -1px 2px #edeff1, 2px 2px 3px #cacfd8;
 		font-size: 18px;
-		padding-right: 20px;
+		padding-right: 26px;
+		padding-left: 10px;
 		color: rgb(206, 206, 206);
 		transition: .5s;
-		opacity: 0;
+		 opacity: 0;
 	}
-
-	#check:checked+.box
-	{
-		width: 300px;
-	}
-	#check:checked+.box > input	
-	{
+	input#query.active{
 		opacity: 1;
+		background: rgb(155, 155, 155);
+
 	}
-	#check:checked+.box > label{
-		box-shadow: none;
-	}
-	i.fa.fa-search{
-		color: $green;
+	input#query.active::placeholder{
+		
+		color: rgb(206, 204, 204);
+		}
+	@keyframes cursor {
+		50% { background: transparent; }
+	 }
+	@media (max-width: 767px) {
+		.search{
+			right: -95px;
+			bottom: -22.5px;
+		}
+		.box{
+			width: 40px;
+			height: 40x;
+		}
+		i.fa.fa-search{
+			margin-top: 22px;
+			color: rgb(204, 204, 204);
+			font-size: 18px;
+			margin-left: 18px;
+		}
+		i.fa.fa-search::before{
+			top: -8px;
+			left: -15px;
+		}
+		i.fa.fa-times.active::before{
+			top: 14px;
+			left: 14px;
+			
+		}
 	}
 	 

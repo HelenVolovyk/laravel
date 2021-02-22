@@ -1,4 +1,4 @@
-		 var bl = $('.gotop, .gotop2, .gotop3')
+		 var bl = $('.gotop, .go__search, .go__phone')
 		 window.addEventListener('scroll', function() {
 			 var st = document.documentElement.scrollTop
 			

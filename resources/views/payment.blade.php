@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="content">
-	<div class="container mt-5">
+	<div class="container mt-5 wow fadeInUp">
  
 		<h2>{{ __('Payment and delivery') }}</h2>
 		<hr class="featurette-divider">
@@ -37,7 +37,7 @@
 		 </div>
 	</div>
 
-	<div class="container-fluid mt-5 mb-5">
+	<div class="container-fluid mt-5 mb-5 wow fadeInUp" data-wow-duration="2s">
 		<div class="payment__box col-md-4 offset-md-2 col-sm-12 offset-sm-0">
 				<div class="payment__box-square"></div>
 		</div>
@@ -49,29 +49,29 @@
 	</div>	
 	
 	
-	<div class="paiment-container pt-5">
+	<div class="paiment-container pt-5 wow fadeInUp" style="flex-wrap: wrap">
 		<!-- Example row of columns -->
 		
-		  <div class="col-md-6">
+		  <div class="col-md-6 col-sm-12">
 			  <div class="payment__title">
 				<i class="fa fa-money fa-2x pr-3" aria-hidden="true"></i> 
 			 	<h2>Heading</h2>
 			</div>
 		
-			<p style="padding: 0 5%">
+			<p class="heading" >
 			 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
 			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
 		</p>
 			 {{-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> --}}
 			
 		  </div>
-		  <div class="col-md-6">
+		  <div class="col-md-6 col-sm-12">
 			<div class="payment__title">
 			<i class="fa fa-credit-card fa-2x pr-3 " aria-hidden="true"></i>
 			 <h2>Heading</h2>
 			</div>
 		
-			 <p style="padding: 0 5%">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+			 <p class="heading" >Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
 			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 			 {{-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> --}}
 		

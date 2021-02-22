@@ -15,9 +15,9 @@
 				
 			
 					<li class="header__link">
-
 						<a class="header__link <?php if ($url == "/shop") { echo ' active';}?>" href={{route('shop')}}>{{ __('Shop') }}</a>
 					</li>
+				
 					<li class="header__link">
 						<a class="header__link  <?php if ($url == "/payment") { echo ' active';}?>" href={{route('payment')}}>{{ __('Payment and delivery') }}</a>
 					</li>
@@ -36,9 +36,9 @@
 					<li class="header__link">
 						<a class="header__link" >
 								т.(093) 123 11 11
-								
-					</a>
+						</a>
 					</li>
+					
 				
 
 				
@@ -106,11 +106,14 @@
 					</li>
 			@endguest
 			</div>
-			
+	
 		
 			</ul>
 		
-		
+			{{-- <div class="nav__search">		
+					@include('inc.search')
+			</div> 		
+						 --}}
 			
 		</div>
 
@@ -118,10 +121,7 @@
 	
 	</nav>	
 	
-					{{-- <div class="nav__search">		
-					@include('inc.search')
-				</div> 		
-						 --}}
+				
 						
 					
 	{{-- @include('inc.searchMob')			 --}}

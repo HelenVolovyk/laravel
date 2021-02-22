@@ -1,4 +1,4 @@
-<div class="mt-5 mb-5 wow fadeInUp">
+<div class="mt-5 ">
 	
 	<div class="owl-carousel owl-theme">
 			@foreach($products->chunk(3) as $productChunk)
@@ -14,5 +14,6 @@
 			@endforeach 
 		
 	</div>
+	
 </div>
 

@@ -106,11 +106,11 @@ crossorigin="anonymous"></script>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                               
-                               <a class="dropdown-item" href="" >
+                               <a class="dropdown-item" href="{{ route('admin.sliders.index') }}" >
                                     {{ __('Sliders List') }}
                                </a> 
                                                                                   
-                               <a class="dropdown-item" href="" >
+                               <a class="dropdown-item" href="{{ route('admin.sliders.create') }}" >
                                     {{ __('Slider Create') }}
                                </a> 
                                                                                       

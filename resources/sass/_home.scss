@@ -51,3 +51,15 @@
 	justify-content: center;
 
 }
+a.more{
+	
+	padding-top: 20px;
+}
+#product__carousel{
+	margin-bottom: 10em;
+}
+@media(max-width:767px){
+	#product__carousel{
+		margin-bottom: 5em;
+	}
+}

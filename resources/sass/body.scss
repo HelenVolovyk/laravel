@@ -19,6 +19,14 @@ body {
 	outline: 0;
 	outline-offset: 0;
 }
+input[type="search"]::-webkit-search-decoration{
+	border:none;
+	background-image:none;
+	background-color:transparent;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
 .wrapper {
 	min-height: 100vh;
 	display: flex;
@@ -50,6 +58,7 @@ a, a:visited{
 }
 a, a:hover{
 	text-decoration: none;
+	
 }
 a.category__link:hover,
 a.breadcrumb__link:hover{
@@ -79,13 +88,13 @@ a.breadcrumb__link:hover{
 	margin-bottom: 20px;
 }
 .gotop,
-.gotop2,
-.gotop3 {
+.go__search,
+.go__phone{
 	position: fixed;
 	width: 50px;
 	height: 50px;
-	// background: rgba(56, 193, 114, 0.5);
-	bottom: 50px;
+	background: rgba(255, 255, 255, 0.8);
+	bottom: 45px;
 	right: 50px;
 	box-shadow: -1px -1px 2px #edeff1,
 	2px 2px 3px #cacfd8;
@@ -98,19 +107,20 @@ a.breadcrumb__link:hover{
 	transition: all .8s ease-in-out;
 
 }
-.gotop2 {
-	bottom: 110px;
+.go__search{
+	bottom: 105px;
+	box-shadow: none;
 }
-.gotop3 {
-	bottom: 170px;
+.go__phone {
+	bottom: 165px;
 }
 @media (max-width: 767px) {
 	.content {
 		padding: 80px 0px 0px 0px;
 	}
 	.gotop,
-	.gotop2,
-	.gotop3 {
+	.go__search,
+	.go__phone {
 		bottom: 10px;
 		right: 10px;
 		width: 40px;
@@ -120,22 +130,23 @@ a.breadcrumb__link:hover{
 		z-index: 100;
 		padding-top: 5px;
 	}
-	.gotop2{
+	.go__search{
 		bottom: 60px;
 	}
-	.gotop3 {
+	.go__phone {
 		bottom: 110px;
 	}
 }
-i.fa.fa-search-plus:hover{
+i.fa.fa-search:hover{
 	-webkit-transform: scale3d(1.5, 1.5, 1.5);
 	-ms-transform: scale3d(1.5, 1.5, 1.5);
 	transform: scale3d(1.5, 1.5, 1.5);
 	
+	
 }
 i.fa.fa-phone,
 i.fa.fa-arrow-up,
-i.fa.fa-search-plus{
+i.fa.fa-search{
 	display:inline-block;
 	vertical-align:middle;
 	-webkit-transform:perspective(3px) translateZ(0);

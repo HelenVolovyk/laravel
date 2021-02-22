@@ -114,3 +114,9 @@ a.cart__link:focus:after{
 #tab-2:checked ~ .content-2{
 	display: block;
 }
+
+.query__result{
+	font-size: 20px;
+	font-style: italic;
+	color: #3490dc;
+}

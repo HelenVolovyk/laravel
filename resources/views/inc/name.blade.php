@@ -35,9 +35,9 @@
 		<div class="name__enter">
 		      @guest
                  
-				<div class="nav__search">		
+				{{-- <div class="nav__search">		
 					@include('inc.search')
-				</div>  
+				</div>   --}}
 			   
 	
                <li class="nav-item">

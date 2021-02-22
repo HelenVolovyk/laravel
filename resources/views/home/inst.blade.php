@@ -3,7 +3,7 @@
 		<h2>follow us on instagram</h2>
 			<div class="image-gallery">
 			
-				<a href="{{Storage::disk('public')->url('images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg')}}" class="box-1" >
+				<a href="https://www.instagram.com/p/CFWv1VtBFqY/" class="box-1" >
 				<i class="fa fa-arrows-alt" aria-hidden="true"></i>
 				</a>
 						
