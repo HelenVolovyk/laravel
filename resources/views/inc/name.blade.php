@@ -1,5 +1,9 @@
 <header class="header">
-	
+{{-- @php
+	 dd(Storage::disk('public')->url( $otherimage->img_src));
+@endphp --}}
+	 
+@endphp
 	<div class="name">
 	
 		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -15,6 +19,8 @@
 
 			<a  href="{{ url('/') }}" class="header__logo">
 				<i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i>
+				{{-- <img src="{{Storage::disk('public')->url('YG/q3/pI/pa/6Jy2xZfxjQdcMsSA_1614112248.jpg')}}" alt="" width="80px" height="80px"> --}}
+			
 			</a>
 
 		

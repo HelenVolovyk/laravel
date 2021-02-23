@@ -25,7 +25,7 @@ class ProductController extends Controller
 		$categories = Category::all();
 		$comments = $product->comments()->with('user')->paginate(5);
 		
-		$images = $product->images()->get();
+		$image = $product->image()->get();
 		$units = Unit::all();
 		$units = $product->units()->first();
 
@@ -46,6 +46,6 @@ class ProductController extends Controller
 	//echo trim($images, '"');
 		//dd($product->images()->pluck('path'));
 		
-		return view('shop.product.show', compact('product',  'comments'), compact('products', 'categories'), compact('images'), compact('units') );
+		return view('shop.product.show', compact('product',  'comments'), compact('products', 'categories'), compact('image'), compact('units') );
 	}
 }

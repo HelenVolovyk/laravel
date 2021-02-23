@@ -14,9 +14,8 @@ class Slider extends Model
 	 ];
 
 
-	 
-	public function image()
-	{
-		return $this->morphMany(\App\Models\Image::class, 'imageable');
-	}
+	 public function image()
+	 {
+		 return $this->morphMany(\App\Models\Image::class, 'imageable');
+	 }
 }

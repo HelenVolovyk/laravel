@@ -4779,7 +4779,7 @@ a.more {
 
 .inst {
   width: 80%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .inst h2 {
@@ -5127,6 +5127,37 @@ a.rec__link:hover {
 
   .rec__cont {
     width: 100%;
+  }
+}
+
+#icon {
+  margin-top: 15em;
+}
+
+.ic {
+  display: flex;
+  justify-content: center;
+}
+
+.ic__icon {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+i.fa.fa-delicious {
+  font-size: 50px;
+  color: gray;
+}
+
+@media (max-width: 767px) {
+  #icon {
+    margin-top: 12em;
+  }
+
+  .ic__icon {
+    width: 70%;
   }
 }
 

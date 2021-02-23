@@ -25,20 +25,30 @@ class SlidersController extends Controller
 
 	public function store(Request $request, Slider $slider)
 	{
-		$newSlider = $slider->create([
-			'title' => $request->get('title'),
-			'title_uk' => $request->get('title_uk'),
+		$slider = $request->all();
 		
-	  ]);
+	// 	$newSlider = $slider->create([
+	// 		'title' => $request->get('title'),
+	// 		'title_uk' => $request->get('title_uk'),
+		
+	//   ]);
+	  unset($slider['slider_images']);
+	  unset($slider['_token']);
+	  
+	  $slider = Slider::create($slider);
+	  
 
-	  if (!empty($request->file('image'))) {
-			$imageService = app()->make(\App\Services\Contract\ImageServiceInterface::class);
-			$filePath = $imageService->upload($request->file('image'));
-		 
+	  if (!empty($request->file('slider_images'))) {
+		
+		foreach ($request->file('slider_images') as $image) {
+		 $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+		 $filePath       = $imageService->upload($image);
+		 $slider->image()->create(['path' => $filePath]);
+	}
+	//dd($request->file());
+}
 
-			$newSlider->image()->create(['path' => $filePath]);
-	  }
-
+	  
 		
 		return redirect(route('admin.sliders.index'))
 			->with(['status' => 'The slider has been created']);
@@ -56,16 +66,13 @@ class SlidersController extends Controller
 		}
 	
 		// dd($images);
-		return view('admin/sliders/edit', compact( 'images'));
+		return view('admin/sliders/edit', compact( 'image'));
 	}
 
 
 
 	public function update(Request $request, Slider $slider)
 	{
-
-
-
 		$slider->update([
 			'title'         => $request->get('title'),
 			'title_uk'         => $request->get('title_uk'),

@@ -49,13 +49,14 @@ class ProductsController extends Controller
        //dd($request);
         //dd($request->file('product_images'));
         $product = $request->all();
-
+		  $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+		  
         unset($product['product_images']);
         unset($product['thumbnail']);
         unset($product['_token']);
 
         if (!empty($request->file('thumbnail'))) {
-            $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+           
             $filePath       = $imageService->upload($request->file('thumbnail'));
             $product['thumbnail'] = $filePath;
         }

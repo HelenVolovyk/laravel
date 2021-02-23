@@ -30,6 +30,10 @@ class Image extends Model
     {
         return $this->morphToMany(\App\Models\Product::class, 'imageable');
     }
+    public function sliders()
+    {
+        return $this->morphToMany(\App\Models\Slider::class, 'imageable');
+    }
 
     public function categories()
     {

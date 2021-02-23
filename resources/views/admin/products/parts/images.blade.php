@@ -16,7 +16,7 @@
               <div class="col-4">
       
               <button class="btn btn-danger product-images-remove ajax"
-                  data-route="{{route('ajax.image.remove', $image->id)}}">Remove</button> 
+                  data-route="{{route('ajax.image.remove', $image->id )}}">Remove</button> 
              </div> 
         </div> 
 
