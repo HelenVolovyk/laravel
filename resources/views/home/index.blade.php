@@ -45,14 +45,18 @@
 		<a class="more" href="">{{ __('View more products') }}</a>
 		
   </div>
-
-
-  
+ 
+{{-- @each('admin.images.show', $otherimage, 'otherimage') --}}
     
   	<section style="">
 		@include('home.rec')
 	</section> 
-    
+
+	<section>
+		@include('home.slick_one')
+	</section>
+
+
   	<section style="">
 		  <div class="last d-flex ">
 			

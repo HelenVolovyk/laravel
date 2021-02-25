@@ -1,6 +1,6 @@
 <div class="mt-5 ">
 	
-	<div class="owl-carousel owl-theme">
+	<div class="owl-carousel one">
 			@foreach($products->chunk(3) as $productChunk)
 			@foreach($productChunk as $product)
 		

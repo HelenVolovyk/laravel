@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-6">
            
             <div class="card">
                 <div class="card-header">Update Otherimages</div>
@@ -24,21 +24,21 @@
                     @endif
 
 
-                  <form method="POST" action="{{ route('admin.images.update', $otherimage) }}" enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('admin.images.update', $otherimages) }}" enctype="multipart/form-data">
                         @csrf
-                        @method("PATCH")
+                        @method("PUT")
 
                       <div class="form-group row">
-                          <label for="img_alt" class="col-md-4 col-form-label text-md-right">{{ __('Alt text') }}</label>
+                          <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Alt text') }}</label>
 									<div class="col-md-6">
-											<input id="img_alt" 
+											<input id="alt" 
 											type="text" 
-											class="form-control @error('img_alt') is-invalid @enderror" 
-											name="img_alt" 
-											value="{{$otherimage->img_alt }}" 
+											class="form-control @error('alt') is-invalid @enderror" 
+											name="alt" 
+											value="{{$otherimages->img_alt ?? ''}}" 
 											required 
 											autofocus>
-											@error('img_alt')
+											@error('alt')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
 												</span>
@@ -47,22 +47,22 @@
                       </div>
 
                       <div class="form-group row">
-                          <label for="img_src" class="col-md-4 col-form-label text-md-right">{{ __('img_src') }}</label>
+                          <label for="alt_uk" class="col-md-4 col-form-label text-md-right">{{ __('Alt_uk') }}</label>
 									<div class="col-md-6">
-											<input id="img_src" 
+											<input id="alt_uk" 
 											type="text" 
 											class="form-control @error('alt') is-invalid @enderror" 
-											name="img_src" 
-											value="{{$otherimage->img_src ?? ""}}" 
+											name="alt_uk" 
+											value="{{$otherimages->img_alt_uk  ?? ''}}" 
 											required 
 											autofocus>
-											@error('img_src')
+											@error('alt_uk')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
 												</span>
 											@enderror
 									</div>
-                      </div> 
+                      </div>
 
 
 

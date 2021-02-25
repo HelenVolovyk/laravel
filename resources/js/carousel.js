@@ -2,14 +2,11 @@ $(document).ready(function(){
 	$('.carousel').carousel();
 });
 
+$(document).ready(function(){
+	$('.owl-carousel.one').carousel();
+});
 
-// $(window).on('load', function() {
-// 	$('.flexslider').flexslider({
-// 	  animation: "slide",
-// 	  animationLoop: false,
-// 	  itemWidth: 210,
-// 	  itemMargin: 5
-// 	});
-//  });
+
+
 
 

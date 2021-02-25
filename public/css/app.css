@@ -4634,7 +4634,8 @@ a.cart__link:focus:after {
   width: 1000px;
 }
 
-.owl-carousel {
+.owl-carousel,
+.owl-slideshow {
   max-width: 2000px;
   margin: 0 auto;
 }
@@ -4675,10 +4676,6 @@ i.fa.fa-chevron-left {
 
 i.fa.fa-chevron-right {
   right: -2%;
-}
-
-.owl-nav {
-  display: none;
 }
 
 li.recipe {

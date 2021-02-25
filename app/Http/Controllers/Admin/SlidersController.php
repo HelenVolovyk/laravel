@@ -74,7 +74,7 @@ class SlidersController extends Controller
 	public function update(Request $request, Slider $slider)
 	{
 		$slider->update([
-			'title'         => $request->get('title'),
+			'title'        	 => $request->get('title'),
 			'title_uk'         => $request->get('title_uk'),
 		//'thumbnail'         => $slider->thumbnail,
          

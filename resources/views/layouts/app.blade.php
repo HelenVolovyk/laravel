@@ -33,6 +33,7 @@
 	 <link href="{{ asset('css/hover-min.css') }}" rel="stylesheet" media="all">
 	 <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" media="all">
 	 <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" media="all">
+	 
 
 	
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
@@ -96,6 +97,7 @@
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script> 
 	  <script defer src="{{ asset('js/owl.carousel.min.js') }}"></script> 
+	 
 	 
 		
 		

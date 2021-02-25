@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Otherimage;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -27,12 +28,12 @@ class HomeController extends Controller
 	 */
 	public function index()
 	{
-
+		$otherimages = Otherimage::all();
 		$products = Product::inRandomOrder()->where('quantity', '>', '0')->get();
 		// $products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		//$products = Product::with('category')->where('quantity', '>', '0')->paginate(10);
 		$categories = Category::all();
-		return view('home.index', compact('categories', 'products'));
+		return view('home.index', compact('categories', 'products', 'otherimages'));
 	}
 
 	public function changeLocale($locale)

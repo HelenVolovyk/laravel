@@ -11,6 +11,7 @@ require('./search');
 require('./carousel');
 require('./btn');
 require('./owlCarousel');
+require('./owl.autoplay');
 require('./lazy_load');
 require('./ibg');
 require('./link');

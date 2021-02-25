@@ -24,7 +24,8 @@
 
 <section id="rec2   wow fadeInUp" >
 <div class="container-fluid ibg mb-5  wow fadeInUp" data-wow-delay="0.5s" style="margin-top: 130px">
-	<div class="rec2 ibg " style="background-image: url('http://test.com/storage/cs/h6/7o/pl/3b2tfl1fB4aiBYEa_1607288301.jpg');">
+	<div class="rec2 ibg " 
+	style="background-image: url('{{Storage::disk('public')->url($otherimages->find(11)->img_src)}}');">
 		<div class="rec__cont">
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam temporibus earum voluptatibus voluptatum atque vero magnam? Tenetur facilis eligendi nam sequi consequuntur eveniet assumenda quidem culpa ratione? Esse, obcaecati voluptatem!</p>
 			<a class="rec__link" href="">xgnxghxghxm</a>
