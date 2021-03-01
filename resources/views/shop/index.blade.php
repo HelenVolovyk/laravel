@@ -43,7 +43,7 @@
 				</div>
 	
 				<div class="col-sm-12 col-md-10">
-					<div class="f">
+					<div class="f wow fadeInUp"  data-wow-duration="2s">
 					@foreach($products->chunk(3) as $productChunk)
 				
 					@foreach($productChunk as $product)

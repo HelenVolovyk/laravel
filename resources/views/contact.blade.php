@@ -10,7 +10,7 @@
 
 			<div class="contact">
 
-				<div class="contact__left" style="background-image: url(	'http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg'">
+				<div class="contact__left ibg" style="background-image: url(	'{{Storage::disk('public')->url($otherimages->find(9)->img_src)}}'">
 					<div class="contact__left-content">
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti est maxime dignissimos rerum. Sint praesentium iste dignissimos officiis vero dolore exercitationem, adipisci obcaecati in possimus!</p>
 					

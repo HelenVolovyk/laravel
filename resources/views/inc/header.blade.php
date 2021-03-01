@@ -31,7 +31,7 @@
 						<a class="header__link  <?php if ($url == "/about") { echo ' active';}?>" href="/about">{{ __('About') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="/contact">{{ __('Contact') }}</a>
+						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="{{ route('contact.index') }}">{{ __('Contact') }}</a>
 					</li>
 					<li class="header__link">
 						<a class="header__link" >

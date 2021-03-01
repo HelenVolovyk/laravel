@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Otherimage;
 use App\Repositories\OrderRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,8 +38,9 @@ class PageController extends Controller
 	
 	 public function contact()
 	 {
+		 $otherimages = Otherimage::all();
 		 $title = 'contact';
-		 return view('recipe', compact('title'));
+		 return view('contact', compact('title', 'otherimages'));
 	 }
 	
 

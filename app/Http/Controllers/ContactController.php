@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateMessageRequest;
 use App\Models\Contact;
+use App\Models\Otherimage;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -11,8 +12,9 @@ class ContactController extends Controller
 
 	public function index()
 	{
+		$otherimages = Otherimage::all();
 		$title = 'Contact';
-		return view('contact', compact('title'));
+		return view('contact', compact('title', 'otherimages'));
 	}
 
 

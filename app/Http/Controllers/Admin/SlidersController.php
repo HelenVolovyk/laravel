@@ -25,31 +25,21 @@ class SlidersController extends Controller
 
 	public function store(Request $request, Slider $slider)
 	{
-		$slider = $request->all();
 		
-	// 	$newSlider = $slider->create([
-	// 		'title' => $request->get('title'),
-	// 		'title_uk' => $request->get('title_uk'),
-		
-	//   ]);
-	  unset($slider['slider_images']);
-	  unset($slider['_token']);
-	  
-	  $slider = Slider::create($slider);
-	  
-
-	  if (!empty($request->file('slider_images'))) {
-		
-		foreach ($request->file('slider_images') as $image) {
+		$newSlider = $slider->create([
+			'title' => $request->get('title'),
+			'title_uk' => $request->get('title_uk'),
+	  ]);
+	
+	  	  
+	  if (!empty($request->file('images'))) {
+		 foreach ($request->file('images') as $image) {
 		 $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
 		 $filePath       = $imageService->upload($image);
-		 $slider->image()->create(['path' => $filePath]);
-	}
-	//dd($request->file());
+		 $newSlider->image()->create(['path' => $filePath]);
+		}
 }
-
-	  
-		
+  		
 		return redirect(route('admin.sliders.index'))
 			->with(['status' => 'The slider has been created']);
 	}
@@ -121,7 +111,7 @@ class SlidersController extends Controller
 	public function destroy(Slider $slider)
 	{
 		$slider->delete();
-		$slider->images()->delete();
+		$slider->image()->delete();
 
 		return redirect(route('admin.sliders.index'))
 			->with(['status' => 'The slider was successfully removed!']);

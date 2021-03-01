@@ -40,12 +40,3 @@
 
 
 
-{{-- <div class="row product-images-row"
-        style="width: 50%; margin: 32px auto 0;">
-        <div class="col-8">
-            <input type="file" name="product_images[]" />
-        </div>
-        <div class="col-4">
-            <button type="btn btn-danger product-images-remove">Remove</button>
-        </div>
-    </div> --}}
