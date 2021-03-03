@@ -63,6 +63,46 @@
                               @enderror
                           </div>
 							 </div>
+
+                      <div class="form-group row">
+                          <label for="shotTitle" class="col-md-4 col-form-label text-md-right">{{ __('shotTitle') }}</label>
+
+                          <div class="col-md-6">
+                              <input id="shotTitle" 
+                              type="text" 
+                              class="form-control @error('shotTitle') is-invalid @enderror" 
+                              name="shotTitle" 
+                              value="{{ old('shotTitle') }}" 
+                              required 
+                              autofocus>
+
+                              @error('shotTitle')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="shotTitle_uk" class="col-md-4 col-form-label text-md-right">{{ __('shotTitle_uk') }}</label>
+
+                          <div class="col-md-6">
+                              <input id="shotTitle_uk" 
+                              type="text_uk" 
+                              class="form-control @error('shotTitle_uk') is-invalid @enderror" 
+                              name="shotTitle_uk" 
+                              value="{{ old('shotTitle_uk') }}" 
+                              required 
+                              autofocus>
+
+                              @error('shotTitle_uk')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+							 </div>
 							 
 							 <div class="form-group row">
 
@@ -98,6 +138,38 @@
 											@enderror
 									</div>
 						  	</div>  
+
+							 <div class="form-group row">
+								<label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
+									<div class="col-md-6">
+										<input id="image" 
+										type="file" 
+										class="form-control @error('image') is-invalid @enderror" 
+										name="images[]" 
+										value="{{ old('image') }}">
+											@error('image')
+												<span class="invalid-feedback" role="alert">
+														<strong>{{ $message }}</strong>
+												</span>
+											@enderror
+									</div>
+						 	 </div> 
+
+							 <div class="form-group row">
+								<label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
+									<div class="col-md-6">
+										<input id="image" 
+										type="file" 
+										class="form-control @error('image') is-invalid @enderror" 
+										name="images[]" 
+										value="{{ old('image') }}">
+											@error('image')
+												<span class="invalid-feedback" role="alert">
+														<strong>{{ $message }}</strong>
+												</span>
+											@enderror
+									</div>
+						 	 </div> 
 
 							 <div class="form-group row">
 								<label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>

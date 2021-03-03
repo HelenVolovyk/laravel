@@ -39,7 +39,7 @@ class SlidersController extends Controller
 		 $newSlider->image()->create(['path' => $filePath]);
 		}
 }
-  		
+  		//dd($newSlider);
 		return redirect(route('admin.sliders.index'))
 			->with(['status' => 'The slider has been created']);
 	}

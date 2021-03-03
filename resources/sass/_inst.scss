@@ -71,7 +71,7 @@
 	opacity: 0;  
 	transition: opacity .5s;  
  }
- .image-gallery a::before {
+ .image-gallery > div::before {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -83,33 +83,11 @@
 	transition: opacity .5s;  
  }
  .image-gallery a:hover i,
- .image-gallery a:hover::before{
+ .image-gallery a:hover::before,
+ .image-gallery > div:hover:before{
 	 opacity: 1;
  }
-.box-1 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-2 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-3 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-4 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-5 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-6 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-7 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
-.box-8 {
-	background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');
-}
+
 @media(max-width:1200px){
 	.inst{
 		width: 100%;

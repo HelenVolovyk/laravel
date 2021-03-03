@@ -17,7 +17,9 @@ class PageController extends Controller
 	 public function payment()
 	 {
 		 $title = 'payment';
-		 return view('payment', compact('title'));
+		 $otherimages = Otherimage::all();
+		
+		 return view('payment', compact('title', 'otherimages'));
 	 }
 	 public function shares()
 	 {
@@ -39,6 +41,7 @@ class PageController extends Controller
 	 public function contact()
 	 {
 		 $otherimages = Otherimage::all();
+		 
 		 $title = 'contact';
 		 return view('contact', compact('title', 'otherimages'));
 	 }

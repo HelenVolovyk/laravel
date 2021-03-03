@@ -1,7 +1,5 @@
 <header class="header">
-{{-- @php
-	 dd(Storage::disk('public')->url( $otherimage->img_src));
-@endphp --}}
+
 	 
 @endphp
 	<div class="name">

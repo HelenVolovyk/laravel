@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSlidersTable extends Migration
+class AddLacalizationToSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-		Schema::create('sliders', function (Blueprint $table) {
-			$table->id();
-			$table->string('title', 100);
-			$table->string('title_uk', 100);
-			$table->timestamps();
-	  });
+        Schema::table('sliders', function (Blueprint $table) {
+			$table->string('shotTitle')->nullable()->after('title_uk');
+			$table->string('shotTitle_uk')->nullable()->after('shotTitle');
+			
+        });
     }
 
     /**
@@ -28,6 +27,8 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-		Schema::dropIfExists('sliders');
+        Schema::table('sliders', function (Blueprint $table) {
+            
+        });
     }
 }

@@ -3478,7 +3478,7 @@ a.more:hover {
 }
 
 a.header__link {
-  color: #aaaaaa;
+  color: #ff6c6c;
   text-transform: uppercase;
   font-size: 14px;
   text-decoration: none;
@@ -4139,6 +4139,12 @@ a.rec__link-shop {
 
 .payment__photo {
   width: 40%;
+  display: flex;
+}
+
+.p_photo {
+  width: 500px;
+  height: 500px;
 }
 
 i.fa.fa-credit-card,
@@ -4867,7 +4873,7 @@ a.more {
   transition: opacity 0.5s;
 }
 
-.image-gallery a::before {
+.image-gallery > div::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -4880,40 +4886,9 @@ a.more {
 }
 
 .image-gallery a:hover i,
-.image-gallery a:hover::before {
+.image-gallery a:hover::before,
+.image-gallery > div:hover:before {
   opacity: 1;
-}
-
-.box-1 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-2 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-3 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-4 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-5 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-6 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-7 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
-}
-
-.box-8 {
-  background-image: url("http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg");
 }
 
 @media (max-width: 1200px) {

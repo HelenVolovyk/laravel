@@ -28,9 +28,11 @@
 						<p class="">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 					</div>
 				</div>	
-				<div class="payment__photo">
-					<div class=" mt-3 mb-3">
+				<div class="payment__photo ibg">
+					<div class="p_photo ibg mt-3 mb-3">
 					<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+			
+				
 					</div>
 				</div>
 			</div>
@@ -39,7 +41,9 @@
 
 	<div class="container-fluid mt-5 mb-5 wow fadeInUp" data-wow-duration="2s">
 		<div class="payment__box col-md-4 offset-md-2 col-sm-12 offset-sm-0">
-				<div class="payment__box-square"></div>
+				<div class="payment__box-square ibg">
+					<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(18)->img_src)}}" alt="">
+				</div>
 		</div>
 	
 			<div class="payment__block">
