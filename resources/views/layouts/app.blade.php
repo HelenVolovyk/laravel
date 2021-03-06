@@ -7,8 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!--<title>{{ config('app.name', 'STOR') }}</title>-->
-    <title>MyShop</title>
+    {{-- <title>{{ config('app.name', 'STOR') }}</title> --}}
+	 {{-- <title>MyShop</title> --}}
+	 @yield('header')
 
     <!-- Scripts -->
     

@@ -40,6 +40,11 @@ class Image extends Model
         return $this->morphToMany(\App\Models\Category::class, 'imageable');
     }
 
+    public function recipes()
+    {
+        return $this->morphToMany(\App\Models\Recipe::class, 'imageable');
+    }
+
 
 
     // public function setPathAttribute(UploadedFile $file)

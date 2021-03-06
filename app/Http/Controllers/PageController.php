@@ -9,57 +9,33 @@ use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
-	 public function about()
-	 {
-		 $title = 'About';
-		 return view('about', compact('title'));
-	 }
-	 public function payment()
-	 {
-		 $title = 'payment';
-		 $otherimages = Otherimage::all();
-		
-		 return view('payment', compact('title', 'otherimages'));
-	 }
-	 public function shares()
-	 {
-		 $title = 'shares';
-		 return view('shares', compact('title'));
-	 }
-	 public function recipes()
-	 {
-		 $title = 'recipes';
-		 return view('recipes', compact('title'));
-	 }
-	
-	 public function recipe()
-	 {
-		 $title = '';
-		 return view('recipe');
-	 }
-	
-	 public function contact()
-	 {
-		 $otherimages = Otherimage::all();
-		 
-		 $title = 'contact';
-		 return view('contact', compact('title', 'otherimages'));
-	 }
-	
 
-
-	 private $orderRepository;
-
-	public function __construct(OrderRepository $orderRepository)
+	public function __invoke($page)
 	{
-		$this->orderRepository = $orderRepository;
+		$otherimages = Otherimage::all();
+		$metaTitle = __('Meta Title: ' . $page);
+		if($metaTitle == 'Meta Title: ' . $page){
+			$metaTitle = NULL;
+		}
+			
+		return view('pages.' . $page, ['metaTitle' => $metaTitle], compact('otherimages'));
 	}
 
 	
-	 public function thankyou()
-	 {
-		 $order = $this->orderRepository->getId();
-		//dd($order[0]->id);
-		 return view('shop.checkout.thankyou', compact('order'));
-	 }
-}
+
+
+// 	 private $orderRepository;
+
+// 	public function __construct(OrderRepository $orderRepository)
+// 	{
+// 		$this->orderRepository = $orderRepository;
+// 	}
+
+	
+// 	 public function thankyou()
+// 	 {
+// 		 $order = $this->orderRepository->getId();
+// 		//dd($order[0]->id);
+// 		 return view('shop.checkout.thankyou', compact('order'));
+// 	 }
+ }

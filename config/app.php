@@ -255,7 +255,7 @@ return [
 	 'languages' => [
 		'en' => 'english',
 		'ru' => 'russian',
-		'uk' => 'ukrain'
+		'uk' => 'ukraine'
   ],
 
 ];

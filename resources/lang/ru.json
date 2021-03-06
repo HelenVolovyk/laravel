@@ -3,6 +3,12 @@
 	"set_lang": "UK",
 	"My Stor": "Moй магазин",
 	"Shop": "Магазин",
+	"Meta Title: about": "О нас",
+	"Meta Title: contact": "Контакт",
+	"Meta Title: payment": "Оплата и доставка",
+	"Meta Title: shares": "Акции",
+	"Meta Title: recipes": "Полезные рецепты",
+	"Meta Title: shop": "Магазин",
 	"About": "О нас",
 	"Contact": "Контакт",
 	"CONTACT": "КОНТАКТ",
@@ -72,6 +78,7 @@
 	"YOU MAY ALSO LIKE:": "ВАМ ТАК ЖЕ МОЖЕТ ПОНРАВИТСЯ",
 	"payment": "Oплата и доставка",
 	"recipes": "Pецепты",
+	"recipe": "Pецепт",
 
 
 	"A fresh verification link has been sent to your email address.": "Новая ссылка для подтверждения была отправлена на Ваш email-адрес.",

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('header')
+	<title>{{ $metaTitle }}</title>
+@endsection
 
 @section('content')
 <div class="content">
@@ -17,7 +20,7 @@
 		  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 		
 		 <div class="mt-5">
-			<a class="recipes__link" href="{{ route('recipe') }}">
+			<a class="recipes__link" href="">
 			Donec ullamcorper zdfbdbg
 			</a>
 		</div>
@@ -38,7 +41,7 @@
 		  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 	
 		  <div class="col-md-9 offset-md-8 mt-5">
-			<a class="recipes__link" href="{{ route('recipe') }}">
+			<a class="recipes__link" href="{{ route('page', 'recipe') }}">
 				Donec ullamcorper zdfbdbg
 				</a>
 			</div>

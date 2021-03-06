@@ -3223,12 +3223,12 @@ h4,
 h5,
 h6 {
   text-align: center;
-  color: gray;
+  color: #9c9c9c;
 }
 
 p {
   font-size: 20px;
-  color: grey;
+  color: #b8b8b8;
 }
 
 .ibg {
@@ -3478,7 +3478,7 @@ a.more:hover {
 }
 
 a.header__link {
-  color: #ff6c6c;
+  color: #aaaaaa;
   text-transform: uppercase;
   font-size: 14px;
   text-decoration: none;
@@ -4126,25 +4126,67 @@ a.rec__link-shop {
   }
 }
 
+#payment__one {
+  margin-bottom: 5%;
+}
+
 .payment {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-left: 30%;
+  margin-right: 5%;
 }
 
 .payment__content {
-  width: 60%;
+  width: 40%;
+  padding-right: 3%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.payment__content p,
+.heading {
+  font-size: calc(20px + 2 * (100vw / 1024));
+  text-align: left;
 }
 
 .payment__photo {
-  width: 40%;
-  display: flex;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .payment__photo {
+    padding: 0% 1%;
+    width: 98%;
+    height: 40%;
+  }
 }
 
 .p_photo {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
+}
+
+.payment__box {
+  width: 30%;
+  margin-left: 20%;
+}
+
+@media (max-width: 1030px) {
+  .payment__box {
+    width: 50%;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 767px) {
+  .payment__box {
+    width: 96%;
+    margin: 0% 2%;
+  }
 }
 
 i.fa.fa-credit-card,
@@ -4152,117 +4194,68 @@ i.fa.fa-money {
   color: #aaaaaa;
 }
 
-.paiment-container {
-  margin-top: 3%;
-  padding: 0 10%;
+.paiment-container__left,
+.paiment-container__right {
   display: flex;
-  justify-content: center;
+}
+
+.paiment-container__left {
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
+.paiment-container__right {
+  width: 100%;
+  margin: 3% 5% 3% 50%;
 }
 
 @media (max-width: 767px) {
-  .payment__content,
-  .payment__photo {
-    width: 100%;
-    padding: 5%;
+  .payment {
+    flex-direction: column;
+    margin: 0 auto;
   }
 
   .paiment-container {
     padding: 0;
   }
-}
 
-.tabs {
-  padding: 50px 0;
-  margin: 0px 0px 50px 0px;
-}
+  .payment__content {
+    width: 96%;
+    padding: 0 15px;
+  }
 
-.tabs__items {
-  display: flex;
-}
+  .p_photo {
+    width: 350px;
+    height: 350px;
+  }
 
-.tabs__item {
-  flex: 0 1 33.333%;
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  color: #999898;
-  text-decoration: none;
-}
+  .paiment-container__left {
+    margin-left: 0%;
+  }
 
-.tabs__item span {
-  position: relative;
-  z-index: 2;
-  padding: 10px 5px;
-}
-
-.tabs__block {
-  padding: 20px;
-  font-size: 18px;
-  line-height: 24px;
-  display: none;
-  position: relative;
-}
-
-.tabs__block p {
-  margin-bottom: 0;
-}
-
-.tabs__block:before {
-  content: "";
-  height: 50px;
-  width: 33.333%;
-  position: absolute;
-  top: -50px;
-}
-
-.tabs__block:nth-child(1) {
-  background-color: white;
-}
-
-.tabs__block:nth-child(1)::before {
-  background-color: white;
-  left: 0;
-}
-
-.tabs__block:nth-child(2) {
-  background-color: white;
-}
-
-.tabs__block:nth-child(2):before {
-  background-color: white;
-  left: 33.333%;
-}
-
-.tabs__block:nth-child(3) {
-  background-color: white;
-}
-
-.tabs__block:nth-child(3):before {
-  background-color: white;
-  right: 0;
-}
-
-.tabs__block:target {
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .tabs__item span {
-    display: block;
-    width: 100px;
-    white-space: nowrap;
-    text-align: left;
-    overflow: hidden;
-    font-size: 14px;
-    text-overflow: ellipsis;
+  .paiment-container__right {
+    margin-top: 3%;
+    margin-left: 0%;
+    margin-right: 0%;
   }
 }
 
 .payment__title {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+h2.payment__title {
+  position: relative;
+}
+
+i.fa.fa-credit-card::before,
+i.fa.fa-money::before {
+  display: inline-block;
+  margin-top: -5px;
+  vertical-align: middle;
+  color: #3490dc;
 }
 
 .payment__box {
@@ -4299,10 +4292,6 @@ i.fa.fa-money {
   position: absolute;
   top: -1%;
   left: 4px;
-}
-
-.heading {
-  padding: 0% 5%;
 }
 
 @media (max-width: 1400px) {

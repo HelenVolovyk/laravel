@@ -1,7 +1,9 @@
 <footer>
 	
-	<div class="jumbotron jumbotron-fluid text-center  wow fadeInUp">
-		<div class="container-fluid">
+	<div class="jumbotron jumbotron-fluid ibg text-center  wow fadeInUp">
+		{{-- <img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(19)->img_src)}}" alt=""> --}}
+		<div class="container-fluid ">
+			
 		  <h6 class="display-4">Fluid jumbotron</h6>
 		  <p class="lead">Это модифицированный jumbotron, который занимает все горизонтальное пространство своего родителя.</p>
 			<div class="col md-6 ">

@@ -42,16 +42,19 @@ Route::group([
 
 	//Route::get('locale/{locale}', 'HomeController@changeLocale')->name('locale');
 
-	Route::get('/', 'HomeController@index')->name('index');
-	Route::get('/about', 'PageController@about')->name('about');
-	Route::get('/payment', 'PageController@payment')->name('payment');
-	Route::get('/shares', 'PageController@shares')->name('shares');
-	Route::get('/recipes', 'PageController@recipes')->name('recipes');
-	Route::get('/recipe', 'PageController@recipe')->name('recipe');
+	Route::get('/{page}', 'PageController')
+	->name('page')
+	->where('page', 'about|contact|payment|shares|recipes|recipe');
+	
+	 Route::get('/', 'HomeController@index')->name('index');
+	 Route::get('/recipe/{recipe}', 'RecipeController@show')->name('recipe.show');
+	
+	// Route::get('/recipes/{recipe}', 'PageController@recipes')->name('recipes');
+	// Route::get('/recipe', 'PageController@recipe')->name('recipe');
 
 	//*contact
 	Route::prefix('contact')->name('contact.')->group(function () {
-		Route::get('/', 'ContactController@index')->name('index');
+		// Route::get('/', 'ContactController@index')->name('index');
 		Route::post('/send', 'ContactController@send')->name('send');
 	});
 
@@ -134,7 +137,7 @@ Route::group([
 			Route::post('/store', 'SlidersController@store')->name('store');
 			Route::get('/index', 'SlidersController@index')->name('index');
 		});
-	
+		
 
 
 		
@@ -142,6 +145,7 @@ Route::group([
 		Route::resource('categories', 'CategoriesController')->except(['show']);
 		Route::resource('sliders', 'SlidersController');
 		Route::resource('images', 'OtherimageController');
+		Route::resource('recipes', 'RecipeController')->except('show');
 	});
 
 	//* Mail

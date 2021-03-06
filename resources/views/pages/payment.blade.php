@@ -1,46 +1,18 @@
 @extends('layouts.app')
-@section('title', 'payment')
+@section('header')
+	<title>{{ $metaTitle }}</title>
+@endsection
 
 @section('content')
 <div class="content">
-	<div class="container mt-5 wow fadeInUp">
- 
-		<h2>{{ __('Payment and delivery') }}</h2>
-		<hr class="featurette-divider">
-		<div class="d-flex justify-content-between">
-			<div class="bread">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-					<li class="breadcrumb-item active" aria-current="page">{{ __('payment') }}</li> 
-					
-				</ol>
-			</div>
-			{{-- <div class="">
-				@include('inc.search')
-			</div> --}}
-		</div>
-		<div class="row">
-			<div class="payment">
-				<div class="payment__content">
-					<div class=" mt-5">
-						<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-						<p class="">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-						<p class="">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-					</div>
-				</div>	
-				<div class="payment__photo ibg">
-					<div class="p_photo ibg mt-3 mb-3">
-					<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			
-				
-					</div>
-				</div>
-			</div>
-		 </div>
-	</div>
 
-	<div class="container-fluid mt-5 mb-5 wow fadeInUp" data-wow-duration="2s">
-		<div class="payment__box col-md-4 offset-md-2 col-sm-12 offset-sm-0">
+	<div class="container">
+	<hr class="featurette-divider">
+	@include('inc.breadcrumb')
+</div>
+<section id="payment__one">
+	<div class="container-fluid  wow fadeInUp" >
+		<div class="payment__box ">
 				<div class="payment__box-square ibg">
 					<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(18)->img_src)}}" alt="">
 				</div>
@@ -51,15 +23,41 @@
 				<div class="white">Donec sed odio dui. Cras justo odio, dapibus ac </div>
 			</div>	
 	</div>	
+</section>
+
+	<div class="container-fluid mt-5 mb-5 wow fadeInUp" data-wow-duration="2s">
+ 
+		{{-- <h2>{{ __('Payment and delivery') }}</h2> --}}
+
+		<div class="row">
+			<div class="payment">
+				<div class="payment__content">
+					<div class="">
+						<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+						<p class="">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+				
+					</div>
+				</div>	
+				<div class="payment__photo mt-3 mb-3">
+					<div class="p_photo ibg ">
+						
+							<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(20)->img_src)}}" alt="" >
+					</div>
+				</div>
+			</div>
+		 </div>
+	</div>
+
+
 	
 	
-	<div class="paiment-container pt-5 wow fadeInUp" style="flex-wrap: wrap">
+	<div class="paiment-container__left  wow fadeInUp" data-wow-duration="2s">
 		<!-- Example row of columns -->
 		
 		  <div class="col-md-6 col-sm-12">
 			  <div class="payment__title">
-				<i class="fa fa-money fa-2x pr-3" aria-hidden="true"></i> 
-			 	<h2>Heading</h2>
+				<i class="fa fa-money fa-3x pr-3" aria-hidden="true"></i> 
+			 	<h2 class="payment__title">Heading</h2>
 			</div>
 		
 			<p class="heading" >
@@ -69,9 +67,12 @@
 			 {{-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> --}}
 			
 		  </div>
-		  <div class="col-md-6 col-sm-12">
+		</div> 
+
+		<div class="paiment-container__right wow fadeInUp" data-wow-duration="2s">
+		  <div class="col-md-5 col-sm-12">
 			<div class="payment__title">
-			<i class="fa fa-credit-card fa-2x pr-3 " aria-hidden="true"></i>
+			<i class="fa fa-credit-card fa-3x pr-3" aria-hidden="true"></i>
 			 <h2>Heading</h2>
 			</div>
 		
@@ -81,11 +82,11 @@
 		
 		  </div>
 		
+		</div>
+  
 		
   
-		<hr>
-  
-	 </div> 
+	
 	
 
 	{{-- <div class="container-fluid" style="background-color: rgb(235, 235, 235)">

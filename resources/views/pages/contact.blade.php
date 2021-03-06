@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('header')
+	<title>{{ $metaTitle }}</title>
+@endsection
 
 @section('content')
 

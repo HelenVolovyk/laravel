@@ -134,6 +134,24 @@ crossorigin="anonymous"></script>
                                                                                       
                             </div>
                         </li>
+								
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                             Recipes<span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                              
+                               <a class="dropdown-item" href="{{ route('admin.recipes.index') }}" >
+                                    {{ __('Recipes List') }}
+                               </a> 
+                                                                                  
+                               <a class="dropdown-item" href="{{ route('admin.recipes.create') }}" >
+                                    {{ __('Recipe Create') }}
+                               </a> 
+                                                                                      
+                            </div>
+                        </li>
                     
                        
                     </ul>
