@@ -44,10 +44,11 @@ Route::group([
 
 	Route::get('/{page}', 'PageController')
 	->name('page')
-	->where('page', 'about|contact|payment|shares|recipes|recipe');
+	->where('page', 'about|contact|payment|shares');
 	
 	 Route::get('/', 'HomeController@index')->name('index');
 	 Route::get('/recipe/{recipe}', 'RecipeController@show')->name('recipe.show');
+	 Route::get('/recipes', 'RecipeController@index')->name('recipes.index');
 	
 	// Route::get('/recipes/{recipe}', 'PageController@recipes')->name('recipes');
 	// Route::get('/recipe', 'PageController@recipe')->name('recipe');

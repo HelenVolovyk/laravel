@@ -40,7 +40,8 @@ class RecipeController extends Controller
     {
        //dd($request);
         //dd($request->file('recipe_images'));
-        $recipe = $request->all();
+		  $recipe = $request->all();
+		  
 		  $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
 		  
    

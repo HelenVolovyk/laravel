@@ -25,7 +25,7 @@
 						<a class="header__link  <?php if ($url == "/shares") { echo ' active';}?>" href={{route('page', 'shares')}}>{{ __('Shares') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/recipes") { echo ' active';}?>" href={{route('page', 'recipes')}}>{{ __('Healthy recipes') }}</a>
+						<a class="header__link  <?php if ($url == "/recipes") { echo ' active';}?>" href={{route( 'recipes.index')}}>{{ __('Healthy recipes') }}</a>
 					</li>
 					<li class="header__link">
 						<a class="header__link  <?php if ($url == "/about") { echo ' active';}?>" href={{route('page', 'about')}}>{{ __('About') }}</a>

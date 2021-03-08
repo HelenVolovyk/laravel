@@ -16,6 +16,7 @@ require('./lazy_load');
 require('./ibg');
 require('./link');
 require('./gotop');
+require('./components');
 
 
 // window.Vue = require('vue');

@@ -9,8 +9,8 @@
 		<div class="bread">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="/">{{ __('recipes') }}</a></li> 
-				<li class="breadcrumb-item active" aria-current="page">{{ __('recipe') }}</li> 
+				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route('recipes.index') }}">{{ __('recipes') }}</a></li> 
+				<li class="breadcrumb-item active" aria-current="page">{{ __('recipe') }}_{{ $recipe->id }}</li> 
 				
 			</ol>
 		</div>
@@ -26,14 +26,14 @@
 	
 			
 			<div class="col-md-12 mt-5">
-			
-				<img src=" {{ Storage::disk('public')->url($image)}}" alt="" width="1200" height="500">
-		
+				<div class="recipe__img ibg" style="width: 100%; height: 600px">
+					<img class="ibg" src=" {{ Storage::disk('public')->url($image)}}" alt="" width="1200" height="500">
+				</div>
 			</div>
 
 			<div class="col-md-3" style="overflow: hidden">
-				<div class="recipe__sidebar mt-5">
-					<div class="recipe__sidebar-content" style="font-size: 20px; color: grey">
+				<div class="recipe__sidebar ">
+					<div class="recipe__sidebar-content" style="font-size: 16px; color: grey">
 						<p><span class="text-muted">Donec ullamcorper</span></p>
 				
 						{{-- <ul class="recipe ">
@@ -44,7 +44,14 @@
 						
 						</ul> --}}
 					
-						{{ $recipe->components }}
+						{{-- {{preg_replace('<br>', '', nl2br($recipe->components)) }} --}}
+						<div class="comp" style="white-space: pre">
+							{{$recipe->components }}
+						</div>
+					
+					
+						{{-- {{ htmlenities($recipe->components) }} --}}
+						{{-- {{  html_entity_decode($recipe->components) }} --}}
 						
 					</div>
 				</div>
@@ -52,7 +59,7 @@
 
 				<div class="col-md-9  mt-5">
 					
-					<p>
+					<p >
 						{{ $recipe->description }}
 					</p>
 				

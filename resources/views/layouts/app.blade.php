@@ -74,7 +74,7 @@
 							
 							
 									
-										
+								<div class="go">	
 								<a class="go__phone" href="tel:123-56-78"><i class="fa fa-phone" aria-hidden="true"></i></a>
 								<div class="go__search">
 									
@@ -83,6 +83,7 @@
 
 								</div>
 								<a class="gotop" href=""><i class="fa fa-arrow-up"></i></a>
+							</div>	
 					{{-- </main> --}}
 				</div>
 		</div>
