@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ComponentRecipe;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 
@@ -39,21 +40,30 @@ class RecipeController extends Controller
     public function store(Request $request)
     {
        //dd($request);
-        //dd($request->file('recipe_images'));
-		  $recipe = $request->all();
+     
 		  
 		  $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
-		  
-   
-
+		     
         if (!empty($request->file('thumbnail'))) {
            
             $filePath       = $imageService->upload($request->file('thumbnail'));
             $recipe['thumbnail'] = $filePath;
-        }
+		  }
+		  
+		  $recipe = Recipe::create([
+			'title' => $request->get('title'),
+			'title_uk' => $request->get('title_uk'),
+			'webname' => str_slug($request->get('title')),
+			'thumbnail' => $filePath, 
+			'description' => $request->get('description'),
+			'description_uk' => $request->get('description_uk'),
+			'shot_description' => $request->get('shot_description'),
+			'shot_description_uk' => $request->get('shot_description_uk'),
+			'components' => $request->get('components'),
+			'components_uk' => $request->get('components_uk')
+	  ]);
 
-        $recipe = Recipe::create($recipe);
-        
+          
 
         if (!empty($request->file('image'))) {
 	           
@@ -61,7 +71,7 @@ class RecipeController extends Controller
                 $recipe->image()->create(['path' => $filePath]);
             
         }
-//dd($recipe);
+
         return redirect(route('admin.recipes.index'))
             ->with(['status' => 'The recipe has been created']);
     }
@@ -141,7 +151,12 @@ class RecipeController extends Controller
         return redirect()
             ->back()
             ->with(['status' => 'The recipe was successfully updated!']);
-    }
+	 }
+	 
+	 public function add(Recipe $recipe)
+	 {
+		 
+	 }
 
     /**
      * Remove the specified resource from storage.

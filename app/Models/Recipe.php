@@ -10,6 +10,7 @@ class Recipe extends Model
 		'id',
 		'title',
 		'title_uk',
+		'webname',		
 		'thumbnail',
 		'description',
 		'description_uk',
@@ -24,4 +25,15 @@ class Recipe extends Model
   {
 	  return $this->morphMany(\App\Models\Image::class, 'imageable');
   }
+
+  public function component()
+	{
+		return $this->morphMany(\App\Models\ComponentRecipe::class, 'componentable');
+	}
+
+	public function getRouteKeyName()
+	{
+		
+		return 'webname'; 
+	}
 }

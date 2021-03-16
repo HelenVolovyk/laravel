@@ -13,16 +13,17 @@
 			@include('inc.breadcrumb')
 
 				<div class="col-md-12 offset-md-1 pt-5 pb-5">
-					<h4 class="font-italic text-left ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
+					<h4 class="font-italic text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
 				</div>
 		</div>
 
 			<div class="about-block mb-4">
 				<div class="about-block__row d-flex flex-wrap">
 
-					<div class="about-block__element_1">
+					<div class="about-block__element_1 ibg">
+						<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(21)->img_src)}}" alt="">
 						<div class="about-block__content">
-							<p>
+							<p class="">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia pariatur molestiae animi nisi nostrum, libero consectetur ipsa nam, beatae similique rerum deleniti perspiciatis at a dolores facilis itaque quam corporis!
 							</p>
 						</div>

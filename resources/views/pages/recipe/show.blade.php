@@ -10,7 +10,7 @@
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
 				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route('recipes.index') }}">{{ __('recipes') }}</a></li> 
-				<li class="breadcrumb-item active" aria-current="page">{{ __('recipe') }}_{{ $recipe->id }}</li> 
+				<li class="breadcrumb-item active" aria-current="page">{{ $recipe->title }}</li> 
 				
 			</ol>
 		</div>
@@ -45,8 +45,8 @@
 						</ul> --}}
 					
 						{{-- {{preg_replace('<br>', '', nl2br($recipe->components)) }} --}}
-						<div class="comp" style="white-space: pre">
-							{{$recipe->components }}
+						<div class="comp" style="white-space: pre-wrap">
+							 {{ $recipe->components }}
 						</div>
 					
 					
@@ -62,7 +62,15 @@
 					<p >
 						{{ $recipe->description }}
 					</p>
-				
+					<p >
+						{{ $recipe->description }}
+					</p>
+					<div class="comp mb-5" style="white-space: pre-line; color:gray; font-size:18px">
+						{{ $recipe->components }}
+				  </div>
+				  <p >
+					{{ $recipe->description }}
+				</p>
 				</div>
 
 				

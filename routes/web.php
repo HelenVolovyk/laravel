@@ -47,7 +47,7 @@ Route::group([
 	->where('page', 'about|contact|payment|shares');
 	
 	 Route::get('/', 'HomeController@index')->name('index');
-	 Route::get('/recipe/{recipe}', 'RecipeController@show')->name('recipe.show');
+	 Route::get('/recipe/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
 	 Route::get('/recipes', 'RecipeController@index')->name('recipes.index');
 	
 	// Route::get('/recipes/{recipe}', 'PageController@recipes')->name('recipes');
@@ -147,6 +147,8 @@ Route::group([
 		Route::resource('sliders', 'SlidersController');
 		Route::resource('images', 'OtherimageController');
 		Route::resource('recipes', 'RecipeController')->except('show');
+		Route::resource('components', 'ComponentsController')->except('show');
+		
 	});
 
 	//* Mail

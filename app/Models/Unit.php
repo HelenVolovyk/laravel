@@ -15,4 +15,8 @@ class Unit extends Model
   {
 		return $this->hasMany(\App\Models\Product::class);
   }
+  public function components()
+  {
+		return $this->hasMany(\App\Models\Component::class);
+  }
 }

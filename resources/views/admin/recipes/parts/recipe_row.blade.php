@@ -10,6 +10,9 @@
                 <a href="{{route('admin.recipes.edit', $recipe->id)}}"
                 style="margin-right: 6px;"
                 class="btn btn-warning">Edit</a>
+                {{-- <a href="{{route('admin.components.create', $recipe->id)}}"
+                style="margin-right: 6px;"
+                class="btn btn-warning">Add components</a> --}}
                 <form action="{{route('admin.recipes.destroy', $recipe->id)}}" method="post">
                   @csrf
                    @method('DELETE')

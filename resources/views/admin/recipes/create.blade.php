@@ -172,7 +172,7 @@
 
                 
                 
-                      <div class="form-group row">
+              <div class="form-group row">
 								<label for="components" class="col-md-4 col-form-label text-md-right">{{ __('components') }}</label>
 
 								<div class="col-md-6">
@@ -209,7 +209,7 @@
 									 @enderror
 								</div>
 						  </div>
-                
+             
                      
                 
                       {{-- @include('admin.recipes.parts.images') --}}

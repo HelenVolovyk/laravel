@@ -10,9 +10,11 @@ class RecipeController extends Controller
    public function show(Recipe $recipe){
 		
 		$image = $recipe->image()->first()->path;
-		$components = $recipe->components;
+
+		
+		// $components = $recipe->components;
 		//dd($image);
-		return view('pages.recipe.show', compact('recipe', 'image', 'components'));
+		return view('pages.recipe.show', compact('recipe', 'image'));
 	}
 
 	public function index()
@@ -23,4 +25,6 @@ class RecipeController extends Controller
 		
 		return view('pages.recipes', compact('recipes'), ['metaTitle' => $metaTitle]);
 	}
+
+
 }

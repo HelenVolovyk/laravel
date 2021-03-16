@@ -2,5 +2,6 @@
 
 return [
   'pieces'    => 'pieces',
-  'kilogram' => 'kg'
+  'kilogram' => 'kg',
+  'gram' => 'g'
 ];
