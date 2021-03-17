@@ -7,17 +7,16 @@ use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
-   public function show(Recipe $recipe){
-		
+   public function show($locale, Recipe $recipe){
+	
 		$image = $recipe->image()->first()->path;
 
-		
-		// $components = $recipe->components;
 		//dd($image);
+		
 		return view('pages.recipe.show', compact('recipe', 'image'));
 	}
 
-	public function index()
+	public function index($locale)
 	{
 		
 		$recipes = Recipe::all()->sortByDesc('created_at');

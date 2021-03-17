@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
+	use Translatable;
+	
 	protected $fillable = [
 		'id',
 		'title',

@@ -19,19 +19,19 @@
 					</li>
 				
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/payment") { echo ' active';}?>" href={{route('page', 'payment')}}>{{ __('Payment and delivery') }}</a>
+						<a class="header__link  <?php if ($url == "/payment") { echo ' active';}?>" href={{route('page', [app()->getLocale(), 'payment' ])}}>{{ __('Payment and delivery') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/shares") { echo ' active';}?>" href={{route('page', 'shares')}}>{{ __('Shares') }}</a>
+						<a class="header__link  <?php if ($url == "/shares") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'shares'])}}>{{ __('Shares') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/recipes") { echo ' active';}?>" href={{route( 'recipes.index')}}>{{ __('Healthy recipes') }}</a>
+						<a class="header__link  <?php if ($url == "/recipes") { echo ' active';}?>" href={{route( 'recipes', [app()->getLocale()])}}>{{ __('Healthy recipes') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/about") { echo ' active';}?>" href={{route('page', 'about')}}>{{ __('About') }}</a>
+						<a class="header__link  <?php if ($url == "/about") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'about'])}}>{{ __('About') }}</a>
 					</li>
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="{{ route('page', 'contact') }}">{{ __('Contact') }}</a>
+						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="{{ route('page', [app()->getLocale(),'contact']) }}">{{ __('Contact') }}</a>
 					</li>
 					<li class="header__link">
 						<a class="header__link" >

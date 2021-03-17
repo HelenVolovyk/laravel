@@ -1,5 +1,5 @@
           <tr>
-             <th scope="row">{{$recipe->title}}</th>
+             <th scope="row">{{$recipe->__('title')}}</th>
              <th><img src="{{Storage::disk('public')->url($recipe->thumbnail)}}" height="50" width="50"></th>
           	
        

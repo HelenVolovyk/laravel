@@ -45,7 +45,7 @@ class SetLocale
 
 			// 											$locale = session('locale');
 			// 											App::setLocale($locale);
-			// dd(session('locale'));
+			// dd($locale);
 
 
 		

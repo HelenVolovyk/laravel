@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
 
-	public function __invoke($page)
+	public function __invoke($locale,$page)
 	{
 		$otherimages = Otherimage::all();
 		$metaTitle = __('Meta Title: ' . $page);
 		if($metaTitle == 'Meta Title: ' . $page){
 			$metaTitle = NULL;
 		}
-			
-		return view('pages.' . $page, ['metaTitle' => $metaTitle], compact('otherimages'));
+			//dd($page);
+		return view('pages.' .  $page , ['metaTitle' => $metaTitle], compact('otherimages'));
 	}
 
 	

@@ -7,7 +7,7 @@ class LocalizationServiceProvider extends ServiceProvider
 {
 	public function register()
 	{
-		// $this->app->bind("Localization", 'App\Services\Localization');
+		 //$this->app->bind("Localization", 'App\Services\Localization');
 		
 	}
  }

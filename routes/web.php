@@ -27,31 +27,31 @@ use Laravel\Socialite\Facades\Socialite;
 
 
 //Route::redirect('/', '/ru');
-
+Route::get('/', function(){
+	return redirect()->route('home-locale', app()->getlocale());
+})->name('index');
 
 
 Route::group([
-	//'prefix' => '{languaue}',
-	//'where' => ['locale' => '[a-zA-Z]{2}'],
+	'prefix' => '{locale?}',
+	'where' => ['locale' => '[a-zA-Z]{2}'],
 	//'prefix' => LocalizationService::locale(),
-	'prefix' => Config::get('routeLang'),
-	'middleware' => 'set_locale'
+	//'prefix' => Config::get('languages'),
+	'middleware' => ['set_locale']
 ], function () {
 
 
 
-	//Route::get('locale/{locale}', 'HomeController@changeLocale')->name('locale');
+	
 
 	Route::get('/{page}', 'PageController')
 	->name('page')
 	->where('page', 'about|contact|payment|shares');
 	
-	 Route::get('/', 'HomeController@index')->name('index');
+	 Route::get('/', 'HomeController@index')->name('home-locale');
 	 Route::get('/recipe/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
-	 Route::get('/recipes', 'RecipeController@index')->name('recipes.index');
-	
-	// Route::get('/recipes/{recipe}', 'PageController@recipes')->name('recipes');
-	// Route::get('/recipe', 'PageController@recipe')->name('recipe');
+	 Route::get('/recipes', 'RecipeController@index')->name('recipes');
+
 
 	//*contact
 	Route::prefix('contact')->name('contact.')->group(function () {
@@ -76,7 +76,12 @@ Route::group([
 		Route::get('/', 'CategoryController@index')->name('index');
 	});
 
-	Route::resource('product', 'ProductController');
+	Route::prefix('product')->name('product.')->group(function () {
+		Route::get('/{product}', 'ProductController@show')->name('show');
+		
+	});
+
+	//Route::resource('product', 'ProductController');
 
 	Route::get('/shop', 'ShopController@index')->name('shop');
 	Route::get('/search', 'ShopController@search')->name('search');
