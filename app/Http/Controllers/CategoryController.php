@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
-    public function index(Category $category)
+    public function index($locale, Category $categories)
     {
         $categories = Category::all();
 		//   $image = $category->image;
@@ -18,13 +18,13 @@ class CategoryController extends Controller
     }
 
 
-    public function show(Category $category)
+    public function show($locale, Category $category)
     {
         $categories = Category::all();
         $category->products()->get();
 		  $products = $category->products()->get();
 		//   $image = $category->image;
-      //   dd($image);
+        // dd($category);
         return view('shop.category.show', compact('category', 'products'))->with('categories', $categories);
     }
 }

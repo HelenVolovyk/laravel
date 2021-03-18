@@ -10,14 +10,16 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ShopController extends Controller
 {
-	public function index()
-	{
-		$products = Product::all()->where('quantity', '>', '0');
-		$categories = Category::all();
+// 	public function index($locale, Product $products)
+// 	{
+// 		$products = Product::all()->where('quantity', '>', '0');
+// 		$categories = Category::all();
 	
-
-		return view('shop.index', compact('categories'), compact('products'));
-	}
+		
+// //dd($products);
+// 		return view('shop.index', compact('categories'), compact('products'));
+// 	}
+	
 
 	public function search(Request $request)
 	{
@@ -34,7 +36,7 @@ class ShopController extends Controller
 									  ->paginate(6);
 									//  ->get();
 
-		return view('shop.product.search-result', compact('categories'))->with('products', $products);
+		return view('shop.product.search-result', compact('categories'))->with('products', [app()->getLocale(), $products ] );
 	}
 	
 }

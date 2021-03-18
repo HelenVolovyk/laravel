@@ -31,6 +31,47 @@ Route::get('/', function(){
 	return redirect()->route('home-locale', app()->getlocale());
 })->name('index');
 
+Auth::routes();
+
+//*login socialite
+Route::prefix('login')->group(function () {
+	Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('redirect');
+	Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+});
+
+Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
+	Route::delete('images/{image}/remove', 'ImagesController@remove')->name('image.remove');
+});
+
+	//*admin
+	Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
+		Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+		Route::get('/users', 'UsersController@index')->name('users');
+		Route::get('/orders', 'UsersController@getOrders')->name('users.orders');
+
+		Route::prefix('sliders')->name('sladers.')->group(function () {
+			Route::get('/index', 'SlidersController@index')->name('index');
+			Route::get('/create', 'SlidersController@create')->name('create');
+			Route::post('/store', 'SlidersController@store')->name('store');
+			Route::get('/index', 'SlidersController@index')->name('index');
+		});
+		
+
+
+		
+		Route::resource('products', 'ProductsController')->except(['show']);
+		Route::resource('categories', 'CategoriesController')->except(['show']);
+		Route::resource('sliders', 'SlidersController');
+		Route::resource('images', 'OtherimageController');
+		Route::resource('recipes', 'RecipeController')->except('show');
+		Route::resource('components', 'ComponentsController')->except('show');
+		
+	});
+
+	//* Mail
+	Route::get('/send', 'MailController@send');
+
+	
 
 Route::group([
 	'prefix' => '{locale?}',
@@ -59,31 +100,21 @@ Route::group([
 		Route::post('/send', 'ContactController@send')->name('send');
 	});
 
-	Auth::routes();
 
-	//*login socialite
-	Route::prefix('login')->group(function () {
-		Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('redirect');
-		Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-	});
-
-	Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
-		Route::delete('images/{image}/remove', 'ImagesController@remove')->name('image.remove');
-	});
 
 	Route::prefix('category')->name('category.')->group(function () {
-		Route::get('/{category}', 'CategoryController@show')->name('show');
+		Route::get('/{category:webname}', 'CategoryController@show')->name('show');
 		Route::get('/', 'CategoryController@index')->name('index');
 	});
 
-	Route::prefix('product')->name('product.')->group(function () {
-		Route::get('/{product}', 'ProductController@show')->name('show');
+		Route::get('/product/{product:webname}', 'ProductController@show')->name('product.show');
 		
-	});
 
-	//Route::resource('product', 'ProductController');
 
-	Route::get('/shop', 'ShopController@index')->name('shop');
+	Route::get('/shop', 'ProductController@index')->name('shop');
+
+
+	//Route::get('/shop', 'ShopController@index')->name('shop');
 	Route::get('/search', 'ShopController@search')->name('search');
 
 
@@ -131,31 +162,5 @@ Route::group([
 	});
 
 
-	//*admin
-	Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
-		Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-		Route::get('/users', 'UsersController@index')->name('users');
-		Route::get('/orders', 'UsersController@getOrders')->name('users.orders');
 
-		Route::prefix('sliders')->name('sladers.')->group(function () {
-			Route::get('/index', 'SlidersController@index')->name('index');
-			Route::get('/create', 'SlidersController@create')->name('create');
-			Route::post('/store', 'SlidersController@store')->name('store');
-			Route::get('/index', 'SlidersController@index')->name('index');
-		});
-		
-
-
-		
-		Route::resource('products', 'ProductsController')->except(['show']);
-		Route::resource('categories', 'CategoriesController')->except(['show']);
-		Route::resource('sliders', 'SlidersController');
-		Route::resource('images', 'OtherimageController');
-		Route::resource('recipes', 'RecipeController')->except('show');
-		Route::resource('components', 'ComponentsController')->except('show');
-		
-	});
-
-	//* Mail
-	Route::get('/send', 'MailController@send');
 });

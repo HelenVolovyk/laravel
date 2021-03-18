@@ -20,7 +20,7 @@ class ProductController extends Controller
 	 * @param  Product $product
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Product $product, Image $image, $locale)
+	public function show($locale, Product $product, Image $image)
 	{
 		$categories = Category::all();
 		$comments = $product->comments()->with('user')->paginate(5);
@@ -33,8 +33,18 @@ class ProductController extends Controller
 		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		$categories = Category::all();
 	
-		$locale = app()->getLocale();
-		//dd($locale);
-		return view('shop.product.show', compact('product',  'comments'), compact('products', 'categories'), compact('image'), compact('units', 'locale') );
+		
+	//dd($locale);
+		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories'), compact('image'), compact('units') );
+	}
+
+	public function index($locale, Product $products)
+	{
+		$products = Product::all()->where('quantity', '>', '0');
+		$categories = Category::all();
+	
+		
+//dd($products);
+		return view('shop.index', compact('categories'), compact('products'));
 	}
 }

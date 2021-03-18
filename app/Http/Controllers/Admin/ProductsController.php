@@ -48,12 +48,12 @@ class ProductsController extends Controller
     {
        //dd($request);
         //dd($request->file('product_images'));
-        $product = $request->all();
+       // $product = $request->all();
 		  $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
 		  
-        unset($product['product_images']);
-        unset($product['thumbnail']);
-        unset($product['_token']);
+      //   unset($product['product_images']);
+      //   unset($product['thumbnail']);
+      //   unset($product['_token']);
 
         if (!empty($request->file('thumbnail'))) {
            
@@ -61,8 +61,28 @@ class ProductsController extends Controller
             $product['thumbnail'] = $filePath;
         }
 
-        $product = Product::create($product);
-        //dd($product);
+       // $product = Product::create($product);
+		  //dd($product);
+		  
+		  $product = Product::create([
+			'category_id' => $request->get('category_id'),
+			'SKU' => $request->get('SKU'),
+			'name' => $request->get('name'),
+			'name_uk' => $request->get('name_uk'),
+			'webname' => str_slug($request->get('name')),
+			'description' => $request->get('description'),
+			'description_uk' => $request->get('description_uk'),
+			'shot_description' => $request->get('shot_description'),
+			'shot_description_uk' => $request->get('shot_description_uk'),
+			'thumbnail' => $filePath, 
+			'price' => $request->get('price'),
+			'discount' => $request->get('discount'),
+			'quantity' => $request->get('quantity'),
+			'units_id' => $request->get('units_id')
+			
+	  ]);
+
+		  
 
         if (!empty($request->file('product_images'))) {
 	            foreach ($request->file('product_images') as $image) {

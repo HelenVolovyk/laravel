@@ -54,7 +54,8 @@ class CategoriesController extends Controller
 
         $newCategory = $category->create([
             'title' => $request->get('title'),
-            'title_uk' => $request->get('title_uk'),
+				'title_uk' => $request->get('title_uk'),
+				'webname' => str_slug($request->get('title')),
             'description' => $request->get('description'),
             'description_uk' => $request->get('description_uk')
         ]);

@@ -15,7 +15,7 @@
 				
 			
 					<li class="header__link">
-						<a class="header__link <?php if ($url == "/shop") { echo ' active';}?>" href={{route('shop')}}>{{ __('Shop') }}</a>
+						<a class="header__link <?php if ($url == "/shop") { echo ' active';}?>" href={{route('shop', [app()->getLocale()])}}>{{ __('Shop') }}</a>
 					</li>
 				
 					<li class="header__link">

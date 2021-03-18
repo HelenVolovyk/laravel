@@ -1,14 +1,14 @@
 <div class="col-sm-6 col-md-2 pl-2">
 	<div class="card" >
 			  
-		 <a href="{{route('product.show', $product)}}">
+		 <a href="{{route('product.show', [app()->getlocale(), $product])}}">
 	
 			<div class="scale cart-img ">
 					<img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="scale card-img-top" alt="..." ></div> 
 		</a>
 			<div class="cart-link">
 						  
-				 <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
+				 <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getlocale(), $product])}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
 								 
 			</div>
 			
@@ -30,7 +30,7 @@
 					</div>
 				  
 					<div class="d-flex justify-content-center mt-3">
-					 <form action="{{route('cart.add', $product)}}" method="POST" class="form-inline" id="button_center">             
+					 <form action="{{route('cart.add', [app()->getlocale(), $product])}}" method="POST" class="form-inline" id="button_center">             
 					  @method('POST')
 					  @csrf
 					  <div class="form-froup  mb-2">

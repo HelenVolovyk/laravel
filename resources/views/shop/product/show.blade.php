@@ -28,7 +28,7 @@
 		 @endif
 		
 			<div class="cart-link">
-				<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-3x" aria-hidden="true"></i></a>
+				<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getlocale(), $product])}}"><i class="fa fa-heart-o fa-3x" aria-hidden="true"></i></a>
 			</div>
 			
 	</div>
@@ -61,7 +61,7 @@
       <div class="">
         <p>{{ __('Quantity') }}</p>
        
-      <form action="{{route('cart.add', $product)}}" method="POST" class="form-inline" >
+      <form action="{{route('cart.add',[app()->getlocale(), $product])}}" method="POST" class="form-inline" >
         @csrf
         @method('post')
         <div class="form-froup  mb-2">
@@ -96,7 +96,7 @@
 
  
 		<div class="form-group required pl-5">
-			<form class="form-horizontal poststars" action="{{route('rating.add', $product)}}" id="addStar" method="POST">
+			<form class="form-horizontal poststars" action="{{route('rating.add', [app()->getlocale(), $product])}}" id="addStar" method="POST">
 			@csrf
   
 
@@ -167,7 +167,7 @@
 						  e.preventDefault();
 		
 						 // alert($(this).data('parent_id'));
-						 $(this).append(`<form action="{{route('comments.add', $product)}}" method="POST"  style="margin: 16px auto; border: 1px solid #333; padding: 16px; width: 50%;">
+						 $(this).append(`<form action="{{route('comments.add', [app()->getlocale(), $product])}}" method="POST"  style="margin: 16px auto; border: 1px solid #333; padding: 16px; width: 50%;">
 		  @csrf
 		  <h6>New comment</h6>
 		<input type="hidden" name="parent_id" id="parent_id">

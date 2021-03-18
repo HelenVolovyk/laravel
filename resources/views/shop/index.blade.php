@@ -24,7 +24,7 @@
 					<div class="sidebar">
 				
 						<div class="category_link ">
-							<div class="mb-2"><a class="category__link" href="{{route('category.index')}}">{{ __('all categories') }}</a></div>
+							<div class="mb-2"><a class="category__link" href="{{route('category.index', [app()->getlocale()])}}">{{ __('all categories') }}</a></div>
 							<div>
 							
 						
@@ -39,7 +39,7 @@
 				</div>
 	
 				<div class="col-sm-12 col-md-10">
-					<div class="f wow fadeInUp"  data-wow-duration="2s">
+					<div class="f">
 					@foreach($products->chunk(3) as $productChunk)
 				
 					@foreach($productChunk as $product)
