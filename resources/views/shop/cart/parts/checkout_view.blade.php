@@ -1,6 +1,6 @@
 <tr>
    <td>
-      <a href="{{route('product.show', $row->id)}}">
+      <a href="{{route('product.show', [app()->getlocale(), $row->id])}}">
       <strong>{{$row->name}}</strong>
       </a>
   </td>

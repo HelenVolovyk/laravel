@@ -65,7 +65,7 @@
 									{{ __('My Profile') }}
 							  </a>
 						  
-							  <a class="dropdown-item" href="{{ route('user.wishlist') }}">
+							  <a class="dropdown-item" href="{{ route('user.wishlist', [app()->getlocal()]) }}">
 									{{ __('My WishList') }}
 							  </a>
 							  @endif
@@ -91,7 +91,7 @@
 
 			<div class="d-flex justify-content-end">
 				<li class="nav-item">
-					 <a class="nav-link" href="{{route('user.wishlist')}}"><i class="fa fa-heart-o" aria-hidden="true"></i>
+					 <a class="nav-link" href="{{route('wishlist', [app()->getlocale()])}}"><i class="fa fa-heart-o" aria-hidden="true"></i>
 						 @if(Cart::instance('wishlist')->count() > 0)
 						  <span class="badge badge-pill badge-secondary">{{Cart::instance('wishlist')->count()}}</span>
 						  @endif
@@ -100,7 +100,7 @@
 		
 
 				<li class="nav-item">
-					<a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<a class="nav-link" href="{{route('cart.index', [app()->getlocale()])}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 						@if(Cart::instance('cart')->count() > 0)
 							<span class="badge badge-pill badge-secondary">{{Cart::instance('cart')->count()}}</span>
 						@endif

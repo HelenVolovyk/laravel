@@ -20,23 +20,8 @@
 
 		<div class="row">
 			<div class="col-md-2">
-				<aside class="product-section container">
-					<div class="sidebar">
-				
-						<div class="category_link ">
-							<div class="mb-2"><a class="category__link" href="{{route('category.index', [app()->getlocale()])}}">{{ __('all categories') }}</a></div>
-							<div>
-							
-						
-							</div>
-				
-							@each('shop.category-view', $categories, 'category') 
-			
-				
-							</div>
-						</div>
-					</aside>
-				</div>
+					@include('inc.sidebar')
+			</div>
 	
 				<div class="col-sm-12 col-md-10">
 					<div class="f">

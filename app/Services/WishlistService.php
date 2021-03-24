@@ -42,7 +42,7 @@ class WishlistService implements WishlistServiceInterface
 
 
 		Cart::instance('wishlist')->add(
-			$product->id,
+			$product->webname,
 			$product->name,
 			1,
 			$product->getPrice()

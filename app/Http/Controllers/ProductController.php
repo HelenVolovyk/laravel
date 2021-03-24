@@ -33,18 +33,20 @@ class ProductController extends Controller
 		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		$categories = Category::all();
 	
+	
 		
 	//dd($locale);
 		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories'), compact('image'), compact('units') );
 	}
 
-	public function index($locale, Product $products)
+	public function index($locale, Product $product, Category $category)
 	{
 		$products = Product::all()->where('quantity', '>', '0');
 		$categories = Category::all();
+		
 	
 		
 //dd($products);
-		return view('shop.index', compact('categories'), compact('products'));
+		return view('shop.index', compact('categories', 'category'), compact('products', 'product'));
 	}
 }

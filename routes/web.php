@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\SlidersController;
 use App\Http\Controllers\Auth\AuthSocialController;
 use App\Http\Controllers\OrderController;
+use App\Models\Category;
 use App\Services\Localization\LocalizationService;
 use Carbon\Traits\Localization;
 use Illuminate\Support\Facades\App;
@@ -56,8 +57,6 @@ Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
 			Route::get('/index', 'SlidersController@index')->name('index');
 		});
 		
-
-
 		
 		Route::resource('products', 'ProductsController')->except(['show']);
 		Route::resource('categories', 'CategoriesController')->except(['show']);
@@ -101,20 +100,13 @@ Route::group([
 	});
 
 
-
-	Route::prefix('category')->name('category.')->group(function () {
-		Route::get('/{category:webname}', 'CategoryController@show')->name('show');
-		Route::get('/', 'CategoryController@index')->name('index');
-	});
-
+		Route::get('/category/{category:webname}', 'CategoryController@show')->name('category.show');
+		Route::get('/category', 'CategoryController@index')->name('category.index');
+	
 		Route::get('/product/{product:webname}', 'ProductController@show')->name('product.show');
-		
+		Route::get('/shop', 'ProductController@index')->name('shop');
 
 
-	Route::get('/shop', 'ProductController@index')->name('shop');
-
-
-	//Route::get('/shop', 'ShopController@index')->name('shop');
 	Route::get('/search', 'ShopController@search')->name('search');
 
 
@@ -122,35 +114,38 @@ Route::group([
 		//*Shopping cart
 		Route::prefix('cart')->name('cart.')->group(function () {
 			Route::get('/', 'CartController@index')->name('index');
-			Route::post('/{product}/add', 'CartController@add')->name('add');
-			Route::post('/{product}/count/update', 'CartController@update')->name('count.update');
-			Route::delete('/{product}/delete', 'CartController@delete')->name('delete');
+			Route::post('/add/{product:webname}', 'CartController@add')->name('add');
+			Route::post('/count/{product:webname}', 'CartController@update')->name('count.update');
+			Route::delete('/delete/{product:webname}', 'CartController@delete')->name('delete');
 		});
 
 		//*checkout
 		Route::get('/checkout', 'CheckoutController')->name('checkout');
-		Route::post('/order/create', 'OrderController@create')->name('order.create');
-		Route::get('/thankyou/{order}', 'PageController@thankyou')->name('thankyou');
+		Route::post('/order', 'OrderController@create')->name('order.create');
+		Route::get('/thankyou/{order}', function($locale, $order){
+			return view('shop.checkout.thankyou', compact('order')); 
+		})->name('thankyou');
 		Route::get('/order', 'OrderController@getOrderByUser')->name('user.order');
 
 		//* wishlist
 		Route::prefix('wishlist')->name('wishlist.')->group(function () {
-			Route::get('/{product}/add', 'WishlistController@add')->name('add');
+			Route::get('/{product:webname}/add', 'WishlistController@add')->name('add');
 			Route::delete('/{product}/delete', 'WishlistController@delete')->name('delete');
 		});
 
 
 		//* Rating
-		Route::post('rating/{product}/add', 'RatingController@add')->name('rating.add');
+		Route::post('rating/{product:webname}/add', 'RatingController@add')->name('rating.add');
 
 		//*comment
 		Route::prefix('comment')->name('comments.')->group(function () {
-			Route::post('/{product}/add', 'CommentController@add')->name('add');
-			Route::get('/{product}/all_comments', 'CommentController@show')->name('show');
+			Route::post('/{product:webname}/add', 'CommentController@add')->name('add');
+			Route::get('/{product:webname}/all_comments', 'CommentController@show')->name('show');
 		});
 	});
 
-
+	Auth::routes();
+	
 	//*auth()->user
 	Route::middleware(['auth', 'user'])->prefix('user')->name('user.')->group(function () {
 		Route::prefix('profile')->name('profile.')->group(function () {
@@ -158,9 +153,9 @@ Route::group([
 			Route::get('/edit', 'ProfileController@edit')->name('edit');
 			Route::post('/update', 'ProfileController@update')->name('update');
 		});
-		Route::get('/wishlist', 'WishlistController@userList')->name('wishlist');
+	
 	});
 
-
+	Route::get('/wishlist', 'WishlistController@userList')->name('wishlist');
 
 });

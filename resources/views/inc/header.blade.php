@@ -67,7 +67,7 @@
 				@guest
                            
 				<li class="nav-item">
-					 <a class="header__link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+					 <a class="header__link" href="{{ route('login', [app()->getLocale()]) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 				</li>		
 			@else
 					<li class="nav-item dropdown ml-2">
@@ -77,29 +77,29 @@
 
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 							@if(auth()->user()->IsAdmin)
-							<a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+							<a class="dropdown-item" href="{{ route('admin.dashboard', [app()->getlocale()]) }}">
 									{{ __('Dashboard') }}
 							</a>
 							@endif
 							@if(auth()->user()->IsUser)
-							<a class="dropdown-item" href="{{ route('user.profile') }}">
+							<a class="dropdown-item" href="{{ route('user.profile', [app()->getlocale()]) }}">
 									{{ __('My Profile') }}
 							</a>
 						
-							<a class="dropdown-item" href="{{ route('user.wishlist') }}">
+							<a class="dropdown-item" href="{{ route('user.wishlist', [app()->getlocale()]) }}">
 									{{ __('My WishList') }}
 							</a>
 							@endif
-							<a class="dropdown-item" href="{{ route('user.order') }}">
+							<a class="dropdown-item" href="{{ route('user.order', [app()->getlocale()]) }}">
 									{{ __('My Orders') }}
 							</a>
-							<a class="dropdown-item" href="{{ route('logout') }}"
+							<a class="dropdown-item" href="{{ route('logout', [app()->getlocale()]) }}"
 								onclick="event.preventDefault();
 													document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
 							</a>
 
-							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							<form id="logout-form" action="{{ route('logout', [app()->getlocale()]) }}" method="POST" style="display: none;">
 									@csrf
 							</form>
 						</div>

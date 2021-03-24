@@ -12,8 +12,8 @@
 			<div class="bread">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-					<li class="breadcrumb-item "><a class="breadcrumb__link" href="/shop">{{ __('Shop') }}</a></li>
-					<li class="breadcrumb-item "><a class="breadcrumb__link" href="{{route('category.index')}}">{{ __('All Categories') }}</a></li>
+					<li class="breadcrumb-item "><a class="breadcrumb__link" href="{{ route('shop', [app()->getLocale()]) }}">{{ __('Shop') }}</a></li>
+					<li class="breadcrumb-item "><a class="breadcrumb__link" href="{{route('category.index', [app()->getlocale()])}}">{{ __('All Categories') }}</a></li>
 					<li class="breadcrumb-item active" aria-current="page">{{ $category->__('title')}}</li> 
 				</ol>
 			</div>
@@ -30,6 +30,7 @@
 			
 				<div class="col-md-2">
 					@include('inc.sidebar')
+					
 				</div>
 			
 

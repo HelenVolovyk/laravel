@@ -3,7 +3,7 @@
       {{-- <img src="{{Storage::disk('public')->url($product['product']['thumbnail'])}}" height="64" width="64"/>  --}}
 
     {{-- <a href="{{route('product.show'), $row->id}}"> --}}
-    <a href="{{route('product.show', $row->id)}}">
+    <a href="{{route('product.show', [app()->getlocale(), $row->id])}}">
       <strong>{{$row->name}}</strong>
     </a>
   </td>
@@ -13,7 +13,7 @@
   
     
   <td>    
-  <form action="{{route('wishlist.delete', $row->id)}}" method="POST"> 
+  <form action="{{route('wishlist.delete', [app()->getlocale(), $row->id])}}" method="POST"> 
     @method('delete')
     @csrf
     <input type="hidden" value="{{$row->rowId}}" name="rowId">

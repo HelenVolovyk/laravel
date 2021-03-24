@@ -48,7 +48,7 @@
   
 </head>
 
-	<body>
+	<body style="opacity: 0; transition: .5s;">
 		<div id="app">
 			<div class="wrapper">
 		
@@ -100,7 +100,11 @@
 	  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script> 
 	  <script defer src="{{ asset('js/owl.carousel.min.js') }}"></script> 
 	 
-	 
+	 <script>
+		 $(document).ready(function(){
+			 $('body').css('opacity', '1');
+		 });
+	 </script>
 		
 		
 	</body>

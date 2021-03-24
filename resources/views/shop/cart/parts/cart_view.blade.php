@@ -4,15 +4,16 @@
 
     {{-- <a href="{{route('product.show'), $row->id}}"> --}}
 
-    <a href="{{route('product.show', $row->id)}}">
+    <a href="{{route('product.show', [app()->getlocale(), $row->id])}}">
       <strong>{{$row->name}}</strong>
     </a>
   </td>
   
     
  <td>    
-<form action="{{route('cart.count.update', $row->id)}}" method="POST"> 
+<form action="{{route('cart.count.update', [app()->getlocale(), $row->id])}}" method="POST"> 
   @csrf
+ 
   <input type="hidden" value="{{$row->rowId}}" name="rowId">
   <input type="number" min="1"  value="{{$row->qty}}" name="product_count" style="width: 55px; height: 35px; margin-right:10px">
   <input type="submit" class="btn btn-outline-success" value="{{ __('update count') }}">
@@ -26,7 +27,7 @@
   <span class ="label label-success"><strong>{{$row->total}} грн</strong></span>
 </td>
 <td>
- <form action="{{route('cart.delete', $row->id)}}" method="POST"> 
+ <form action="{{route('cart.delete', [app()->getlocale(), $row->id ])}}" method="POST"> 
   @method('DELETE')
   @csrf
   <input type="hidden" value="{{$row->rowId}}" name="rowId">

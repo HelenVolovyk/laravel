@@ -27,7 +27,7 @@ class OrderController extends Controller
 		$this->orderRepository = $orderRepository;
 	}
 
-	public function getOrderByUser(Order $order, Product $product)
+	public function getOrderByUser(Order $order, $locale, Product $product)
 	{
 		$orders = $this->orderRepository->getList();
 
@@ -39,9 +39,9 @@ class OrderController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function create(CreateOrderRequest $request, User $user)
+	public function create(CreateOrderRequest $request, $locale, User $user)
 	{
-
+		
 		$user = auth()->user();
 		$cartTotal = (float) Cart::instance('cart')->total(2, '.', '');
 		$cartItem = Cart::instance('cart')->content();
@@ -84,13 +84,17 @@ class OrderController extends Controller
 			'balance' => $user->balance - $cartTotal
 		]);
 
+	
+		
 		foreach ($cartItem as $item) {
-			$order->products()->attach($item->id, [
+			$order->products()->attach($item->webname, [
 				'quantity'   => (int) $item->qty,
 				'price'      => $item->price
+				
 			]);
 		}
-
+		
+		//dd($cartItem);
 
 		//Cart::instance('cart')->restore($user->instanceCartName());
 		Cart::instance('cart')->destroy();
@@ -98,10 +102,5 @@ class OrderController extends Controller
 		return redirect()->route('thankyou', compact('order'));
 	}
 
-	public function thankyou()
-	{
-		$order = $this->orderRepository->getId();
-		//dd($order);
-		return view('shop.checkout.thankyou', compact('order'));
-	}
+
 }

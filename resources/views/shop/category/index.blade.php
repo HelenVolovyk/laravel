@@ -14,7 +14,7 @@ All Categories
 			<div class="bread">
 				<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/shop">{{ __('Shop') }}</a></li>
+				<li class="breadcrumb-item"><a class="breadcrumb__link" href="{{ route('shop', [app()->getLocale()]) }}">{{ __('Shop') }}</a></li>
 				<li class="breadcrumb-item active" aria-current="page">{{ __('All Categories') }}</li>
 				</ol>
 			</div>

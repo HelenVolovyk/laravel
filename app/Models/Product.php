@@ -118,9 +118,9 @@ class Product extends Model implements Buyable
 	
 	public function getRouteKeyName()
 	{
-		
 		return 'webname'; 
 	}
+	
 	// protected $lang_fields = [
 	// 	'name',
 	// 	'name_uk',
