@@ -1,10 +1,10 @@
 const classes = {
-	wrapper: "slider-images-wrapper",
-	addBtn: ".slider-images-add",
-	removeBtn: ".slider-images-remove",
-	row: ".slider-images-row"
+	wrapper_s: ".slider-images-wrapper",
+	addBtn_s: ".slider-images-add",
+	removeBtn_s: ".slider-images-remove",
+	row_s: ".slider-images-row"
 };
-const htmlTemplate = `
+const htmlTemplate_s = `
 	<div class="row slider-images-row"
 		 style="width: 100%; margin: 32px auto 0;">
 		 <div class="col-8">
@@ -15,12 +15,12 @@ const htmlTemplate = `
 		 </div>
 	</div>`;
 
-$(document).on("click", classes.addBtn, function(e) {
+$(document).on("click", classes.addBtn_s, function(e) {
 	e.preventDefault();
-	$(classes.wrapper).append(htmlTemplate);
+	$(classes.wrapper_s).append(htmlTemplate_s);
 });
 
-$(document).on("click", classes.removeBtn, function(e) {
+$(document).on("click", classes.removeBtn_s, function(e) {
 	e.preventDefault();
 
 	  if ($(this).hasClass("ajax")) {
@@ -38,7 +38,7 @@ $(document).on("click", classes.removeBtn, function(e) {
 			  type: "DELETE",
 			  dataType: "json",
 			  success: function(data) {
-					let parent =  $btn.parents(classes.row);
+					let parent =  $btn.parents(classes.row_s);
 					parent.html(data.message);
 				
 					setTimeout(function(parent) {
@@ -50,7 +50,7 @@ $(document).on("click", classes.removeBtn, function(e) {
 			  }
 		 });
 	} else {
-		 let parent = $(this).parents(classes.row);
+		 let parent = $(this).parents(classes.row_s);
 		 if (parent) {
 			  parent.remove();
 		 }

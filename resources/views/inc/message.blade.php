@@ -20,3 +20,13 @@
 	 {{session('customeError')}}
 </div>
 @endif
+
+@if(Session::has('success'))
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="alert alert-success">
+        {{Session::get('success')}}
+      </div>
+    </div>
+  </div>
+@endif

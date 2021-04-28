@@ -30,10 +30,19 @@ class Image extends Model
     {
         return $this->morphToMany(\App\Models\Product::class, 'imageable');
     }
+    public function sliders()
+    {
+        return $this->morphToMany(\App\Models\Slider::class, 'imageable');
+    }
 
     public function categories()
     {
         return $this->morphToMany(\App\Models\Category::class, 'imageable');
+    }
+
+    public function recipes()
+    {
+        return $this->morphToMany(\App\Models\Recipe::class, 'imageable');
     }
 
 

@@ -26,7 +26,6 @@ class SetLocale
 
 
 
-
 		if (request('change_language')) {
 			session()->put('language', request('change_language'));
 			$language = request('change_language');
@@ -40,22 +39,6 @@ class SetLocale
 			app()->setLocale($language);
 		}
 
-
-		
-
-			// 											$locale = session('locale');
-			// 											App::setLocale($locale);
-			// dd(session('locale'));
-
-
-		
-
-		// $langPrefix = ltrim($request->route()->getPrefix(), '/');
-		// if ($langPrefix) {
-		// 	App::setlocale($langPrefix);
-		// }
-
-		// dd($langPrefix);
 
 		return $next($request);
 	}

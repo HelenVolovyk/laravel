@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Image;
+use App\Models\Otherimage;
+use App\Models\Unit;
 
 class ProductController extends Controller
 {
@@ -19,23 +21,28 @@ class ProductController extends Controller
 	 * @param  Product $product
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Product $product, Image $image)
+	public function show($locale, Product $product, Image $image)
 	{
 		$categories = Category::all();
 		$comments = $product->comments()->with('user')->paginate(5);
 		
-		$images = $product->images()->get('path');
+		$images = $product->images()->get();
+				
+		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
+		$categories = Category::all();
 	
 		
-		//  $images = $product->image();
-		// $images  = $product->images()->pluck('path');
-		// $re =  '/[“”]/u';
-		//$images  = preg_replace("/[^a-zA-Z0-9\s-]/", "", $images );
+		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories'), compact('images') );
+	}
+
+	public function index($locale, Product $product, Category $category)
+	{
+		$products = Product::all()->where('quantity', '>', '0');
+		$categories = Category::all();
+		
 	
-		//$images  = preg_replace('/(^[\"\']|[\"\']$)/', '', $image);
-	//dd($images);
-	//echo trim($images, '"');
-		//dd($product->images()->pluck('path'));
-		return view('shop.product.show', compact('product',  'comments'), compact('categories'), compact('images') );
+		
+//dd($products);
+		return view('shop.index', compact('categories', 'category'), compact('products', 'product'));
 	}
 }

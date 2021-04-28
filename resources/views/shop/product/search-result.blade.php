@@ -8,6 +8,7 @@
 @include('inc.message')
 
 <div class="container">
+	<div class="content">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
     <li class="breadcrumb-item"><a href="/">{{ __('Shop') }}</a></li>
@@ -18,20 +19,19 @@
 		<div class="col-md-2">
 			<aside class="product-section container">
 				<div class="sidebar">
-				<h6>{{ __('By Category') }}</h6>
-					<div class="category_link mt-3">
-						<div class="font-weight-bold"><a href="{{route('category.index')}}">{{ __('all categories') }}</a></div>
+				
+					<div class="category_link ">
+						<div class="mb-2"><a class="category__link" href="{{route('category.index')}}">{{ __('all categories') }}</a></div>
 						<div>
-            
-         
+						
+					
 						</div>
-	 
-
-        @each('shop.category-view', $categories, 'category') 
-  
-    
-    			</div>
-  			</div>
+			
+						@each('shop.category-view', $categories, 'category') 
+		
+			
+						</div>
+					</div>
 		</aside>
 </div>
 
@@ -40,11 +40,12 @@
 
 
 			<div class="search-results-container container">
-				<h1>{{ __('Search Result') }}</h1>
+				{{-- <h1>{{ __('Search Result') }}</h1> --}}
+				<div class="result d-flex">
 				<p class="search-results-count">{{ $products->total()}} 
-					{{ __('result(s) for') }} 
-					'{{  request()->input('query') }}'</p>
-
+					{{ __('result(s) for') }} </p>
+					<span class="query__result"> &nbsp '{{  request()->input('query') }}'</span>
+				</div>
 				
 					<div class="products">
 						@foreach($products->chunk(3) as $productChunk)
@@ -64,5 +65,6 @@
 			
 			</div>
 		</div>
+	</div>
 	</div>
 @endsection

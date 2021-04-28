@@ -7,6 +7,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -30,8 +31,9 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories = Category::all()->toArray();
-        //dd($categories);
+		  $categories = Category::all()->toArray();
+		 
+        //dd($units);
         return view('admin/products/create', compact('categories'));
     }
 
@@ -43,22 +45,39 @@ class ProductsController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-        //dd($request);
+       //dd($request);
         //dd($request->file('product_images'));
-        $product = $request->all();
-
-        unset($product['product_images']);
-        unset($product['thumbnail']);
-        unset($product['_token']);
-
+       // $product = $request->all();
+		  $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
+		  
+    
         if (!empty($request->file('thumbnail'))) {
-            $imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);
             $filePath       = $imageService->upload($request->file('thumbnail'));
             $product['thumbnail'] = $filePath;
         }
 
-        $product = Product::create($product);
-        //dd($product);
+       // $product = Product::create($product);
+		  //dd($product);
+		  
+		  $product = Product::create([
+			'category_id' => $request->get('category_id'),
+			'SKU' => $request->get('SKU'),
+			'name' => $request->get('name'),
+			'name_uk' => $request->get('name_uk'),
+			'webname' => Str::slug($request->get('name')),
+			'description' => $request->get('description'),
+			'description_uk' => $request->get('description_uk'),
+			'shot_description' => $request->get('shot_description'),
+			'shot_description_uk' => $request->get('shot_description_uk'),
+			'thumbnail' => $filePath, 
+			'price' => $request->get('price'),
+			'discount' => $request->get('discount'),
+			'quantity' => $request->get('quantity'),
+			'units_id' => $request->get('units_id')
+			
+	  ]);
+
+		  
 
         if (!empty($request->file('product_images'))) {
 	            foreach ($request->file('product_images') as $image) {
@@ -90,10 +109,11 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-       // dd($product);
-        $categories = Category::all()->toArray();
+		  		 
+		  $categories = Category::all()->toArray();
+		
         $images = $product->images;
-       // dd($images);
+        //dd( $units->name);
         return view('admin/products/edit', compact('categories', 'product'));
     }
 
@@ -123,7 +143,8 @@ class ProductsController extends Controller
             'shot_description_uk'  => $request->get('shot_description_uk'),
             'price'             => $request->get('price'),
             'discount'          => $request->get('discount'),
-            'quantity'          => $request->get('quantity')
+            'quantity'          => $request->get('quantity'),
+            'unit'         	  => $request->get('unit')
         ]);
 
       //dd($request->product);
@@ -179,6 +200,7 @@ class ProductsController extends Controller
     {
         $product->delete();
         $product->image()->delete();
+        $product->thumbnail()->delete();
 
         return redirect(route('admin.products.index'))
             ->with(['status' => 'The product was successfully removed!']);

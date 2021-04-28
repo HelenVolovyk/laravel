@@ -6,8 +6,26 @@
 
 require('./bootstrap');
 require('./header');
+require('./accordion');
+require('./search');
+require('./carousel');
+require('./btn');
+require('./owlCarousel');
+require('./owl.autoplay');
+require('./lazy_load');
+require('./ibg');
+require('./link');
+require('./gotop');
+require('./components');
+require('./slider-for');
+require('./product_slider');
 
-// window.Vue = require('vue');
+
+
+//window.Vue = require("vue").default;
+// import Vue from 'vue'
+// window.Vue = Vue;
+// require('./bootstrap'); 
 
 /**
  * The following block of code may be used to automatically register your

@@ -261,7 +261,10 @@
                                 </span>
                             @enderror
                         </div>
-                    </div>
+						  </div>
+						  
+					
+
 
                 @include('admin.products.parts.images')
 

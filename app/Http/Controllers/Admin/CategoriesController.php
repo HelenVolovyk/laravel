@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Image;
+use Illuminate\Support\Str;
 
 
 class CategoriesController extends Controller
@@ -20,9 +21,13 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        $categories = Category::withCount('products')->paginate(5);
-       // dd($categories);
-        return view('admin/categories/index', compact('categories'));
+		  $categories = Category::withCount('products')->paginate(5);
+		  foreach($categories as $category){
+			$image = $category->image;
+		  }
+		 
+        //dd($image->path);
+        return view('admin/categories/index', compact('categories', 'image'));
         // dd('hi!');
     }
 
@@ -50,7 +55,8 @@ class CategoriesController extends Controller
 
         $newCategory = $category->create([
             'title' => $request->get('title'),
-            'title_uk' => $request->get('title_uk'),
+				'title_uk' => $request->get('title_uk'),
+				'webname' => Str::slug($request->get('title')),
             'description' => $request->get('description'),
             'description_uk' => $request->get('description_uk')
         ]);

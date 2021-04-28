@@ -255,6 +255,7 @@
                           </div>
                       </div>
 
+				
 
                       @include('admin.products.parts.images')
 

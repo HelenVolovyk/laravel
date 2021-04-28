@@ -16,15 +16,16 @@ class WishlistController extends Controller
 {
 
 
-	public function userList()
+	public function userList($locale)
 	{
+		
 		return view('user.wishlist.wishlist');
 	}
 
 
-	public function add(Product $product, User $user, WishlistService $service)
+	public function add($locale, Product $product, User $user, WishlistService $service)
 	{
-		//dd($product);
+		
 		$service->addItem($product);
 		
 
@@ -32,9 +33,9 @@ class WishlistController extends Controller
 	}
 
 	
-	public function delete(Request $request, Product $product, WishlistService $service)
+	public function delete($locale, Request $request, Product $product, WishlistService $service)
 	{
-		//dd($product);
+		//dd($locale);
 		$service->deleteItem($request->rowId, $product);
 
 		$user = new User();
@@ -42,6 +43,8 @@ class WishlistController extends Controller
 
 		$result = Cart::instance('wishlist')->remove($request->rowId);
 
+		//dd($rowId);
+		
 		if ($result) {
 			$job = new PostAfterDeleteWishistJob(Cart::instance('wishlist'));
 			$this->dispatch($job);
@@ -50,6 +53,6 @@ class WishlistController extends Controller
 		}
 
 		
-		return redirect()->back()->with(['status' => 'The product (' . $product->name . ') was deleted from your wish list!']);
+		return redirect()->back()->with(['status' => 'The product (' . $product->__('name') . ') was deleted from your wish list!']);
 	}
 }

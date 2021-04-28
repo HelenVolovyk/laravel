@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\Product;
 use App\Models\User;
+use App\Notifications\ProductInStockNotification;
 
 class ProductObserver
 {
@@ -31,8 +32,6 @@ class ProductObserver
                     ->get()
                     ->each
                     ->notify(new ProductInStockNotification($product)); 
-                    
-                    
         }
     }
 

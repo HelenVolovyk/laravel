@@ -15,7 +15,7 @@ class MailController extends Controller
 {
     public function send()
     {
-		 //Mail::send(new newMail());
+		 Mail::send(new newMail());
 		 
 		 Mail::send(['test'=>'email'], ['name', 'webDev'], function($message){
 			$message->to('mr0778240@gmail.com', 'toWebDev')->subject('test');

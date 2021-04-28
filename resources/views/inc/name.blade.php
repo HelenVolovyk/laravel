@@ -1,49 +1,49 @@
 <header class="header">
+
+	 
+@endphp
 	<div class="name">
-<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
-	<div class="container">
 	
+		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
+			
+			<div class="container">
+				
+			  <!-- Right Side Of Navbar -->
 			<div class="header__burger">
 				<span></span>
 				<span></span>
 				<span></span>
 			</div> 
-			<a  href="{{ url('/') }}" class="header__logo ml-2">
-				<i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i>
-			</a>
-			<div class="navbar-brand text-wrap "style="width: 10rem; height: 4rem;">
-			<a class="navbar-brand" href="">
-						{{ __('My Stor') }}
-			</a>
-			<a class="tel" href="tel:123-456-78">123-456-78</a>
-		</div>	
-					  <!-- Right Side Of Navbar -->
-		  <ul class="navbar-nav ml-auto ">
 
-  <!-- Lang -->
-			<div class="name__lang">
-				<div class="lang mt-2 mr-2">
-					@if(count(config('app.languages')) > 1)
-					
-						<li class="nav-item dropdown d-md-down-none ">
-							<a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-										{{ strtoupper(app()->getLocale()) }}
-							</a>
-							<div class="dropdown-menu dropdown-menu-right">
-									@foreach(config('app.languages') as $langLocale => $langName)
-										<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-								
-									@endforeach
-							</div>
-						</li>
-						@endif 
-				</div>  
+			<a  href="{{ url('/') }}" class="header__logo">
+				<i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i>
+				{{-- <img src="{{Storage::disk('public')->url('YG/q3/pI/pa/6Jy2xZfxjQdcMsSA_1614112248.jpg')}}" alt="" width="80px" height="80px"> --}}
+			
+			</a>
+
+		
+			
+			{{-- <a class="tel" href="tel:123-456-78"><i class="fa fa-phone fa-2x"></i>  123-456-78</a> --}}
+		
+			<div class="brend__name">
+				<a class="navbar-brand" href="">{{ __('My Stor') }}</a>
 			</div>
+			
+		
+		
+  <!-- Lang -->
+  <ul class="navbar-nav ml-auto ">
+
 
 			<!-- Authentication Links -->
 		<div class="name__enter">
 		      @guest
-                           
+                 
+				{{-- <div class="nav__search">		
+					@include('inc.search')
+				</div>   --}}
+			   
+	
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 					</li>		
@@ -65,7 +65,7 @@
 									{{ __('My Profile') }}
 							  </a>
 						  
-							  <a class="dropdown-item" href="{{ route('user.wishlist') }}">
+							  <a class="dropdown-item" href="{{ route('user.wishlist', [app()->getlocal()]) }}">
 									{{ __('My WishList') }}
 							  </a>
 							  @endif
@@ -88,9 +88,10 @@
 			</div>
 					
 		
+
 			<div class="d-flex justify-content-end">
 				<li class="nav-item">
-					 <a class="nav-link" href="{{route('user.wishlist')}}"><i class="fa fa-heart-o" aria-hidden="true"></i>
+					 <a class="nav-link" href="{{route('wishlist', [app()->getlocale()])}}"><i class="fa fa-heart-o" aria-hidden="true"></i>
 						 @if(Cart::instance('wishlist')->count() > 0)
 						  <span class="badge badge-pill badge-secondary">{{Cart::instance('wishlist')->count()}}</span>
 						  @endif
@@ -99,21 +100,41 @@
 		
 
 				<li class="nav-item">
-					<a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<a class="nav-link" href="{{route('cart.index', [app()->getlocale()])}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 						@if(Cart::instance('cart')->count() > 0)
 							<span class="badge badge-pill badge-secondary">{{Cart::instance('cart')->count()}}</span>
 						@endif
 					</a>
 				</li>
-			</div>
 			
 
-						
-		  </ul>
-	</div>
-</nav>
 
-</div>
+			<div class="name__lang">
+				<div class="lang mt-2 ml-3">
+					@if(count(config('app.languages')) > 1)
+					
+					<li class="nav-item dropdown d-md-down-none ">
+							<a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+										{{ strtoupper(app()->getLocale()) }}
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+									@foreach(config('app.languages') as $langLocale => $langName)
+										<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+								
+									@endforeach
+							</div>
+						</li>
+						@endif 
+				</div>  
+			</div>
+		</div>
+			
+		 </ul>
+
+			</div>
+		</nav>
+	</div>
+
 
 
 	

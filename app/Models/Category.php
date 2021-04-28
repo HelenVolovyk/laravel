@@ -12,7 +12,8 @@ class Category extends Model
     protected $fillable = [
         'id',
         'title',
-        'title_uk',
+		  'title_uk',
+		  'webname',
         'description',
         'description_uk'
 
@@ -33,5 +34,10 @@ class Category extends Model
         $more = strlen($this->description) > 100 ? '...' : '';
 
         return substr($this->description, 0, 100) . $more;
-    }
+	 }
+	 
+	public function getRouteKeyName()
+	{
+		return 'webname'; 
+	}
 }

@@ -7,14 +7,15 @@ Shopping Cart
 
 
 @section('content')
-  {{-- @if(Session::has('cart')) --}}
+ 
   @if(Cart::instance('cart')->count() > 0)
   <div class="container">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
-      <li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ __('Cart') }}</li>
-	 </ol>
+	  <div class="content">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+				<li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">{{ __('Cart') }}</li>
+			</ol>
 	 
 	
 	
@@ -57,12 +58,13 @@ Shopping Cart
     </div>
   </div>
 
-  @else
-
-  <div class="row justify-content-center">
-         <h2>{{ __('No items in Cart!') }}</h2> 
-    
-  </div>
-</div>
+  	@else
+		<div class="content">
+			<div class="row justify-content-center">
+				<h2>{{ __('No items in the Cart!') }}</h2> 
+				</div>
+			</div>
+		</div>
+	</div>
 @endif
 @endsection

@@ -1,72 +1,47 @@
 
-{{-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	 
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="7000">
 	<ol class="carousel-indicators">
-	  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	  <li data-target="#myCarousel" data-slide-to="1"></li>
-	  <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 	</ol>
 	<div class="carousel-inner">
-	  <div class="carousel-item active">
-		 <svg class="bd-placeholder-img" width="100%" height="400px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-		 <div class="container">
-			<div class="carousel-caption text-left">
-			  <h1>Example headline.</h1>
-			  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-			</div>
+	  <div class="carousel-item active ibg" >
+		{{-- <img class="ibg" src='{{Storage::disk('public')->url($image->find(8)->path) }}' alt=""> --}}
+		<img class="ibg" src='{{Storage::disk('public')->url($slider->find(20)->thumbnail) }}' alt="">
+		
+			<div class="carousel__text text-center ">
+			<h1 class="wow fadeInUp" >First slide label</h1>
+			<h3 class="wow fadeInUp" data-wow-delay="1s">Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+		 </div>
+		
+	  </div>
+	  <div class="carousel-item ibg" >
+		
+		{{-- <img class="ibg" src='{{Storage::disk('public')->url($image->find(18)->path) }}' alt=""> --}}
+
+		<div class="carousel__text text-center">
+			<h1 class="">{{ $slider->find(20)->title }}</h1>
+			<h3 class="">{{ $slider->find(20)->shotTitle }}</h3>
 		 </div>
 	  </div>
-	  <div class="carousel-item">
-		 <svg class="bd-placeholder-img" width="100%" height="400px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-		 <div class="container">
-			<div class="carousel-caption">
-			  <h1>Another example headline.</h1>
-			  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-			</div>
-		 </div>
-	  </div>
-	  <div class="carousel-item">
-		 <svg class="bd-placeholder-img" width="100%" height="400px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-		 <div class="container">
-			<div class="carousel-caption text-right">
-			  <h1>One more for good measure.</h1>
-			  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-			</div>
+	  <div class="carousel-item ibg" >
+		
+		{{-- <img class="ibg" src='{{Storage::disk('public')->url($image->find(36)->path) }}' alt=""> --}}
+		<div class="carousel__text text-center">
+			<h1 class="">First slide label</h1>
+			<h3 class="">Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
 		 </div>
 	  </div>
 	</div>
-	<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 	  <span class="sr-only">Previous</span>
 	</a>
-	<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
 	  <span class="sr-only">Next</span>
 	</a>
  </div>
-</div> --}}
-<div class="container-fluid">
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-	<div class="carousel-inner">
-	  <div class="carousel-item active">
-		<svg class="carousel-3 bd-placeholder-img" width="100%" height="900px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-	</div>
-	  </div>
-	  <div class="carousel-item">
-		<svg class="carousel-2 bd-placeholder-img" width="100%" height="900px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-	  </div>
-	  <div class="carousel-item">
-		<svg class="carousel-3 bd-placeholder-img" width="100%" height="900px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-	  </div>
-	</div>
-	<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	  <span class="sr-only">Previous</span>
-	</a>
-	<a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	  <span class="sr-only">Next</span>
-	</a>
-</div>

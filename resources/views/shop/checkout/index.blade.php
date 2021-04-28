@@ -29,9 +29,9 @@ Checkout
         @endif
      
 
-        <form action="{{route('order.create')}}" method="POST" id="checkout-form">
-          @csrf
-               
+        <form action="{{route('order.create', [app()->getLocale()])}}" method="POST" id="checkout-form">
+			 @csrf
+	
           <div class="">
             <div class="form-group">
               <label for="user_name">{{ __('Name') }}</label>
@@ -123,7 +123,7 @@ Checkout
 		  --}}
 		  
 
-        @csrf
+       
         <button type="submit" class="btn btn-success">{{ __('Buy now') }}</button>
      
         </form>

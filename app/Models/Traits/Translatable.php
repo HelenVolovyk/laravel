@@ -18,7 +18,7 @@ trait Translatable
 		} 
 		
 
-		//dd($fieldName);
+	//	dd($fieldName);
 		//dd($this);
 		
 		else {

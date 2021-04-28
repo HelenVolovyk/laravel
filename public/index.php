@@ -37,6 +37,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -62,4 +63,3 @@ $kernel->terminate($request, $response);
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'On'); 
-

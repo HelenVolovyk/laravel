@@ -1,37 +1,39 @@
 
-   <div class="col-sm-6 col-md-4">
-     <div class="card shadow-sm" >
-        <a href="{{route('product.show', $product)}}">
+<div class="col-sm-12 col-md-6 col-lg-4">
 
-          <div class="cart-img ">
-            <img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="..." ></div> 
+     <div class="card mb-2" style="border: none" >
+        <a  class="cart__link" href="{{route('product.show', [app()->getLocale(), $product])}}">
+          <div class="scale cart-img ">
+				<img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="scale card-img-top" alt="..." >
+			</div> 
         </a>
 
         <div class="cart-link">
           
-       
-          <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', $product)}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
+			 <a class=" badge rounded-pill bg-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+			</a>
                       
         </div>
       
  
        <div class="card-body">
 			<h5 class="card-title">{{$product->__('name')}}</h5>
-          <p class="card-text">{{$product->__('shot_description')}}</p>
+		
+				<div class="">
       		 @include('shop.category-view', ['category'=>$product->category()->first()])
-            
+				</div>  
            
               
            <div class="clearfix ">
              <div class="price">
              @if($product->discount > 0)
-               <small style="color: red; text-decoration: line-through">${{$product->price}}</small>
+               <small style="color: red; text-decoration: line-through">{{$product->price}} грн</small>
              @endif
-             <div class="printPrice">${{$product->printPrice()}}</div>
+             <div class="printPrice">{{$product->printPrice()}} грн</div>
             </div>
            
-
-             <form action="{{route('cart.add', $product)}}" method="POST" class="form-inline" id="button_center">             
+				<div class="d-flex justify-content-center mt-3">
+             <form action="{{route('cart.add', [app()->getLocale(), $product])}}" method="POST" class="form-inline" id="button_center">             
               @method('POST')
               @csrf
               <div class="form-froup  mb-2">
@@ -47,16 +49,24 @@
                       > 
       
               </div> 
-            
-                <button type="submit" class="btn btn-primary mt-2" id="button_center">{{ __('Add to Cart') }}</button>
-           
+	  	
+				<button type="submit" class="btn  card__btn" id="button_center">{{ __('Add to Cart') }}
+				</button> 
+				<div class="btn__line">
+					<div class="block1"></div>
+					<div class="block2"></div>
+				</div>
+			
+			</div>
+
+				
+            </div>
                </form>
 
-
-           </div>
-       </div>
-     </div>
-    </div>
+			  </div>
+		  </div>
+	   </div>
+  
 
   
                 

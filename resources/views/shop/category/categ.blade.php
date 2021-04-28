@@ -1,33 +1,21 @@
-
-
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-6 col-md-4 m-3">
   <div class="card shadow-sm" >
-     {{-- <a href="{{route('product.show', $product)}}"> --}}
-
-       {{-- <div class="cart-img ">
-         <img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="..." ></div> 
-     </a> --}}
-
      <div class="cart-link">
-       
-       {{-- <a class="badge badge-pill badge-light flot-right" href="{{route('product.show', $product->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
-       {{-- <a class="badge badge-pill badge-light flot-right" href="#"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a> --}}
-                   
      </div>
    
  
-    <div class="card-body">
-      <a href="{{route('category.show', $category)}}">
-        <h5 class="card-title">{{$category->__('title')}}</h5>
-      </a>
-      
-       <p class="card-text">{{$category->__('description')}}</p>
-      
-         
+    <div class="categ__card-body " class="wow fadeInTopLeft" data-wow-duration="2s" data-wow-delay="5s" data-wow-offset="10" data-wow-iteration="10">
 
-     
-
-     
+        <h5 class="card-title">
+			<a class="categ__cart-linck" href="{{route('category.show', [app()->getLocale(), $category])}}">	{{$category->__('title')}}</a>
+		</h5>
+      
+      
+		 <p class="card-text">{{$category->__('description')}}</p>
+		 
+		 {{-- @include('admin.categories.parts.images') --}}
+      
+        
     </div>
   </div>
  </div>

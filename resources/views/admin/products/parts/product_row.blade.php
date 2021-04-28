@@ -3,7 +3,7 @@
              <th><img src="{{Storage::disk('public')->url($product->thumbnail)}}" height="50" width="50"></th>
              <td>{{$product->name}}</td>
 
-			  <td><a href="{{route('admin.products.edit', $product->category->id)}}">{{$product->category->title}}</a>
+			  <td><a href="{{route('admin.products.edit', [app()->getLocale(), $product->category->id] )}}">{{$product->category->title}}</a>
 			  </td>
        
              <td>{{$product->shot_description}}</td>

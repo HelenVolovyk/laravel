@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
 
-	public function index()
+		
+	public function index($locale, Product $product)
 	{
+	
 		return view('shop.cart.index');
 	}
 
@@ -29,26 +31,32 @@ class CartController extends Controller
 	 * @param Product $product
 	 */
 
-	public function add(Request $request, Product $product)
+	public function add(Request $request, $locale, Product $product)
 	{
 			
 			Cart::instance('cart')->add(
-			$product->id,
+			
+			$product->webname,
 			$product->__('name'),
 			$request->product_count,
 			$product->getPrice()
 		);
+	
+	
 
+		//dd(Cart::instance('cart')->content());
 		//Cart::instance('cart')->store(auth()->user()->instanceCartName()); 
 
 		return redirect()->back()->with(['status' => 'The product was added to cart']);
 	}
 
 
-	public function update(Request $request, Product $product)
+	public function update(Request $request, $locale, Product $product)
 	{
+		
+		//dd(Cart::instance('cart')->content());
 		if ($request->product_count > $product->quantity) {
-			return redirect()->back()->with(['customeError' => 'Product count should be less then' . $product->quantity]);
+			return back()->with(['customeError' => 'Product count should be less then' . $product->quantity]);
 		}
 
 		Cart::instance('cart')->update(
@@ -56,18 +64,19 @@ class CartController extends Controller
 			$request->product_count
 		);
 
-		return redirect()->back()->with(['status' => 'The product ' . $product->__('name') . ' count was updated']);
+		return redirect()->back()->with(['status' => 'The product count was updated']);
 	}
 
 
 
-	public function delete(Request $request, Product $product)
+	public function delete(Request $request)
 	{
-		
+	
+		//dd(Cart::instance('cart'));
 		Cart::instance('cart')->remove($request->rowId);
 		//Cart::instance('cart')->restore(Auth::user()->instanceCartName());
 
-		return redirect()->back()
+		return back()
 			->with(['status' => 'The product was removed']);
 	}
 }

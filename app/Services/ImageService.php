@@ -21,7 +21,7 @@ class ImageService implements ImageServiceInterface
     //dd($imagePath);
 
     Storage::put(
-     
+     'public/'.
         $imagePath,
       File::get($file)
 

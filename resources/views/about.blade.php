@@ -1,45 +1,50 @@
 @extends('layouts.app')
+@section('header')
+<title>{{ $metaTitle }}</title>
+	 
+@endsection
 
 @section('content')
-<div class="container">
- 
-    <h2>{{ __('ABOUT') }}</h2>
-	 <hr class="featurette-divider">
+<div class="content about">
+	<div class="container ">
+			<h2>{{ __('ABOUT') }}</h2>
+			<hr class="about__hr">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
+			@include('inc.breadcrumb')
 
-    <hr class="featurette-divider">
+				<div class="col-md-12 offset-md-1 pt-5 pb-5">
+					<h4 class="font-italic text-left ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
+				</div>
+		</div>
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
+			<div class="about-block mb-4">
+				<div class="about-block__row d-flex flex-wrap">
 
-    <hr class="featurette-divider">
+					<div class="about-block__element_1">
+						<div class="about-block__content">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia pariatur molestiae animi nisi nostrum, libero consectetur ipsa nam, beatae similique rerum deleniti perspiciatis at a dolores facilis itaque quam corporis!
+							</p>
+						</div>
+					</div>
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
+					<div class="about-block__element_2">
+						<div class="about-block__content_2"></div>
+					</div>	
 
-    <hr class="featurette-divider">
-</div>
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="about__text">
+					
+						
+							<p class="text-left mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ratione fugiat distinctio accusamus similique, nesciunt quisquam dicta harum aliquam quo sint incidunt ut aperiam laborum sit, neque molestiae voluptatum deserunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ratione fugiat distinctio accusamus similique, nesciunt quisquam dicta harum aliquam quo sint incidunt ut aperiam laborum sit, neque molestiae voluptatum deserunt?</p>
+							<p class="text-right pt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+					
+			
+				</div>
+			</div>
+
+ </div>
 @endsection

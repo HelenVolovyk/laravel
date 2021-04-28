@@ -23,6 +23,7 @@ class Product extends Model implements Buyable
 		'SKU',
 		'name',
 		'name_uk',
+		'webname',
 		'description',
 		'description_uk',
 		'shot_description',
@@ -59,6 +60,7 @@ class Product extends Model implements Buyable
 	}
 
 
+	
 	public function followers()
 	{
 		return $this->belongsToMany(
@@ -86,7 +88,7 @@ class Product extends Model implements Buyable
 			$price -= ($price / 100 * $this->discount);
 		}
 
-		return round($price, 2);
+		return number_format($price, 2, '.', '');
 	}
 
 	public function getPrice()
@@ -109,6 +111,12 @@ class Product extends Model implements Buyable
 		return !empty($vote->rating) ? $vote->rating : false;
 	}
 
+	
+	public function getRouteKeyName()
+	{
+		return 'webname'; 
+	}
+	
 	// protected $lang_fields = [
 	// 	'name',
 	// 	'name_uk',

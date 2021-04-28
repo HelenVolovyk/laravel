@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Otherimage;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -25,21 +26,33 @@ class SlidersController extends Controller
 
 	public function store(Request $request, Slider $slider)
 	{
+
+		$imageService   = app()->make(\App\Services\Contract\ImageServiceInterface::class);  
+		if (!empty($request->file('thumbnail'))) {
+			  
+			$filePath       = $imageService->upload($request->file('thumbnail'));
+			$newSlider['thumbnail'] = $filePath;
+	  }
+	  
 		$newSlider = $slider->create([
 			'title' => $request->get('title'),
 			'title_uk' => $request->get('title_uk'),
-		
+			'shotTitle' => $request->get('shotTitle'),
+			'shotTitle_uk' => $request->get('shotTitle_uk'),
+			'thumbnail' => $filePath, 
+       
 	  ]);
+	
+	 	
 
-	  if (!empty($request->file('image'))) {
-			$imageService = app()->make(\App\Services\Contract\ImageServiceInterface::class);
-			$filePath = $imageService->upload($request->file('image'));
-		 
-
-			$newSlider->image()->create(['path' => $filePath]);
-	  }
-
-		
+	  
+	  if (!empty($request->file('images'))) {
+		 foreach ($request->file('images') as $image) {
+		 $filePath       = $imageService->upload($image);
+		 $newSlider->image()->create(['path' => $filePath]);
+		}
+}
+  		//dd($newSlider);
 		return redirect(route('admin.sliders.index'))
 			->with(['status' => 'The slider has been created']);
 	}
@@ -56,20 +69,17 @@ class SlidersController extends Controller
 		}
 	
 		// dd($images);
-		return view('admin/sliders/edit', compact( 'images'));
+		return view('admin/sliders/edit', compact( 'image'));
 	}
 
 
 
 	public function update(Request $request, Slider $slider)
 	{
-
-
-
 		$slider->update([
-			'title'         => $request->get('title'),
+			'title'        	 => $request->get('title'),
 			'title_uk'         => $request->get('title_uk'),
-		//'thumbnail'         => $slider->thumbnail,
+			'thumbnail' => $filePath, 
          
 			 
 		]);
@@ -102,6 +112,7 @@ class SlidersController extends Controller
 	public function show(Slider $slider)
 	{
 		$slider = $slider->getctive();
+		
 		return $slider;
 	}
 
@@ -114,7 +125,7 @@ class SlidersController extends Controller
 	public function destroy(Slider $slider)
 	{
 		$slider->delete();
-		$slider->images()->delete();
+		$slider->image()->delete();
 
 		return redirect(route('admin.sliders.index'))
 			->with(['status' => 'The slider was successfully removed!']);

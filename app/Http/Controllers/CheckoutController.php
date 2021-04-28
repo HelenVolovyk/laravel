@@ -12,7 +12,7 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke()
+    public function __invoke($locale)
     {
         
         return view('shop.checkout.index');
