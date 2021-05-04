@@ -86,6 +86,7 @@ class ProductsController extends Controller
             }
         }
 
+		
         return redirect(route('admin.products.index'))
             ->with(['status' => 'The product has been created']);
     }

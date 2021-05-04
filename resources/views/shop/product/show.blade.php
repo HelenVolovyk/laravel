@@ -6,24 +6,26 @@
 <div class="content">
 
 
+
 	{{-- @if(session('status'))
 	<div class="alert alert-success">
 		 {{session('status')}}
 	</div>
 	@endif --}}
 	{{-- @include('inc.message') --}}
-	
+	<div class="col-md-12 mb-3">
+		<h3 class="text-center">{{ $product->__('name') }}</h3>
+	 </div>
+
 <div class="row justify-content-center">
-  <div class="col-md-4 mb-3">
-	 <h3 class="text-center">{{ $product->__('name') }}</h3>
-  </div>
+ 
   
 		
 <hr>
 
-<div class="row">
+{{-- <div class="row"> --}}
   <div class="col-md-6">
-	<div class="card md-4 shadow-sm" >
+	<div class="card pr md-6 " >
 
  		{{-- @if(Storage::disk('public')->has($product->thumbnail)) 
 			<img src="{{Storage::disk('public')->url($product->thumbnail)}}" class="card-img-top" alt="">
@@ -35,13 +37,7 @@
 
 			@include('inc.product_slider')
 
-			{{-- @include('shop.product.parth.images') --}}
-
-
-			 
-
-			{{-- @endforeach --}}
-			{{-- @endif  --}}
+			{{-- @include('inc.slider') --}}
 		
 	</div>
   </div>
@@ -225,7 +221,7 @@
 						@endif
 					</div> --}}
 				</div>
-			</div>
+			{{-- </div> --}}
 		</div> 
 	</div>
 </div>

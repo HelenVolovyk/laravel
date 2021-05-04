@@ -26,13 +26,19 @@ class ProductController extends Controller
 		$categories = Category::all();
 		$comments = $product->comments()->with('user')->paginate(5);
 		
+		
 		$images = $product->images()->get();
-				
+					
+		$array = collect([$product->thumbnail]);
+		$images->each(function($image) use ($array){
+			$array->push($image->path);
+		});
+		
 		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		$categories = Category::all();
 	
 		
-		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories'), compact('images') );
+		return view('shop.product.show', compact('product', 'products', 'comments', 'categories', 'array'));
 	}
 
 	public function index($locale, Product $product, Category $category)
@@ -43,6 +49,6 @@ class ProductController extends Controller
 	
 		
 //dd($products);
-		return view('shop.index', compact('categories', 'category'), compact('products', 'product'));
+		return view('shop.index', compact('categories', 'category', 'products', 'product'));
 	}
 }

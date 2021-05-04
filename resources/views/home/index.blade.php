@@ -14,9 +14,9 @@
 </div>
 <section>
 		<!--- Start Carousel Section -->
-		<div class="container-fluid">
+		{{-- <div class="container-fluid">
 			@include('inc.slider')
-		</div>
+		</div> --}}
 		<!--- End Carousel Section -->
 </section>
 

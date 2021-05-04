@@ -1,12 +1,11 @@
 <header class="header">
 
 	 
-@endphp
-	<div class="name">
+<div class="name">
 	
 		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
 			
-			<div class="container">
+			<div class="container-fluid">
 				
 			  <!-- Right Side Of Navbar -->
 			<div class="header__burger">
@@ -15,20 +14,14 @@
 				<span></span>
 			</div> 
 
-			<a  href="{{ url('/') }}" class="header__logo">
-				<i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i>
-				{{-- <img src="{{Storage::disk('public')->url('YG/q3/pI/pa/6Jy2xZfxjQdcMsSA_1614112248.jpg')}}" alt="" width="80px" height="80px"> --}}
+			<a  href="{{ url('/') }}" class="logo">
+			
+				<img src="{{Storage::disk('public')->url($otherimages->find(11)->img_src)}}" alt="" width="90px" height="60px">
 			
 			</a>
 
 		
-			
-			{{-- <a class="tel" href="tel:123-456-78"><i class="fa fa-phone fa-2x"></i>  123-456-78</a> --}}
 		
-			<div class="brend__name">
-				<a class="navbar-brand" href="">{{ __('My Stor') }}</a>
-			</div>
-			
 		
 		
   <!-- Lang -->
@@ -37,6 +30,20 @@
 
 			<!-- Authentication Links -->
 		<div class="name__enter">
+			<li class="nav-item">
+				<div class="search">
+								
+					<input type="checkbox" id="check">
+					  	<div class="box">
+						  <input type="text"  placeholder="поиск">
+						  <label for="check">
+								  <i class="fa fa-search" aria-hidden="true"></i>
+						  </label>
+						
+						</div>
+				  
+			  </div>
+			</li>
 		      @guest
                  
 				{{-- <div class="nav__search">		

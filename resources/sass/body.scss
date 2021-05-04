@@ -149,16 +149,13 @@ a.breadcrumb__link:hover{
 		bottom: 110px;
 	}
 }
-i.fa.fa-search:hover{
-	-webkit-transform: scale3d(1.5, 1.5, 1.5);
-	-ms-transform: scale3d(1.5, 1.5, 1.5);
-	transform: scale3d(1.5, 1.5, 1.5);
+
 	
 	
-}
+
 i.fa.fa-phone,
-i.fa.fa-arrow-up,
-i.fa.fa-search{
+i.fa.fa-arrow-up
+{
 	display:inline-block;
 	vertical-align:middle;
 	-webkit-transform:perspective(3px) translateZ(0);

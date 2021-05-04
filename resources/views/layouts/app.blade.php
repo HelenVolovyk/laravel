@@ -31,6 +31,7 @@
     <!-- Styles -->
    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 	 <link href="{{ asset('css/hover-min.css') }}" rel="stylesheet" media="all">
 	 <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" media="all">
 	 <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" media="all">
@@ -76,12 +77,12 @@
 									
 								<div class="go">	
 								<a class="go__phone" href="tel:123-56-78"><i class="fa fa-phone" aria-hidden="true"></i></a>
-								<div class="go__search">
+								{{-- <div class="go__search">
 									
 									@include('inc.search')
 								
 
-								</div>
+								</div> --}}
 								<a class="gotop" href=""><i class="fa fa-arrow-up"></i></a>
 							</div>	
 					{{-- </main> --}}
