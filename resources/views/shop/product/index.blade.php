@@ -23,11 +23,10 @@
           <div class="card-body">
             <h5 class="card-title">{{$product->name}}</h5>
             <p class="card-text">{{$product->shot_description}}.</p>
-            {{-- @if(!empty($product->categories)) --}}
-           {{-- <p>{{$product->category->title}}</p> --}}
-                {{-- <a href="{{route('category.show')}}">{{$product->category->title}}</a>  --}}
+           
               @include('shop.category-view', ['category'=>$product->category()->first()]) 
-            {{-- @endif --}}
+			
+				<div>@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
           
 
 

@@ -21,9 +21,13 @@
 			{{-- <div class="cart-description">
 			 	<p class="card-text">{{$product->__('shot_description')}}</p>
 			</div> --}}
+			<div class="d-flex justify-content-between">
 				<div class="">
-      		 @include('shop.category-view', ['category'=>$product->category()->first()])
+      		 @include('shop.category-one-view', ['category'=>$product->category()->first()])
 				</div>  
+				<div>@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
+			</div>
+
            
               
            <div class="clearfix ">

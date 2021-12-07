@@ -4,21 +4,19 @@
 <div class="content">
 <div class="container">
 
-	 {{-- <h2>{{ __('Healthy recipes') }}</h2> --}}
+	
 	 <div class="d-flex justify-content-between">
 		<div class="bread">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route('recipes') }}">{{ __('recipes') }}</a></li> 
+				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route( 'recipes', [app()->getLocale()]) }}">{{ __('recipes') }}</a></li> 
 				<li class="breadcrumb-item active" aria-current="page">{{ $recipe->__('title') }}</li> 
-				
 			</ol>
 		</div>
-
 	</div>
 
+	<h2>{{ $recipe->__('title') }}</h2>
 	
-	 <h3 class="mt-5">{{ $recipe->__('title ')}}</h3>
 	 {{-- <hr class="featurette-divider"> --}}
 
     <div class="row featurette">
@@ -36,19 +34,11 @@
 					<div class="recipe__sidebar-content" style="font-size: 16px; color: grey">
 						<p><span class="text-muted">Donec ullamcorper</span></p>
 				
-						{{-- <ul class="recipe ">
-							<li class="recipe">gfghghgh dfgg - 300 g</li>
-							<li class="recipe">gfghghgh dfgg - 300 g</li>
-							<li class="recipe">gfghghgh dfgg - 300 g</li>
-							<li class="recipe">gfghghgh dfgg - 300 g</li>
-						
-						</ul> --}}
-					
+										
 						{{-- {{preg_replace('<br>', '', nl2br($recipe->components)) }} --}}
 						<div class="comp" style="white-space: pre-wrap">
 							 {{ $recipe->__('components') }}
-						</div>
-					
+						</div> 
 					
 						{{-- {{ htmlenities($recipe->components) }} --}}
 						{{-- {{  html_entity_decode($recipe->components) }} --}}
@@ -65,9 +55,9 @@
 					<p >
 						{{ $recipe->__('description') }}
 					</p>
-					<div class="comp mb-5" style="white-space: pre-line; color:gray; font-size:18px">
+					{{-- <div class="comp mb-5" style="white-space: pre-line; color:gray; font-size:18px">
 						{{ $recipe->__('components') }}
-				  </div>
+				  </div> --}}
 				  <p >
 					{{ $recipe->__('description') }}
 				</p>

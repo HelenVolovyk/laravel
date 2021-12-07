@@ -9,8 +9,8 @@
 
 		<nav class="header__menu">
 		
-			<div class="container">
-			<ul class="header__list">
+			<div class="container__menu">
+			<ul class="header__list pt-3">
 				
 				
 			
@@ -82,11 +82,11 @@
 							</a>
 							@endif
 							@if(auth()->user()->IsUser)
-							<a class="dropdown-item" href="{{ route('user.profile', [app()->getlocale()]) }}">
+							<a class="dropdown-item" href="{{ route('user.profile.index', [app()->getlocale()]) }}">
 									{{ __('My Profile') }}
 							</a>
 						
-							<a class="dropdown-item" href="{{ route('user.wishlist', [app()->getlocale()]) }}">
+							<a class="dropdown-item" href="{{ route('wishlist', [app()->getlocale()]) }}">
 									{{ __('My WishList') }}
 							</a>
 							@endif

@@ -69,6 +69,8 @@ class ProductsController extends Controller
 			'SKU' => $request->get('SKU'),
 			'name' => $request->get('name'),
 			'name_uk' => $request->get('name_uk'),
+			'manufacturer' => $request->get('manufacturer'),
+			'manufacturer_uk' => $request->get('manufacturer_uk'),
 			'webname' => str_slug($request->get('name')),
 			'description' => $request->get('description'),
 			'description_uk' => $request->get('description_uk'),

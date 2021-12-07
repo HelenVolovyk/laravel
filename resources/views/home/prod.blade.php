@@ -1,28 +1,42 @@
 <div class="home__product-container">
 	<div class="products__three mt-5">
 	
-			<div class="home__product  ibg wow fadeInRight" style="background-image: url('http://test.com/storage/images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg');">
-				<a   href="">
-				
-					  {{-- <img class="ibg" src="{{Storage::disk('public')->url('images/af6a4c29-9cfb-383d-ba55-50cb598283bc.jpg')}}"  alt="">   --}}
+		@foreach ($recommended as $n => $product)
+		<a   href="{{route('product.show', [app()->getLocale(), $product->webname])}}" class="recom">
+			<div class="home__product  ibg wow fadeInRight" 
+				@if($n % 3 == 1)
+				data-wow-delay="0.2s"
+				@endif
+				@if($n % 3 == 2)
+				data-wow-delay="0.4s"
+				@endif
+			>
+						<img class="ibg" src="{{Storage::disk('public')->url($product->thumbnail)}}"  alt="">  
 					
-				</a>
-			</div>
-			<div class="home__product  ibg wow fadeInRight" data-wow-delay="0.2s" style="background-image: url('http://test.com/storage/bR/5j/Zc/9u/aDK4IGgr5RCfQYM3_1606994232.jpg');" >
-				<a href="">
-					
-						{{-- <img class="ibg" src="{{Storage::disk('public')->url('bR/5j/Zc/9u/aDK4IGgr5RCfQYM3_1606994232.jpg')}}"  alt="">  --}}
-					
-				</a>
-			</div>
-			<div class="home__product ibg wow fadeInRight" data-wow-delay="0.4s" style="background-image: url('http://test.com/storage/H2/oO/lp/Jr/Dx6IPNBg6DTMvQ3U_1608492951.jpg');">
-				<a href="">
-					
-						{{-- <img  class="ibg" src="{{Storage::disk('public')->url('H2/oO/lp/Jr/Dx6IPNBg6DTMvQ3U_1608492951.jpg')}}"  alt="">  --}}
-					
-				</a>
+						<div class="fon">
+							<div class="fon__name">
+								{{ $product->name }}
+							</div>
+						
+							<div class="price fon__price">
+								@if($product->discount > 0)
+								  <p style="color: rgb(195, 0, 255); text-decoration: line-through; text-transform: uppercase; ">{{$product->price}} грн</p>
+								@endif
+								<div class="fon__printPrice pl-3">
+									<p>{{$product->printPrice()}} грн</p>
+									</div>
+							  </div>
+							  <div class="fon__details">
+								{{ __('more details') }}
+							  </div>
+							  
+						</div>
 			</div>
 		
-	</div>
+		</a>
 
+		@endforeach
+	
+	
+	</div>
 </div> 

@@ -6,6 +6,8 @@ use App\Http\Requests\CreateOrderRequest;
 use App\Jobs\PostAfterCreateOrder;
 use App\Jobs\PostAfterCreateOrderjob;
 use App\Jobs\PostAfterCreateUser;
+use App\Mail\newMail;
+use App\Mail\OrderCreated;
 use App\Models\Order;
 use App\Models\Product;
 use App\Repositories\OrderRepository;
@@ -15,6 +17,7 @@ use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
@@ -79,6 +82,14 @@ class OrderController extends Controller
 			$this->dispatch($job);
 		}
 
+		$name= $order['user_name']; 
+		$total = $order['total'];
+		//dd($name);
+		
+		Mail::to($order['user_email'])->send(new OrderCreated($name, $total));
+		//Mail::to('mr0778240@gmail.com')->send(new OrderCreated($name, $total));
+
+		
 		
 		$user->update([
 			'balance' => $user->balance - $cartTotal
@@ -99,7 +110,8 @@ class OrderController extends Controller
 		//Cart::instance('cart')->restore($user->instanceCartName());
 		Cart::instance('cart')->destroy();
 		//dd($user);
-		return redirect()->route('thankyou', compact('order'));
+		//return redirect()->route('thankyou', compact('order'));
+		return view('shop.checkout.thankyou', compact('order'));
 	}
 
 

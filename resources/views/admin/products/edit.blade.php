@@ -84,8 +84,29 @@
                                 @enderror
                             </div>
                         </div>
+  
+							 
+								<div class="form-group row">
+									<label for="manufacturer_id" class="col-md-4 col-form-label text-md-right">{{ __('Manufacturer') }}</label>
+									<div class="col-md-6">
+									  <select name="manufacturer_id" id="manufacturer_id" class="form-control">
+											@foreach($manufacturers as $manufacturer)
+												 <option value="{{$manufacturer['id']}}"
+												 @if($manufacturer['id'] === $product->manufacturer_id) selected="selected" @endif
+												 >{{$manufacturer['title']}}</option>
+											@endforeach
+											</select>
+ 
+										 @error('manufacturer_id')
+											  <span class="invalid-feedback" role="alert">
+													<strong>{{ $message }}</strong>
+											  </span>
+										 @enderror
+									  </div>
+								 </div>
+								
 
-                         <div class="form-group row">
+                        <div class="form-group row">
                           <label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
                           <div class="col-md-6">
                             <select name="category_id" id="category_id" class="form-control">

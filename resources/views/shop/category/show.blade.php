@@ -22,8 +22,8 @@
 			</div> --}}
 		</div>
 
-		<h1 class="text-center mb-4">{{ __('Products by') }}</h1>
-		<h2 class="text-center mb-4">{{ $category->__('title')}}</h2>
+		<h2 class="text-center mb-4">{{ __('Products by') }} "{{ $category->__('title')}}"</h2>
+		
 
 
 		<div class="row">

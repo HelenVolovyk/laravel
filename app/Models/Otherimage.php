@@ -14,4 +14,9 @@ class Otherimage extends Model
 		
 
 	];
+
+	public function Instagrams()
+	{
+		return $this->hasOne(\App\Models\Instagram::class);
+	}
 }

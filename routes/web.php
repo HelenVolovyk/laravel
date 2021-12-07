@@ -102,8 +102,11 @@ Route::group([
 
 		Route::get('/category/{category:webname}', 'CategoryController@show')->name('category.show');
 		Route::get('/category', 'CategoryController@index')->name('category.index');
+		
 	
 		Route::get('/product/{product:webname}', 'ProductController@show')->name('product.show');
+		Route::get('/manufacturer/{manufacturer:webname}', 'ManufacturerController@show')->name('manufacturer.show');
+	
 		Route::get('/shop', 'ProductController@index')->name('shop');
 
 
@@ -131,6 +134,7 @@ Route::group([
 		Route::prefix('wishlist')->name('wishlist.')->group(function () {
 			Route::get('/{product:webname}/add', 'WishlistController@add')->name('add');
 			Route::delete('/{product}/delete', 'WishlistController@delete')->name('delete');
+			//Route::get('/user', 'WishlistController@userList')->name('delete');
 		});
 
 

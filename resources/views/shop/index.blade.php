@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="content">
-	<div class="shop__container" >
+	<div class="container" >
 		<div class="top row" style="margin: 0" >
 			<div class="bread col-auto mr-auto" >
 				<ol class="breadcrumb" >
@@ -34,7 +34,12 @@
 					@endforeach
 				@endforeach
 			</div>
+<div class="mt-3">
+			{{$products->links()}}
+		</div>
+
 				</div>
+				
 			</div>
 		</div>
 	</div>

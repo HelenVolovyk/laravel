@@ -21,7 +21,7 @@ Shopping Cart
 	 
 
     <h1 class="text-center">{{ __('Cart') }}</h1>
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center mt-5">
     
       <div class="col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-3">
        

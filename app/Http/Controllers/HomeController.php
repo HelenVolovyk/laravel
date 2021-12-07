@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Content;
 use App\Models\Image;
+use App\Models\Instagram;
 use App\Models\Otherimage;
 use App\Models\Product;
 use App\Models\Slider;
@@ -36,31 +38,32 @@ class HomeController extends Controller
 		// $products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
 		//$products = Product::with('category')->where('quantity', '>', '0')->paginate(10);
 		$categories = Category::all();
-		
+		$recommended = Product::where('is_recommended', '=', '1')->get();
+	//dd($recommended);
 		$sliderOne = DB::table('sliders')->whereIn('id', [1,46,47])->get();
 		//$slider =Slider::find(34);
 	
 		$slider = Slider::all();
 		$image = Image::all();
-		//$image =Slider::find(34)->image;
+		$instagrams = Instagram::all(); 
+		foreach($instagrams as $instagram){
+			$src = $instagram->otherimages->img_src;
+			
+		}
+
+		$content = Content::all();
+		
+		//dd($content->find(1)->text);
+		//$ima$instagramsge =Slider::find(34)->image;
 	//$image =$slider->image;
 
 		//dd($otherimages->find(17)->img_src);
 		
 		//dd($slider->find(1)->title);
-		return view('home.index', compact('categories', 'products', 'otherimages', 'slider', 'image'));
+		return view('home.index', compact('categories', 'products', 'otherimages', 'slider', 'image', 'recommended', 'instagrams', 'src', 'content'));
 	}
 
-	public function changeLocale($locale)
-	 {
-		
-		
-		// session(['locale' => $locale]);
-		// 	App::setlocale($locale);
-		// //dd(session('locale'));
-	
-		//  return redirect()->back();
-	}
+
 
 
 

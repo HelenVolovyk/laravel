@@ -5,15 +5,16 @@
 							<div class="mb-2">
 								<a class="category__link" href="{{route('category.index', [app()->getlocale()])}}">{{ __('all categories') }}
 								</a>
+							
 							</div>
 							<div>
 							
+	{{-- {{ dd($parentCategories) }}					 --}}
+							</div>
+						{{-- @each('shop.category-view', $categories, 'category' )  --}}
+						@include('shop.category-view') 
 						
+
 							</div>
-				
-							@each('shop.category-view', $categories, 'category') 
-			
-				
-							</div>
-						</div>
-					</aside> 
+					</div>
+</aside> 

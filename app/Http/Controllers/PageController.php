@@ -24,18 +24,5 @@ class PageController extends Controller
 	
 
 
-// 	 private $orderRepository;
 
-// 	public function __construct(OrderRepository $orderRepository)
-// 	{
-// 		$this->orderRepository = $orderRepository;
-// 	}
-
-	
-// 	 public function thankyou()
-// 	 {
-// 		 $order = $this->orderRepository->getId();
-// 		//dd($order[0]->id);
-// 		 return view('shop.checkout.thankyou', compact('order'));
-// 	 }
  }

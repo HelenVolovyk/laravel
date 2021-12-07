@@ -203,4 +203,11 @@ input[type=product_count] {
     /* плюс прочие стили для текста, отступы */
 }
 
+.cent{
+	height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
  

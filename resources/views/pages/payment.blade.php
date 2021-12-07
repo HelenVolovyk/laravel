@@ -7,14 +7,17 @@
 <div class="content">
 
 	<div class="container">
-	<hr class="featurette-divider">
+	{{-- <hr class="featurette-divider"> --}}
 	@include('inc.breadcrumb')
 </div>
+
+<h2>{{ __('PAYMENT AND DELIVERY') }}</h2>
+
 <section id="payment__one">
-	<div class="container-fluid  wow fadeInUp" >
+	<div class="container-fluid  wow fadeIn" >
 		<div class="payment__box ">
 				<div class="payment__box-square ibg">
-					<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(18)->img_src)}}" alt="">
+					<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(1)->img_src)}}" alt="">
 				</div>
 		</div>
 	
@@ -25,7 +28,7 @@
 	</div>	
 </section>
 
-	<div class="container-fluid mt-5 mb-5 wow fadeInUp" data-wow-duration="2s">
+	<div class="container-fluid mt-5 mb-5 wow fadeIn" data-wow-duration="2s">
  
 		{{-- <h2>{{ __('Payment and delivery') }}</h2> --}}
 
@@ -41,7 +44,7 @@
 				<div class="payment__photo mt-3 mb-3">
 					<div class="p_photo ibg ">
 						
-							<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(20)->img_src)}}" alt="" >
+							<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(2)->img_src)}}" alt="" >
 					</div>
 				</div>
 			</div>
@@ -51,7 +54,7 @@
 
 	
 	
-	<div class="paiment-container__left  wow fadeInUp" data-wow-duration="2s">
+	<div class="paiment-container__left  wow fadeIn" data-wow-duration="2s">
 		<!-- Example row of columns -->
 		
 		  <div class="col-md-6 col-sm-12">
@@ -69,7 +72,7 @@
 		  </div>
 		</div> 
 
-		<div class="paiment-container__right wow fadeInUp" data-wow-duration="2s">
+		<div class="paiment-container__right wow fadeIn" data-wow-duration="2s">
 		  <div class="col-md-5 col-sm-12">
 			<div class="payment__title">
 			<i class="fa fa-credit-card fa-3x pr-3" aria-hidden="true"></i>

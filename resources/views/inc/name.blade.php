@@ -1,12 +1,12 @@
 <header class="header">
 
-	 
-@endphp
+{{-- 	 
+@endphp --}}
 	<div class="name">
 	
 		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
 			
-			<div class="container">
+			<div class="container-fluid">
 				
 			  <!-- Right Side Of Navbar -->
 			<div class="header__burger">
@@ -14,10 +14,16 @@
 				<span></span>
 				<span></span>
 			</div> 
+			<div class="brend__name">
+			{{-- <a  href="{{ url('/') }}" class="header__logo"> --}}
+			<a  href="{{ url('/') }}" class="logo">
+				{{-- <i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i> --}}
+				
+				<img class="pb-2" src="{{Storage::disk('public')->url('Rm/Ma/DW/oN/9XhRK00PoPeRwUWF_1638471509.png')}}" alt="" width="90px" height="90px">
 
-			<a  href="{{ url('/') }}" class="header__logo">
-				<i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i>
-				{{-- <img src="{{Storage::disk('public')->url('YG/q3/pI/pa/6Jy2xZfxjQdcMsSA_1614112248.jpg')}}" alt="" width="80px" height="80px"> --}}
+				<div class="fishfood">
+					{{ __('Fish Food') }}
+				</div>
 			
 			</a>
 
@@ -25,8 +31,13 @@
 			
 			{{-- <a class="tel" href="tel:123-456-78"><i class="fa fa-phone fa-2x"></i>  123-456-78</a> --}}
 		
-			<div class="brend__name">
-				<a class="navbar-brand" href="">{{ __('My Stor') }}</a>
+			
+				{{-- <a class="navbar-brand" href="">
+					
+					<div class="fishfood">
+						{{ __('Fish Food') }}
+					</div>
+				</a> --}}
 			</div>
 			
 		
@@ -65,7 +76,7 @@
 									{{ __('My Profile') }}
 							  </a>
 						  
-							  <a class="dropdown-item" href="{{ route('user.wishlist', [app()->getlocal()]) }}">
+							  <a class="dropdown-item" href="{{ route('wishlist', [app()->getlocale()]) }}">
 									{{ __('My WishList') }}
 							  </a>
 							  @endif

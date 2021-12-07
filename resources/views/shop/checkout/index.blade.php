@@ -6,7 +6,7 @@ Checkout
 
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
   <h1 class="text-center">{{ __('Checkout') }}</h1>
   <div class="row justify-content-space-between">
     <div class="col-md-6">

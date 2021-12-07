@@ -8,7 +8,7 @@
 <div class="container">
 
 	
-   <hr class="featurette-divider">
+   {{-- <hr class="featurette-divider"> --}}
 @include('inc.breadcrumb')
 
 

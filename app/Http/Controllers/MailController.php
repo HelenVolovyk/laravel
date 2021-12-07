@@ -33,9 +33,9 @@ class MailController extends Controller
 	{
 		$item = User::create($data);
 
-		if($item){
-			$job = new PostAfterCreateUser($item);
-			$this->dispatch($job);
-		}
+		// if($item){
+		// 	$job = new PostAfterCreateUser($item);
+		// 	$this->dispatch($job);
+		// }
 	}
 }

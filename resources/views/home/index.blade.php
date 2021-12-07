@@ -22,10 +22,10 @@
 
 
 
-<div class="content">
+<div class="content_one">
 	<div class="container">
 		<div class="mt-4 mb-4  wow fadeInUp" >
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate atque asperiores nostrum quam enim obcaecati tempori tainerbus eveniet numquam, cumque porro ad, rerum repudiandae earum placeat, libero recusandae. Voluptate, praesentium laborum?</p>
+			<p>{{ $content->find(1)->__('text') }}</p>
 		</div>
 	</div>
 
@@ -35,11 +35,13 @@
 </section>
 
 
+<div class="container">
+	<p class="text-center  wow fadeInUp" style="margin-bottom: 8em">
+		{{ $content->find(1)->__('text') }}
+	</p>
+</div>
 
-	<p class="text-center  wow fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Debitis inventore quos consectetur dolorum ab, illo quaerat perferendis minima accusamus error nemo voluptatem fuga dolorem doloremque id odio in soluta accusantium?</p>
-
-
-	<div class="container-fluid  wow fadeInUp" id="product__carousel">
+	<div class="container-fluid  wow fadeIn" data-wow-delay="0.5c" id="product__carousel">
 		@include('inc.owlCarousel')
 
 		<a class="more" href="">{{ __('View more products') }}</a>
@@ -50,6 +52,10 @@
     
   	<section style="">
 		@include('home.rec')
+	</section> 
+    
+  	<section style="">
+		@include('home.rec2')
 	</section> 
 
 	<section>

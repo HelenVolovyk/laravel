@@ -84,6 +84,26 @@
                           </div>
                       </div>
 
+							
+							 <div class="form-group row">
+								<label for="manufacturer_id" class="col-md-4 col-form-label text-md-right">{{ __('Manufacturer_id') }}</label>
+								<div class="col-md-6">
+								  <select name="manufacturer_id" id="manufacturer_id" class="form-control">
+										@foreach($manufacturers as $manufacturer)
+											 <option value="{{$manufacturer['id']}}">{{$manufacturer['title']}}</option>
+										@endforeach
+									</select>
+
+
+									 @error('manufacturer_id')
+										  <span class="invalid-feedback" role="alert">
+												<strong>{{ $message }}</strong>
+										  </span>
+									 @enderror
+								</div>
+						  </div>
+
+
                       <div class="form-group row">
                           <label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('Category_id') }}</label>
                           <div class="col-md-6">
@@ -91,7 +111,7 @@
                                 @foreach($categories as $category)
                                     <option value="{{$category['id']}}">{{$category['title']}}</option>
                                 @endforeach
-                                </select>
+                             </select>
 
 
                               @error('category_id')

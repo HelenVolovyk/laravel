@@ -40,11 +40,12 @@
 
 
 			<div class="search-results-container container">
-				{{-- <h1>{{ __('Search Result') }}</h1> --}}
+			
 				<div class="result d-flex">
 				<p class="search-results-count">{{ $products->total()}} 
-					{{ __('result(s) for') }} </p>
+					{{ __('result(s) for') }} 
 					<span class="query__result"> &nbsp '{{  request()->input('query') }}'</span>
+				</p>
 				</div>
 				
 					<div class="products">

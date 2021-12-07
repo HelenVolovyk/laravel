@@ -8,12 +8,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Image;
+use App\Models\Manufacturer;
+use App\Models\Otherimage;
+use App\Models\Overcategory;
 use App\Models\Unit;
 
 class ProductController extends Controller
 {
 
-
+	public $parentCategories;
 	/**
 	 * Display the specified resource.
 	 *
@@ -23,6 +26,8 @@ class ProductController extends Controller
 	public function show($locale, Product $product, Image $image)
 	{
 		$categories = Category::all();
+		$manufacturers = Manufacturer::all();
+	
 		$comments = $product->comments()->with('user')->paginate(5);
 		
 		$image = $product->image()->get();
@@ -31,22 +36,33 @@ class ProductController extends Controller
 
 		
 		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
-		$categories = Category::all();
+	
+		//$categories = Category::all();
 	
 	
 		
 	//dd($locale);
-		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories'), compact('image'), compact('units') );
+		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories', 'manufacturers'), compact('image'), compact('units') );
 	}
 
-	public function index($locale, Product $product, Category $category)
+	public function index($locale, Product $product, Category $category, Manufacturer $manufacturer)
 	{
-		$products = Product::all()->where('quantity', '>', '0');
+		
+		$products = Product::where('quantity', '>', '0')->paginate(3);
 		$categories = Category::all();
-		
 	
+		$manufacturers = Manufacturer::all();
 		
-//dd($products);
-		return view('shop.index', compact('categories', 'category'), compact('products', 'product'));
-	}
+		$parentCategories = Category::where('parent_id',0)->get();
+
+	//	dd($parentCategories);
+		
+		
+	//dd($products);
+		// return view('shop.index', compact('categories', 'category'), 
+		// 			compact('products', 'product'), 
+		// 			compact('manufacturers', 'manufacturer'),
+		// 			compact('parentCategories'));
+		return view('shop.index', compact('products', 'manufacturers', 'parentCategories','categories', 'category'));
+}
 }

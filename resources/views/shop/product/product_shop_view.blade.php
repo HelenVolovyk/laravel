@@ -17,8 +17,11 @@
 				<h5 class="card-title">{{$product->__('name')}}</h5>
 			
 					<div class="">
-					 @include('shop.category-view', ['category'=>$product->category()->first()])
+					 @include('shop.category-one-view', ['category'=>$product->category()->first()])
 					</div>  
+					<div>@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
+			
+				
 				  
 					  
 				  <div class="clearfix">

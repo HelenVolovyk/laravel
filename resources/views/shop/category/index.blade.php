@@ -34,10 +34,10 @@ All Categories
   
   			<div class="categories__container text-center">
 				<div class="categ__text pt-3 pb-3">
-    			@foreach($categories->chunk(3) as $categoryChunk)
+    			@foreach($parentCategories->chunk(3) as $parentChunk)
 					<div class="row d-flex justify-content-around">
 					
-  					@foreach($categoryChunk as $category)
+  					@foreach($parentChunk as $parentCategory)
 
 					@include('shop.category.categ')
 

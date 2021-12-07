@@ -2,8 +2,10 @@
  @inject('wishlist', 'App\Services\WishlistService')
 
 @section('content')
-<div class="container">
 <div class="content">
+<div class="container">
+
+	
 
 {{-- 
 	{{$product=Product::where('images_id', $image->id)->get()}}  --}}
@@ -12,7 +14,7 @@
 	
 <div class="row justify-content-center">
   <div class="col-md-4 mb-3">
-	 <h3 class="text-center">{{ $product->__('name') }}</h3>
+	 <h3 class="text-center mt-3">{{ $product->__('name') }}</h3>
   </div>
   
 	
@@ -47,8 +49,15 @@
        
         <div class="product_category">
 			 <div>{{ __('Product Categories') }}</div>
-          <div>@include('shop.category-view', ['category'=>$product->category()->first()])</div>
+          <div>@include('shop.category-one-view', ['category'=>$product->category()->first()])</div>
         </div>
+       
+        <div class="product_manufacturer">
+			 <div>{{ __('Manufacturer country') }}</div>
+			 <div>@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
+       
+		  </div>
+		  
         <hr>
            @if($product->usersRated() > 0)
            <p>{{ __('Rating:')  }}
@@ -161,6 +170,7 @@
 <a href="" class="reply">reply</a>
 
 				@push('footer-scripts')
+				
 				<script>
 					 $(function(){
 						$(document).on('click', '.reply', function(e){

@@ -24,6 +24,7 @@ class Product extends Model implements Buyable
 		'name',
 		'name_uk',
 		'webname',
+		'manufacturer_id',
 		'description',
 		'description_uk',
 		'shot_description',
@@ -39,6 +40,11 @@ class Product extends Model implements Buyable
 	public function category()
 	{
 		return $this->belongsTo(\App\Models\Category::class);
+	}
+
+	public function manufacturer()
+	{
+		return $this->belongsTo(\App\Models\Manufacturer::class);
 	}
 
 	public function orders()

@@ -27,6 +27,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	 <link rel="preconnect" href="https://fonts.gstatic.com">
 	 <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comforter&family=Kaushan+Script&family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comforter&family=Kaushan+Script&family=Mali:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comforter&family=Encode+Sans+Condensed:wght@300&family=Fredericka+the+Great&family=Kaushan+Script&family=Mali:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
 	 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">

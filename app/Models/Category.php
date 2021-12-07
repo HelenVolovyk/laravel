@@ -14,6 +14,7 @@ class Category extends Model
         'title',
 		  'title_uk',
 		  'webname',
+		  'parent_id',
         'description',
         'description_uk'
 
@@ -24,6 +25,11 @@ class Category extends Model
         return $this->hasMany(\App\Models\Product::class);
     }
 
+	 public function categories(){
+
+		return $this->hasMany(\App\Models\Category::class, 'parent_id');
+  	}
+	
     public function image()
     {
         return $this->morphOne(\App\Models\Image::class, 'imageable');
