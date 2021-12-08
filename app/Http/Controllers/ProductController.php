@@ -48,7 +48,7 @@ class ProductController extends Controller
 	public function index($locale, Product $product, Category $category, Manufacturer $manufacturer)
 	{
 		
-		$products = Product::where('quantity', '>', '0')->paginate(3);
+		$products = Product::where('quantity', '>', '0')->paginate(6);
 		$categories = Category::all();
 	
 		$manufacturers = Manufacturer::all();

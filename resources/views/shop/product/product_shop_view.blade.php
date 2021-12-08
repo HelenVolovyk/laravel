@@ -1,4 +1,5 @@
-<div class="col-sm-6 col-md-2 pl-2">
+<div class="col-sm-6 col-md-4 ">
+{{-- <div class="col-sm-6 col-md-4 col-lg-4 "> --}}
 	<div class="card" >
 			  
 		 <a href="{{route('product.show', [app()->getlocale(), $product])}}">
@@ -27,7 +28,7 @@
 				  <div class="clearfix">
 					 <div class="price">
 					 @if($product->discount > 0)
-						<small style="color: red; text-decoration: line-through">{{$product->price}} грн</small>
+						<small style="colorrgb(221, 1, 74); text-decoration: line-through">{{$product->price}} грн</small>
 					 @endif
 					 <div class="printPrice">{{$product->printPrice()}} грн</div>
 					</div>
@@ -50,10 +51,14 @@
 			
 					  </div> 
 					 
-						 <button type="submit" class="btn btn-success  mt-2" id="button_center">{{ __('Add to Cart') }}</button>
-						 {{-- <button type="submit" class="button hvr-fade mt-2" id="button_center">{{ __('Add to Cart') }}</button> --}}
 					
-						
+					
+						 <button type="submit" class="btn  card__btn text-uppercase" style="color: #6cb2eb; font-weight: bold; letter-spacing: 0.5px;" id="button_center">{{ __('Add to Cart') }}
+						</button> 
+						<div class="btn__line">
+							<div class="block1"></div>
+							<div class="block2"></div>
+						</div>
 	
 						</div>
 					</form>

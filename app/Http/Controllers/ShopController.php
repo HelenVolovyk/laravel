@@ -11,16 +11,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ShopController extends Controller
 {
-// 	public function index($locale, Product $products)
-// 	{
-// 		$products = Product::all()->where('quantity', '>', '0');
-// 		$categories = Category::all();
-	
-		
-// //dd($products);
-// 		return view('shop.index', compact('categories'), compact('products'));
-// 	}
-	
+
 
 	public function search(Request $request)
 	{

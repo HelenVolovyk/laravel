@@ -44,7 +44,7 @@
 				<div class="payment__photo mt-3 mb-3">
 					<div class="p_photo ibg ">
 						
-							<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(2)->img_src)}}" alt="" >
+							<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(36)->img_src)}}" alt="" >
 					</div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 		
 		  <div class="col-md-6 col-sm-12">
 			  <div class="payment__title">
-				<i class="fa fa-money fa-3x pr-3" aria-hidden="true"></i> 
+				<i class="fa fa-money fa-2x pr-3 pb-1" aria-hidden="true"></i> 
 			 	<h2 class="payment__title">Heading</h2>
 			</div>
 		
@@ -75,7 +75,7 @@
 		<div class="paiment-container__right wow fadeIn" data-wow-duration="2s">
 		  <div class="col-md-5 col-sm-12">
 			<div class="payment__title">
-			<i class="fa fa-credit-card fa-3x pr-3" aria-hidden="true"></i>
+			<i class="fa fa-credit-card fa-2x pr-3 pb-1" aria-hidden="true"></i>
 			 <h2>Heading</h2>
 			</div>
 		

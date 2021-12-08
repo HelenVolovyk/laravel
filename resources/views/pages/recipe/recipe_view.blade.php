@@ -6,8 +6,8 @@
 			</div>
 
          <div class="recipe__text left">
-				<h2 class="featurette-heading ">{{ $recipe->__('title') }} </h2>
-				<span class="text-muted ">It’ll blow your mind.</span>
+				<h3 class="featurette-heading text-uppercase" style="color: #c7a4ca">{{ $recipe->__('title') }} </h3>
+				<span class="text-muted ">{{ $recipe->shot_description }}</span>
 				<p class="lead mt-5 ">{{$recipe->__('shot_description')}}</p>
 			 
 				 <div class="r__link mt-5">

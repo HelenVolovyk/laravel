@@ -15,7 +15,7 @@
 		</div>
 	</div>
 
-	<h2>{{ $recipe->__('title') }}</h2>
+	<h2 class="text-uppercase">{{ $recipe->__('title') }}</h2>
 	
 	 {{-- <hr class="featurette-divider"> --}}
 

@@ -21,7 +21,7 @@
 	  <div class="carousel-item ibg" >
 		
 		{{-- <img class="ibg" src='' alt=""> --}}
-		<img class="ibg" src='{{Storage::disk('public')->url($otherimages->find(7)->img_src) }}' alt="">
+		<img class="ibg" src='{{Storage::disk('public')->url($otherimages->find(32)->img_src) }}' alt="">
 	
 
 		<div class="carousel__text text-center">

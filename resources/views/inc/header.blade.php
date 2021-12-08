@@ -10,7 +10,7 @@
 		<nav class="header__menu">
 		
 			<div class="container__menu">
-			<ul class="header__list pt-3">
+			<ul class="header__list ">
 				
 				
 			
@@ -31,11 +31,14 @@
 						<a class="header__link  <?php if ($url == "/about") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'about'])}}>{{ __('About') }}</a>
 					</li>
 					<li class="header__link">
+						<a class="header__link  <?php if ($url == "/reviews") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'reviews'])}}>{{ __('Reviews') }}</a>
+					</li>
+					<li class="header__link">
 						<a class="header__link  <?php if ($url == "/contact") { echo ' active';}?>" href="{{ route('page', [app()->getLocale(),'contact']) }}">{{ __('Contact') }}</a>
 					</li>
 					<li class="header__link">
 						<a class="header__link" >
-								т.(093) 123 11 11
+							<span style="color: #068ce6">	т.(093) 123 11 11 </span>
 						</a>
 					</li>
 					

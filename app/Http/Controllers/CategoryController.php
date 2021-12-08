@@ -34,12 +34,18 @@ public $parentCategories;
     public function show($locale, Category $category)
     {
         $categories = Category::all();
-        $category->products()->get();
-		  $products = $category->products()->get();
-		  $parentCategories = Category::where('parent_id',0)->get();
+      //    $category->products()->get();
+		//   $products = $category->products()->get();
+    
+		$parentCategories = Category::where('parent_id',0)->get();
+		
+		$category_ids = $category->getDescendants($category);
+		$products = Product::whereIn('category_id',$category_ids)->get();
 
-		//   $image = $category->image;
-       // dd($parentCategories);
-		  return view('shop.category.show', compact('parentCategories', 'category', 'products'))->with('categories', $categories);
-    }
+		return view('shop.category.show', compact('parentCategories',  'category', 'products'))->with('categories', $categories);
+	 }
+	 
+	 
+	 
+   
 }

@@ -46,11 +46,7 @@ class HomeController extends Controller
 		$slider = Slider::all();
 		$image = Image::all();
 		$instagrams = Instagram::all(); 
-		foreach($instagrams as $instagram){
-			$src = $instagram->otherimages->img_src;
-			
-		}
-
+		
 		$content = Content::all();
 		
 		//dd($content->find(1)->text);
@@ -60,7 +56,7 @@ class HomeController extends Controller
 		//dd($otherimages->find(17)->img_src);
 		
 		//dd($slider->find(1)->title);
-		return view('home.index', compact('categories', 'products', 'otherimages', 'slider', 'image', 'recommended', 'instagrams', 'src', 'content'));
+		return view('home.index', compact('categories', 'products', 'otherimages', 'slider', 'image', 'recommended', 'instagrams', 'content'));
 	}
 
 

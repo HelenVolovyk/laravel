@@ -1,4 +1,3 @@
-
 <div class="col-sm-12 col-md-6 col-lg-4">
 
      <div class="card mb-2" style="border: none" >
@@ -17,7 +16,7 @@
       
  
        <div class="card-body">
-			<h5 class="card-title">{{$product->__('name')}}</h5>
+			<h5 class="card-title" style="color: #7a8684">{{$product->__('name')}}</h5>
 			{{-- <div class="cart-description">
 			 	<p class="card-text">{{$product->__('shot_description')}}</p>
 			</div> --}}
@@ -33,9 +32,9 @@
            <div class="clearfix ">
              <div class="price">
              @if($product->discount > 0)
-               <small style="color: red; text-decoration: line-through">{{$product->price}} грн</small>
+               <small style="color: rgb(221, 1, 74); text-decoration: line-through">{{$product->price}} грн</small>
              @endif
-             <div class="printPrice">{{$product->printPrice()}} грн</div>
+             <div class="printPrice" style="color: #7a8684">{{$product->printPrice()}} грн</div>
             </div>
            
 				<div class="d-flex justify-content-center mt-3">
@@ -56,7 +55,7 @@
       
               </div> 
 	  		{{-- <div class="add"> --}}
-				<button type="submit" class="btn  card__btn" id="button_center">{{ __('Add to Cart') }}
+				<button type="submit" class="btn  card__btn text-uppercase" style="color: #6cb2eb; font-weight: bold; letter-spacing: 0.5px;"  id="button_center">{{ __('Add to Cart') }}
 				</button> 
 				<div class="btn__line">
 					<div class="block1"></div>

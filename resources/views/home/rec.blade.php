@@ -11,24 +11,24 @@
 	</div>
 </div>
 
-{{-- <section id="icon">
+ <section id="icon">
 	<div class="container ic">
 		<div class="ic__icon">
-			<div class="ic__icon-content">
-				<img class="" src="{{Storage::disk('public')->url($otherimages->find(13)->img_src) }}" alt='' width="50px">  
-				<p>Lorem ipsum fcgf класси vbxnbnnhg  </p>
+			<div class="ic__icon-content wow fadeIn" data-wow-duration="2.5s">
+				<img class="" src="{{Storage::disk('public')->url($otherimages->find(13)->img_src) }}" alt='' width="40px">  
+				<p class="text-center pt-2">Lorem ipsum fcgf класси vbxnbnnhg  </p>
 			</div>
-			<div class="ic__icon-content">
-				<img class="" src="{{Storage::disk('public')->url($otherimages->find(13)->img_src) }}" alt='' width="50px">  
-				<p>Lorem ipsum fcgf класси vbxnbnnhg </p>
+			<div class="ic__icon-content wow fadeIn" data-wow-duration="3s">
+				<img class="" src="{{Storage::disk('public')->url($otherimages->find(13)->img_src) }}" alt='' width="40px">  
+				<p class="text-center pt-2">Lorem ipsum fcgf класси vbxnbnnhg </p>
 			</div>
-			<div class="ic__icon-content">
-				<img class="" src="{{Storage::disk('public')->url($otherimages->find(13)->img_src) }}" alt='' width="50px">  
-				<p>Lorem ipsum fcgf класси vbxnbnnhg </p>
+			<div class="ic__icon-content wow fadeIn" data-wow-duration="3.5s">
+				<img class="" src="{{Storage::disk('public')->url($otherimages->find(13)->img_src) }}" alt='' width="40px">  
+				<p class="text-center pt-2">Lorem ipsum fcgf класси vbxnbnnhg </p>
 			</div>
 		
 
 		</div>	
 	</div>
-</section> --}}
+</section> 
 

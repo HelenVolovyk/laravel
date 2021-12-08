@@ -1,14 +1,14 @@
 <footer>
 	
-	<div class="jumbotron jumbotron-fluid ibg text-center  wow fadeIn">
-		{{-- <img class="ibg" src="{{Storage::disk('public')->url('4l/p5/t0/dF/xPrd1gUp9dalHCVL_1638733162.jpg')}}" alt=""> --}}
+	<div id="d" class="jumbotron jumbotron-fluid  ibg text-center  wow fadeIn">
+	
 		<img class="ibg" src="{{Storage::disk('public')->url('Ck/pY/8P/FR/pHOnmpsT2KSRm4od_1638822600.jpg')}}" alt="" width="50px" height="50px" >
 	
 		<div class="container text-center">
 			
 		  <h6 class="subscrib pb-2">{{ __('we do not spam our subscribers') }}</h6>
 		  <p class="subscriber pb-3">{{ __('but we want them to know about everything first') }}</p>
-			<div class="col md-6 pb-3">
+			<div class="col md-6 ">
 				<form action="{{route('contact.send')}}" method="POST">
 					@csrf
 						<div class="row no-wrap justify-content-center">
@@ -25,9 +25,14 @@
 	</div>
 
 
+<div class="footer__line" style="width: 100%; height:22px; background-color: #f1f1f1;">
+
+</div>
+	
+
   <div class="container footer">
-	 <div class="footer__content">
-		<div class="row__footer-brand mb-3 ">
+	  	 <div class="footer__content">
+		<div class="row__footer-brand mb-2 mt-4">
 			<div class="footer-brand ml-2 d-flex">
 				<a class="footer-brand" href="{{ url('/') }}">
 											
@@ -47,7 +52,7 @@
 						<ul class="list-unstyled text-small">
 							<li><a class="text-muted" href="#">{{ __('About') }}</a></li>
 							<li><a class="text-muted" href="#">{{ __('Contact') }}</a></li>
-							<li><a class="text-muted"  class="hvr-grow-rotate"  href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon"></i><span style="color:#1889d4; ">123-456-78</span>  </a></li>
+							<li><a class="text-muted"  class="hvr-grow-rotate"  href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon"></i><span style="color:#068ce6; ">123-456-78</span>  </a></li>
 						
 						</ul>
 					</div>
@@ -88,10 +93,12 @@
 	</div>
 
 
-		<hr class="socket">
+	<hr class="mt-0 mb-0" style="margin-bottom: 0">
 		<div class="nano text-center">
 			&copy;Nano 2021
 		</div>
+
+	
 
 </footer>
 

@@ -18,7 +18,9 @@ class Category extends Model
         'description',
         'description_uk'
 
-    ];
+	 ];
+	 
+	 private $descendants = [];
 
     public function products()
     {
@@ -46,4 +48,35 @@ class Category extends Model
 	{
 		return 'webname'; 
 	}
+
+	
+
+	public function children()
+		{
+			 return $this->categories()->with('children');
+		}
+
+	public function hasChildren(){
+			 if($this->children->count()){
+				  return true;
+			 }
+
+			 return false;
+		}
+
+	public function findDescendants(Category $category){
+			 $this->descendants[] = $category->id;
+
+			 if($category->hasChildren()){
+				  foreach($category->children as $child){
+						$this->findDescendants($child);
+				  }
+			 }
+		}
+
+	 public function getDescendants(Category $category){
+			 $this->findDescendants($category);
+			 return $this->descendants;
+		}
+
 }

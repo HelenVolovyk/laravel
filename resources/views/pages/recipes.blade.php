@@ -8,12 +8,12 @@
 <div class="container">
 
 	
-   {{-- <hr class="featurette-divider"> --}}
+   
 @include('inc.breadcrumb')
 
 
 
-    <h2>{{ __('Healthy recipes') }}</h2>
+    <h2 class="text-uppercase" style="color: #a9bdb9">{{ __('Healthy recipes') }}</h2>
 	 
 	 @foreach ($recipes as $recipe)
 

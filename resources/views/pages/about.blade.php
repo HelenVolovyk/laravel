@@ -35,7 +35,7 @@
 
 					<div class="about-block__element_2">
 						<div class="about-block__content_2">
-							<div class="about-block__content_2-text">
+							<div class="about-block__content_2-text wow fadeIn" data-wow-duration="2.5s">
 								<p style="color: white">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia pariatur molestiae animi nisi nostrum, libero consectetur ipsa nam,
 								</p>

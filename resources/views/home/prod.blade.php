@@ -20,7 +20,7 @@
 						
 							<div class="price fon__price">
 								@if($product->discount > 0)
-								  <p style="color: rgb(195, 0, 255); text-decoration: line-through; text-transform: uppercase; ">{{$product->price}} грн</p>
+								  <p style="color:rgb(221, 1, 74); text-decoration: line-through; text-transform: uppercase; ">{{$product->price}} грн</p>
 								@endif
 								<div class="fon__printPrice pl-3">
 									<p>{{$product->printPrice()}} грн</p>

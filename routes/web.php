@@ -86,7 +86,7 @@ Route::group([
 
 	Route::get('/{page}', 'PageController')
 	->name('page')
-	->where('page', 'about|contact|payment|shares');
+	->where('page', 'about|contact|payment|shares|reviews');
 	
 	 Route::get('/', 'HomeController@index')->name('home-locale');
 	 Route::get('/recipe/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
@@ -101,6 +101,7 @@ Route::group([
 
 
 		Route::get('/category/{category:webname}', 'CategoryController@show')->name('category.show');
+	
 		Route::get('/category', 'CategoryController@index')->name('category.index');
 		
 	

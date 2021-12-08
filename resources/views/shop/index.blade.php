@@ -25,7 +25,7 @@
 	
 				<div class="col-sm-12 col-md-10">
 					<div class="f">
-					@foreach($products->chunk(3) as $productChunk)
+					@foreach($products->chunk(6) as $productChunk)
 				
 					@foreach($productChunk as $product)
 

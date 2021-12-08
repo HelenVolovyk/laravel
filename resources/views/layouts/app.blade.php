@@ -113,6 +113,12 @@
 		 $(document).ready(function(){
 			 $('body').css('opacity', '1');
 		 });
+
+		 $(document).ready(function(){
+				if (document.location.pathname == '/ru/contact') {
+				$('#d').css('display', 'none');   
+			}
+	  	});
 	 </script>
 		
 		

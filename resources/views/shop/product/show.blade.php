@@ -7,14 +7,20 @@
 
 	
 
-{{-- 
-	{{$product=Product::where('images_id', $image->id)->get()}}  --}}
-	{{-- {{ Storage::disk('public')->$filePath}} --}}
-	{{-- {{Storage::disk('public')->url($product->images()->pluck('path'))}}  --}}
+	<div class="d-flex justify-content-between">
+		<div class="bread">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
+				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route( 'shop', [app()->getLocale()]) }}">{{ __('Shop') }}</a></li> 
+				<li class="breadcrumb-item active" aria-current="page">{{ $product->__('name') }}</li> 
+			</ol>
+		</div>
+	</div>
+
 	
 <div class="row justify-content-center">
   <div class="col-md-4 mb-3">
-	 <h3 class="text-center mt-3">{{ $product->__('name') }}</h3>
+	 <h3 class="text-center text-uppercase mt-3" style="color:  #a9bdb9">{{ ($product->__('name'))  }}</h3>
   </div>
   
 	
@@ -38,13 +44,15 @@
 
   <div class="col-md-6 pl-5">
     @if($product->discount > 0)
-		<p style="color: red; text-decoration: line-through">{{ __('Old Price: ') }}
-			 {{$product->price}} грн</p>
+		<p style="color: rgb(221, 1, 74); text-decoration: line-through">{{ __('Old Price: ') }}
+			 {{ $product->price }} грн</p>
     @endif
-      <p>{{ __('PRICE: ') }}<strong>{{$product->printPrice()}} грн</strong></p>
+		<p>{{ __('PRICE:' ) }}
+			<strong class="pl-2">{{ $product->printPrice() }} грн</strong>
+		</p>
       <p>SKU: {{$product->SKU}}</p>
-      <p>{{ __('IN STOCK: ') }}
-			<strong> {{$product->quantity}}</strong></p>
+      <p>{{ __('IN STOCK:' ) }}
+			<strong class="pl-2"> {{ $product->quantity }}</strong></p>
       <hr>
        
         <div class="product_category">
@@ -139,7 +147,7 @@
 		@endauth  
 		</div>
 	</div>
-  
+  </div>
   
 	<div class="about__product-wrapper mt-5">
 		<div class="tabs-wrapper">
@@ -148,14 +156,14 @@
 			<label class="tab tab-1" for="tab-1">
 				{{ __('DESCRIPTION:') }}
 			</label>
-		<label class="tab tab-2" for="tab-2">
-			{{ __('COMMENTS:') }}
-		</label>
-			<div class="tabs__content content-1">
-				
-					<p>{{$product->__('description')}}</p>
-				
-			</div>
+			<label class="tab tab-2" for="tab-2">
+				{{ __('COMMENTS:') }}
+			</label>
+				<div class="tabs__content content-1">
+					
+						<p>{{$product->__('description')}}</p>
+					
+				</div>
 			<div class="tabs__content content-2">
 				@if(!empty($vote->rating)){
 					@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
@@ -222,7 +230,9 @@
 					
 						@endif
 					</div> --}}
-				</div>
+
+
+			
 			</div>
 		</div> 
 	</div>
@@ -230,22 +240,37 @@
 
 
 
-<p style="margin-top: 2%; text-align:center; margin-bottom: 2%">{{ __('YOU MAY ALSO LIKE:') }} </p>  
+<p style="margin-top: 6%; text-align:center; ">{{ __('YOU MAY ALSO LIKE:') }} </p>  
 	<div class="container-fluid">
 	
-		<div class="sentence">
-		
-		
+		{{-- <div class="sentence">
 				@foreach($products->chunk(5) as $productChunk)
-				
 					@foreach($productChunk as $product)
-
 						@include('shop.product.product_shop_view')
-
 					@endforeach
 				@endforeach
+		</div> --}}
+
+		<div class="mt-5 ">
+			<div class="sentence">
+			<div class="owl-carousel one">
+					@foreach($products->chunk(6) as $productChunk)
+					@foreach($productChunk as $product)
+				
+				<div class="it__prod">
+					<div class="c">
+						@include('shop.product.product_shop_view')
+					</div>
+				</div>
+				
+					@endforeach
+					@endforeach 
+				
+			</div>
+			</div>
 			
 		</div>
+
 	</div>
 
 
