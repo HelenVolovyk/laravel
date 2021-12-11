@@ -3,21 +3,23 @@
 
 @section('content')
 <div class="content">
-<div class="container">
-
-	
-
-	<div class="d-flex justify-content-between">
-		<div class="bread">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-				<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route( 'shop', [app()->getLocale()]) }}">{{ __('Shop') }}</a></li> 
-				<li class="breadcrumb-item active" aria-current="page">{{ $product->__('name') }}</li> 
-			</ol>
+	.<div class="container-fluid">
+		<div class="shop__container">
+			<div class="d-flex justify-content-between">
+				<div class="bread">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
+						<li class="breadcrumb-item" ><a class="breadcrumb__link" href="{{ route( 'shop', [app()->getLocale()]) }}">{{ __('Shop') }}</a></li> 
+						<li class="breadcrumb-item active" aria-current="page">{{ $product->__('name') }}</li> 
+					</ol>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	
+
+
+	<div class="container">	
 <div class="row justify-content-center">
   <div class="col-md-4 mb-3">
 	 <h3 class="text-center text-uppercase mt-3" style="color:  #a9bdb9">{{ ($product->__('name'))  }}</h3>
@@ -44,24 +46,24 @@
 
   <div class="col-md-6 pl-5">
     @if($product->discount > 0)
-		<p style="color: rgb(221, 1, 74); text-decoration: line-through">{{ __('Old Price: ') }}
+		<p  class="oldPrice" >{{ __('Old Price: ') }}
 			 {{ $product->price }} грн</p>
     @endif
-		<p>{{ __('PRICE:' ) }}
+		<p class="printPrice">{{ __('PRICE:' ) }}
 			<strong class="pl-2">{{ $product->printPrice() }} грн</strong>
 		</p>
-      <p>SKU: {{$product->SKU}}</p>
-      <p>{{ __('IN STOCK:' ) }}
+      <p class="printPrice" >sku: {{$product->SKU}}</p>
+      <p class="printPrice">{{ __('IN STOCK:' ) }}
 			<strong class="pl-2"> {{ $product->quantity }}</strong></p>
       <hr>
        
         <div class="product_category">
-			 <div>{{ __('Product Categories') }}</div>
+			 <p class="show">{{ __('Product Categories') }}</p>
           <div>@include('shop.category-one-view', ['category'=>$product->category()->first()])</div>
         </div>
        
         <div class="product_manufacturer">
-			 <div>{{ __('Manufacturer country') }}</div>
+			 <p class="show">{{ __('Manufacturer country') }}</p>
 			 <div>@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
        
 		  </div>
@@ -76,7 +78,7 @@
       @if($product->quantity > 0)
       <hr>
       <div class="">
-        <p>{{ __('Quantity') }}</p>
+        <p class="printPrice">{{ __('Quantity') }}</p>
        
       <form action="{{route('cart.add',[app()->getlocale(), $product])}}" method="POST" class="form-inline" >
         @csrf
@@ -87,7 +89,7 @@
            <input type="number"
                   name="product_count"
                   class="form-content"
-                  id="product_count"
+                  id="c"
                   min="1"
                   max="{{$product->quantity}}"
                   value="1"
@@ -97,7 +99,9 @@
 
 		  <div>@include('shop.units-view', ['units'=>$product->units()->first()])</div>
 
-        <button type="submit" class="btn btn-primary mb-2 ml-5">{{ __('Add to Cart') }}</button>
+        <button type="submit" class="btn btn-primary btn-lg mb-2 ml-5">
+			  <span class="buy">	{{ __('Add to Cart') }}</span>
+			</button>
 		</form>
 		
 	    </div>
@@ -213,26 +217,7 @@
 
 
 
-					{{-- <div class="col-md-12">
-							<p style="margin-top: 2%">{{ __('DESCRIPTION:') }} </p>
-							<p>{{$product->__('description')}}</p>
-					</div>
-		
-					<div class="mt-3">
-						@if(!empty($vote->rating)){
-							@include('comments.index', ['comments'=>$comments, 'product'=>$product]) 
-									}
-							@else 
-								<div class="col-md-12">
-									<p>{{ __('COMMENTS:') }}</p>
-									<p>{{ __('This product has no comments yet') }} </p>
-								</div>
 					
-						@endif
-					</div> --}}
-
-
-			
 			</div>
 		</div> 
 	</div>
@@ -243,23 +228,16 @@
 <p style="margin-top: 6%; text-align:center; ">{{ __('YOU MAY ALSO LIKE:') }} </p>  
 	<div class="container-fluid">
 	
-		{{-- <div class="sentence">
-				@foreach($products->chunk(5) as $productChunk)
-					@foreach($productChunk as $product)
-						@include('shop.product.product_shop_view')
-					@endforeach
-				@endforeach
-		</div> --}}
-
+	
 		<div class="mt-5 ">
 			<div class="sentence">
 			<div class="owl-carousel one">
 					@foreach($products->chunk(6) as $productChunk)
-					@foreach($productChunk as $product)
+					@foreach($products as $product)
 				
 				<div class="it__prod">
 					<div class="c">
-						@include('shop.product.product_shop_view')
+						@include('shop.product.product_view')
 					</div>
 				</div>
 				
@@ -267,6 +245,8 @@
 					@endforeach 
 				
 			</div>
+
+		
 			</div>
 			
 		</div>

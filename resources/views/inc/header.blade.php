@@ -38,7 +38,7 @@
 					</li>
 					<li class="header__link">
 						<a class="header__link" >
-							<span style="color: #068ce6">	т.(093) 123 11 11 </span>
+							<span class="navtel" >	т.(093) 123 11 11 </span>
 						</a>
 					</li>
 					

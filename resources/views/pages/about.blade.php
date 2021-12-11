@@ -6,18 +6,17 @@
 
 @section('content')
 <div class="content about">
-	<div class="container ">
-		
-			{{-- <hr class="about__hr"> --}}
+	
+					{{-- <hr class="about__hr"> --}}
 
-			@include('inc.breadcrumb')
+	@include('inc.breadcrumb')
 
-			<h2>{{ __('ABOUT') }}</h2>
-
+		<h2>{{ __('ABOUT') }}</h2>
+			<div class="container ">
 				<div class="col-md-12 offset-md-1 pt-5 pb-5">
 					<h4 class="font-italic text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
 				</div>
-		</div>
+			</div>
 
 		
 

@@ -35,13 +35,9 @@ class ProductController extends Controller
 		$units = $product->units()->first();
 
 		
-		$products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
-	
-		//$categories = Category::all();
+		$products = Product::inRandomOrder()->take(6)->where('quantity', '>', '0')->get();
 	
 	
-		
-	//dd($locale);
 		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories', 'manufacturers'), compact('image'), compact('units') );
 	}
 
@@ -55,14 +51,6 @@ class ProductController extends Controller
 		
 		$parentCategories = Category::where('parent_id',0)->get();
 
-	//	dd($parentCategories);
-		
-		
-	//dd($products);
-		// return view('shop.index', compact('categories', 'category'), 
-		// 			compact('products', 'product'), 
-		// 			compact('manufacturers', 'manufacturer'),
-		// 			compact('parentCategories'));
 		return view('shop.index', compact('products', 'manufacturers', 'parentCategories','categories', 'category'));
 }
 }

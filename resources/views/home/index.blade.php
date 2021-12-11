@@ -22,58 +22,51 @@
 
 
 
-<div class="content_one">
-	<div class="container">
-		<div class="mt-4 mb-4  wow fadeInUp" >
-			<p>{{ $content->find(1)->__('text') }}</p>
+	<div class="content_one">
+		<div class="container">
+			<div class="mt-4 mb-4  wow fadeInUp" >
+				<p>{{ $content->find(1)->__('text') }}</p>
+			</div>
 		</div>
-	</div>
 
 
-<section>
-	@include('home.prod')
-</section>
+		<section>
+			@include('home.prod')
+		</section>
 
 
-<div class="container">
-	<p class="text-center  wow fadeInUp" style="margin-bottom: 8em">
-		{{ $content->find(1)->__('text') }}
-	</p>
-</div>
+		<div class="container">
+			<p class="text-center  wow fadeInUp" style="margin-bottom: 8em">
+				{{ $content->find(1)->__('text') }}
+			</p>
+		</div>
 
-	<div class="container-fluid  wow fadeIn" data-wow-delay="0.5c" id="product__carousel">
-		@include('inc.owlCarousel')
-
-		<a class="more" href="">{{ __('View more products') }}</a>
+		<div class="container-fluid  wow fadeIn" data-wow-delay="0.5c" id="product__carousel">
+			@include('inc.owlCarousel')
+				<a class="more" href="">{{ __('View more products') }}</a>
+		</div>
+	
 		
-  </div>
- 
-{{-- @each('admin.images.show', $otherimage, 'otherimage') --}}
-    
-  	<section style="">
-		@include('home.rec')
-	</section> 
-    
-  	<section style="">
-		@include('home.rec2')
-	</section> 
+		<section style="">
+			@include('home.rec')
+		</section> 
+		
+		<section style="">
+			@include('home.rec2')
+		</section> 
 
-	<section>
-		@include('home.slick_one')
-	</section>
+		<section>
+			@include('home.slick_one')
+		</section>
 
 
-  	<section style="">
-		  <div class="last d-flex ">
-			
+		<section style="">
+			<div class="last d-flex ">
 					@include('home.inst')
-			 
-			 
-		  </div>
-		
-	</section> 
+			</div>
+		</section> 
 
-</div>
+	</div>
 
 
 @endsection

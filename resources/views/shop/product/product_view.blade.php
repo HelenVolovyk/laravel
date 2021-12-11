@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-md-6 col-lg-4">
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
      <div class="card mb-2" style="border: none" >
         <a  class="cart__link" href="{{route('product.show', [app()->getLocale(), $product])}}">
@@ -9,17 +9,15 @@
 
         <div class="cart-link">
           
-			 <a class=" badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+			 <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o fa-3x" aria-hidden="true"></i>
 			</a>
                       
         </div>
       
  
        <div class="card-body">
-			<h5 class="card-title" style="color: #7a8684">{{$product->__('name')}}</h5>
-			{{-- <div class="cart-description">
-			 	<p class="card-text">{{$product->__('shot_description')}}</p>
-			</div> --}}
+			<h5 class="card-title text-uppercase" style="color: #828a88">{{$product->__('name')}}</h5>
+		
 			<div class="d-flex justify-content-between">
 				<div class="">
       		 @include('shop.category-one-view', ['category'=>$product->category()->first()])
@@ -29,15 +27,15 @@
 
            
               
-           <div class="clearfix ">
+           <div class="clearfix">
              <div class="price">
              @if($product->discount > 0)
-               <small style="color: rgb(221, 1, 74); text-decoration: line-through">{{$product->price}} грн</small>
+               <div class="oldPrice" >{{$product->price}} грн</div>
              @endif
-             <div class="printPrice" style="color: #7a8684">{{$product->printPrice()}} грн</div>
+             <div class="printPrice">{{$product->printPrice()}} грн</div>
             </div>
            
-				<div class="d-flex justify-content-center mt-3">
+				<div class="d-flex justify-content-center mt-2 mb-2">
              <form action="{{route('cart.add', [app()->getLocale(), $product])}}" method="POST" class="form-inline" id="button_center">             
               @method('POST')
               @csrf
@@ -53,15 +51,19 @@
                         value="1"
                       > 
       
-              </div> 
-	  		{{-- <div class="add"> --}}
-				<button type="submit" class="btn  card__btn text-uppercase" style="color: #6cb2eb; font-weight: bold; letter-spacing: 0.5px;"  id="button_center">{{ __('Add to Cart') }}
-				</button> 
-				<div class="btn__line">
-					<div class="block1"></div>
-					<div class="block2"></div>
-				</div>
-			  {{-- </div> --}}
+				  </div> 
+				  
+	  			<div class="add d-flex">
+					<button type="submit" class="btn  card__btn"  id="button_center">
+						<span class="add">{{ __('Add to Cart') }}</span>
+						
+					</button> 
+					<div class="btn__line">
+						<div class="block1"></div>
+						<div class="block2"></div>
+					</div>
+			  </div>
+
 			</div>
 
 				

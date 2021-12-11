@@ -1,8 +1,7 @@
-<div class="col-sm-6 col-md-12 m-3">
+<div class="col-sm-6 col-md-12 mb-3">
   <div class="card shadow-sm" >
     
- 
-	 <div class="categ__card-body ibg" class="wow fadeInTopLeft" 	 
+ 	 <div class="categ__card-body ibg" class="wow fadeInTopLeft" 	 
 		 data-wow-duration="2s">
 		<img src="{{Storage::disk('public')->url($parentCategory->thumbnail)}}" class="ibg" alt="">
 
@@ -16,4 +15,4 @@
 	     
     </div>
   </div>
- </div>
+</div>

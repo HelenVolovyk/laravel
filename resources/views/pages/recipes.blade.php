@@ -4,29 +4,23 @@
 @endsection
 
 @section('content')
-<div class="content">
-<div class="container">
 
+	<div class="content">
 	
-   
-@include('inc.breadcrumb')
+		@include('inc.breadcrumb')
 
+		<h2 class="text-uppercase mb-5" style="color: #a9bdb9;" >{{ __('Healthy recipes') }}</h2>
 
-
-    <h2 class="text-uppercase" style="color: #a9bdb9">{{ __('Healthy recipes') }}</h2>
-	 
-	 @foreach ($recipes as $recipe)
-
-		@if ($recipe->id % 2)
-			@include('pages.recipe.recipe_view2')
+		<div class="container">	
 			
-		@else
-			@include('pages.recipe.recipe_view')
+			@foreach ($recipes as $recipe)
+				@if ($recipe->id % 2)
+					@include('pages.recipe.recipe_view2')
+				@else
+					@include('pages.recipe.recipe_view')
+				@endif
+			@endforeach
 		
-		@endif
-			  
-	 @endforeach
-	
-</div>
-</div>
+		</div>
+	</div>
 @endsection

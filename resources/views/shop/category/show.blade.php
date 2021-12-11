@@ -7,7 +7,9 @@
 @section('content')
 
 <div class="content">
-	<div class="container">
+	<div class="container__fluid">
+		<div class="shop__container">
+		
 		<div class="d-flex justify-content-between">
 			<div class="bread">
 				<ol class="breadcrumb">
@@ -26,8 +28,10 @@
 		
 
 
-		<div class="row">
-			
+		
+		
+					<div class="row">
+
 				<div class="col-md-2">
 					@include('inc.sidebar')
 					
@@ -49,5 +53,7 @@
 			</div>
 		</div>
 	</div>
+	</div>
+
 </div>
 @endsection
