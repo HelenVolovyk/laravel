@@ -19,7 +19,7 @@
 		</div>
 	
 
-		<h2 class="text-uppercase" style="color: #c7a4ca;">{{ $recipe->__('title') }}</h2>
+		<h2 class="text-uppercase recipe__title" style="color: var(--recipe-title)">{{ $recipe->__('title') }}</h2>
 		
 		<div class="container">
     	<div class="row featurette">
@@ -34,7 +34,7 @@
 			<div class="col-md-3 mt-5" style="overflow: hidden">
 				<div class="recipe__sidebar">
 					<div class="recipe__sidebar-content" style="font-size: 16px; color: grey">
-						<p><span class="" style="color: #c7a4ca">{{ __('components') }}</span></p>
+						<p><span class="recipe__title" style="color: var(--recipe-title);">{{ __('components') }}</span></p>
 				
 						<div class="comp" style="">
 							 {{ $recipe->__('components') }}
@@ -53,10 +53,11 @@
 				<div class="col md-9">
 					<div class="d-flex justify-content-end  mb-3">
 						{{-- <button type="submit" class="btn btn-primary">{{ __('Add to Cart') }}</button>  --}}
-						<a href="" class="wave-btn">
+						
+						{{-- <a href="" class="wave-btn">
 							<span class="wave-btn__text">{{ __('добавить в корзину') }}</span>
 							<span class="wave-btn__waves"></span>
-						</a> 
+						</a>  --}}
 
 					</div>
 				</div>	

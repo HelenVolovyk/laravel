@@ -5,7 +5,7 @@
 			</div>
 			<div class="rec__block-2 wow fadeIn" data-wow-duration="2.5s">
 				<p>{{ $content->find(3)->__('text') }}</p>
-				<a class="rec__link" style="color: #1272c0"  href="">xgnxghxghxm</a>
+				<a class="rec__link"   href="">xgnxghxghxm</a>
 			</div>
 		</div>
 	</div>

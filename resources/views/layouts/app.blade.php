@@ -34,6 +34,15 @@
 	<link href="https://fonts.googleapis.com/css2?family=Comforter&family=Kaushan+Script&family=Mali:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Comforter&family=Encode+Sans+Condensed:wght@300&family=Fredericka+the+Great&family=Kaushan+Script&family=Mali:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Secular+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Righteous&family=Secular+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="{{ asset('fonts/Boronic.ttf') }}" crossorigin>
+	<link rel="preconnect" href="{{ asset('fonts/Bukhari Script Alternates.ttf') }}" crossorigin>
+	<link rel="preconnect" href="{{ asset('fonts/Dolley.otf') }}" crossorigin>
+	<link rel="preconnect" href="{{ asset('fonts/Elishe.otf') }}" crossorigin>
+	<link rel="preconnect" href="{{ asset('fonts/Rosematte.otf') }}" crossorigin>
 
 
 	 

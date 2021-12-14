@@ -14,15 +14,23 @@
 				<span></span>
 				<span></span>
 			</div> 
+
+		
 			<div class="brend__name">
 			{{-- <a  href="{{ url('/') }}" class="header__logo"> --}}
 			<a  href="{{ url('/') }}" class="logo">
 				{{-- <i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i> --}}
 				
-				<img class="pb-2" src="{{Storage::disk('public')->url('Rm/Ma/DW/oN/9XhRK00PoPeRwUWF_1638471509.png')}}" alt="" width="90px" height="90px">
+				<img class="logo pb-2" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" width="90px" height="90px">
+				{{-- <img class="logo pb-2" src="{{Storage::disk('public')->url('Sv/MD/Nk/fw/RRQVXW86nxEkwzT5_1639411219.ico')}}" alt="" width="90px" height="90px"> --}}
 
-				<div class="fishfood">
-					{{ __('Fish Food') }}
+				<div class="myname">
+					<div class="fishfood">
+						{{ __('BONITO') }}
+						
+						{{-- {{ __('Fish Food') }} --}}
+					</div>
+					{{-- <span class="bonito">морепродукты</span>  --}}
 				</div>
 			
 			</a>
@@ -39,6 +47,7 @@
 					</div>
 				</a> --}}
 			</div>
+		
 			
 		
 		
@@ -62,7 +71,9 @@
 					@else
 					<li class="nav-item dropdown">
 						 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-							  {{ Auth::user()->name }} <span class="caret"></span>
+							<span style="color: var(--prima);"> {{ Auth::user()->name }}</span>
+
+							  <span class="caret"></span>
 						 </a>
 
 						 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

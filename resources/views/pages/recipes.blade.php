@@ -9,7 +9,7 @@
 	
 		@include('inc.breadcrumb')
 
-		<h2 class="text-uppercase mb-5" style="color: #a9bdb9;" >{{ __('Healthy recipes') }}</h2>
+		<h2 class="text-uppercase mb-5" style="color: var(--title);" >{{ __('Healthy recipes') }}</h2>
 
 		<div class="container">	
 			

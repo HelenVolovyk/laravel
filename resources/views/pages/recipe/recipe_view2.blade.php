@@ -1,11 +1,11 @@
  <div class="recipe__row">
 	 
 	<div class="recipe__text right">
-		  <h3 class="featurette-heading text-uppercase" style="color: #c7a4ca"> {{ $recipe->__('title') }}</h3>
-		  	<span class="text-muted">{{ $recipe->shot_description }}</span>
+		  <h3 class="featurette-heading text-uppercase recipe__title" style="color: var(--recipe-title);"> {{ $recipe->__('title') }}</h3> 
+		  	<p class="">{{ $recipe->shot_description }}</p>
 		
 				<div class="r__link mt-5">
-					<a class="recipes__link " href="{{route('recipe.show', [app()->getLocale(), $recipe] )}}">
+					<a class="recipes__link"  style="color: var(--recipe-title);" href="{{route('recipe.show', [app()->getLocale(), $recipe] )}}">
 						{{ __('more details') }}
 					</a>
 				</div>

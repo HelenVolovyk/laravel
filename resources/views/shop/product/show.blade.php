@@ -22,7 +22,7 @@
 	<div class="container">	
 <div class="row justify-content-center">
   <div class="col-md-4 mb-3">
-	 <h3 class="text-center text-uppercase mt-3" style="color:  #a9bdb9">{{ ($product->__('name'))  }}</h3>
+	 <h2 class="text-center text-uppercase  mt-3" style="font-weight:bolder; color: var(--title);">{{ ($product->__('name'))  }}</h2>
   </div>
   
 	
@@ -38,7 +38,7 @@
 		 @endif
 		
 			<div class="cart-link">
-				<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getlocale(), $product])}}"><i class="fa fa-heart-o fa-3x" aria-hidden="true"></i></a>
+				<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getlocale(), $product])}}"><i class="fa fa-heart-o fa-3x product-heard" aria-hidden="true"></i></a>
 			</div>
 			
 	</div>
@@ -54,19 +54,21 @@
 		</p>
       <p class="printPrice" >sku: {{$product->SKU}}</p>
       <p class="printPrice">{{ __('IN STOCK:' ) }}
-			<strong class="pl-2"> {{ $product->quantity }}</strong></p>
+			<span class="pl-2"> {{ $product->quantity }}</p></p>
       <hr>
        
         <div class="product_category">
 			 <p class="show">{{ __('Product Categories') }}</p>
-          <div>@include('shop.category-one-view', ['category'=>$product->category()->first()])</div>
+          	<div>
+				 	@include('shop.category-one-view', ['category'=>$product->category()->first()])
+				</div>
         </div>
        
         <div class="product_manufacturer">
 			 <p class="show">{{ __('Manufacturer country') }}</p>
-			 <div>@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
-       
-		  </div>
+			 	<div class="pr-0">
+				 	@include('shop.manufacturer-view', ['manufacturer'=>$product->manufacturer()->first()])</div>
+        		</div>
 		  
         <hr>
            @if($product->usersRated() > 0)
@@ -225,8 +227,8 @@
 
 
 
-<p style="margin-top: 6%; text-align:center; ">{{ __('YOU MAY ALSO LIKE:') }} </p>  
-	<div class="container-fluid">
+<p style="margin-top: 6%; text-align:center; color: var(--prima); ">{{ __('YOU MAY ALSO LIKE:') }} </p>  
+	<div class="col-sm-12 g-0">
 	
 	
 		<div class="mt-5 ">
@@ -235,10 +237,10 @@
 					@foreach($products->chunk(6) as $productChunk)
 					@foreach($products as $product)
 				
-				<div class="it__prod">
-					<div class="c">
+				<div class="it">
+					
 						@include('shop.product.product_view')
-					</div>
+					
 				</div>
 				
 					@endforeach
@@ -250,6 +252,8 @@
 			</div>
 			
 		</div>
+
+	
 
 	</div>
 

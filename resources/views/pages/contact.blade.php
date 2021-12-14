@@ -6,11 +6,14 @@
 @section('content')
 
 <div class="content">
-	<div class="container">
-		@include('inc.breadcrumb')
+	<div class="container-fluid">
+		<div class="shop__container">
+			@include('inc.breadcrumb')
+		</div>
+	
 	</div>
 		 {{-- <h2 class="contact__h text-center mb-3">{{ __('CONTACT') }}</h2> --}}
-		 <h1 class="text-center text-uppercase mb-5">{{ __('Contact') }}</h1>
+		 <h1 class="text-center text-uppercase mb-5" style="color: var(--title)">{{ __('Contact') }}</h1>
 
 			<div class="contact">
 
@@ -19,17 +22,9 @@
 						<p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti est maxime dignissimos rerum. Sint praesentium iste dignissimos officiis vero dolore exercitationem, adipisci obcaecati in possimus!</p>
 					
 						<p class="">
-							<a class="contact-phone"  class="hvr-grow-rotate" href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon fa-2x"></i><span style="color:  #53b1fe; font-size: 24px; font-weight: bold; "> 123-456-78</span> </a>
+							<a class="contact-phone"  class="hvr-grow-rotate" href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon fa-2x"></i><span style="color:var(--prima); font-size: 24px; font-weight: bold; "> 123-456-78</span> </a>
 						</p>
-							
-							{{-- <p class="">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti est maxime dignissimos rerum. </p>
-						<hr>
-						<div class="row justify-content-center">
-							<a href=""><i class="fa fa-twitter fa-2x"></i></a>
-							<a href=""><i class="fa fa-facebook fa-2x pl-5"></i></a>
-							<a href=""><i class="fa fa-instagram fa-2x pl-5"></i></a>
-							</div> --}}
+				
 					</div> 
 				</div>
 
@@ -37,7 +32,7 @@
 					<div class="contact__right-content ">
 
 					
-						<h4 class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem sed deleniti, mollitia quisquam iusto ipsa saepe vero rem nam maiores harum eum culpa minus id accusamus pariatur tenetur sit veritatis.</h4>
+						<h3 class="mb-5" style="color: #c7a4ca;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem sed deleniti, mollitia quisquam iusto ipsa saepe vero rem nam maiores harum eum culpa minus id accusamus pariatur tenetur sit veritatis.</h3>
 					
 
 				 <form  action="{{route('contact.send')}}" method="POST">

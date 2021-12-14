@@ -9,8 +9,8 @@ All Categories
 
 
 <div class="content">
-	<div class="container">
-		
+	<div class="container-fluid">
+		<div class="shop__container">
 			<div class="bread">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
@@ -18,11 +18,11 @@ All Categories
 					<li class="breadcrumb-item active" aria-current="page">{{ __('All Categories') }}</li>
 				</ol>
 			</div> 
-	
+		</div>
 	</div>
 		
 		<div class="container-fluid">
-			<h1 class="text-center mt-2">{{ __('All Categories') }}</h1>
+			<h1 class="text-center mt-2" style="color: var(--gr-b);">{{ __('All Categories') }}</h1>
 
 			<div class="categories">
 					<div class="col-md-12  mt-5">

@@ -10,7 +10,7 @@
 				@include('inc.breadcrumb')
 	
 
-		<h2>{{ __('SHARES') }}</h2>
+		<h2 style="color: var(--title)">{{ __('SHARES') }}</h2>
 			
 		<div class="container">
 			<div class="jumbotron ibg p-4 p-md-5 text-white rounded  mt-5" style="height: 600px">
@@ -27,7 +27,7 @@
 			</div>
 					
 			<div class="text-right button-container mt-5 mb-5">
-				<a href="/shop" class="">{{ __('View more products') }}</a>
+				<a href="/shop" class="" style="color: var(--prima)">{{ __('View more products') }}</a>
 			</div>
 		</div>
 	</div>

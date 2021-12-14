@@ -2,10 +2,11 @@
 	
 	<div id="d" >
 		<div class="jumbotron jumbotron-fluid  ibg text-center  wow fadeIn">
-		<img class="ibg" src="{{Storage::disk('public')->url('Ck/pY/8P/FR/pHOnmpsT2KSRm4od_1638822600.jpg')}}" alt="" width="50px" height="50px" >
+		<img class="ibg" src="{{Storage::disk('public')->url('w2/AC/kt/t2/u1PXIIR3M75xKc0h_1639521679.jpg')}}" alt=""  >
+		{{-- <img class="ibg" src="{{Storage::disk('public')->url('Ee/Iq/Ro/0l/pWiav22HBntU3Dda_1639492859.jpg')}}" alt=""  > --}}
 	
 		<div class="container text-center">
-		  <h6 class="subscrib pb-2">{{ __('we do not spam our subscribers') }}</h6>
+		  <p class="subscrib pb-2">{{ __('we do not spam our subscribers') }}</p>
 		  <p class="subscriber pb-3">{{ __('but we want them to know about everything first') }}</p>
 			<div class="col md-6 ">
 				<form action="{{route('contact.send')}}" method="POST">
@@ -16,7 +17,11 @@
 								placeholder="{{ __('your email') }}">
 							</div>
 							<div class="">
-								<button type="submit" class="footer__btn btn btn-primary">{{ __('send') }}</button>
+								<button type="submit" class="footer__btn btn btn-blu">
+									<span class="footer__btn-send">
+										{{ __('send') }}
+									</span>
+								</button>
 							</div>
 						
 						</div>
@@ -37,9 +42,9 @@
 			<div class="row__footer-brand mb-2 mt-4">
 				<div class="footer-brand ml-2 d-flex">
 					<a class="footer-brand" href="{{ url('/') }}">
-						<img src="{{Storage::disk('public')->url('Rm/Ma/DW/oN/9XhRK00PoPeRwUWF_1638471509.png')}}" alt="" width="50px" height="50px" >
+						<img src="{{Storage::disk('public')->url('np/Cz/3E/a0/nxqXTW3kFtpLajPK_1639516204.png')}}" alt="" width="30px" height="30px" >
 						<div class="footer__name">
-							{{ __('Fish Food') }}
+							{{ __('BONITO') }}
 						</div>
 					</a>
 				</div>
@@ -53,7 +58,7 @@
 						<ul class="list-unstyled text-small">
 							<li><a class="text-muted" href={{route('page', [app()->getLocale(),'about'])}}>{{ __('About') }}</a></li>
 							<li><a class="text-muted" href={{route('page', [app()->getLocale(),'contact'])}}>{{ __('Contact') }}</a></li>
-							<li><a class="text-muted"  class="hvr-grow-rotate"  href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon"></i><span style="color:#068ce6; ">123-456-78</span>  </a></li>
+							<li><a class="text-muted"  class="hvr-grow-rotate"  href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon fa-foot"></i><span style="color: var(--prima); font-weight: bold;">123-456-78</span>  </a></li>
 						
 						</ul>
 					</div>

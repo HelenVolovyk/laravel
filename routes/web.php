@@ -109,6 +109,8 @@ Route::group([
 		Route::get('/manufacturer/{manufacturer:webname}', 'ManufacturerController@show')->name('manufacturer.show');
 	
 		Route::get('/shop', 'ProductController@index')->name('shop');
+		Route::get('/shop/priceUp', 'ProductController@priceUp')->name('shop.priceUp');
+		Route::get('/shop/priceDown', 'ProductController@priceDown')->name('shop.priceDown');
 
 
 	Route::get('/search', 'ShopController@search')->name('search');

@@ -10,7 +10,7 @@
 		@include('inc.breadcrumb')
 
 
-<h2>{{ __('PAYMENT AND DELIVERY') }}</h2>
+<h2 style="color: var(--title);">{{ __('PAYMENT AND DELIVERY') }}</h2>
 
 <section id="payment__one">
 	<div class="container-fluid  wow fadeIn  mt-5" >
@@ -55,7 +55,7 @@
 		 <div class="col-md-6 col-sm-12">
 			<div class="payment__title">
 				<i class="fa fa-money fa-2x pr-3 pb-1" aria-hidden="true"></i> 
-			 	<h2 class="payment__title">Heading</h2>
+			 	<h2 class="payment__title" style="color: #3490dc;">Heading</h2>
 			</div>
 		
 			<p class="heading" >
@@ -70,7 +70,7 @@
 			<div class="col-md-5 col-sm-12">
 				<div class="payment__title">
 					<i class="fa fa-credit-card fa-2x pr-3 pb-1" aria-hidden="true"></i>
-					<h2>Heading</h2>
+					<h2 style="color: #3490dc;">Heading</h2>
 				</div>
 			
 				<p class="heading" >Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 

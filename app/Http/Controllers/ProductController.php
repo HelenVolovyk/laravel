@@ -34,10 +34,8 @@ class ProductController extends Controller
 		$units = Unit::all();
 		$units = $product->units()->first();
 
-		
 		$products = Product::inRandomOrder()->take(6)->where('quantity', '>', '0')->get();
-	
-	
+		
 		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories', 'manufacturers'), compact('image'), compact('units') );
 	}
 
@@ -48,9 +46,38 @@ class ProductController extends Controller
 		$categories = Category::all();
 	
 		$manufacturers = Manufacturer::all();
-		
+			
 		$parentCategories = Category::where('parent_id',0)->get();
 
 		return view('shop.index', compact('products', 'manufacturers', 'parentCategories','categories', 'category'));
-}
+	}
+
+	public function priceUp($locale, Product $product){
+		$categories = Category::all();
+		$manufacturers = Manufacturer::all();
+		$comments = $product->comments()->with('user');
+		
+		$image = $product->image()->get();
+		$units = Unit::all();
+		$units = $product->units()->first();
+		$products = Product::orderBy('price', 'asc')->paginate(6);
+		$parentCategories = Category::where('parent_id',0)->get();
+		
+		return view('shop.price.up', compact('products', 'comments', 'parentCategories'), compact('product', 'categories', 'manufacturers'), compact('image'), compact('units') );
+	}
+
+	public function priceDown($locale, Product $product){
+		$categories = Category::all();
+		$manufacturers = Manufacturer::all();
+		$comments = $product->comments()->with('user');
+		
+		$image = $product->image()->get();
+		$units = Unit::all();
+		$units = $product->units()->first();
+	
+		$products = Product::orderBy('price', 'desc')->paginate(6);
+		$parentCategories = Category::where('parent_id',0)->get();
+
+		return view('shop.price.down' , ['metaTitle' => $metaTitle], compact('products', 'comments', 'parentCategories'), compact('product', 'categories', 'manufacturers'), compact('image'), compact('units') );
+	}
 }

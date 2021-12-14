@@ -9,14 +9,14 @@
 
         <div class="cart-link">
           
-			 <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o fa-3x" aria-hidden="true"></i>
+			 <a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o fa-3x product-heard" aria-hidden="true"></i>
 			</a>
                       
         </div>
       
  
        <div class="card-body">
-			<h5 class="card-title text-uppercase" style="color: #828a88">{{$product->__('name')}}</h5>
+			<h6 class="card-title text-uppercase" >{{$product->__('name')}}</h6>
 		
 			<div class="d-flex justify-content-between">
 				<div class="">

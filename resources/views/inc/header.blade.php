@@ -4,7 +4,8 @@
 
 	
   
-	 <div class="header__body">
+	 <div class="header__body ibg">
+		{{-- <img class="ibg" src="{{Storage::disk('public')->url('Lh/98/FQ/4a/fPEVl4hrPzhvyiyZ_1639311158.jpg')}}" alt=""  > --}}
 		
 
 		<nav class="header__menu">

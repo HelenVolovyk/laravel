@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Manufacturer;
 use App\Models\Otherimage;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -20,10 +21,6 @@ public $parentCategories;
 		  $categories = Category::all();
 		  $parentCategories = Category::where('parent_id',0)->get();
 
-		  //dd($parentCategories);
-		//   $image = $category->image;
-		  // dd($locale);
-		 // dd($categories);
         return view('shop.category.index', compact('parentCategories'))->with('categories', $categories);
     }
 
@@ -38,11 +35,13 @@ public $parentCategories;
 		//   $products = $category->products()->get();
     
 		$parentCategories = Category::where('parent_id',0)->get();
+		$manufacturers = Manufacturer::all();
 		
 		$category_ids = $category->getDescendants($category);
 		$products = Product::whereIn('category_id',$category_ids)->get();
+		
 
-		return view('shop.category.show', compact('parentCategories',  'category', 'products'))->with('categories', $categories);
+		return view('shop.category.show', compact('parentCategories',  'category', 'products', 'manufacturers'))->with('categories', $categories);
 	 }
 	 
 	 

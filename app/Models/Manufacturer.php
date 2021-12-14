@@ -13,6 +13,7 @@ class Manufacturer extends Model
 		 'id',
 		 'title',
 		 'title_uk',
+		 'webname'
 	
 
 	];
@@ -20,5 +21,10 @@ class Manufacturer extends Model
 	public function products()
 	{
 		 return $this->hasMany(\App\Models\Product::class);
+	}
+
+	public function getRouteKeyName()
+	{
+		return 'webname'; 
 	}
 }

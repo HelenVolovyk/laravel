@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Manufacturer;
-use Illuminate\Http\Request;
+
 
 class ManufacturerController extends Controller
 {
-	public function show($locale, Manufacturer $category)
+	public function show($locale, Manufacturer $manufacturer, Category $category)
 	{
-		 $manufacturer = Manufacturer::all();
-		 $manufacturer->products()->get();
-		 $products = $manufacturer->products()->get();
+		
+		$manufacturers = Manufacturer::all();
+		$category = Category::all();
+		$parentCategories = Category::where('parent_id',0)->get();
 	
-		//  dd($manufacturers);
-		 return view('shop.manufacturer.show', compact('manufacturer', 'products'))->with('manufacturers', $manufacturers);
+		$manufacturer->products()->get();
+		$products = $manufacturer->products()->get();
+
+		return view('shop.manufacturer.show', compact('manufacturer', 'products', 'parentCategories'))->with('manufacturers', $manufacturers);
 	}
 }

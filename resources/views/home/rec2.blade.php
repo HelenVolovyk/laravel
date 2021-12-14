@@ -5,8 +5,7 @@
 		style="background-image: url('{{Storage::disk('public')->url($otherimages->find(9)->img_src)}}');">
 			<div class="rec__cont wow fadeIn" data-wow-delay="0.4s">
 				<p>{{ $content->find(4)->__('text') }}</p>
-				<a class="rec__link" style="color: 
-				#0263b3" href="{{route( 'recipes', [app()->getLocale()])}}">{{ __('see recipes') }}</a>
+				<a class="rec__link"  href="{{route( 'recipes', [app()->getLocale()])}}">{{ __('see recipes') }}</a>
 			
 			</div>
 		</div>
