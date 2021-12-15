@@ -5,10 +5,9 @@
 			@foreach($productChunk as $product)
 		
 		<div class="it">
-			
-			{{-- <div class="c"> --}}
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 				@include('shop.product.product_view')
-			{{-- </div> --}}
+			</div>
 		</div>
 		
 			@endforeach

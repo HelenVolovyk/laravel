@@ -22,7 +22,7 @@
 	<div class="container">	
 <div class="row justify-content-center">
   <div class="col-md-4 mb-3">
-	 <h2 class="text-center text-uppercase  mt-3" style="font-weight:bolder; color: var(--title);">{{ ($product->__('name'))  }}</h2>
+	 <h2 class="text-center text-uppercase  mt-3 mb-2" style="font-weight:bolder; color: var(--prima);">{{ ($product->__('name'))  }}</h2>
   </div>
   
 	
@@ -49,11 +49,11 @@
 		<p  class="oldPrice" >{{ __('Old Price: ') }}
 			 {{ $product->price }} грн</p>
     @endif
-		<p class="printPrice">{{ __('PRICE:' ) }}
-			<strong class="pl-2">{{ $product->printPrice() }} грн</strong>
+		<p class="print" style="color: var(--gr)">{{ __('PRICE:' ) }}
+			<strong class="pl-2" style="color: var(--new-blue)">{{ $product->printPrice() }} грн</strong>
 		</p>
-      <p class="printPrice" >sku: {{$product->SKU}}</p>
-      <p class="printPrice">{{ __('IN STOCK:' ) }}
+      <p class="print" style="color: var(--gr)">sku: {{$product->SKU}}</p>
+      <p class="print" style="color: var(--gr)">{{ __('IN STOCK:' ) }}
 			<span class="pl-2"> {{ $product->quantity }}</p></p>
       <hr>
        
@@ -80,7 +80,7 @@
       @if($product->quantity > 0)
       <hr>
       <div class="">
-        <p class="printPrice">{{ __('Quantity') }}</p>
+        <p class="print">{{ __('Quantity') }}</p>
        
       <form action="{{route('cart.add',[app()->getlocale(), $product])}}" method="POST" class="form-inline" >
         @csrf
@@ -160,10 +160,17 @@
 			<input class="tab-input" type="radio" name="tabs" id="tab-1" checked>
 			<input class="tab-input" type="radio" name="tabs" id="tab-2">
 			<label class="tab tab-1" for="tab-1">
-				{{ __('DESCRIPTION:') }}
+
+				<span style="font-family: 'Prosto One', cursive;">
+					{{ __('DESCRIPTION:') }}
+				</span>
+	
 			</label>
 			<label class="tab tab-2" for="tab-2">
-				{{ __('COMMENTS:') }}
+				<span style="font-family: 'Prosto One', cursive;">
+					{{ __('COMMENTS:') }}
+				</span>
+		
 			</label>
 				<div class="tabs__content content-1">
 					
@@ -227,30 +234,27 @@
 
 
 
-<p style="margin-top: 6%; text-align:center; color: var(--prima); ">{{ __('YOU MAY ALSO LIKE:') }} </p>  
+<p style="margin-top: 6%; text-align:center; color: var(--new-blue); font-family: 'Prosto One', cursive; ">{{ __('YOU MAY ALSO LIKE:') }} </p>  
 	<div class="col-sm-12 g-0">
 	
 	
 		<div class="mt-5 ">
 			<div class="sentence">
-			<div class="owl-carousel one">
-					@foreach($products->chunk(6) as $productChunk)
-					@foreach($products as $product)
-				
-				<div class="it">
-					
-						@include('shop.product.product_view')
-					
-				</div>
-				
-					@endforeach
-					@endforeach 
-				
-			</div>
 
-		
-			</div>
+			{{-- <div class="owl-carousel one">
+				@foreach($products->chunk(6) as $productChunk)
+				@foreach($products as $product)
+					<div class="it">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+							@include('shop.product.product_view')
+						</div>
+					</div>
+				@endforeach
+				@endforeach 
+			</div> --}}
 			
+			@include('inc.owlCarousel')
+			</div>
 		</div>
 
 	

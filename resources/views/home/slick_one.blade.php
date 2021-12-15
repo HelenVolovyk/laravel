@@ -11,6 +11,6 @@
 	</div> --}}
 	
 <div class="container wow fadeIn" data-wow-delay="" style="margin-bottom: 10em">
-	<h2 style="color: #c694ca">{{ $content->find(5)->__('text') }}</h2>
+	<h2 style="color: var(--new-feel);">{{ $content->find(5)->__('text') }}</h2>
 </div>
 </div>

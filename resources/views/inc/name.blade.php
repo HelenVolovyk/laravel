@@ -6,7 +6,9 @@
 	
 		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
 			
-			<div class="container-fluid">
+			<div class="container-fluid pl-2 pr-2">
+
+				
 				
 			  <!-- Right Side Of Navbar -->
 			<div class="header__burger">
@@ -21,7 +23,7 @@
 			<a  href="{{ url('/') }}" class="logo">
 				{{-- <i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i> --}}
 				
-				<img class="logo pb-2" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" width="90px" height="90px">
+				<img class="logo " src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" width="90px" height="90px">
 				{{-- <img class="logo pb-2" src="{{Storage::disk('public')->url('Sv/MD/Nk/fw/RRQVXW86nxEkwzT5_1639411219.ico')}}" alt="" width="90px" height="90px"> --}}
 
 				<div class="myname">
@@ -152,6 +154,8 @@
 		</div>
 			
 		 </ul>
+
+
 
 			</div>
 		</nav>

@@ -1,4 +1,4 @@
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+{{-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4"> --}}
 
      <div class="card mb-2" style="border: none" >
         <a  class="cart__link" href="{{route('product.show', [app()->getLocale(), $product])}}">
@@ -72,7 +72,7 @@
 
 			  </div>
 		  </div>
-	   </div>
+	   {{-- </div> --}}
   
 
   

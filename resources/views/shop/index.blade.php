@@ -30,7 +30,9 @@
 						<div class="f">
 							@foreach($products->chunk(6) as $productChunk)
 								@foreach($productChunk as $product)
-									@include('shop.product.product_view')
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+										@include('shop.product.product_view')
+									</div>
 								@endforeach
 							@endforeach
 						</div>
