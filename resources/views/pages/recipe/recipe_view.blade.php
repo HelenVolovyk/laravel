@@ -1,6 +1,6 @@
 <div class="recipe__row">
 
-  	<div class="recipe__thumbnail ibg" >
+  	<div class="recipe__thumbnail ibg">
 		<img class="ibg" src=" {{ Storage::disk('public')->url($recipe->thumbnail)}}" alt="" >
 	</div>
 

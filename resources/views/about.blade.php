@@ -5,16 +5,16 @@
 @endsection
 
 @section('content')
-<div class="content about">
-	<div class="container ">
+	<div class="content about">
+		<div class="container ">
 			<h2>{{ __('ABOUT') }}</h2>
-			<hr class="about__hr">
+				<hr class="about__hr">
 
-			@include('inc.breadcrumb')
+				@include('inc.breadcrumb')
 
-				<div class="col-md-12 offset-md-1 pt-5 pb-5">
-					<h4 class="font-italic text-left ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
-				</div>
+					<div class="col-md-12 offset-md-1 pt-5 pb-5">
+						<h4 class="font-italic text-left ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
+					</div>
 		</div>
 
 			<div class="about-block mb-4">
@@ -38,13 +38,11 @@
 			<div class="container-fluid">
 				<div class="about__text">
 					
-						
-							<p class="text-left mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ratione fugiat distinctio accusamus similique, nesciunt quisquam dicta harum aliquam quo sint incidunt ut aperiam laborum sit, neque molestiae voluptatum deserunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ratione fugiat distinctio accusamus similique, nesciunt quisquam dicta harum aliquam quo sint incidunt ut aperiam laborum sit, neque molestiae voluptatum deserunt?</p>
-							<p class="text-right pt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-					
-			
+						<p class="text-left mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ratione fugiat distinctio accusamus similique, nesciunt quisquam dicta harum aliquam quo sint incidunt ut aperiam laborum sit, neque molestiae voluptatum deserunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ratione fugiat distinctio accusamus similique, nesciunt quisquam dicta harum aliquam quo sint incidunt ut aperiam laborum sit, neque molestiae voluptatum deserunt?</p>
+						<p class="text-right pt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+								
 				</div>
 			</div>
 
- </div>
+	</div>
 @endsection

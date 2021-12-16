@@ -9,17 +9,8 @@ All Categories
 
 
 <div class="content">
-	<div class="container-fluid">
-		<div class="shop__container">
-			<div class="bread">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-					<li class="breadcrumb-item"><a class="breadcrumb__link" href="{{ route('shop', [app()->getLocale()]) }}">{{ __('Shop') }}</a></li>
-					<li class="breadcrumb-item active" aria-current="page">{{ __('All Categories') }}</li>
-				</ol>
-			</div> 
-		</div>
-	</div>
+
+	@include('inc.breadcrumb')
 		
 		<div class="container-fluid">
 			<h1 class="text-center mt-2" style="color: var(--gr-b);">{{ __('All Categories') }}</h1>

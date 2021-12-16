@@ -1,26 +1,27 @@
 @extends('layouts.app')
 
+@section('header')
+<title>{{ 'интернетмагазин всегда свежих морепродуктов' }}</title>
+@endsection
+
 @section('content')
-<div class="container">
-		@if(Session::has('success'))
-		<div class="row">
-			<div class="col-sm-6 col-md-4">
-				<div class="alert alert-success">
-				{{Session::get('success')}}
+	<div class="container">
+			@if(Session::has('success'))
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="alert alert-success">
+					{{Session::get('success')}}
+					</div>
 				</div>
 			</div>
-		</div>
-		@endif
-</div>
-<section>
-		<!--- Start Carousel Section -->
-		<div class="container-fluid">
-			@include('inc.slider')
-		</div>
-		<!--- End Carousel Section -->
-</section>
+			@endif
+	</div>
 
-
+	<section>
+			<div class="container-fluid">
+				@include('inc.slider')
+			</div>
+	</section>
 
 	<div class="content_one">
 		<div class="container">
@@ -29,11 +30,9 @@
 			</div>
 		</div>
 
-
 		<section>
 			@include('home.prod')
 		</section>
-
 
 		<div class="container">
 			<p class="text-center  wow fadeInUp" style="margin-bottom: 8em">
@@ -46,7 +45,6 @@
 				<a class="more" href="">{{ __('View more products') }}</a>
 		</div>
 	
-		
 		<section style="">
 			@include('home.rec')
 		</section> 
@@ -59,7 +57,6 @@
 			@include('home.slick_one')
 		</section>
 
-
 		<section style="">
 			<div class="last d-flex ">
 					@include('home.inst')
@@ -67,6 +64,5 @@
 		</section> 
 
 	</div>
-
 
 @endsection

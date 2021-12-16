@@ -81,15 +81,12 @@ Route::group([
 ], function () {
 
 
-
-	
-
 	Route::get('/{page}', 'PageController')
 	->name('page')
 	->where('page', 'about|contact|payment|shares|reviews');
 	
 	 Route::get('/', 'HomeController@index')->name('home-locale');
-	 Route::get('/recipe/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
+	 Route::get('/recipes/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
 	 Route::get('/recipes', 'RecipeController@index')->name('recipes');
 
 
@@ -100,20 +97,21 @@ Route::group([
 	});
 
 
-		Route::get('/category/{category:webname}', 'CategoryController@show')->name('category.show');
+	Route::get('/categories/{category:webname}', 'CategoryController@show')->name('category.show');
+
+	Route::get('shop/categories', 'CategoryController@index')->name('categories');
 	
-		Route::get('/category', 'CategoryController@index')->name('category.index');
-		
-	
-		Route::get('/product/{product:webname}', 'ProductController@show')->name('product.show');
-		Route::get('/manufacturer/{manufacturer:webname}', 'ManufacturerController@show')->name('manufacturer.show');
-	
-		Route::get('/shop', 'ProductController@index')->name('shop');
-		Route::get('/shop/priceUp', 'ProductController@priceUp')->name('shop.priceUp');
-		Route::get('/shop/priceDown', 'ProductController@priceDown')->name('shop.priceDown');
+
+	Route::get('/shop/{product:webname}', 'ProductController@show')->name('product');
+
+	Route::get('/shop/categories/{manufacturer:webname}', 'ManufacturerController@show')->name('manufacturer');
+
+	Route::get('/shop', 'ProductController@index')->name('shop');
+	Route::get('/priceUp', 'ProductController@up')->name('shop.priceUp');
+	Route::get('/priceDown', 'ProductController@priceDown')->name('shop.priceDown');
 
 
-	Route::get('/search', 'ShopController@search')->name('search');
+	Route::get('/shop/categories/search', 'ShopController@search')->name('search');
 
 
 	Route::middleware('auth')->group(function () {

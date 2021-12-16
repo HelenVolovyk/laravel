@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+	 <link rel="shortcut icon" href="{{Storage::disk('public')->url('Wy/I1/gI/Kh/r5MZ20S8LYZFNu4o_1639644946.ico')}}" alt=""  type="image/x-icon">
     {{-- <title>{{ config('app.name', 'STOR') }}</title> --}}
 	 {{-- <title>MyShop</title> --}}
 	 @yield('header')

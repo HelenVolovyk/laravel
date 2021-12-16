@@ -4,13 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\User;
-use Illuminate\Http\Request;
-use App\Models\Comment;
 use App\Models\Image;
 use App\Models\Manufacturer;
-use App\Models\Otherimage;
-use App\Models\Overcategory;
 use App\Models\Unit;
 
 class ProductController extends Controller
@@ -41,7 +36,6 @@ class ProductController extends Controller
 
 	public function index($locale, Product $product, Category $category, Manufacturer $manufacturer)
 	{
-		
 		$products = Product::where('quantity', '>', '0')->paginate(6);
 		$categories = Category::all();
 	
@@ -52,7 +46,8 @@ class ProductController extends Controller
 		return view('shop.index', compact('products', 'manufacturers', 'parentCategories','categories', 'category'));
 	}
 
-	public function priceUp($locale, Product $product){
+	public function up($locale, Product $product){
+			
 		$categories = Category::all();
 		$manufacturers = Manufacturer::all();
 		$comments = $product->comments()->with('user');
@@ -63,7 +58,7 @@ class ProductController extends Controller
 		$products = Product::orderBy('price', 'asc')->paginate(6);
 		$parentCategories = Category::where('parent_id',0)->get();
 		
-		return view('shop.price.up', compact('products', 'comments', 'parentCategories'), compact('product', 'categories', 'manufacturers'), compact('image'), compact('units') );
+		return view('shop.price.up', compact('products', 'comments', 'parentCategories','product', 'categories', 'manufacturers','image', 'units') );
 	}
 
 	public function priceDown($locale, Product $product){
@@ -77,7 +72,14 @@ class ProductController extends Controller
 	
 		$products = Product::orderBy('price', 'desc')->paginate(6);
 		$parentCategories = Category::where('parent_id',0)->get();
-
-		return view('shop.price.down' , ['metaTitle' => $metaTitle], compact('products', 'comments', 'parentCategories'), compact('product', 'categories', 'manufacturers'), compact('image'), compact('units') );
+		
+		return view('shop.price.down' , compact('products', 
+															'comments', 
+															'parentCategories', 
+															'product', 
+															'categories', 
+															'manufacturers',
+															'image',
+															'units')  );
 	}
 }

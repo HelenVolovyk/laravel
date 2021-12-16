@@ -66,7 +66,7 @@
 					<div class="col-md-3 text-left">
 						<ul class="list-unstyled text-small">
 							<li><a class="text-muted" href={{route('shop', [app()->getLocale()])}}>{{ __('All goods') }}</a></li>
-							<li><a class="text-muted" href={{route('category.index', [app()->getlocale()])}}>{{ __('All categories') }}</a></li>
+							<li><a class="text-muted" href={{route('categories', [app()->getlocale()])}}>{{ __('All categories') }}</a></li>
 							<li><a class="text-muted" href={{route('page', [app()->getLocale(), 'payment' ])}}>{{ __('Payment and delivery') }}</a></li>
 						</ul>
 					</div>

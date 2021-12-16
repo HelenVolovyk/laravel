@@ -26,23 +26,10 @@
 					</div>
 		
 					<div class="col-sm-12 col-md-9">
-
 						<div class="f">
-							@foreach($products->chunk(6) as $productChunk)
-								@foreach($productChunk as $product)
-									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-										@include('shop.product.product_view')
-									</div>
-								@endforeach
-							@endforeach
+							@include('inc.product-sort')
 						</div>
-
-						<div class="mt-3">
-							{{$products->links()}}
-						</div>
-
 					</div>
-					
 				</div>
 
 			</div>

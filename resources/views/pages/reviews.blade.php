@@ -6,9 +6,7 @@
 @section('content')
 <div class="content">
 
- 
-   {{-- <hr class="featurette-divider"> --}}
-	 @include('inc.breadcrumb')
+	@include('inc.breadcrumb')
 
 	<h2 style="color: var(--title);">{{ __('REVIEWS') }}</h2>
 	 <div class="container"> 

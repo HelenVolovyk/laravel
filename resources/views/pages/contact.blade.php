@@ -5,17 +5,16 @@
 
 @section('content')
 
-<div class="content">
-	<div class="container-fluid">
-		<div class="shop__container">
-			@include('inc.breadcrumb')
+	<div class="content">
+		<div class="container-fluid">
+			<div class="shop__container">
+				@include('inc.breadcrumb')
+			</div>
 		</div>
-	
-	</div>
-		 {{-- <h2 class="contact__h text-center mb-3">{{ __('CONTACT') }}</h2> --}}
-		 <h1 class="text-center text-uppercase mb-5" style="color: var(--title)">{{ __('Contact') }}</h1>
 
-			<div class="contact">
+		<h1 class="text-center text-uppercase mb-5" style="color: var(--title)">{{ __('Contact') }}</h1>
+
+		<div class="contact">
 
 				<div class="contact__left ibg" style="background-image: url(	'{{Storage::disk('public')->url($otherimages->find(31)->img_src)}}'">
 					 <div class="contact__left-content wow fadeIn" data-wow-duration="2s">
@@ -60,12 +59,8 @@
 				</div> 
 			</div>
 		</div>
-	
-</div>
-
+	</div>
 	
    {{-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=151mOkxXsGs5GBiGZ_EHjW7kNURBa9bBo" width="900" height="560"></iframe>  --}}
-
-	
 
 @endsection

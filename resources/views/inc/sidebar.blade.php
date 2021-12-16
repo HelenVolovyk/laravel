@@ -4,7 +4,7 @@
 		<div class="category_link ">
 			
 			<div class="mb-2">
-				<a class="category__link" href="{{route('category.index', [app()->getlocale()])}}">
+				<a class="category__link" href="{{route('categories', [app()->getlocale()])}}">
 					<span class="sidebar-title">
 						{{ __('all categories') }}
 					</span>

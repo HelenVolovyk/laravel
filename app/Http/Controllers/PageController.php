@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Otherimage;
-use App\Repositories\OrderRepository;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 class PageController extends Controller
 {
@@ -20,9 +18,5 @@ class PageController extends Controller
 			//dd($page);
 		return view('pages.' .  $page , ['metaTitle' => $metaTitle], compact('otherimages'));
 	}
-
-	
-
-
 
  }
