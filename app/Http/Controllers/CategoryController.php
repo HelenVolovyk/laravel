@@ -38,7 +38,7 @@ public $parentCategories;
 		$manufacturers = Manufacturer::all();
 		
 		$category_ids = $category->getDescendants($category);
-		$products = Product::whereIn('category_id',$category_ids)->get();
+		$products = Product::whereIn('category_id',$category_ids)->take(6)->paginate(6);
 		
 
 		return view('shop.category.show', compact('parentCategories',  'category', 'products', 'manufacturers'))->with('categories', $categories);

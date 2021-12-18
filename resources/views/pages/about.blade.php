@@ -4,14 +4,15 @@
 <title>{{ $metaTitle }}</title>
 @endsection
 
+
 @section('content')
-<div class="content about">
+<div class="content">
 	
 	@include('inc.breadcrumb')
 
 		<h2 style="color: var(--title);">{{ __('ABOUT') }}</h2>
 			<div class="container ">
-				<div class="col-md-12 offset-md-1 pt-5 pb-5">
+				<div class="col-md-12  pt-4 pb-5">
 					<h4 class="font-italic text-left" style="color: var(--gr);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, at fuga! Quis molestiae necessitatibus minima recusandae sequi facilis repudiandae nemo commodi eum, culpa est veniam odio quia, cum quam possimus.</h4>
 			</div>
 		</div>

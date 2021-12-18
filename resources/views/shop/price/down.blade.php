@@ -10,7 +10,13 @@
 		<div class="container__fluid">
 			<div class="shop__container">
 			
-				@include('inc.breadcrumb')
+				<div class="arrow__up">
+					@include('inc.arrow')
+				</div>
+
+				<div class="price__up-breadcrumb">
+					@include('inc.breadcrumb')
+				</div>
 
 				<h2 class="text-center mb-4">{{ __('Products by sort priceDown') }} </h2>
 			

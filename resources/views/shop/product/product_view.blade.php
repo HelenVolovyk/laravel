@@ -6,7 +6,7 @@
    </a>
 
 	<div class="cart-link">
-		<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o fa-3x product-heard" aria-hidden="true"></i>
+		<a class="badge badge-pill badge-light flot-right" href="{{route('wishlist.add', [app()->getLocale(), $product])}}"><i class="fa fa-heart-o  product-heard" aria-hidden="true"></i>
 		</a>      
 	</div>
       

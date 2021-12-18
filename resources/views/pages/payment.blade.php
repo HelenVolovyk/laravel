@@ -12,7 +12,7 @@
 	<h2 style="color: var(--title);">{{ __('PAYMENT AND DELIVERY') }}</h2>
 
 		<section id="payment__one">
-			<div class="container-fluid  wow fadeIn  mt-5" >
+			<div class="container-fluid payment__first wow fadeIn " >
 				<div class="payment__box ">
 						<div class="payment__box-square ibg">
 							<img class="ibg" src="{{Storage::disk('public')->url($otherimages->find(1)->img_src)}}" alt="">

@@ -6,18 +6,15 @@
 @section('content')
 
 	<div class="content">
-		<div class="container-fluid">
-			<div class="shop__container">
-				@include('inc.breadcrumb')
-			</div>
-		</div>
-
-		<h1 class="text-center text-uppercase mb-5" style="color: var(--title)">{{ __('Contact') }}</h1>
+				
+		@include('inc.breadcrumb')
+			
+			<h1 class="contact-title text-center text-uppercase " style="color: var(--title)">{{ __('Contact') }}</h1>
 
 		<div class="contact">
 
 				<div class="contact__left ibg" style="background-image: url(	'{{Storage::disk('public')->url($otherimages->find(31)->img_src)}}'">
-					 <div class="contact__left-content wow fadeIn" data-wow-duration="2s">
+					 <div class="contact__left-content wow fadeIn text-center" data-wow-duration="2s">
 						<p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti est maxime dignissimos rerum. Sint praesentium iste dignissimos officiis vero dolore exercitationem, adipisci obcaecati in possimus!</p>
 					
 						<p class="">
@@ -31,7 +28,7 @@
 					<div class="contact__right-content ">
 
 					
-						<h3 class="mb-5" style="color: #c7a4ca;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem sed deleniti, mollitia quisquam iusto ipsa saepe vero rem nam maiores harum eum culpa minus id accusamus pariatur tenetur sit veritatis.</h3>
+						<h3 class="contact__right-content-text mb-5" style="color: var(--new-feel);">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem sed deleniti, mollitia quisquam iusto ipsa saepe vero rem nam maiores harum eum culpa minus id accusamus pariatur tenetur sit veritatis.</h3>
 					
 
 				 <form  action="{{route('contact.send')}}" method="POST">

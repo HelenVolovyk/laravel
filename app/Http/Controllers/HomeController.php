@@ -35,8 +35,7 @@ class HomeController extends Controller
 	{
 		$otherimages = Otherimage::all();
 		$products = Product::inRandomOrder()->where('quantity', '>', '0')->get();
-		// $products = Product::inRandomOrder()->take(3)->where('quantity', '>', '0')->get();
-		//$products = Product::with('category')->where('quantity', '>', '0')->paginate(10);
+		
 		$categories = Category::all();
 		$recommended = Product::where('is_recommended', '=', '1')->get();
 	//dd($recommended);

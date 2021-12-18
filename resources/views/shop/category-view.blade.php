@@ -7,7 +7,9 @@
 				@if(count($parentCategory->categories))
 			<div class="ac-block__text ">
 				@foreach ( $parentCategory->categories as $category )
-				<a class="sb pl-4" href="{{route('category.show', [app()->getLocale(), $category])}}">{{$category->title}}</a><br>
+					<div class="pl-4">
+						<a class="categ__cart-linck sb " href="{{route('category.show', [app()->getLocale(), $category])}}">{{$category->title}}</a><br>
+					</div>
 				@endforeach
 			</div>
 			@endif

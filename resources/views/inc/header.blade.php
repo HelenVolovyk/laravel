@@ -1,26 +1,43 @@
 @include('inc.name')
   @section('navbar')
-  <?php $url = $_SERVER["REQUEST_URI"];?>
 
-	
-  
+   @php
+	$url = $_SERVER["REQUEST_URI"];
+	$b = explode('/', $_SERVER['REQUEST_URI']);
+		$c = array_slice($b, 2); 
+	//	dd($c);
+	@endphp 
+
 	 <div class="header__body">
 	
-		
-
 		<nav class="header__menu">
 		
 			<div class="container__menu">
+				<div class="">
 			<ul class="header__list ">
 				
-				
-			
+						
 					<li class="header__link">
-						<a class="header__link <?php if ($url == "/shop") { echo ' active';}?>" href={{route('shop', [app()->getLocale()])}}>{{ __('Shop') }}</a>
+						<a class="header__link <?php if ($c == "/shop") { echo ' active';}?>" href={{route('shop', [app()->getLocale()])}}>{{ __('Shop') }}</a>
 					</li>
 				
+					{{-- <li class="header__link">
+						<div class="btn-group">
+							<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							  Right-aligned menu example
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end">
+							  <li><button class="dropdown-item" type="button">Action</button></li>
+							  <li><button class="dropdown-item" type="button">Another action</button></li>
+							  <li><button class="dropdown-item" type="button">Something else here</button></li>
+							</ul>
+						 </div>
+					</li> --}}
+
+
+				
 					<li class="header__link">
-						<a class="header__link  <?php if ($url == "/payment") { echo ' active';}?>" href={{route('page', [app()->getLocale(), 'payment' ])}}>{{ __('Payment and delivery') }}</a>
+						<a class="header__link  <?php if ($c == "/payment") { echo ' active';}?>" href={{route('page', [app()->getLocale(), 'payment' ])}}>{{ __('Payment and delivery') }}</a>
 					</li>
 					<li class="header__link">
 						<a class="header__link  <?php if ($url == "/shares") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'shares'])}}>{{ __('Shares') }}</a>
@@ -44,9 +61,6 @@
 					</li>
 					
 				
-
-				
-
 
 					<div class="header__lang">
 						<div class="lang mt-2">
@@ -113,6 +127,7 @@
 	
 		
 			</ul>
+		</div>
 		
 			{{-- <div class="nav__search">		
 					@include('inc.search')
@@ -128,8 +143,11 @@
 				
 						
 					
-	{{-- @include('inc.searchMob')			 --}}
+
 			
 		
 	</div>
+
+
+
 </header>
