@@ -3119,6 +3119,10 @@ input[type=search]::-webkit-search-decoration {
 	padding-top: 60px;
 }
 
+.container.log{
+
+	padding-top: 2rem;
+}
 .content {
   padding-top: 180px;
   
@@ -3549,9 +3553,9 @@ img.logo{
 	height: 90px;
 }
 
-.logo{
+/* .logo{
 	display: flex;
-}
+} */
 
 .myname{
 	display: flex;
@@ -3560,33 +3564,45 @@ img.logo{
 }
 
 .fishfood{
-
 	font-family: 'Archivo Black', sans-serif;
 	font-weight: 400;
-	/* font-size: 58px; */
 	font-size: calc(32px + 16 * (100vw / 1280));
-	/* color: rgba(221, 34, 174, 0.959); */
 	color: var(--prima);
-	/* color: rgba(158, 158, 158, 0.959); */
 	text-decoration: none;
-
 	letter-spacing: -2.0px;
 	position: relative;
+}
+
+.brend__name{
+	width: 25%;
+	height: 100%;
+	display: flex;
+		justify-content: left;
+		align-items: center;
+}
+.logo{
+	width: 90px;
+	height: 90px;
+	text-align: center;
+}
+img.logos{
+	max-width: 100%;
+}
+nav.name{
+	padding-top: 0;
 }
 
 @media(max-width: 767px){
 	nav.name{
 		padding-right: 0;
 		padding-left: 0;
+		padding-top: 0;
 		}
-	img.logo{
+	.logo{
 		width: 50px;
 		height: 50px;
-		margin-top: 10px;
-		margin-left: 3px;
 	}
 	.fishfood{
-		/* font-size: 45px; */
 		padding-left: 10px;
 	}
 	.brend__name{
@@ -3596,11 +3612,9 @@ img.logo{
 	}
 }
 @media(max-width: 400px){
-	img.logo{
+	.logo{
 		width: 40px;
 		height: 40px;
-		margin-top: 10px;
-		margin-left: 3px;
 	}
 	.brend__name{
 		width: 78%;
@@ -3611,11 +3625,9 @@ img.logo{
 }
 
 @media(max-width: 300px){
-	img.logo{
+	.logo{
 		width: 35px;
 		height: 35px;
-		margin-top: 10px;
-		margin-left: 10px;
 	}
 	.brend__name{
 		width: 73%;
@@ -3841,6 +3853,10 @@ i.fa.fa-phone.fa-2x:before {
 .navbar-brand {
   max-width: 120px;
 }
+.nav__lang{
+	color: var(--prima)
+
+}
 
 .navtel{
 	/* color: #0096AD; */
@@ -3970,7 +3986,9 @@ i.fa.fa-heart-o.product-heard::before{
   }
 
   .header__menu.active {
-    top: 30px;
+	 top: 10px;
+	 /* display: flex;
+	 align-items: center; */
   }
 
   .header__list {
@@ -4157,7 +4175,7 @@ i.fa.fa-search:hover::before {
 
 input#query {
   position: absolute;
-  width: 300px;
+  width: 200px;
   height: 50px;
   background-color: white;
   outline: none;
@@ -4939,8 +4957,8 @@ a.cart__link:focus:after {
   display: block;
 }
 
-.query__result {
-  font-size: 20px;
+span.query__result {
+  font-size: 26px;
   font-style: italic;
   color: #3490dc;
 }

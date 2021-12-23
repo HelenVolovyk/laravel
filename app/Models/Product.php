@@ -25,6 +25,7 @@ class Product extends Model implements Buyable
 		'name_uk',
 		'webname',
 		'manufacturer_id',
+		'package',
 		'description',
 		'description_uk',
 		'shot_description',

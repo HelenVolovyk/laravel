@@ -123,6 +123,28 @@
                       </div>
 
                       <div class="form-group row">
+                          <label for="package" class="col-md-4 col-form-label text-md-right">{{ __('Package') }}</label>
+                          <div class="col-md-6">
+                          <input id="package" 
+                              type="text" 
+                              class="form-control @error('package') is-invalid @enderror" 
+                              name="package" 
+                              value="{{ old('npackage') }}" 
+                              required 
+                              autofocus>
+
+                              @error('package')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+
+
+
+                      <div class="form-group row">
 
                           <label for="thumbnail" class="col-md-4 col-form-label text-md-right">{{ __('Thumbnail') }}</label>
 

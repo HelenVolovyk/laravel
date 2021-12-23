@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
+use App\Models\Manufacturer;
 use App\Models\Product;
 use App\Models\Unit;
 use Carbon\Traits\Units;
@@ -33,9 +34,10 @@ class ProductsController extends Controller
     public function create()
     {
 		  $categories = Category::all()->toArray();
+		  $manufacturers = Manufacturer::all()->toArray();
 		  $units = Unit::all()->toArray();
         //dd($units);
-        return view('admin/products/create', compact('categories', 'units'));
+        return view('admin/products/create', compact('categories', 'units', 'manufacturers'));
     }
 
     /**
@@ -69,8 +71,8 @@ class ProductsController extends Controller
 			'SKU' => $request->get('SKU'),
 			'name' => $request->get('name'),
 			'name_uk' => $request->get('name_uk'),
-			'manufacturer' => $request->get('manufacturer'),
-			'manufacturer_uk' => $request->get('manufacturer_uk'),
+			'manufacturer_id' => $request->get('manufacturer_id'),
+			'package' => $request->get('package'),
 			'webname' => str_slug($request->get('name')),
 			'description' => $request->get('description'),
 			'description_uk' => $request->get('description_uk'),

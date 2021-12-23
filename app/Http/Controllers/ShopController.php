@@ -11,10 +11,10 @@ use Illuminate\Http\Request;
 class ShopController extends Controller
 {
 
-	public function search(Request $request)
+	public function search($locale, Request $request)
 	{
-		dd($request()->input('query'));
 		$categories = Category::all();
+		$parentCategories = Category::where('parent_id',0)->get();
 		$manufacturers = Manufacturer::all();
 
 		$request->validate([
@@ -23,13 +23,13 @@ class ShopController extends Controller
 
 		$query = request()->input('query');
 	
-
 		$products = Product::where('name', 'like', "%$query%")
 									->orWhere('description', 'like', "%$query%")
-									  ->paginate(6);
-									
-
-		return view('shop.product.search-result', compact('categories', 'manufacturers'))->with('products', [app()->getLocale(), $products ] );
+									->paginate(6);
+							
+		 $count = $products->count();
+		
+		return view('shop.product.search-result', compact('parentCategories',   'products', 'manufacturers', 'count'))->with('categories', $categories);
 	}
 	
 }

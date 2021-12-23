@@ -110,8 +110,7 @@ Route::group([
 	Route::get('/priceUp', 'ProductController@up')->name('shop.priceUp');
 	Route::get('/priceDown', 'ProductController@priceDown')->name('shop.priceDown');
 
-
-	Route::get('/shop/categories/search', 'ShopController@search')->name('search');
+	Route::get('/search', 'ShopController@search')->name('search');
 
 
 	Route::middleware('auth')->group(function () {

@@ -19,35 +19,25 @@
 
 		
 			<div class="brend__name">
-			{{-- <a  href="{{ url('/') }}" class="header__logo"> --}}
-			<a  href="{{ url('/') }}" class="logo">
-				{{-- <i class="fa fa-bandcamp fa-2x" aria-hidden="true"></i> --}}
-				
-				<img class="logo " src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" width="90px" height="90px">
-				{{-- <img class="logo pb-2" src="{{Storage::disk('public')->url('Sv/MD/Nk/fw/RRQVXW86nxEkwzT5_1639411219.ico')}}" alt="" width="90px" height="90px"> --}}
+			
+				<div class="logo ibg">
+					{{-- <a  href="{{ url('/') }}" class="logo"> --}}
+
+					<img class="logos ibg" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" >
+
+				{{-- </a> --}}
+			
+				</div>
 
 				<div class="myname">
 					<div class="fishfood">
 						{{ __('BONITO') }}
 						
-						{{-- {{ __('Fish Food') }} --}}
-					</div>
-					{{-- <span class="bonito">морепродукты</span>  --}}
-				</div>
-			
-			</a>
-
-		
-			
-			{{-- <a class="tel" href="tel:123-456-78"><i class="fa fa-phone fa-2x"></i>  123-456-78</a> --}}
-		
-			
-				{{-- <a class="navbar-brand" href="">
 					
-					<div class="fishfood">
-						{{ __('Fish Food') }}
 					</div>
-				</a> --}}
+				
+				</div>
+		
 			</div>
 		
 			
@@ -138,12 +128,12 @@
 					@if(count(config('app.languages')) > 1)
 					
 					<li class="nav-item dropdown d-md-down-none ">
-							<a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<a class="nav__lang" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 										{{ strtoupper(app()->getLocale()) }}
 							</a>
 							<div class="dropdown-menu dropdown-menu-right">
 									@foreach(config('app.languages') as $langLocale => $langName)
-										<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+										<a class="dropdown-item nav__lang" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
 								
 									@endforeach
 							</div>

@@ -7,56 +7,35 @@
 @section('content')
 @include('inc.message')
 
-	<div class="container">
-		<div class="content">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
-				<li class="breadcrumb-item"><a href="/">{{ __('Shop') }}</a></li>
-				<li class="breadcrumb-item">{{ __('Search') }}</li>
-			</ol>
+	<div class="content">
+		<div class="container__fluid">
+			<div class="shop__container">
 
-			<div class="row">
-				<div class="col-md-2">
-					<aside class="product-section container">
-						<div class="sidebar">
-							<div class="category_link ">
-								<div class="mb-2"><a class="category__link" href="{{route('category.index')}}">{{ __('all categories') }}</a></div>
-											
-									@each('shop.category-view', $categories, 'category') 
-				
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
+					<li class="breadcrumb-item"><a href="/">{{ __('Shop') }}</a></li>
+					<li class="breadcrumb-item active">{{ __('Search') }}</li>
+				</ol>
+
+					<div class="result  text-center ">
+						<h3 class="search-results-count">{{ $count }} 
+							{{ __('result(s) for') }} 
+							<span class="query__result"> &nbsp '{{  request()->input('query') }}'</span>
+						</h3>
+					</div>
+		
+					<div class="row shop">
+						<div class="col-md-3">
+								@include('inc.sidebar')
+						</div>
+			
+						<div class="col-sm-12 col-md-9">
+							<div class="f">
+								@include('inc.product-sort')
 							</div>
 						</div>
-					</aside>
-				</div>
-
-				<div class="col-md-10">
-
-					<div class="search-results-container container">
-					
-						<div class="result d-flex">
-							<p class="search-results-count">{{ $products->total()}} 
-								{{ __('result(s) for') }} 
-								<span class="query__result"> &nbsp '{{  request()->input('query') }}'</span>
-							</p>
-						</div>
-						
-						<div class="products">
-							@foreach($products->chunk(3) as $productChunk)
-								<div class="row">
-									@foreach($productChunk as $product)
-									
-												@include('shop.product.product_view')
-
-									@endforeach
-								</div>
-							@endforeach
-							
-							{{ $products->appends(request()->input())->links()  }}
-						</div>
-						
 					</div>
-				
-				</div>
+			
 			</div>
 		</div>
 	</div>
