@@ -4,6 +4,7 @@
 	<title>{{ __('Shop') }}</title>
 @endsection
 
+
 @section('content')
 
 	<div class="content">
@@ -13,12 +14,11 @@
 					
 				<div class="row justify-content-between">
 						<div class="col-6">
-							{{-- @include('inc.breadcrumb') --}}
-						<ol class="breadcrumb" >
-							<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
-							<li class="breadcrumb-item active" aria-current="page">{{ __('Shop') }}</li>
-						</ol>
-					</div> 
+							<ol class="breadcrumb" >
+								<li class="breadcrumb-item"><a class="breadcrumb__link" href="/">{{ __('Home') }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ __('Shop') }}</li>
+							</ol>
+						</div> 
 			
 								
 					<div class="aaa col-6 d-flex justify-content-end">

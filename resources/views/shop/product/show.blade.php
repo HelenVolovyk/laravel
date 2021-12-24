@@ -217,29 +217,8 @@
 		<p style="margin-top: 6%; text-align:center; color: var(--new-blue); font-family: 'Prosto One', cursive; ">{{ __('YOU MAY ALSO LIKE:') }}
 		</p>  
 		
-		<div class="col-sm-12 g-0">
-	
-			<div class="mt-5 ">
-				<div class="sentence">
-
-				{{-- <div class="owl-carousel one">
-					@foreach($products->chunk(6) as $productChunk)
-					@foreach($products as $product)
-						<div class="it">
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-								@include('shop.product.product_view')
-							</div>
-						</div>
-					@endforeach
-					@endforeach 
-				</div> --}}
-				
-					@include('inc.owlCarousel')
-				</div>
-			</div>
-
-	
-
+		<div class="col-sm-12 g-0 ">
+			@include('inc.owlCarousel')
 		</div>
 
 

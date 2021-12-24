@@ -1,7 +1,6 @@
 <header class="header">
 
-{{-- 	 
-@endphp --}}
+
 	<div class="name">
 	
 		<nav class="name navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -17,27 +16,21 @@
 				<span></span>
 			</div> 
 
-		
+			
 			<div class="brend__name">
-			
-				<div class="logo ibg">
-					{{-- <a  href="{{ url('/') }}" class="logo"> --}}
-
-					<img class="logos ibg" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" >
-
-				{{-- </a> --}}
-			
-				</div>
-
-				<div class="myname">
-					<div class="fishfood">
-						{{ __('BONITO') }}
-						
-					
+				<a  href="{{ url('/') }}" class="logo">
+					<div class="logo ibg">
+						<img class="logos ibg" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" >
 					</div>
-				
-				</div>
-		
+				</a>
+			
+				<a  href="{{ url('/') }}" class="logo">
+					<div class="myname">
+						<div class="fishfood">
+							{{ __('BONITO') }}
+						</div>
+					</div>
+				</a>
 			</div>
 		
 			

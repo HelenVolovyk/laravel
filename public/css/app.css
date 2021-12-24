@@ -3124,8 +3124,10 @@ input[type=search]::-webkit-search-decoration {
 	padding-top: 2rem;
 }
 .content {
-  padding-top: 180px;
+  padding-top: 160px;
   
+  
+ 
 }
 
 a,
@@ -3730,6 +3732,7 @@ a.more:hover {
   display: flex;
   position: relative;
   z-index: 2;
+  margin-bottom: 0;
 }
 
 .header__link a:hover {
@@ -3740,21 +3743,22 @@ a.more:hover {
 a.header__link {
   color: white;
   text-decoration: none;
+  text-transform: capitalize;
   padding: 0px 7px 0px 7px;
   position: relative;
   font-family: 'Prosto One', cursive;
 }
 
 a.header__link.active {
-  color: #3490dc;
-  border-bottom: 3px solid #3490dc;
+  color:var(--link-active);
+  border-bottom: 3px solid var(--link-active);
   /*задаём цвет линии*/
   padding-bottom: 1px;
 }
 
 a.product__link.active {
-  color: #3490dc;
-  border-bottom: 2px solid #3490dc;
+  color: var(--link-active);
+  border-bottom: 2px solid var(--link-active);
   /*задаём цвет линии*/
 }
 
@@ -3847,7 +3851,7 @@ i.fa.fa-phone.fa-2x:before {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 50px;
+  height: 100%;
 }
 
 .navbar-brand {
@@ -4471,14 +4475,16 @@ a.sb{
 }
 
 .reviews-name{
-	color: var(--second);
+	color: var(--link-active);
 	font-family: 'Prosto One', cursive;
 	font-size: 16px;
 }
+
 img.reviews{
 	width: 100px;
 	height: 100px;
 }
+
 @media(max-width: 575px){
 	img.reviews{
 		width: 60px;
@@ -4818,11 +4824,15 @@ i.fa.fa-money::before {
   opacity: 0;
 }
 
-.btn__line {
+.btn__line,
+.btn__line-contact {
 	display: flex;
-	opacity: 0;
 	align-items: center;
  }
+ .btn__line{
+	opacity: 0;
+ }
+
 
 @media(max-width: 767px){
 	.card__btn,
@@ -4831,9 +4841,8 @@ i.fa.fa-money::before {
 	 }
 }
 
-
-
-.block1 {
+.block1,
+.block3 {
   background-color: var(--new-blue);
   width: 50px;
   height: 2px;
@@ -4847,7 +4856,8 @@ i.fa.fa-money::before {
 	 }
 }
 
-.block2 {
+.block2,
+.block4 {
   width: 0;
   height: 0;
   border-bottom: 7px solid transparent;
@@ -4858,10 +4868,13 @@ i.fa.fa-money::before {
 
 .block1:hover,
 .block2:hover {
-  width: 100%;
+  width: 50px;
   transition: width 0.5s ease-out;
   /*задаём время анимации*/
 }
+
+
+
 
 @media(max-width: 570px){
 	.block1,
@@ -4928,7 +4941,6 @@ a.cart__link:focus:after {
   padding: 20px;
   flex-basis: 50%;
   margin-bottom: 0;
-  /* color: #3490dc; */
   color: var(--new-blue);
   font-size: calc(16px + 2 * (100vw / 1024));
 }
@@ -4942,7 +4954,6 @@ a.cart__link:focus:after {
 
 #tab-1:checked ~ .tab-1 {
   border-bottom: 2px solid var(--prima);
-  /* border-bottom: 2px solid #3490dc; */
 }
 
 #tab-1:checked ~ .content-1 {
@@ -5832,7 +5843,7 @@ i.fa.fa-delicious {
 
 .contact {
   width: 100%;
-  height: 100%;
+  height: 76vh;
   display: flex;
   padding: 0;
   flex-wrap: wrap;
@@ -5845,7 +5856,21 @@ i.fa.fa-delicious {
 
 .contact-title,
 .recipes-title{
-	margin-bottom: 4rem;
+	margin-bottom: 1rem;
+}
+
+.contact-title{
+	font-size: calc(26px + 20 * (100vw / 1280));
+	position: absolute;
+	top: 16%;
+	left: 45%;
+	z-index: 2;
+	color: transparent;
+	background: #666666;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	text-shadow: 0px 3px 3px rgba(255,255,255,0.9);
 }
 
 .contact__right {
@@ -5859,7 +5884,7 @@ i.fa.fa-delicious {
 .contact__right-content {
   display: flex;
   flex-direction: column;
-  padding: 10% 15% 0% 15%;
+  padding: 0% 15%;
 }
 
 .contact__left {
@@ -5891,7 +5916,7 @@ i.fa.fa-delicious {
   display: flex;
   padding: 5px;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   height: 100%;
 }
 
@@ -5914,7 +5939,7 @@ i.fa.fa-delicious {
   margin: 10px 0;
   background: transparent;
   border: 0;
-  border-bottom: 2px solid var(--contact);
+  border-bottom: 2px solid var(--new-blue);
   padding: 10px;
   color: #9b9b9b;
   width: 100%;
@@ -5926,19 +5951,20 @@ i.fa.fa-delicious {
 }
 
 ::-webkit-input-placeholder {
-  color: var(--contact);
+  color: var(--new-blue);
+  font-size: 18px;
 }
 
 ::-moz-input-placeholder {
-  color: var(--contact);
+  color: var(--new-blue);
 }
 
 ::-ms-input-placeholder {
-  color: var(--contact);
+  color: var(--new-blue);
 }
 
 .contact-phone i {
-  color: var(--contact);
+  color: var(--new-blue);
 }
 
 a.contact-phone:hover,
@@ -5963,6 +5989,27 @@ a.contact-phone:focus {
   background: #0ca4d3;
 }
 
+span.send__contact{
+	color: var(--new-blue);
+	font-size: 22px;
+}
+
+
+.contact__sub:hover
+span.send__contact{
+	color: #02a0da;
+}
+
+.contact__sub:hover
+.block3{
+	background-color: var(--link-active-b);
+}
+
+.contact__sub:hover
+.block4{
+	border-left: 25px solid var(--link-active-b);
+	transition: 0.3s ease-in;
+}
 
 @media (max-width: 1024px) {
   .contact-form {
@@ -6014,6 +6061,7 @@ a.contact-phone:focus {
 		 padding-bottom: 10px;
 	 }
 	 .contact-title{
+		/* font-size: 28px; */
 		margin-bottom: 1rem;
 		position: absolute;
 		top: 18%;
@@ -6141,6 +6189,8 @@ a.contact-phone:focus {
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --prima: #6cd4db;
   --link: #1d68a7;
+  --link-active: #0081eb;
+  --link-active-b:#02a0da;;
   /* --prima: #1cb9ca; */
   /* --prima:#06B3CC; */
   /* --prima: hsl(315, 73%, 50%); */
