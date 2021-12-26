@@ -3125,9 +3125,75 @@ input[type=search]::-webkit-search-decoration {
 }
 .content {
   padding-top: 160px;
-  
-  
- 
+}
+.content.cart {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width: 767px){
+	.content.cart {
+		height: 84vh;
+		margin-bottom: 3rem;
+		
+	 }
+}
+
+.cart__table{
+	padding: 5px !important;
+}
+
+.cart__table-title{
+	font-size: calc(12px + 6 * (100vw / 1280));
+}
+.cart__table-value{
+	font-size: calc(10px + 4 * (100vw / 1280));
+	color: #5a5a5a;
+}
+.cart__total{
+	text-transform: uppercase;
+	color: #5a5a5a;
+	letter-spacing: 1px;
+	font-size: calc(12px + 4 * (100vw / 1280));
+}
+button.update__cart{
+	margin: 0;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+}
+svg.bi.bi-check-lg{
+	width: 34px;
+	height: 34px;
+}
+span.update__cart{
+	font-size:  20px;
+	font-weight: bolder;
+}
+@media(max-width: 767px){
+	button.update__cart{
+		 width: 30px;
+		 height: 30px;
+		 text-align: center;
+	}
+	svg.bi.bi-check-lg{
+		width: 24px;
+		height: 24px;
+		font-weight: bolder;
+	}
+	span.update__cart{
+		font-size:  14px;
+		
+	}
+}
+.cart__table-title{
+	color: var(--new-grey);
+	
+}
+i.fa.fa-smile-o{
+	color: var(--link-active);
 }
 
 a,
@@ -3195,7 +3261,7 @@ a.go__phone {
 
 @media (max-width: 767px) {
   .content {
-    padding: 80px 0px 0px 0px;
+    padding-top: 70px;
   }
 
   .gotop,
@@ -3619,7 +3685,7 @@ nav.name{
 		height: 40px;
 	}
 	.brend__name{
-		width: 78%;
+		width: 75%;
 		display: flex;
 		justify-content: center;
 	}
@@ -3649,7 +3715,9 @@ a.categ__cart-linck{
 	color:#67706d;
 	
 }
-
+a.shares__link{
+	text-decoration: none !important;
+}
 a.navbar-brand:hover:after,
 a.navbar-brand:focus:after,
 a.header__lang:hover:after,
@@ -3657,7 +3725,9 @@ a.header__lang:focus:after,
 a.recipes__link:hover:after,
 a.categ__cart-linck::after,
 a.recipes__link:focus:after,
-a.more:focus::after {
+a.more:focus::after,
+a.shares__link:hover:after,
+a.shares__link:focus:after{
   width: 0%;
 }
 
@@ -3665,7 +3735,8 @@ a.header__link:hover,
 a.rec__link:hover,
 a.recipes__link:hover,
 a.categ__cart-linck:hover,
-a.more:hover {
+a.more:hover,
+a.shares__link:hover {
   text-decoration: none;
 }
 
@@ -3767,7 +3838,8 @@ a.category__link:after,
 .categ__cart-linck::after,
 a.product__link::after,
 /* a.recipes__link::after, */
-a.more::after {
+a.more::after,
+a.shares__link::after {
   display: block;
   position: absolute;
   left: 0;
@@ -3816,7 +3888,10 @@ a.recipes__link:focus:after,
 a.product__link:hover:after,
 a.product__link:focus:after,
 a.more:focus::after,
-a.more:hover::after {
+a.more:hover::after,
+a.shares__link:hover:after,
+a.shares__link:focus:after
+ {
   width: 100%;
 }
 
@@ -4555,7 +4630,7 @@ a.rec__link-shop {
   }
 
   .content {
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
 }
 
@@ -6381,8 +6456,6 @@ sup {
 
 a {
   color: var(--new-blue);
-  /* color: #3490dc; */
-  /* color: #00bdf7; */
   text-decoration: none;
   background-color: transparent;
   font-size: calc(12px + 6 * (100vw / 1280));
@@ -6390,6 +6463,7 @@ a {
 
 a:hover {
   color: #1d68a7;
+  color: var(--link-active);
   text-decoration: underline;
 }
 
@@ -17128,6 +17202,9 @@ a.text-dark:focus {
 
 .text-muted {
   color: #6c757d !important;
+}
+.text-muted:hover{
+	color: var(--link-active) !important;
 }
 
 .text-black-50 {

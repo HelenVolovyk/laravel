@@ -44,26 +44,25 @@ Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
 	Route::delete('images/{image}/remove', 'ImagesController@remove')->name('image.remove');
 });
 
-	//*admin
-	Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
-		Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-		Route::get('/users', 'UsersController@index')->name('users');
-		Route::get('/orders', 'UsersController@getOrders')->name('users.orders');
+//*admin
+Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
+	Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+	Route::get('/users', 'UsersController@index')->name('users');
+	Route::get('/orders', 'UsersController@getOrders')->name('users.orders');
 
-		Route::prefix('sliders')->name('sladers.')->group(function () {
-			Route::get('/index', 'SlidersController@index')->name('index');
-			Route::get('/create', 'SlidersController@create')->name('create');
-			Route::post('/store', 'SlidersController@store')->name('store');
-			Route::get('/index', 'SlidersController@index')->name('index');
-		});
-		
-		
-		Route::resource('products', 'ProductsController')->except(['show']);
-		Route::resource('categories', 'CategoriesController')->except(['show']);
-		Route::resource('sliders', 'SlidersController');
-		Route::resource('images', 'OtherimageController');
-		Route::resource('recipes', 'RecipeController')->except('show');
-		Route::resource('components', 'ComponentsController')->except('show');
+	Route::prefix('sliders')->name('sladers.')->group(function () {
+		Route::get('/index', 'SlidersController@index')->name('index');
+		Route::get('/create', 'SlidersController@create')->name('create');
+		Route::post('/store', 'SlidersController@store')->name('store');
+		Route::get('/index', 'SlidersController@index')->name('index');
+	});
+	
+	Route::resource('products', 'ProductsController')->except(['show']);
+	Route::resource('categories', 'CategoriesController')->except(['show']);
+	Route::resource('sliders', 'SlidersController');
+	Route::resource('images', 'OtherimageController');
+	Route::resource('recipes', 'RecipeController')->except('show');
+	Route::resource('components', 'ComponentsController')->except('show');
 		
 	});
 
@@ -71,12 +70,9 @@ Route::prefix('ajax')->name('ajax.')->namespace('Ajax')->group(function () {
 	Route::get('/send', 'MailController@send');
 
 	
-
 Route::group([
 	'prefix' => '{locale?}',
 	'where' => ['locale' => '[a-zA-Z]{2}'],
-	//'prefix' => LocalizationService::locale(),
-	//'prefix' => Config::get('languages'),
 	'middleware' => ['set_locale']
 ], function () {
 
@@ -85,9 +81,9 @@ Route::group([
 	->name('page')
 	->where('page', 'about|contact|payment|shares|reviews');
 	
-	 Route::get('/', 'HomeController@index')->name('home-locale');
-	 Route::get('/recipes/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
-	 Route::get('/recipes', 'RecipeController@index')->name('recipes');
+	Route::get('/', 'HomeController@index')->name('home-locale');
+	Route::get('/recipes/{recipe:webname}', 'RecipeController@show')->name('recipe.show');
+	Route::get('/recipes', 'RecipeController@index')->name('recipes');
 
 
 	//*contact
@@ -96,25 +92,21 @@ Route::group([
 		Route::post('/send', 'ContactController@send')->name('send');
 	});
 
-
+	//*shop
 	Route::get('/categories/{category:webname}', 'CategoryController@show')->name('category.show');
-
 	Route::get('shop/categories', 'CategoryController@index')->name('categories');
-	
-
 	Route::get('/shop/{product:webname}', 'ProductController@show')->name('product');
 
 	Route::get('/shop/categories/{manufacturer:webname}', 'ManufacturerController@show')->name('manufacturer');
-
 	Route::get('/shop', 'ProductController@index')->name('shop');
 	Route::get('/priceUp', 'ProductController@up')->name('shop.priceUp');
 	Route::get('/priceDown', 'ProductController@priceDown')->name('shop.priceDown');
-
 	Route::get('/search', 'ShopController@search')->name('search');
 
 
 	Route::middleware('auth')->group(function () {
 		//*Shopping cart
+		// Route::get('/shop/cart', 'CartController@index')->name('cart.index');
 		Route::prefix('cart')->name('cart.')->group(function () {
 			Route::get('/', 'CartController@index')->name('index');
 			Route::post('/add/{product:webname}', 'CartController@add')->name('add');
@@ -137,9 +129,10 @@ Route::group([
 			//Route::get('/user', 'WishlistController@userList')->name('delete');
 		});
 
-
 		//* Rating
-		Route::post('rating/{product:webname}/add', 'RatingController@add')->name('rating.add');
+		Route::post('/rating/add/{product:webname}', 'RatingController@add')->name('rating.add');
+		// Route::post('rating/add/{product:webname}/', 'RatingController@add')->name('rating.add');
+	
 
 		//*comment
 		Route::prefix('comment')->name('comments.')->group(function () {
@@ -157,7 +150,6 @@ Route::group([
 			Route::get('/edit', 'ProfileController@edit')->name('edit');
 			Route::post('/update', 'ProfileController@update')->name('update');
 		});
-	
 	});
 
 	Route::get('/wishlist', 'WishlistController@userList')->name('wishlist');

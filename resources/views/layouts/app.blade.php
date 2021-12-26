@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
 	 <script src="{{ asset('js/app.js') }}" defer></script>
+	 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+		  crossorigin="anonymous"></script>
 	 {{-- <script src="{{ asset('js/wow.min.js') }}" defer></script> --}}
 	 
     @stack('scripts')
@@ -71,22 +73,49 @@
 			<div class="wrapper">
 		
 			@include('inc.header')
+
+
+	@php
+		//  $uri = $request->path();
+
+		//  if ($url != url('/')) 
+		// 	@include('inc.breadcrumb')
+		 
+	// 	if()
+	// @include('inc.breadcrumb')
+
+	// $b = explode('/', $_SERVER['REQUEST_URI']);
+	// 	$c = array_slice($b, 2); 
+
+		
+		@endphp
+
+		
+	
+	
+				
+			
+		
+	
+	{{-- @if(Request::is('about', 'contact', 'payment', 'shares', 'reviews')) --}}
+	{{-- @include('inc.breadcrumb')
+		 --}}
+	{{-- @endif --}}
+
+		
 				
 			@show
 	
 			
 
-					@if(Request::is('/'))
-						{{-- @include('inc.slider') --}}
-						
-					@endif
-
+					
 				
 	
 			
 					{{-- <main > --}}
 						
 								@include('inc.message')
+								
 						
 								@yield('content')
 							

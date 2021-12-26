@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-<title>{{ 'интернетмагазин всегда свежих морепродуктов' }}</title>
+<title>{{ 'Home интернетмагазин всегда свежих морепродуктов' }}</title>
 @endsection
 
 @section('content')

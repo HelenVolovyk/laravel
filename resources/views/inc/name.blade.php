@@ -18,19 +18,22 @@
 
 			
 			<div class="brend__name">
-				<a  href="{{ url('/') }}" class="logo">
-					<div class="logo ibg">
-						<img class="logos ibg" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" >
-					</div>
-				</a>
-			
-				<a  href="{{ url('/') }}" class="logo">
-					<div class="myname">
-						<div class="fishfood">
-							{{ __('BONITO') }}
+				<div class="">
+					<a  href="{{ url('/') }}" class="logo">
+						<div class="logo ibg">
+							<img class="logos ibg" src="{{Storage::disk('public')->url('Rp/w6/5a/SF/ZgaSBAKb9cBJkM4P_1639521301.png')}}" alt="" >
 						</div>
-					</div>
-				</a>
+					</a>
+				</div>
+				<div class="">
+					<a  href="{{ url('/') }}" class="logo">
+						<div class="myname">
+							<div class="fishfood">
+								{{ __('BONITO') }}
+							</div>
+						</div>
+					</a>
+				</div>
 			</div>
 		
 			

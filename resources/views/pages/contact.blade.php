@@ -3,19 +3,10 @@
 	<title>{{ $metaTitle }}</title>
 @endsection
 
-@php
-$url = $_SERVER["REQUEST_URI"];
-$b = explode('/', $_SERVER['REQUEST_URI']);
-	$c = array_slice($b, 2); 
-$d = implode($c);
-
-	//dd($d);
-//dd($url);
-@endphp 
 
 @section('content')
 
-	<div class="content">
+	<div class="">
 				
 		@include('inc.breadcrumb')
 			

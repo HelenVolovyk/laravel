@@ -2,13 +2,12 @@
  @inject('wishlist', 'App\Services\WishlistService')
 
 @section('content')
-<div class="content">
 
 	@include('inc.breadcrumb')
 
 	<div class="container">	
 		<div class="row justify-content-center">
-			<div class="col-md-4 mb-3">
+			<div class="col-md-10 mb-3">
 				<h2 class="text-center text-uppercase  mt-3 mb-2" style="font-weight:bolder; color: var(--prima);">{{ ($product->__('name'))  }}</h2>
 			</div>
   
@@ -110,7 +109,8 @@
 		
 
 					@if($product->getUserProductRating()!==false) 
-						@for($i=1; $i<=5; $i++)
+						 @for($i=1; $i<=5; $i++)
+					
 							<input class ="star star-{{$i}}"
 									value="{{$i}}"
 									id="star-{{$i}}"
@@ -119,8 +119,8 @@
 									@if($i == $product->getUserProductRating()) checked ="checked" @endif
 									/>
 									<label class="star star-{{$i}}" for="star-{{$i}}"></label>
-						@endfor
-					@else   
+						@endfor 
+					@else  
 						<input class="star star-1" value="1" id="star-1" type="radio" name="star">
 						<label class="star star-1" for="star-1"></label> 
 						<input class="star star-2" value="2" id="star-2" type="radio" name="star">
@@ -210,7 +210,7 @@
 			</div>
 		</div> 
 	</div>
-</div>
+
 
 
 

@@ -8,10 +8,10 @@
 		foreach ($c as $item) {
 			$items[] = $item;
 		}
-		
+	
 @endphp
 
-
+<div class="content" >
 <div class="container__fluid">
 	<div class="shop__container">		
 		
@@ -46,6 +46,10 @@
 
 	</div>
 </div>
+
+
+</div>
+
 
 
  

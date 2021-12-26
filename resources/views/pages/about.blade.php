@@ -6,7 +6,7 @@
 
 
 @section('content')
-<div class="content">
+<div class="">
 	
 	@include('inc.breadcrumb')
 

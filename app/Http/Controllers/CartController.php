@@ -22,7 +22,6 @@ class CartController extends Controller
 		
 	public function index($locale, Product $product)
 	{
-		//dd($product);
 		return view('shop.cart.index');
 	}
 

@@ -4,10 +4,8 @@
 @endsection
 
 @section('content')
-	<div class="content">
-		
+	<div class="">
 		@include('inc.breadcrumb')
-	
 		<h1 style="color: var(--title)">{{ __('SHARES') }}</h1>
 			
 		<div class="container">
@@ -27,7 +25,7 @@
 			</div>
 					
 			<div class="text-right button-container mt-5 mb-5">
-				<a href="/shop" class="" style="color: var(--prima)">{{ __('View more products') }}</a>
+				<a href={{route('shop', [app()->getLocale()])}} class="shares__link" >{{ __('View more products') }}</a>
 			</div>
 		</div>
 	</div>

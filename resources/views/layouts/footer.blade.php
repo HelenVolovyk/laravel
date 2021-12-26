@@ -56,8 +56,8 @@
 
 					<div class="col-md-3 text-left">
 						<ul class="list-unstyled text-small">
-							<li><a class="text-muted" href={{route('page', [app()->getLocale(),'about'])}}>{{ __('About') }}</a></li>
-							<li><a class="text-muted" href={{route('page', [app()->getLocale(),'contact'])}}>{{ __('Contact') }}</a></li>
+							<li><a class="text-muted" href={{route('page', [app()->getLocale(),'about'])}}>{{ __('about') }}</a></li>
+							<li><a class="text-muted" href={{route('page', [app()->getLocale(),'contact'])}}>{{ __('contact') }}</a></li>
 							<li><a class="text-muted"  class="hvr-grow-rotate"  href="tel:123-56-78"><i class="fa fa-phone fa hvr-icon fa-foot"></i><span style="color: var(--prima); font-weight: bold;">123-456-78</span>  </a></li>
 						
 						</ul>
@@ -67,15 +67,15 @@
 						<ul class="list-unstyled text-small">
 							<li><a class="text-muted" href={{route('shop', [app()->getLocale()])}}>{{ __('All goods') }}</a></li>
 							<li><a class="text-muted" href={{route('categories', [app()->getlocale()])}}>{{ __('All categories') }}</a></li>
-							<li><a class="text-muted" href={{route('page', [app()->getLocale(), 'payment' ])}}>{{ __('Payment and delivery') }}</a></li>
+							<li><a class="text-muted" href={{route('page', [app()->getLocale(), 'payment' ])}}>{{ __('payment and delivery') }}</a></li>
 						</ul>
 					</div>
 			
 					<div class="col-md-3 text-left">
 						<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href={{route('page', [app()->getLocale(),'shares'])}}>{{ __('Shares') }}</a></li>
-						<li><a class="text-muted" href={{route( 'recipes', [app()->getLocale()])}}>{{ __('Healthy recipes') }}</a></li>
-						<li><a class="text-muted" href={{route('page', [app()->getLocale(),'reviews'])}}>{{ __('Reviews') }}</a></li>
+						<li><a class="text-muted" href={{route('page', [app()->getLocale(),'shares'])}}>{{ __('shares') }}</a></li>
+						<li><a class="text-muted" href={{route( 'recipes', [app()->getLocale()])}}>{{ __('healthy recipes') }}</a></li>
+						<li><a class="text-muted" href={{route('page', [app()->getLocale(),'reviews'])}}>{{ __('reviews') }}</a></li>
 						</ul>
 					</div>
 

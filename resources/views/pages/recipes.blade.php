@@ -5,10 +5,8 @@
 
 @section('content')
 
-	<div class="content recires">
-	
+	<div class="">
 		@include('inc.breadcrumb')
-
 		<h2 class="recipes-title text-uppercase " style="color: var(--title);" >{{ __('Healthy recipes') }}</h2>
 
 		<div class="container">	

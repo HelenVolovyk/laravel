@@ -6,12 +6,17 @@ use Illuminate\Http\Request;
 
 class RatingController extends Controller
 {
+	
 /**
  * @param Product $product
  */
 
-   public function add(Product $product, Request $request)
+   public function add(Request $request)
    {
+		$b = explode('/', $_SERVER['REQUEST_URI']);
+		$e = array_pop($b);
+		$product = Product::where('webname', $e)->first();
+			
       $product->rateOnce($request->star);
 
       return redirect()->back()->with(['status' => 'Your rating was added']);

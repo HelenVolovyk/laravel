@@ -2,9 +2,9 @@
 
 @section('content')
 
-	<div class="content">
-		
+	<div class="">
 		@include('inc.breadcrumb')
+		
 
 		<h2 class="text-uppercase recipe__title" style="color: var(--recipe-title)">{{ $recipe->__('title') }}</h2>
 		

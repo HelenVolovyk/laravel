@@ -9,13 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Traits\Translatable;
+use Illuminate\Support\Facades\Auth;
+use willvincent\Rateable\Rating;
 
 class Product extends Model implements Buyable
 {
-
-	use Translatable;
-	use CanBeBought, Rateable;
-
+	use Translatable, CanBeBought, Rateable;
 
 	protected $fillable = [
 		'id',
@@ -106,6 +105,8 @@ class Product extends Model implements Buyable
 	{
 		return  $this->printPrice();
 	}
+
+
 
 	/**
 	 * @return mixed

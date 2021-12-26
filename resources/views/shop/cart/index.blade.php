@@ -8,61 +8,70 @@ Shopping Cart
 
 @section('content')
   {{-- @if(Session::has('cart')) --}}
+  @include('inc.breadcrumb')
+  <div class="content cart">
+
   @if(Cart::instance('cart')->count() > 0)
-  <div class="container">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">{{ __('Home') }}</a></li>
-      <li class="breadcrumb-item"><a href="/shop">{{ __('Shop') }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ __('Cart') }}</li>
-	 </ol>
-	 
-	
+	<div class="container">
 	
 	 
-
-    <h1 class="text-center">{{ __('Cart') }}</h1>
-    <div class="row justify-content-md-center mt-5">
-    
-      <div class="col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-3">
-       
-       <table class="table table-light">
-          <thead>
-            <tr>
-             <th>{{ __('Product') }}</th>
-             <th>{{ __('Qty') }}</th>
-             <th>{{ __('Price') }}</th>
-             <th>{{ __('Subtotal') }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            @each('shop.cart.parts.cart_view', Cart::instance('cart')->content(), 'row')
-          </tbody>
-       </table>
-                       
-      </div>
-    </div>
+	
+		<h1 class="text-center">{{ __('cart') }}</h1>
+			<div class="row justify-content-md-center mt-5">
+				<div class="cart__table col-sm-12 col-md-10 col-md-offset-3 col-sm-offset-3">
+					<table class="table table-light table-sm text-center">
+						<thead>
+							<tr class="cart__table-title">
+							<th>{{ __('Product') }}</th>
+							<th>{{ __('Qty') }}</th>
+							<th>{{ __('Price') }}</th>
+							<th>{{ __('Subtotal') }}</th>
+							</tr>
+						</thead>
+						<tbody>
+							@each('shop.cart.parts.cart_view', Cart::instance('cart')->content(), 'row')
+						</tbody>
+					</table>
+				</div>
+			</div>
 
 
- 
-  <div class="row-right mt-5">
-    <div class="col-sm-11 col-md-11 col-md-offset-3 col-sm-offset-3">
-    <div>
-    <span><strong>{{ __('Total') }}
-		 {{Cart::total()}}</strong></span>
-    </div>
-    <div class="mt-3">
-       <a href="{{ route('checkout', app()->getLocale()) }}" type="button" class="btn btn-success">{{ __('Checkout') }}</a> 
-     
-    </div>
-    </div>
-  </div>
+ 			<div class="row-right mt-5">
+				<div class="col-sm-11 col-md-11 col-md-offset-3 col-sm-offset-3">
+					<div>
+						<span class="cart__total" ><strong>{{ __('Total') }}
+						{{Cart::total()}}</strong></span>
+					</div>
+					<div class="mt-3">
+						<a href="{{ route('checkout', app()->getLocale()) }}" type="button" class="btn btn-success">
+							<span style="font-size: 20px">
+								{{ __('Checkout') }}
+							</span>
+						</a> 
+					</div>
+					<div class=" mt-5" >
+						<a href={{route('shop', [app()->getLocale()])}} class="shares__link" >{{ __('continue shopping?') }}</a>
+					</div>
+				</div>
+			</div>
 
-  @else
+  	@else
 
-  <div class="row justify-content-center">
-         <h2>{{ __('No items in Cart!') }}</h2> 
-    
-  </div>
+			<div class="justify-content-center col-md-4">
+					<h2>{{ __('No items in your Cart!') }}</h2> 
+					<div class="row justify-content-center ">
+						<h3 style="color: var(--link-active)">{{ __("but it's easy to fix") }}</h3>
+						<i class="fa fa-smile-o fa-2x pl-3" aria-hidden="true"></i>
+
+					</div>
+				
+
+					<div class="text-center mt-5 mb-5" >
+						<a href={{route('shop', [app()->getLocale()])}} class="shares__link" >{{ __('to the store') }}</a>
+					</div>
+			</div>
+
+		</div>
+	@endif
 </div>
-@endif
 @endsection

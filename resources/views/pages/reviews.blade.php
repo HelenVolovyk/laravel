@@ -4,8 +4,7 @@
 @endsection
 
 @section('content')
-<div class="content">
-
+<div class="">
 	@include('inc.breadcrumb')
 
 	<h2  class="pb-3" style="color: var(--title);">{{ __('REVIEWS') }}</h2>
