@@ -19,7 +19,7 @@ Shopping Cart
 		<h1 class="text-center">{{ __('cart') }}</h1>
 			<div class="row justify-content-md-center mt-5">
 				<div class="cart__table col-sm-12 col-md-10 col-md-offset-3 col-sm-offset-3">
-					<table class="table table-light table-sm text-center">
+					<table class="table table-light table-sm ">
 						<thead>
 							<tr class="cart__table-title">
 							<th>{{ __('Product') }}</th>

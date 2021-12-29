@@ -23,15 +23,14 @@ class ProductController extends Controller
 		$categories = Category::all();
 		$manufacturers = Manufacturer::all();
 	
-		$comments = $product->comments()->with('user')->paginate(5);
-		
 		$image = $product->image()->get();
 		$units = Unit::all();
 		$units = $product->units()->first();
 
 		$products = Product::inRandomOrder()->take(6)->where('quantity', '>', '0')->get();
-		
-		return view('shop.product.show', compact('product', 'comments'), compact('products', 'categories', 'manufacturers'), compact('image'), compact('units') );
+		$comments = $product->comments()->with('user')->paginate(5);
+	
+		return view('shop.product.show', compact('product', 'comments', 'products', 'categories', 'manufacturers', 'image', 'units' ));
 	}
 
 	public function index($locale, Product $product, Category $category, Manufacturer $manufacturer)

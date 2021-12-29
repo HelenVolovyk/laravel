@@ -9,14 +9,17 @@ use App\Models\Product;
 
 class CommentController extends Controller
 {
-    public function add(Request $request, Product $product)
+    public function add(Request $request)
     {
-       //dd($request->comment); 
-        $data = $request->all();
-        unset($data['_token']);
-        $data['user_id'] = auth()->id();
-        $product->comments()->create($data);
-
+		$b = explode('/', $_SERVER['REQUEST_URI']);
+		$e = array_slice($b, 0,-1);
+		$f = array_pop($e);
+		$product = Product::where('webname', $f)->first();
+		
+		$data = $request->all();
+		unset($data['_token']);
+		$data['user_id'] = auth()->id();
+		$product->comments()->create($data);
 
       return redirect()->back()->with(['status' => 'Comment was added']);
     }

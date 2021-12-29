@@ -5008,7 +5008,6 @@ a.cart__link:focus:after {
   width: 100%;
   display: none;
   padding: 20px;
-  background-color: #f1f1f169;
 }
 
 .tab {
@@ -5021,10 +5020,11 @@ a.cart__link:focus:after {
 }
 
 @media(max-width: 767px){
-	.tab{
+	.tab,
+	.tabs__content.content-2{
 		padding: 0;
 	}
-	
+
 }
 
 #tab-1:checked ~ .tab-1 {
@@ -5049,6 +5049,15 @@ span.query__result {
   color: #3490dc;
 }
 
+#new_comment form{
+	width: 50%;
+}
+
+@media(max-width: 767px){
+	#new_comment form{
+		width: 100%;
+	}
+}
 /*dws*/
 
 .dws {

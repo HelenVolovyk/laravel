@@ -11,7 +11,7 @@
 	@csrf
 	
 			<input type="hidden" value="{{$row->rowId}}" name="rowId">
-			<div class="d-flex justify-content-center">
+			<div class="d-flex ">
 				<input type="number" min="1"  value="{{$row->qty}}" name="product_count" style="width: 30px; height: 25px; margin-right:10px">
 		
 				<button type="submit" class="btn btn-success btn-sm  update__cart text-center" >
