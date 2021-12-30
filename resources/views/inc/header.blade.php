@@ -31,7 +31,7 @@
 					<a class="header__link  <?php if ($d == "about") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'about'])}}>{{ __('about') }}</a>
 				</li>
 				<li class="header__link">
-					<a class="header__link  <?php if ($d == "reviews") { echo ' active';}?>" href={{route('page', [app()->getLocale(),'reviews'])}}>{{ __('reviews') }}</a>
+					<a class="header__link  <?php if ($d == "reviews") { echo ' active';}?>" href={{route('reviews', [app()->getLocale(),'reviews'])}}>{{ __('reviews') }}</a>
 				</li>
 				<li class="header__link">
 					<a class="header__link  <?php if ($d == "contact") { echo ' active';}?>" href="{{ route('page', [app()->getLocale(),'contact']) }}">{{ __('contact') }}</a>

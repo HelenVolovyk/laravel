@@ -77,9 +77,12 @@ Route::group([
 ], function () {
 
 
-	Route::get('/{page}', 'PageController')
+	Route::get('/{page}', 'PageController@index')
 	->name('page')
-	->where('page', 'about|contact|payment|shares|reviews');
+	->where('page', 'about|contact|payment|shares');
+
+	Route::get('/reviews', 'PageController@reviews')->name('reviews');
+	
 	
 	Route::get('/', 'HomeController@index')->name('home-locale');
 	Route::get('/recipes/{recipe:webname}', 'RecipeController@show')->name('recipe.show');

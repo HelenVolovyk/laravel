@@ -8,44 +8,48 @@ Wish List
 
 @section('content')
 
- 
-  @if(Cart::instance('wishlist')->count() > 0)
-  <div class="container">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
-      <li class="breadcrumb-item active" aria-current="page">WishList</li>
-    </ol>
+	 @include('inc.breadcrumb')
+	
+ <div class="content cart">
 
-    <h1 class="text-center">Wish list</h1>
-    <div class="row justify-content-md-center">
-    
-      <div class="col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-3">
-       
-       <table class="table table-light">
-          <thead>
-            <tr>
-             <th>Product</th>
-             <th>Price</th>
-             <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            @each('user.wishlist.parts.wishlist_view', Cart::instance('wishlist')->content(), 'row')
-          </tbody>
-       </table>
-                       
-      </div>
-    </div>
+	@if(Cart::instance('wishlist')->count() > 0)
 
+		<h2 class="text-center mb-5" style="text-transform: uppercase">{{ __('wishlist') }}</h2>
+		
+		<div class="row justify-content-md-center">
+			<div class="col-md-6">
+			
+				<table class="table table-light">
+					<thead>
+						<tr class="cart__table-title">
+							<th >{{ __('Product') }}</th>
+							<th>{{ __('Price') }}</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						@each('user.wishlist.parts.wishlist_view', Cart::instance('wishlist')->content(), 'row')
+					</tbody>
+				</table>
+								
+			</div>
+		</div>
 
+	@else
 
-  @else
-
-  <div class="row justify-content-center">
-         <h2>No items in Wish List!</h2> 
-    
-  </div> 
+		<div class="justify-content-center">
+			<h2>{{ __('No items in Wish List!') }}</h2> 
+		
+				<div class="row justify-content-center ">
+					<h3 style="color: var(--link-active)">{{ __("but it's easy to fix") }}</h3>
+					<i class="fa fa-smile-o fa-2x pl-3" aria-hidden="true"></i>
+				</div>
+			
+				<div class="text-center mt-5 mb-5" >
+					<a href={{route('shop', [app()->getLocale()])}} class="shares__link" >{{ __('to the store') }}</a>
+				</div>
+		</div> 
+		
+	@endif
 </div> 
-@endif
 @endsection

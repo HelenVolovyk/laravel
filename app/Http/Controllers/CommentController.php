@@ -26,6 +26,7 @@ class CommentController extends Controller
 
     public function show(Request $request, Product $product)
     {
-      return view('comments.all_comments');
+		$comments = Comment::where('print', 1)->get(); 
+      return view('pages.reviews');
     }
 }
