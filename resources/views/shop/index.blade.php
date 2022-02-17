@@ -9,6 +9,9 @@
 
 	<div class="">
 		@include('inc.breadcrumb')
+
+		@include('inc.message')
+
 		<div class="container__fluid">
 			<div class="shop__container">
 

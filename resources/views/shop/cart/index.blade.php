@@ -9,6 +9,7 @@ Shopping Cart
 @section('content')
   
   @include('inc.breadcrumb')
+  @include('inc.message')
   <div class="content cart">
 
   @if(Cart::instance('cart')->count() > 0)

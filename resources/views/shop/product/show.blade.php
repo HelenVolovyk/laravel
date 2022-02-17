@@ -4,14 +4,14 @@
 @section('content')
 
 	@include('inc.breadcrumb')
+	@include('inc.message')
 
 	<div class="container">	
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-3">
 				<h2 class="text-center text-uppercase  mt-3 mb-2" style="font-weight:bolder; color: var(--prima);">{{ ($product->__('name'))  }}</h2>
 			</div>
-  
-		<hr>
+  		<hr>
 
 		<div class="row">
 			<div class="col-md-6">

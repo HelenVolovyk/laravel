@@ -73,52 +73,16 @@
 			<div class="wrapper">
 		
 			@include('inc.header')
+			{{-- @include('inc.message') --}}
 
-
-	@php
-		//  $uri = $request->path();
-
-		//  if ($url != url('/')) 
-		// 	@include('inc.breadcrumb')
-		 
-	// 	if()
-	// @include('inc.breadcrumb')
-
-	// $b = explode('/', $_SERVER['REQUEST_URI']);
-	// 	$c = array_slice($b, 2); 
-
-		
-		@endphp
-
-		
+	@show
 	
-	
-				
-			
-		
-	
-	{{-- @if(Request::is('about', 'contact', 'payment', 'shares', 'reviews')) --}}
-	{{-- @include('inc.breadcrumb')
-		 --}}
-	{{-- @endif --}}
-
-		
-				
-			@show
-	
-			
-
-					
-				
-	
-			
-					{{-- <main > --}}
 						
-								@include('inc.message')
-								
-						
-								@yield('content')
-							
+		
+		
+
+		@yield('content')
+	
 							
 									
 								<div class="go">	

@@ -1,7 +1,7 @@
 <footer>
 	
 	<div id="d" >
-		<div class="jumbotron jumbotron-fluid  ibg text-center  wow fadeIn">
+		<div class="jumbotron jumbotron-fluid  ibg text-center  wow fadeIn ">
 		<img class="ibg" src="{{Storage::disk('public')->url('w2/AC/kt/t2/u1PXIIR3M75xKc0h_1639521679.jpg')}}" alt=""  >
 		{{-- <img class="ibg" src="{{Storage::disk('public')->url('Ee/Iq/Ro/0l/pWiav22HBntU3Dda_1639492859.jpg')}}" alt=""  > --}}
 	
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer__line" style="width: 100%; height:22px; background-color: #f1f1f1;"></div>
+	{{-- <div class="footer__line" style="width: 100%; height:22px; background-color: #f1f1f1;"></div> --}}
 	</div>
 
 
@@ -51,7 +51,7 @@
 			</div>	
 		
 
-			<div class="col-md-12 text-center">
+			<div class="col-md-10 text-center">
 				<div class="row">
 
 					<div class="col-md-3 text-left">
@@ -100,7 +100,7 @@
 	</div>
 </div>
 
-		<hr class="mt-0 mb-0" style="margin-bottom: 0">
+		{{-- <hr class="mt-0 mb-0" style="margin-bottom: 0"> --}}
 		<div class="nano text-center">
 			&copy;Nano 2021
 		</div>

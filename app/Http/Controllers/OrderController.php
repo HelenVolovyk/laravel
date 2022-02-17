@@ -86,8 +86,8 @@ class OrderController extends Controller
 		$total = $order['total'];
 		//dd($name);
 		
-		Mail::to($order['user_email'])->send(new OrderCreated($name, $total));
-		//Mail::to('mr0778240@gmail.com')->send(new OrderCreated($name, $total));
+	//	Mail::to($order['user_email'])->send(new OrderCreated($name, $total));
+		Mail::to('mr0778240@gmail.com')->send(new OrderCreated($name, $total));
 
 		
 		

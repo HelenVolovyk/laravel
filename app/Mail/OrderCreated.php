@@ -12,6 +12,7 @@ class OrderCreated extends Mailable
 
 	 protected $name;
 	 protected $total;
+	 
     /**
      * Create a new message instance.
      *
@@ -19,8 +20,8 @@ class OrderCreated extends Mailable
      */
     public function __construct($name, $total)
     {
-        $this->name = $name;
-        $this->total = $total;
+		$this->name = $name;
+		$this->total = $total;
     }
 
     /**
@@ -30,9 +31,9 @@ class OrderCreated extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.order_created', [
-			  'name' 	=> $this->name,
-			  'total' 	=> $this->total 
-			  ]);
+		return $this->view('mail.order_created', [
+			'name' 	=> $this->name,
+			'total' 	=> $this->total 
+			]);
     }
 }

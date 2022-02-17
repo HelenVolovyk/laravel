@@ -6,18 +6,17 @@ Checkout
 
 
 @section('content')
+@include('inc.breadcrumb')
+	@include('inc.message')
+
+
 <div class="container mt-5">
   <h1 class="text-center">{{ __('Checkout') }}</h1>
   <div class="row justify-content-space-between">
     <div class="col-md-6">
     
 
-      {{-- <h4>Your Total: $ {{Cart::total()}}</h4>   --}}
-
-        {{-- <div id="charge-error" class="alert alert-danger" {{!Session::has('error') ? 'hidden' : ''}}>
-        {{Session::get('error')}}
-		  </div> --}}
-		  
+    	  
         @if($errors->any())
         <div class="alert alert-danger">
           <ul>
